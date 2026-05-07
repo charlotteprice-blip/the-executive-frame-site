@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Programme · Executive Frame™</title>
+<meta name="description" content="A six-module clinical programme for capable adults operating under sustained load. Available self-paced, in cohorts, or 1:1 coached.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/ef-styles.css">
+<style id="page-css">
+:root {
+  /* EF Law arm tones */
+  --law:    #6B8AA8;
+  --law-2:  #4d6781;
+  --law-tint: rgba(107,138,168,0.10);
+}
+
+/* ═══ HERO ═══════════════════════════════════════════ */
+.hero{
+  background:var(--navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:80px 80px;
+  background-position:center center;
+  color:#FFFFFF;
+  padding:120px 32px 96px;
+  border-bottom:3px solid var(--law);
+}
+@media(max-width:760px){.hero{padding:80px 24px 64px;}}
+.hero-wrap{max-width:1080px;margin:0 auto;}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:rgba(143,163,184,0.85);margin-bottom:36px;display:flex;align-items:center;gap:14px;}
+.eyebrow::before{content:"";flex-shrink:0;width:36px;height:1px;background:var(--law);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:600;line-height:1.0;letter-spacing:-0.022em;color:#FFFFFF;margin:0 0 32px 0;}
+.hero h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.65);display:block;}
+@media(max-width:760px){.hero h1{font-size:48px;}}
+.hero-lede{font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.6;color:rgba(255,255,255,0.78);margin:0 0 48px 0;max-width:760px;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-meta-line{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.10);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(255,255,255,0.55);}
+
+
+/* ═══ C³ TUNNEL CARDS ═══════════════════════════ */
+.c3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+@media(max-width:760px){.c3-grid{grid-template-columns:1fr;}}
+.c3-card{padding:36px 32px;background:#FFFFFF;border:1px solid var(--line);border-top:3px solid var(--mid);display:flex;flex-direction:column;}
+.c3-card[data-stage="centre"]{border-top-color:var(--centre);}
+.c3-card[data-stage="clarify"]{border-top-color:var(--clarify);}
+.c3-card[data-stage="choose"]{border-top-color:var(--choose);}
+.c3-card .stage{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.c3-card h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text);margin:0 0 14px 0;line-height:1.2;}
+.c3-card p{font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.6;color:var(--mid);margin:0 0 14px 0;}
+.c3-card p em{font-style:italic;color:var(--text);}
+.c3-card .verb-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--muted);padding-top:18px;border-top:1px solid var(--line-soft);margin-top:auto;}
+
+
+/* ═══ MODULE DROPDOWNS ═══════════════════════════ */
+.lp-mod-grid{display:flex;flex-direction:column;gap:0;margin-top:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#FFFFFF;}
+.lp-mod{border-bottom:1px solid var(--line-soft);}
+.lp-mod:last-child{border-bottom:none;}
+.lp-mod-sum{list-style:none;cursor:pointer;display:grid;grid-template-columns:60px 1fr 30px;gap:24px;align-items:center;padding:24px 8px;transition:background 0.2s;}
+.lp-mod-sum::-webkit-details-marker{display:none;}
+.lp-mod-sum:hover{background:rgba(143,163,184,0.04);}
+@media(max-width:640px){.lp-mod-sum{grid-template-columns:48px 1fr 26px;gap:14px;padding:20px 8px;}}
+.lp-mod-n{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;font-weight:600;color:var(--law-2);line-height:1;text-align:center;}
+@media(max-width:640px){.lp-mod-n{font-size:24px;}}
+.lp-mod-c{display:flex;flex-direction:column;gap:6px;min-width:0;}
+.lp-mod-tag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--law-2);}
+.lp-mod-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);line-height:1.3;letter-spacing:-0.005em;}
+.lp-mod-title em{font-style:italic;font-weight:500;color:var(--mid);}
+@media(max-width:640px){.lp-mod-title{font-size:18px;}}
+.lp-mod-toggle{font-family:'Cormorant Garamond',serif;font-size:24px;color:rgba(15,26,20,0.40);text-align:right;transition:transform 0.3s ease;}
+.lp-mod[open] .lp-mod-toggle{transform:rotate(45deg);color:var(--law-2);}
+.lp-mod-body{padding:4px 8px 28px 92px;}
+@media(max-width:640px){.lp-mod-body{padding:0 8px 24px 8px;}}
+.lp-mod-body p{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.7;color:var(--mid);margin:0 0 14px 0;max-width:760px;}
+.lp-mod-body p strong{color:var(--text);font-weight:600;}
+.lp-mod-body p em{font-style:italic;color:var(--text);}
+.lp-mod-deliv{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft);}
+.lp-mod-deliv-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--muted);margin-right:6px;}
+.lp-pill{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--law-2);background:var(--law-tint);padding:5px 11px;border-radius:50px;}
+
+
+/* ═══ THREE PATHWAYS ═══════════════════════════ */
+.lp-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+@media(max-width:880px){.lp-paths{grid-template-columns:1fr;}}
+.lp-path{background:#FFFFFF;border:1px solid var(--line);border-top:4px solid var(--mid);border-radius:3px;padding:36px 32px 32px;display:flex;flex-direction:column;position:relative;}
+.lp-path[data-route="self"]{border-top-color:var(--centre);}
+.lp-path[data-route="group"]{border-top-color:var(--law);box-shadow:0 4px 24px rgba(143,163,184,0.10);}
+.lp-path[data-route="coached"]{border-top-color:var(--choose);}
+.lp-path-feat{position:absolute;top:14px;right:14px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--law-2);background:var(--law-tint);padding:5px 10px;border-radius:50px;}
+.lp-path-tag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.lp-path h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text);line-height:1.2;letter-spacing:-0.005em;margin:0 0 8px 0;}
+.lp-path-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--mid);margin-bottom:24px;}
+.lp-path ul{list-style:none;padding:0;margin:0 0 28px 0;flex-grow:1;}
+.lp-path li{font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.55;color:var(--mid);padding:8px 0;border-bottom:1px solid var(--line-soft);}
+.lp-path li:last-child{border-bottom:none;}
+.lp-path-link{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--law-2);text-decoration:none;padding-top:16px;border-top:1px solid var(--line);}
+.lp-path-link:hover{color:var(--text);}
+
+
+/* ═══ WHO IT'S FOR — TWO-COLUMN ═══════════════ */
+.lp-who{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+@media(max-width:760px){.lp-who{grid-template-columns:1fr;}}
+.lp-who-card{background:#FFFFFF;border:1px solid var(--line);border-radius:3px;padding:36px 32px;}
+.lp-who-card.fit{border-top:3px solid #5B8F7B;}
+.lp-who-card.notfit{border-top:3px solid var(--muted);}
+.lp-who-card h4{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text);margin:0 0 18px 0;letter-spacing:-0.005em;}
+.lp-who-card ul{list-style:none;padding:0;margin:0;}
+.lp-who-card li{font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.6;color:var(--mid);padding:10px 0 10px 22px;border-bottom:1px solid var(--line-soft);position:relative;}
+.lp-who-card li:last-child{border-bottom:none;}
+.lp-who-card.fit li::before{content:"·";position:absolute;left:6px;top:9px;color:#5B8F7B;font-size:24px;font-weight:700;line-height:1;}
+.lp-who-card.notfit li::before{content:"—";position:absolute;left:0;top:14px;color:var(--muted);font-size:13px;}
+
+
+/* ═══ EVIDENCE DROPDOWNS ═══════════════════ */
+.lp-ev{margin-top:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.lp-ev-item{border-bottom:1px solid var(--line-soft);}
+.lp-ev-item:last-child{border-bottom:none;}
+.lp-ev-sum{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:20px 8px;}
+.lp-ev-sum::-webkit-details-marker{display:none;}
+.lp-ev-sum:hover{background:rgba(15,26,20,0.02);}
+.lp-ev-dot{width:8px;height:8px;border-radius:50%;background:var(--law);margin-top:7px;}
+.lp-ev-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text);line-height:1.3;}
+.lp-ev-toggle{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(15,26,20,0.40);transition:transform 0.3s ease;}
+.lp-ev-item[open] .lp-ev-toggle{transform:rotate(45deg);color:var(--law-2);}
+.lp-ev-body{padding:0 8px 18px 38px;}
+.lp-ev-body p{font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.65;color:var(--mid);margin:0;max-width:680px;}
+
+
+/* ═══ ANCHORS — THE LINES ═══════════════ */
+.lp-anchors{margin-top:36px;border-top:1px solid var(--line);}
+.lp-anchor{display:grid;grid-template-columns:48px 1fr;gap:24px;align-items:baseline;padding:18px 8px;border-bottom:1px solid var(--line-soft);}
+.lp-anchor:last-child{border-bottom:none;}
+.lp-anchor-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--law-2);font-weight:600;}
+.lp-anchor-text{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--text);line-height:1.5;letter-spacing:-0.005em;}
+
+
+/* ═══ CLOSING ═══════════════════════════════════════ */
+.closing{
+  background:var(--navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:80px 80px;
+  background-position:center center;
+  color:#FFFFFF;
+  padding:96px 32px 80px;
+  text-align:center;
+  border-top:3px solid var(--law);
+}
+.closing-line{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;line-height:1.1;letter-spacing:-0.018em;color:#FFFFFF;margin:0 0 24px 0;}
+.closing-line em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.65);display:block;}
+@media(max-width:560px){.closing-line{font-size:32px;}}
+.closing-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.65);max-width:680px;margin:0 auto 48px;line-height:1.6;}
+.closing-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+.closing-meta{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.50);line-height:1.7;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);}
+.closing-triptych{display:flex;flex-direction:column;gap:10px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.40);padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);margin-top:48px;}
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="site-nav"></nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="eyebrow">Executive Frame&trade; &middot; The Programme</div>
+    <h1>The operating sequence for capable lives<em>under load.</em></h1>
+    <p class="hero-lede">A six-module clinical programme for capable adults operating at sustained capacity &mdash; in work, family, leadership, and life. Composure, decision quality, and recovery treated as clinical skills, not personality traits. Available self-paced, in cohorts, or 1:1 coached.</p>
+    <div class="hero-ctas">
+      <a href="enquire.html" class="btn btn-primary">Begin enquiry</a>
+      <a href="#programme" class="btn btn-ghost">The six modules</a>
+    </div>
+    <div class="hero-meta-line">Auckland &middot; Christchurch &middot; Queenstown &middot; Telehealth &middot; CPD-eligible</div>
+  </div>
+</section>
+
+<!-- ═══ 01 · THE PREMISE ═══ -->
+<section class="section">
+  <div class="wrap wrap-narrow">
+    <div class="chrome">01 — The Premise</div>
+    <h2>Most breakdowns in capable lives <em>are not effort problems.</em><br>They are sequence problems.</h2>
+
+    <div class="body">
+      <p>Capable people do not fail under sustained load because they lack effort, intelligence, or resolve. They fail because the system narrows.</p>
+      <p>Modern life imposes four loads simultaneously: <strong>cognitive load</strong> (the thinking work, the decisions, the planning), <strong>emotional load</strong> (the work of holding others, the work of holding oneself), <strong>structural load</strong> (deadlines, demands, pressure), and <strong>identity load</strong> &mdash; <em>the gap between the person you intended to be and the person the conditions are producing.</em></p>
+      <p>Under sustained four-load conditions, the nervous system enters a predictable cascade. The work is not to override this. <strong>It is to know it, name it, and have a sequence ready when it arrives.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 · C³ LOOP ═══ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="chrome">02 — The Architecture</div>
+    <h2>Centre. Clarify. <em>Choose.</em></h2>
+    <p class="lede">Three stages. Run in order. The order is the intervention.</p>
+
+    <div class="c3-grid">
+
+      <div class="c3-card" data-stage="centre">
+        <div class="stage">Stage 01 · Centre</div>
+        <h3>Stabilise the system <em>enough to think.</em></h3>
+        <p>Regulation before cognition. Not calm &mdash; <strong>regulated enough to access the prefrontal cortex.</strong> The somatic work that brings the body back into a state where thinking is available again.</p>
+        <div class="verb-line">Without it, every move that follows is compromised.</div>
+      </div>
+
+      <div class="c3-card" data-stage="clarify">
+        <div class="stage">Stage 02 · Clarify</div>
+        <h3>Restore <em>cognitive accuracy.</em></h3>
+        <p>Once the system stabilises, thinking becomes available &mdash; but it is biased toward speed and certainty. Not more thinking. <strong>More accurate thinking.</strong> Fact, story, triage. The discipline that protects sound decisions.</p>
+        <div class="verb-line">Fact, story, triage. The discipline of accuracy.</div>
+      </div>
+
+      <div class="c3-card" data-stage="choose">
+        <div class="stage">Stage 03 · Choose</div>
+        <h3>Act <em>with intention.</em></h3>
+        <p>From regulation and clarity, action becomes available &mdash; and deliberate. <strong>One step. Aligned. Owned.</strong> Not perfect, not exhaustive, but consistent with the person you intend to be under pressure.</p>
+        <div class="verb-line">The loop closes on action. Then it begins again.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 · THE FULL PROGRAMME ═══ -->
+<section class="section" id="programme">
+  <div class="wrap">
+    <div class="chrome">03 — The Programme</div>
+    <h2>Six modules, <em>sequenced.</em></h2>
+    <p class="lede">Each module produces four deliverables: an eLearning module, workshop guide, participant workbook, and a self-paced interactive HTML module with persistent reflections and a printable certificate.</p>
+
+    <div class="lp-mod-grid">
+      <details class="lp-mod">
+        <summary class="lp-mod-sum">
+          <div class="lp-mod-n">01</div>
+          <div class="lp-mod-c">
+            <div class="lp-mod-tag">Foundations · The frame, named</div>
+            <div class="lp-mod-title">Foundations <em>&mdash; the four loads, the Tunnel</em></div>
+          </div>
+          <div class="lp-mod-toggle">+</div>
+        </summary>
+        <div class="lp-mod-body">
+          <p>Why breakdowns in capable lives are sequence problems, not effort problems. The four loads of modern professional life and how they cascade. Introduction of the operating sequence and the S.H.I.F.T.&trade; real-time tool.</p>
+          <div class="lp-mod-deliv">
+            <span class="lp-mod-deliv-label">Each module includes</span>
+            <span class="lp-pill">eLearning</span>
+            <span class="lp-pill">Workshop</span>
+            <span class="lp-pill">Workbook</span>
+            <span class="lp-pill">Interactive</span>
+          </div>
+        </div>
+      </details>
+      <details class="lp-mod">
+        <summary class="lp-mod-sum">
+          <div class="lp-mod-n">02</div>
+          <div class="lp-mod-c">
+            <div class="lp-mod-tag">Centre · Why we skip Stage One</div>
+            <div class="lp-mod-title">Centre <em>&mdash; regulation as access</em></div>
+          </div>
+          <div class="lp-mod-toggle">+</div>
+        </summary>
+        <div class="lp-mod-body">
+          <p>The Physiological Sigh (Balban 2023). Three regulation tools that work in real life &mdash; between meetings, before difficult conversations, in the moments that count. <em>Self-criticism as activation, not as truth.</em></p>
+          <div class="lp-mod-deliv">
+            <span class="lp-mod-deliv-label">Each module includes</span>
+            <span class="lp-pill">eLearning</span>
+            <span class="lp-pill">Workshop</span>
+            <span class="lp-pill">Workbook</span>
+            <span class="lp-pill">Interactive</span>
+          </div>
+        </div>
+      </details>
+      <details class="lp-mod">
+        <summary class="lp-mod-sum">
+          <div class="lp-mod-n">03</div>
+          <div class="lp-mod-c">
+            <div class="lp-mod-tag">Clarify · Why thinking more rarely helps</div>
+            <div class="lp-mod-title">Clarify <em>&mdash; fact, story, triage</em></div>
+          </div>
+          <div class="lp-mod-toggle">+</div>
+        </summary>
+        <div class="lp-mod-body">
+          <p>The five cognitive distortions most frequent under load (Beck 1976, Burns 1980). <strong>Now / Do / Later</strong> as working memory triage under conditions Baddeley would recognise. Fact-story separation in the moments that matter.</p>
+          <div class="lp-mod-deliv">
+            <span class="lp-mod-deliv-label">Each module includes</span>
+            <span class="lp-pill">eLearning</span>
+            <span class="lp-pill">Workshop</span>
+            <span class="lp-pill">Workbook</span>
+            <span class="lp-pill">Interactive</span>
+          </div>
+        </div>
+      </details>
+      <details class="lp-mod">
+        <summary class="lp-mod-sum">
+          <div class="lp-mod-n">04</div>
+          <div class="lp-mod-c">
+            <div class="lp-mod-tag">Choose · One act, deliberately</div>
+            <div class="lp-mod-title">Choose <em>&mdash; values, microsteps, deliberate action</em></div>
+          </div>
+          <div class="lp-mod-toggle">+</div>
+        </summary>
+        <div class="lp-mod-body">
+          <p>Behavioural activation (Jacobson 1996, Dimidjian 2006). The three avoidance patterns most common in capable lives &mdash; <em>endless preparation, the big move that never lands, the flinch dressed as decisiveness.</em> Action as discipline, not motivation.</p>
+          <div class="lp-mod-deliv">
+            <span class="lp-mod-deliv-label">Each module includes</span>
+            <span class="lp-pill">eLearning</span>
+            <span class="lp-pill">Workshop</span>
+            <span class="lp-pill">Workbook</span>
+            <span class="lp-pill">Interactive</span>
+          </div>
+        </div>
+      </details>
+      <details class="lp-mod">
+        <summary class="lp-mod-sum">
+          <div class="lp-mod-n">05</div>
+          <div class="lp-mod-c">
+            <div class="lp-mod-tag">S.H.I.F.T.™ · Mid-meeting, mid-call, mid-conversation</div>
+            <div class="lp-mod-title">S.H.I.F.T. <em>&mdash; the real-time tool</em></div>
+          </div>
+          <div class="lp-mod-toggle">+</div>
+        </summary>
+        <div class="lp-mod-body">
+          <p>Stop. Hold. Focus. Take Action. The compressed sequence available when the full sequence cannot run. Three rehearsal scenarios &mdash; <em>the high-stakes meeting, the difficult conversation, the 3am moment.</em> Failure points and recovery.</p>
+          <div class="lp-mod-deliv">
+            <span class="lp-mod-deliv-label">Each module includes</span>
+            <span class="lp-pill">eLearning</span>
+            <span class="lp-pill">Workshop</span>
+            <span class="lp-pill">Workbook</span>
+            <span class="lp-pill">Interactive</span>
+          </div>
+        </div>
+      </details>
+      <details class="lp-mod">
+        <summary class="lp-mod-sum">
+          <div class="lp-mod-n">06</div>
+          <div class="lp-mod-c">
+            <div class="lp-mod-tag">Integration · Practice that holds across a life</div>
+            <div class="lp-mod-title">Integration <em>&mdash; rhythms, drift, architecture</em></div>
+          </div>
+          <div class="lp-mod-toggle">+</div>
+        </summary>
+        <div class="lp-mod-body">
+          <p>Six drift signals &mdash; early markers that the framework is no longer running. Three practice rhythms (daily, weekly, monthly) that maintain the architecture. The framework&rsquo;s place in a sustainable life: <em>sustaining, deepening, mastery.</em></p>
+          <div class="lp-mod-deliv">
+            <span class="lp-mod-deliv-label">Each module includes</span>
+            <span class="lp-pill">eLearning</span>
+            <span class="lp-pill">Workshop</span>
+            <span class="lp-pill">Workbook</span>
+            <span class="lp-pill">Interactive</span>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 · THREE PATHWAYS ═══ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="chrome">04 — Three pathways</div>
+    <h2>Three ways to take <em>the programme.</em></h2>
+    <p class="lede">The same six modules, delivered in the format that fits your practice and your week.</p>
+
+    <div class="lp-paths">
+      <div class="lp-path" data-route="self">
+        
+        <div class="lp-path-tag">Pathway 01</div>
+        <h3>Self-paced</h3>
+        <div class="lp-path-sub">Six interactive modules &middot; structured for autonomy</div>
+        <ul>
+          <li>Six self-contained interactive modules</li>
+          <li>Persistent reflections saved across sessions</li>
+          <li>Live practice tools &mdash; Physiological Sigh, triage, values, rehearsal</li>
+          <li>Printable completion certificate per module</li>
+          <li>CPD-eligible self-directed entries where applicable</li>
+        </ul>
+        <a href="enquire.html" class="lp-path-link">Begin self-paced &rarr;</a>
+      </div>
+      <div class="lp-path" data-route="group">
+        <span class="lp-path-feat">Most chosen</span>
+        <div class="lp-path-tag">Pathway 02</div>
+        <h3>Group programme</h3>
+        <div class="lp-path-sub">Six facilitated sessions &middot; cohort-based</div>
+        <ul>
+          <li>Cohort of 8&ndash;12 capable adults</li>
+          <li>Workshop format with workbook integration</li>
+          <li>Facilitated by Dr Sarah Anticich or accredited associates</li>
+          <li>Peer practice across modules &mdash; significant retention advantage</li>
+          <li>CPD-eligible facilitated entries where applicable</li>
+        </ul>
+        <a href="enquire.html" class="lp-path-link">See the group programme &rarr;</a>
+      </div>
+      <div class="lp-path" data-route="coached">
+        
+        <div class="lp-path-tag">Pathway 03</div>
+        <h3>1:1 coached</h3>
+        <div class="lp-path-sub">Six sessions over 12&ndash;16 weeks &middot; tailored</div>
+        <ul>
+          <li>Direct coaching with Dr Sarah Anticich</li>
+          <li>Modules tailored to your specific context</li>
+          <li>Real-time application to current circumstances</li>
+          <li>In-person (Auckland &middot; Christchurch &middot; Queenstown) or telehealth</li>
+          <li>For senior leaders, those in transition, those approaching burnout</li>
+        </ul>
+        <a href="enquire.html" class="lp-path-link">Enquire about 1:1 &rarr;</a>
+      </div>
+    </div>
+
+    <p class="coda">Different lives absorb structural material differently. <strong>Use one. Use all. Move between them as the work requires.</strong></p>
+  </div>
+</section>
+
+<!-- ═══ 05 · WHO IT'S FOR ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="chrome">05 — Fit</div>
+    <h2>Who this <em>is built for.</em></h2>
+    <p class="lede">Designed for capable adults operating at sustained capacity. The mechanism is general; the adaptation is to modern professional and personal life.</p>
+
+    <div class="lp-who">
+      <div class="lp-who-card fit">
+        <h4>The programme fits</h4>
+        <ul>
+          <li>Senior professionals managing sustained complex load</li>
+          <li>Leaders carrying responsibility for others</li>
+          <li>Those in roles requiring decisions under pressure</li>
+          <li>Parents balancing professional and family load</li>
+          <li>High-performers approaching or recovering from burnout</li>
+          <li>Those returning to work after illness, parental leave, or career break</li>
+          <li>Anyone whose work, family, or life depends on functioning under load</li>
+        </ul>
+      </div>
+      <div class="lp-who-card notfit">
+        <h4>The programme is not</h4>
+        <ul>
+          <li>Acute mental health treatment &mdash; that requires a treating clinician</li>
+          <li>A substitute for clinical care if you are in crisis</li>
+          <li>A general resilience or wellness programme</li>
+          <li>Career coaching or business strategy</li>
+          <li>A quick-win productivity intervention</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 · MECHANISMS / EVIDENCE ═══ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="chrome">06 — The mechanisms</div>
+    <h2>The mechanisms <em>are forty years old.</em></h2>
+    <p class="lede">No new science. Disciplined adaptation of established clinical and cognitive research to the specific conditions of capable lives under load.</p>
+
+    <div class="lp-ev">
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">Balban et al. (2023) &middot; <em style="font-style:italic;color:var(--mid);">Cell Reports Medicine</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>The Physiological Sigh (cyclic sighing) demonstrated as the most effective brief breathing intervention for autonomic arousal reduction. Used in Module 2.</p></div>
+      </details>
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">Beck (1976), Burns (1980) &middot; <em style="font-style:italic;color:var(--mid);">Cognitive Distortions</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>The five cognitive distortions most often present in legal cognition under load &mdash; catastrophising, mind-reading, all-or-nothing, personalisation, should-statements. Used in Module 3.</p></div>
+      </details>
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">Jacobson (1996), Dimidjian et al. (2006) &middot; <em style="font-style:italic;color:var(--mid);">Behavioural Activation</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>One of the most evidence-based behavioural interventions in clinical psychology. <em>Action precedes motivation.</em> Used in Module 4.</p></div>
+      </details>
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">Arnsten (2009) &middot; <em style="font-style:italic;color:var(--mid);">Nature Reviews Neuroscience</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>Stress-pathway impairment of prefrontal cortex function. Working memory narrows from 7&plusmn;2 to 2&ndash;3 items under sustained threat. Used throughout the programme.</p></div>
+      </details>
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">Baddeley &amp; Hitch (1974), Baddeley (2003) &middot; <em style="font-style:italic;color:var(--mid);">Working Memory</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>The working memory model that grounds the Now / Do / Later triage in Module 3 &mdash; capacity is finite, and triage is a competence, <em>not a personality trait.</em></p></div>
+      </details>
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">Mehrabian (1971) &middot; <em style="font-style:italic;color:var(--mid);">Communication channels</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>The widely misunderstood but core finding on multi-channel communication. <em>In written legal practice, tone is the entire channel.</em> Used in Module 4.</p></div>
+      </details>
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">Leroy (2009) &middot; <em style="font-style:italic;color:var(--mid);">Attention Residue</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>The cognitive cost of unfinished tasks on subsequent capacity. Grounds the file-finish discipline and the closing-out practice. Used in Modules 3 and 5.</p></div>
+      </details>
+
+      <details class="lp-ev-item">
+        <summary class="lp-ev-sum">
+          <span class="lp-ev-dot"></span>
+          <span class="lp-ev-title">LexisNexis NZ Wellbeing Report (2023) &middot; <em style="font-style:italic;color:var(--mid);">Sector data</em></span>
+          <span class="lp-ev-toggle">+</span>
+        </summary>
+        <div class="lp-ev-body"><p>72% of NZ lawyers report high or very high stress. 45% identify sustained pressure as the primary driver of professional quality lapses. <strong>The conditions that produced the programme.</strong></p></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 07 · ANCHOR LINES ═══ -->
+<section class="section">
+  <div class="wrap wrap-narrow">
+    <div class="chrome">07 — The lines that hold the framework</div>
+    <h2>Carried through every module. <em>Available in the moment that requires them.</em></h2>
+
+    <div class="lp-anchors">
+      <div class="lp-anchor">
+        <div class="lp-anchor-num">i.</div>
+        <div class="lp-anchor-text">&ldquo;Human first. Then performance.&rdquo;</div>
+      </div>
+      <div class="lp-anchor">
+        <div class="lp-anchor-num">ii.</div>
+        <div class="lp-anchor-text">&ldquo;This is not failure. This is biology meeting sustained load.&rdquo;</div>
+      </div>
+      <div class="lp-anchor">
+        <div class="lp-anchor-num">iii.</div>
+        <div class="lp-anchor-text">&ldquo;Most breakdowns are not effort problems. They are sequence problems.&rdquo;</div>
+      </div>
+      <div class="lp-anchor">
+        <div class="lp-anchor-num">iv.</div>
+        <div class="lp-anchor-text">&ldquo;You do not need more effort. You need the right sequence.&rdquo;</div>
+      </div>
+      <div class="lp-anchor">
+        <div class="lp-anchor-num">v.</div>
+        <div class="lp-anchor-text">&ldquo;Centre. Clarify. Choose.&rdquo;</div>
+      </div>
+    </div>
+</section>
+
+<!-- ═══ CLOSING ═══ -->
+<section class="closing">
+  <p class="closing-line">Capable mind.<em>Made sustainable.</em></p>
+  <p class="closing-tag">Six modules. Twenty-four assets. One operating sequence that runs from foundations to integration. Begin with intake &mdash; confidential, read by your clinician before the first session.</p>
+  <div class="closing-ctas">
+    <a href="enquire.html" class="btn btn-primary">Begin enquiry</a>
+    <a href="index.html" class="btn btn-ghost">Back to Executive Frame</a>
+  </div>
+
+  <div class="closing-meta">
+    Dr Sarah Anticich &middot; Clinical &amp; Industrial/Organisational Psychologist<br>
+    Auckland &middot; Christchurch &middot; Queenstown &middot; Telehealth NZ-wide
+  </div>
+
+  <div class="closing-triptych">
+    <div>Centre. Clarify. Choose.</div>
+    <div>Stop. Hold. Focus. Take Action.</div>
+    <div>Human first. Then performance.</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="ft-line">
+    <a href="index.html">Home</a>
+    <a href="framework.html">Framework</a>
+    <a href="method.html">Method</a>
+    <a href="about-sarah.html">About Sarah</a>
+    <a href="library.html">Library</a>
+    <a href="library.html">Library</a>
+    <a href="enquire.html">Contact</a>
+  </div>
+  <div class="ft-line">Auckland &middot; Christchurch &middot; Queenstown &middot; Telehealth available &middot; admin@sarahanticich.co.nz</div>
+  <div class="ft-final">&copy; 2026 Sarah Anticich Consulting &middot; Executive Frame&trade; &middot; Human first. Then performance.</div>
+</footer>
+
+<script src="../assets/js/nav.js"></script>
+</body>
+</html>
