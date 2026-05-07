@@ -15,17 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="/pages/programs.html" class="nav-link nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
       <div class="nav-dropdown-panel">
         <a href="/pages/health.html" class="nav-dd-item"><span class="dd-dot" style="background:#5B8F7B;"></span>Executive Frame Health</a>
-        <a href="health-dgbi.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ Executive Frame Health — DGBI</a>
-        <a href="health-elearning.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ Executive Frame Health — eLearning</a>
+        <a href="/pages/health-dgbi.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ Executive Frame Health — DGBI</a>
+        <a href="/pages/health-elearning.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ Executive Frame Health — eLearning</a>
         <a href="/pages/elite.html" class="nav-dd-item"><span class="dd-dot" style="background:#C9874E;"></span>Executive Frame Elite</a>
         <a href="/pages/corporate.html" class="nav-dd-item"><span class="dd-dot" style="background:#6B8AA8;"></span>Executive Frame Corporate</a>
         <a href="/pages/law.html" class="nav-dd-item"><span class="dd-dot" style="background:#8FA3B8;"></span>Executive Frame Law</a>
-        <a href="law-family.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#8FA3B8;"></span>↳ Executive Frame Law — Family</a>
+        <a href="/pages/law-family.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#8FA3B8;"></span>↳ Executive Frame Law — Family</a>
         <a href="/pages/women.html" class="nav-dd-item"><span class="dd-dot" style="background:#C28699;"></span>Executive Frame Women</a>
         <a href="/pages/neurodiversity.html" class="nav-dd-item"><span class="dd-dot" style="background:#8B7BA8;"></span>Executive Frame Neurodiversity</a>
         <a href="/pages/family.html" class="nav-dd-item"><span class="dd-dot" style="background:#B68A6F;"></span>Executive Frame Family Systems</a>
         <a href="/pages/consulting.html" class="nav-dd-item"><span class="dd-dot" style="background:#6FA0A4;"></span>C³ Consulting</a>
-        <a href="/pages/partners.html" class="nav-dd-item nav-dd-divider"><span class="dd-dot" style="background:#FFFFFF;opacity:0.5;"></span>Partner organisations</a>
+        <div class="nav-dd-divider"></div>
+        <a href="/pages/partners.html" class="nav-dd-item"><span class="dd-dot" style="background:#8B95A1;"></span>Partner organisations</a>
       </div>
     </div>
     <a href="/pages/deck.html" class="nav-link nav-link-accent">The Deck</a>
