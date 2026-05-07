@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
   <div class="nl">
     <a href="framework.html" class="nav-link">What</a>
-    <a href="science.html" class="nav-link">Why</a>
+    <a href="pages/why.html" class="nav-link">Why</a>
     <a href="method.html" class="nav-link">How</a>
     <a href="about-sarah.html" class="nav-link nav-link-sarah">About Sarah</a>
     <div class="nav-dropdown">
