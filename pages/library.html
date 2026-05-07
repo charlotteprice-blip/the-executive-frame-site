@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library · Executive Frame™</title>
+<meta name="description" content="Podcast, articles, talks, and resources from Dr Sarah Anticich and Executive Frame™.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/ef-styles.css">
+<style id="page-css">
+:root{
+  --navy:#15212D;
+  --text:#0f1a14;
+  --mid:#3d4a3f;
+  --muted:#7a8590;
+  --line:rgba(15,26,20,0.08);
+  --line-soft:rgba(15,26,20,0.04);
+  --cream:#F7F4EE;
+  --centre:#C28699;
+  --clarify:#79859b;
+  --choose:#8598a9;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Cormorant Garamond',serif;background:#FFFFFF;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* ═══ NAV ═══ */
+.site-nav{background:var(--navy);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.nb-brand{display:flex;flex-direction:column;text-decoration:none;flex-shrink:0;}
+.nb-top{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;letter-spacing:-0.005em;}
+.nb-top sup{font-size:0.4em;}
+.nb-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.55);margin-top:-2px;}
+.nl{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+.nl a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;}
+.nl a:hover{color:#FFFFFF;}
+.nl .nav-cta{padding:10px 18px;border:1px solid rgba(255,255,255,0.4);border-radius:50px;}
+.nl .nav-cta:hover{border-color:#FFFFFF;}
+.nl a.active{color:#FFFFFF;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:2px;}
+@media(max-width:760px){.nl{gap:14px;}.nl a{font-size:10px;}}
+
+/* ═══ HERO ═══ */
+.hero{background:var(--navy);background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:80px 80px;background-position:center center;color:#FFFFFF;padding:120px 32px 96px;}
+@media(max-width:760px){.hero{padding:80px 24px 64px;}}
+.hero-wrap{max-width:1080px;margin:0 auto;}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:36px;display:flex;align-items:center;gap:14px;}
+.eyebrow::before{content:"";flex-shrink:0;width:36px;height:1px;background:rgba(255,255,255,0.55);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:600;line-height:1.0;letter-spacing:-0.022em;color:#FFFFFF;margin:0 0 32px 0;}
+.hero h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.65);display:block;}
+@media(max-width:760px){.hero h1{font-size:48px;}}
+.hero-lede{font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.6;color:rgba(255,255,255,0.78);margin:0 0 48px 0;max-width:760px;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* ═══ BUTTONS ═══ */
+.btn{display:inline-flex;align-items:center;padding:15px 32px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.2s ease;border:1px solid transparent;cursor:pointer;}
+.btn-primary{background:#FFFFFF;color:var(--navy);border-color:#FFFFFF;}
+.btn-primary:hover{background:transparent;color:#FFFFFF;}
+.btn-ghost{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,0.5);}
+.btn-ghost:hover{border-color:#FFFFFF;}
+.btn-dark{background:var(--navy);color:#FFFFFF;border-color:var(--navy);}
+.btn-dark:hover{background:transparent;color:var(--navy);}
+.btn-dark-ghost{background:transparent;color:var(--navy);border-color:rgba(15,26,20,0.25);}
+.btn-dark-ghost:hover{border-color:var(--navy);}
+
+/* ═══ SECTIONS ═══ */
+.section{padding:96px 32px;background:#FFFFFF;}
+.section-alt{background:var(--cream);}
+@media(max-width:760px){.section{padding:64px 24px;}}
+.wrap{max-width:1080px;margin:0 auto;}
+.wrap-narrow{max-width:780px;}
+.chrome{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:14px;}
+.chrome::before{content:"";flex-shrink:0;width:36px;height:1px;background:var(--text);opacity:0.5;}
+h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;line-height:1.15;letter-spacing:-0.012em;color:var(--text);margin:0 0 24px 0;max-width:920px;}
+h2 em{font-style:italic;font-weight:400;color:var(--mid);}
+@media(max-width:760px){h2{font-size:32px;}}
+.lede{font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.65;color:var(--mid);margin:0 0 36px 0;max-width:780px;}
+.body p{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.75;color:var(--mid);margin:0 0 20px 0;max-width:780px;}
+.body p:last-child{margin-bottom:0;}
+.body p strong{color:var(--text);font-weight:600;}
+.body p em{font-style:italic;}
+.coda{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.55;color:var(--mid);margin:48px 0 0 0;max-width:780px;padding-top:32px;border-top:1px solid var(--line);}
+.coda strong{color:var(--text);font-weight:600;font-style:normal;}
+
+/* ═══ CLOSING ═══ */
+.closing{background:var(--navy);background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:80px 80px;background-position:center center;color:#FFFFFF;padding:96px 32px 80px;text-align:center;}
+.closing-line{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;line-height:1.1;letter-spacing:-0.018em;color:#FFFFFF;margin:0 0 48px 0;}
+.closing-line em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.65);display:block;}
+@media(max-width:560px){.closing-line{font-size:32px;}}
+.closing-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+.closing-triptych{display:flex;flex-direction:column;gap:10px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.40);padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);}
+
+/* ═══ FOOTER ═══ */
+.site-footer{background:#0a141a;color:rgba(255,255,255,0.55);padding:48px 32px;text-align:center;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;}
+.site-footer a{color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;}
+.site-footer a:hover{color:#FFFFFF;}
+.site-footer .ft-line{margin-bottom:14px;}
+.site-footer .ft-final{margin-top:18px;color:rgba(255,255,255,0.40);font-size:9px;letter-spacing:0.22em;}
+
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="site-nav"></nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="eyebrow">The Library</div>
+    <h1>Resources<em>for the work.</em></h1>
+    <p class="hero-lede">Podcast, articles, talks, and tools. Each piece is built to be portable &mdash; useful inside a working week, not stored for theoretical interest. The Library grows quietly. Check back, or subscribe for new releases.</p>
+    <div class="hero-ctas">
+      <a href="https://open.spotify.com/show/5ZxJ6zGCAR6lIYqzVOFLrk" class="btn btn-primary" target="_blank" rel="noopener">Listen on Spotify ↑</a>
+      <a href="#articles" class="btn btn-ghost">Browse articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 · PODCAST ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="chrome">01 — Podcast</div>
+    <h2>Podcast appearances. <em>Hosting and guesting.</em></h2>
+    <p class="lede">A regular podcast from Sarah, designed to be listenable in the gaps of a working day. Each episode is short, clinical, and operationally useful. Subscribe on Spotify for new releases.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;">
+
+      <a href="https://open.spotify.com/episode/4jHBo8vsSyBKXHaVQQkVGh" target="_blank" rel="noopener" style="background:#FFFFFF;border:1px solid var(--line);border-left:4px solid var(--centre);border-radius:3px;padding:32px 32px;text-decoration:none;display:flex;flex-direction:column;transition:all 0.2s;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">🎧 Latest episode</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text);margin:0 0 12px 0;line-height:1.25;">A 30-second psychology hack <em style="font-style:italic;font-weight:500;color:var(--mid);">to reset focus and reduce stress, in real time.</em></h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.6;color:var(--mid);margin:0 0 18px 0;flex-grow:1;">A short, clinical reset you can run between meetings. Built on the somatic principles underpinning Centre &mdash; designed to bring the system back online in seconds.</p>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);padding-top:14px;border-top:1px solid var(--line);">Listen on Spotify ↑</div>
+      </a>
+
+      <a href="https://open.spotify.com/episode/4jHBo8vsSyBKXHaVQQkVGh?si=n2ajL3-7SS2Mj5ma57M_Rg" target="_blank" rel="noopener" style="background:#FFFFFF;border:1px solid var(--line);border-left:4px solid var(--clarify);border-radius:3px;padding:32px 32px;text-decoration:none;display:flex;flex-direction:column;transition:all 0.2s;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">🎙 Podcast guest</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text);margin:0 0 12px 0;line-height:1.25;">The Powerhouse Diaries <em style="font-style:italic;font-weight:500;color:var(--mid);">with Yaela Raber.</em></h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.6;color:var(--mid);margin:0 0 18px 0;flex-grow:1;">A grounded conversation on what&rsquo;s really happening beneath the surface of high performance, burnout, and leadership. Nervous system regulation, emotional recovery, and performing under pressure.</p>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);padding-top:14px;border-top:1px solid var(--line);">Listen on Spotify ↑</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 · PEER-REVIEWED PUBLICATIONS ═══ -->
+<section class="section section-alt" id="articles">
+  <div class="wrap">
+    <div class="chrome">02 — Peer-reviewed publications</div>
+    <h2>Published research. <em>Anxiety prevention, resilience, child mental health.</em></h2>
+    <p class="lede">Sarah&rsquo;s peer-reviewed work spans childhood anxiety prevention, resilience-building interventions, and developmental psychology. Selected publications below.</p>
+
+    <div style="margin-top:48px;border-top:1px solid var(--line);">
+
+      <article style="display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 8px;border-bottom:1px solid var(--line-soft);align-items:baseline;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);">2014 · Journal article</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin:0 0 8px 0;line-height:1.3;">Socio-emotional problems in boys with sex chromosome aneuploidies <em style="font-style:italic;font-weight:500;color:var(--mid);">compared to a clinical sample</em></h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.55;color:var(--mid);margin:0 0 8px 0;">Fjermestad, K. W., Stokke, S., Wergeland, G. J. H., <strong>Anticich, S. A. J.</strong>, &amp; Heiervang, E. R.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted);margin:0;"><em>Children&rsquo;s Health Care, 43(2), 123&ndash;136</em> &middot; <a href="https://doi.org/10.1080/02739615.2014.901186" target="_blank" rel="noopener" style="color:var(--mid);">DOI ↗</a></p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 8px;border-bottom:1px solid var(--line-soft);align-items:baseline;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);">2013 · Journal article</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin:0 0 8px 0;line-height:1.3;">The prevention of childhood anxiety and promotion of resilience among preschool-aged children <em style="font-style:italic;font-weight:500;color:var(--mid);">&mdash; a universal school-based trial</em></h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.55;color:var(--mid);margin:0 0 8px 0;"><strong>Anticich, S. A. J.</strong>, Barrett, P. M., Silverman, W., Lacherez, P., &amp; Gillies, R.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted);margin:0;"><em>Advances in School Mental Health Promotion, 6(2), 93&ndash;117</em> &middot; <a href="https://doi.org/10.1080/1754730X.2013.784616" target="_blank" rel="noopener" style="color:var(--mid);">DOI ↗</a></p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 8px;border-bottom:1px solid var(--line-soft);align-items:baseline;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);">2012 · Journal article</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin:0 0 8px 0;line-height:1.3;">Recent advances in intervention <em style="font-style:italic;font-weight:500;color:var(--mid);">for early childhood anxiety</em></h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.55;color:var(--mid);margin:0 0 8px 0;"><strong>Anticich, S. A. J.</strong>, Barrett, P. M., Gillies, R., &amp; Silverman, W.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted);margin:0;"><em>Australian Journal of Guidance and Counselling, 22(1), 45&ndash;58</em> &middot; <a href="https://doi.org/10.1017/jgc.2012.24" target="_blank" rel="noopener" style="color:var(--mid);">DOI ↗</a></p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THOUGHT LEADERSHIP ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="chrome">03 — Thought leadership &amp; public scholarship</div>
+    <h2>Writing for practice. <em>Translating research into the working week.</em></h2>
+
+    <div style="margin-top:48px;border-top:1px solid var(--line);">
+
+      <article style="display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 8px;border-bottom:1px solid var(--line-soft);align-items:baseline;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);">2024 · LawTalk</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin:0 0 8px 0;line-height:1.3;">Lawyer wellbeing &mdash; <em style="font-style:italic;font-weight:500;color:var(--mid);">a collective effort</em></h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.6;color:var(--mid);margin:0 0 8px 0;">A piece for the New Zealand Law Society&rsquo;s LawTalk magazine, addressing wellbeing in the legal profession as a collective rather than individual responsibility.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted);margin:0;"><em>LawTalk &mdash; New Zealand Law Society, Issue 957</em> &middot; <a href="https://www.lawsociety.org.nz/news/publications/lawtalk/lawtalk-issue-957/lawyer-wellbeing-a-collective-effort" target="_blank" rel="noopener" style="color:var(--mid);">Read article ↗</a></p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 8px;border-bottom:1px solid var(--line-soft);align-items:baseline;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);">2023 · Article</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin:0 0 8px 0;line-height:1.3;">Little by Little &mdash; <em style="font-style:italic;font-weight:500;color:var(--mid);">daily practices for sustainable wellbeing</em></h3>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.6;color:var(--mid);margin:0 0 8px 0;">A piece on the small, repeatable practices that sustain wellbeing under sustained load &mdash; written for a general readership.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted);margin:0;"><em>What&rsquo;s Hot New Zealand</em> &middot; <a href="https://whatshotnewzealand.com/blog/little-by-little" target="_blank" rel="noopener" style="color:var(--mid);">Read article ↗</a></p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 · TOOLS & PRODUCTS ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="chrome">03 — Tools &amp; products</div>
+    <h2>The framework, <em>made portable.</em></h2>
+    <p class="lede">Clinical resources designed to be used inside the working week, not stored on a shelf.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
+
+      <a href="deck.html" style="background:#FFFFFF;border:1px solid var(--line);border-radius:3px;padding:32px 32px;text-decoration:none;display:flex;flex-direction:column;transition:all 0.2s;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Issue 01 · The Deck</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text);margin:0 0 12px 0;line-height:1.2;">The S.H.I.F.T.&trade; Deck. <em style="font-style:italic;font-weight:500;color:var(--mid);">The framework, in your hand.</em></h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.6;color:var(--mid);margin:0 0 18px 0;flex-grow:1;">Fifty-two cards. One repeatable practice. Designed to be carried, used, and run in the moments that matter. Limited first print run.</p>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--text);padding-top:14px;border-top:1px solid var(--line);">View product →</div>
+      </a>
+
+      <a href="health-elearning.html" style="background:#FFFFFF;border:1px solid var(--line);border-radius:3px;padding:32px 32px;text-decoration:none;display:flex;flex-direction:column;transition:all 0.2s;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">In development</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text);margin:0 0 12px 0;line-height:1.2;">EF Health eLearning. <em style="font-style:italic;font-weight:500;color:var(--mid);">A clinical course on DGBIs.</em></h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.6;color:var(--mid);margin:0 0 18px 0;flex-grow:1;">A self-paced course for patients living with disorders of gut&ndash;brain interaction. Six modules, clinical-grade content, designed for daily use. Launching 2026.</p>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--text);padding-top:14px;border-top:1px solid var(--line);">Register interest →</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 · SUBSCRIBE ═══ -->
+<section class="section section-alt">
+  <div class="wrap wrap-narrow" style="text-align:center;">
+    <div class="chrome" style="justify-content:center;">04 — Stay connected</div>
+    <h2 style="margin-left:auto;margin-right:auto;">Notes from the practice. <em>Quarterly.</em></h2>
+    <p class="lede" style="margin-left:auto;margin-right:auto;">Occasional notes on the work, new releases, and clinical thinking. Quarterly cadence. No marketing.</p>
+
+    <div style="margin-top:32px;">
+      <a href="https://form.jotform.com/252018951134048" target="_blank" rel="noopener" class="btn btn-dark">Subscribe to the list</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSING ═══ -->
+<section class="closing">
+  <p class="closing-line">Built to be <em>used, not stored.</em></p>
+  <div class="closing-ctas">
+    <a href="enquire.html" class="btn btn-primary">Get in touch</a>
+    <a href="about-sarah.html" class="btn btn-ghost">About Sarah</a>
+  </div>
+  <div class="closing-triptych">
+    <div>Centre. Clarify. Choose.</div>
+    <div>Stop. Hold. Focus. Take Action.</div>
+    <div>Auckland · Christchurch · Queenstown · Telehealth</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="ft-line">
+    <a href="index.html">Home</a>
+    <a href="framework.html">Framework</a>
+    <a href="method.html">Method</a>
+    <a href="about-sarah.html">About Sarah</a>
+    <a href="work-with-sarah.html">Work with Sarah</a>
+    <a href="library.html">Library</a>
+    <a href="enquire.html">Contact</a>
+  </div>
+  <div class="ft-line">Auckland · Christchurch · Queenstown · Telehealth available · admin@sarahanticich.co.nz</div>
+  <div class="ft-final">© 2026 Sarah Anticich Consulting · Executive Frame™ · Human first. Then performance.</div>
+</footer>
+
+<script src="../assets/js/nav.js"></script>
+</body>
+</html>

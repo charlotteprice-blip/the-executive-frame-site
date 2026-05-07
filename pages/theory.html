@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Executive Frame™ — A Clinical Architecture for Functioning Under Pressure · Sarah Anticich</title>
+<meta name="description" content="Executive Frame™ is a clinical system for individuals, families, and organisations navigating sustained pressure. Centre. Clarify. Choose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/ef-styles.css">
+<style>
+:root{
+  --navy:#15212D;
+  --text:#0f1a14;
+  --mid:#3d4a3f;
+  --muted:#7a8590;
+  --line:rgba(15,26,20,0.08);
+  --line-soft:rgba(15,26,20,0.04);
+  --cream:#F7F4EE;
+  --centre:#C28699;
+  --clarify:#79859b;
+  --choose:#8598a9;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Cormorant Garamond',serif;
+  background:#FFFFFF;
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ═══ NAV ═══════════════════════════════════════════ */
+.site-nav{
+  background:var(--navy);
+  padding:18px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.nb-brand{display:flex;flex-direction:column;text-decoration:none;flex-shrink:0;}
+.nb-top{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;letter-spacing:-0.005em;}
+.nb-top sup{font-size:0.4em;}
+.nb-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.55);margin-top:-2px;}
+.nl{display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+.nl a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;}
+.nl a:hover{color:#FFFFFF;}
+.nl .cta{padding:10px 18px;border:1px solid rgba(255,255,255,0.4);border-radius:50px;}
+.nl .cta:hover{border-color:#FFFFFF;}
+@media(max-width:760px){.nl{gap:14px;}.nl a{font-size:10px;}}
+
+/* ═══ HERO ═══════════════════════════════════════════ */
+.hero{
+  background:var(--navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:80px 80px;
+  background-position:center center;
+  color:#FFFFFF;
+  padding:120px 32px 96px;
+}
+@media(max-width:760px){.hero{padding:80px 24px 64px;}}
+
+.hero-wrap{max-width:1080px;margin:0 auto;}
+
+.eyebrow{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.55);
+  margin-bottom:36px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.eyebrow::before{
+  content:"";
+  flex-shrink:0;
+  width:36px;
+  height:1px;
+  background:rgba(255,255,255,0.55);
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:88px;
+  font-weight:600;
+  line-height:1.0;
+  letter-spacing:-0.022em;
+  color:#FFFFFF;
+  margin:0 0 32px 0;
+}
+.hero h1 em{
+  font-style:italic;
+  font-weight:400;
+  color:rgba(255,255,255,0.65);
+  display:block;
+}
+@media(max-width:760px){.hero h1{font-size:54px;}}
+
+.hero-lede{
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;
+  line-height:1.6;
+  color:rgba(255,255,255,0.78);
+  margin:0 0 48px 0;
+  max-width:760px;
+}
+
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  padding:15px 32px;
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-radius:2px;
+  transition:all 0.2s ease;
+  border:1px solid transparent;
+  cursor:pointer;
+}
+.btn-primary{
+  background:#FFFFFF;
+  color:var(--navy);
+  border-color:#FFFFFF;
+}
+.btn-primary:hover{
+  background:transparent;
+  color:#FFFFFF;
+}
+.btn-ghost{
+  background:transparent;
+  color:#FFFFFF;
+  border-color:rgba(255,255,255,0.5);
+}
+.btn-ghost:hover{
+  border-color:#FFFFFF;
+}
+.btn-dark{
+  background:var(--navy);
+  color:#FFFFFF;
+  border-color:var(--navy);
+}
+.btn-dark:hover{
+  background:transparent;
+  color:var(--navy);
+}
+.btn-dark-ghost{
+  background:transparent;
+  color:var(--navy);
+  border-color:rgba(15,26,20,0.25);
+}
+.btn-dark-ghost:hover{
+  border-color:var(--navy);
+}
+
+/* ═══ SECTION BASE ═══════════════════════════════════ */
+.section{padding:96px 32px;background:#FFFFFF;}
+.section-alt{background:var(--cream);}
+@media(max-width:760px){.section{padding:64px 24px;}}
+.wrap{max-width:1080px;margin:0 auto;}
+.wrap-narrow{max-width:780px;}
+
+.chrome{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:28px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.chrome::before{
+  content:"";
+  flex-shrink:0;
+  width:36px;
+  height:1px;
+  background:var(--text);
+  opacity:0.5;
+}
+
+h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;
+  font-weight:600;
+  line-height:1.12;
+  letter-spacing:-0.014em;
+  color:var(--text);
+  margin:0 0 28px 0;
+  max-width:920px;
+}
+h2 em{font-style:italic;font-weight:400;color:var(--mid);}
+@media(max-width:760px){h2{font-size:34px;}}
+
+.lede{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  line-height:1.65;
+  color:var(--mid);
+  margin:0 0 36px 0;
+  max-width:780px;
+}
+
+.body p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  line-height:1.75;
+  color:var(--mid);
+  margin:0 0 20px 0;
+  max-width:780px;
+}
+.body p:last-child{margin-bottom:0;}
+.body p strong{color:var(--text);font-weight:600;}
+.body p em{font-style:italic;color:var(--text);}
+
+.coda{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:21px;
+  line-height:1.55;
+  color:var(--mid);
+  margin:48px 0 0 0;
+  max-width:780px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+.coda strong{color:var(--text);font-weight:600;font-style:normal;}
+
+/* ═══ TUNNEL — three columns ═══════════════════════ */
+.tunnel-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:48px;
+}
+@media(max-width:760px){.tunnel-grid{grid-template-columns:1fr;}}
+
+.tunnel-card{
+  padding:36px 32px;
+  background:#FFFFFF;
+  border:1px solid var(--line);
+  border-top:3px solid var(--mid);
+  display:flex;
+  flex-direction:column;
+}
+.tunnel-card[data-stage="centre"]{border-top-color:var(--centre);}
+.tunnel-card[data-stage="clarify"]{border-top-color:var(--clarify);}
+.tunnel-card[data-stage="choose"]{border-top-color:var(--choose);}
+
+.tunnel-card .stage{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:16px;
+}
+.tunnel-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  font-weight:600;
+  color:var(--text);
+  margin:0 0 14px 0;
+  line-height:1.2;
+}
+.tunnel-card p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  line-height:1.6;
+  color:var(--mid);
+  margin:0 0 14px 0;
+}
+.tunnel-card p em{font-style:italic;color:var(--text);}
+.tunnel-card .maps{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--muted);
+  padding-top:18px;
+  border-top:1px solid var(--line-soft);
+  margin-top:auto;
+}
+.tunnel-card .maps strong{color:var(--text);font-weight:600;font-style:normal;}
+
+/* ═══ C³ LOOP — three expandable stages ═══════════════ */
+.stages{
+  margin-top:48px;
+  border-top:1px solid var(--line);
+}
+.stage-row{border-bottom:1px solid var(--line);}
+.stage-row summary{
+  list-style:none;
+  cursor:pointer;
+  display:grid;
+  grid-template-columns:140px 1fr 30px;
+  gap:24px;
+  align-items:baseline;
+  padding:28px 8px;
+}
+.stage-row summary::-webkit-details-marker{display:none;}
+.stage-row summary:hover{background:rgba(15,26,20,0.02);}
+.stage-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding-top:6px;
+}
+.stage-row[data-phase="centre"] .stage-tag{color:var(--centre);}
+.stage-row[data-phase="clarify"] .stage-tag{color:var(--clarify);}
+.stage-row[data-phase="choose"] .stage-tag{color:var(--choose);}
+
+.stage-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  font-weight:600;
+  color:var(--text);
+  line-height:1.2;
+  letter-spacing:-0.005em;
+}
+.stage-name em{font-style:italic;font-weight:500;color:var(--mid);}
+@media(max-width:760px){.stage-name{font-size:24px;}.stage-row summary{grid-template-columns:1fr 30px;gap:8px;}.stage-tag{grid-column:1;grid-row:1;}.stage-name{grid-column:1;grid-row:2;}}
+
+.stage-toggle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  color:rgba(15,26,20,0.40);
+  text-align:right;
+  transition:transform 0.3s ease;
+}
+.stage-row[open] .stage-toggle{transform:rotate(45deg);color:var(--text);}
+
+.stage-body{padding:0 8px 32px 164px;}
+@media(max-width:760px){.stage-body{padding:0 4px 28px 4px;}}
+.stage-body p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  line-height:1.7;
+  color:var(--mid);
+  margin:0 0 18px 0;
+  max-width:780px;
+}
+.stage-body p strong{color:var(--text);font-weight:600;}
+.stage-body p em{font-style:italic;color:var(--text);}
+.stage-cred{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--muted);
+  padding-top:14px;
+  border-top:1px solid var(--line-soft);
+  margin-top:8px;
+}
+
+/* ═══ S.H.I.F.T. ═══════════════════════════════════ */
+.shift{
+  background:var(--navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:80px 80px;
+  background-position:center center;
+  color:#FFFFFF;
+  padding:96px 32px;
+}
+@media(max-width:760px){.shift{padding:64px 24px;}}
+
+.shift .chrome{color:rgba(255,255,255,0.55);}
+.shift .chrome::before{background:rgba(255,255,255,0.55);}
+
+.shift h2{color:#FFFFFF;}
+.shift h2 em{color:rgba(255,255,255,0.65);}
+.shift .lede{color:rgba(255,255,255,0.78);}
+
+.shift-rows{margin-top:48px;border-top:1px solid rgba(255,255,255,0.10);max-width:780px;}
+.shift-row{
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:32px;
+  padding:24px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  align-items:baseline;
+}
+@media(max-width:560px){.shift-row{grid-template-columns:60px 1fr;gap:20px;}}
+
+.shift-letter{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:48px;
+  font-weight:600;
+  color:rgba(255,255,255,0.85);
+  line-height:1;
+  text-align:center;
+}
+.shift-content h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:600;
+  color:#FFFFFF;
+  margin:0 0 8px 0;
+}
+.shift-content p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  line-height:1.6;
+  color:rgba(255,255,255,0.78);
+  margin:0;
+}
+
+/* ═══ EIGHT ARMS ═══════════════════════════════════ */
+.arms{
+  margin-top:48px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.arm{
+  display:grid;
+  grid-template-columns:24px 280px 1fr 200px;
+  gap:32px;
+  padding:28px 8px;
+  border-bottom:1px solid var(--line-soft);
+  text-decoration:none;
+  align-items:baseline;
+  transition:background 0.2s,padding 0.2s;
+}
+.arm:last-child{border-bottom:none;}
+.arm:hover{background:rgba(15,26,20,0.015);padding-left:14px;}
+@media(max-width:980px){
+  .arm{grid-template-columns:18px 1fr;gap:14px;}
+  .arm-context,.arm-cta{grid-column:2;}
+}
+
+.arm-pip{
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  margin-top:8px;
+  background:var(--arm);
+}
+.arm[data-arm="health"]         {--arm:#5B8F7B;}
+.arm[data-arm="elite"]          {--arm:#C9874E;}
+.arm[data-arm="corporate"]      {--arm:#6B8AA8;}
+.arm[data-arm="law"]            {--arm:#8FA3B8;}
+.arm[data-arm="women"]          {--arm:#C28699;}
+.arm[data-arm="neurodiversity"] {--arm:#8B7BA8;}
+.arm[data-arm="family"]         {--arm:#B68A6F;}
+.arm[data-arm="consulting"]     {--arm:#6FA0A4;}
+
+.arm-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:600;
+  color:var(--text);
+  letter-spacing:-0.005em;
+  line-height:1.25;
+}
+.arm-name em{font-style:italic;font-weight:500;color:var(--mid);font-size:18px;display:block;margin-top:4px;}
+
+.arm-context{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  line-height:1.6;
+  color:var(--mid);
+}
+
+.arm-cta{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:right;
+  white-space:nowrap;
+}
+.arm:hover .arm-cta{color:var(--arm);}
+@media(max-width:980px){.arm-cta{text-align:left;}}
+
+/* ═══ CHANGES — what changes block ═══════════════════ */
+.changes{
+  margin-top:36px;
+  max-width:680px;
+  border-top:1px solid var(--line);
+}
+.changes div{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;
+  font-weight:500;
+  color:var(--text);
+  padding:18px 8px;
+  border-bottom:1px solid var(--line-soft);
+}
+
+/* ═══ EVIDENCE PROSE ═══════════════════════════════ */
+.prose{
+  margin-top:36px;
+  max-width:780px;
+  border-top:1px solid var(--line);
+  padding-top:32px;
+}
+.prose p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  line-height:1.75;
+  color:var(--mid);
+  margin:0 0 24px 0;
+}
+.prose p strong{color:var(--text);font-weight:600;}
+
+.prose-coda{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:21px;
+  line-height:1.55;
+  color:var(--text);
+  margin:48px 0 0 0;
+  max-width:780px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+.prose-coda strong{font-weight:600;font-style:normal;}
+
+/* ═══ CLOSING ═══════════════════════════════════════ */
+.closing{
+  background:var(--navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:80px 80px;
+  background-position:center center;
+  color:#FFFFFF;
+  padding:120px 32px 96px;
+  text-align:center;
+}
+
+.closing-line{
+  font-family:'Cormorant Garamond',serif;
+  font-size:64px;
+  font-weight:600;
+  line-height:1.05;
+  letter-spacing:-0.018em;
+  color:#FFFFFF;
+  margin:0 0 56px 0;
+}
+.closing-line em{
+  font-style:italic;
+  font-weight:400;
+  color:rgba(255,255,255,0.65);
+  display:block;
+}
+@media(max-width:760px){.closing-line{font-size:42px;}}
+
+.closing-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:64px;}
+
+.closing-triptych{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.40);
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* ═══ FOOTER ═══════════════════════════════════════ */
+.footer{
+  background:#0a141a;
+  color:rgba(255,255,255,0.55);
+  padding:32px;
+  text-align:center;
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+.footer a{color:rgba(255,255,255,0.7);text-decoration:none;margin:0 12px;}
+.footer a:hover{color:#FFFFFF;}
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="site-nav"></nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="eyebrow">A clinical system for functioning under pressure</div>
+
+    <h1>Human first.<em>Then performance.</em></h1>
+
+    <p class="hero-lede">Executive Frame&trade; is a clinical architecture for individuals, families, and organisations navigating sustained pressure. It integrates emotional regulation, executive function, and self-determination into one operating system &mdash; applied across clinical, performance, and organisational contexts.</p>
+
+    <div class="hero-ctas">
+      <a href="https://sarahanticich.co.nz/contact" class="btn btn-primary">Begin enquiry</a>
+      <a href="#how" class="btn btn-ghost">How it works</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 · THE PREMISE ═══ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="chrome">01 — The Premise</div>
+    <h2>Most failures under pressure <em>are not effort problems.</em><br>They are sequence problems.</h2>
+
+    <div class="body">
+      <p>Capable people do not fail under pressure because they lack effort, knowledge, or resolve.</p>
+      <p>They fail because the system narrows.</p>
+      <p>Under sustained load, the human nervous system shifts from access to protection. Perception funnels. Working memory contracts. Thinking accelerates and confidence rises in inverse proportion to accuracy. Action precedes reflection. The person remains present. The capacity does not.</p>
+      <p>This is not a character flaw. It is biology operating exactly as designed.</p>
+      <p>The work is not to override it. <strong>The work is to know it, name it, and have a sequence ready when it arrives.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 · THE PATTERN ═══ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="chrome">02 — The Pattern</div>
+    <h2>Instability. Confusion. <em>Powerlessness.</em></h2>
+    <p class="lede">When load increases, the system narrows in a recognisable order. Activation rises. Threat detection sharpens. Attention contracts. Working memory thins. Thinking becomes faster &mdash; and more certain than it should be. Behaviour becomes more reactive.</p>
+
+    <div class="tunnel-grid">
+
+      <div class="tunnel-card" data-stage="centre">
+        <div class="stage">Stage 01</div>
+        <h3>Instability</h3>
+        <p>The body becomes reactive. Heart rate climbs. Sleep degrades. Sensation amplifies.</p>
+        <p><em>The body can lose its steadiness.</em></p>
+        <div class="maps">Maps to <strong>Centre</strong> — restores stability.</div>
+      </div>
+
+      <div class="tunnel-card" data-stage="clarify">
+        <div class="stage">Stage 02</div>
+        <h3>Confusion</h3>
+        <p>Thinking becomes unclear. Cognitive distortions rise. Interpretation hardens around threat.</p>
+        <p><em>The mind can lose its accuracy.</em></p>
+        <div class="maps">Maps to <strong>Clarify</strong> — restores accuracy.</div>
+      </div>
+
+      <div class="tunnel-card" data-stage="choose">
+        <div class="stage">Stage 03</div>
+        <h3>Powerlessness</h3>
+        <p>Action becomes restricted. Avoidance, control, withdrawal. Agency narrows to immediate protection.</p>
+        <p><em>Agency can narrow.</em></p>
+        <div class="maps">Maps to <strong>Choose</strong> — restores agency.</div>
+      </div>
+
+    </div>
+
+    <p class="coda">Inside the Tunnel, urgency feels real. Thoughts feel accurate. Reactions feel justified. Capacity is reduced &mdash; and the reduction is invisible to the person experiencing it. <strong>Most breakdowns under pressure are sequence problems, not effort problems.</strong></p>
+  </div>
+</section>
+
+<!-- ═══ 03 · THE C³ LOOP ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="chrome">03 — The C³ Loop™</div>
+    <h2>Centre. Clarify. <em>Choose.</em></h2>
+    <p class="lede">Executive Frame&trade; does not begin by attempting to fix what is happening. It begins by changing how the person responds in real time. At the centre of the system is one architecture, run in strict order.</p>
+    <div class="body">
+      <p>The order is not stylistic. It mirrors the neurobiological sequence in which the brain comes back online: regulate, then think, then act. <strong>Reverse the order and the system fails. Skip a stage and the system fails. The order is the method.</strong></p>
+    </div>
+
+    <div class="stages">
+
+      <details class="stage-row" data-phase="centre">
+        <summary>
+          <span class="stage-tag">Stage 01 · Centre</span>
+          <span class="stage-name">Stabilise the system <em>enough to think.</em></span>
+          <span class="stage-toggle">+</span>
+        </summary>
+        <div class="stage-body">
+          <p>When pressure rises, cognition is not the first move. Regulation is.</p>
+          <p>Centring is the work of returning the body to a state in which thinking is available. Not calm. Not relaxed. <strong>Regulated enough to access the prefrontal cortex.</strong></p>
+          <p>The work is somatic before it is cognitive: interoceptive awareness, breath regulation, vagal engagement, attention to ground and posture. The aim is precise &mdash; restore the conditions under which clear thinking becomes possible.</p>
+          <p><em>Without it, every move that follows is compromised.</em></p>
+          <div class="stage-cred">Grounded in: Polyvagal theory · Huberman applied neurobiology · Linehan distress tolerance · Perry neurosequential model</div>
+        </div>
+      </details>
+
+      <details class="stage-row" data-phase="clarify">
+        <summary>
+          <span class="stage-tag">Stage 02 · Clarify</span>
+          <span class="stage-name">Restore <em>cognitive accuracy.</em></span>
+          <span class="stage-toggle">+</span>
+        </summary>
+        <div class="stage-body">
+          <p>Once the system stabilises, thinking becomes available &mdash; but it remains biased toward speed and certainty. Under residual pressure, the mind defaults to interpretation, not observation.</p>
+          <p>Clarifying is the work of distinguishing fact from story, signal from noise, urgency from priority. It is not more thinking. <strong>It is more accurate thinking.</strong></p>
+          <p>The work is structural: externalise the variables, name what is known and what is assumed, separate what is being asked from what is being feared. <em>Clarity does not require certainty. It requires sufficient perspective to see what is real.</em></p>
+          <div class="stage-cred">Grounded in: Beck (CBT) · Barkley (executive function) · Hayes (ACT) · McGonigal (stress reappraisal)</div>
+        </div>
+      </details>
+
+      <details class="stage-row" data-phase="choose">
+        <summary>
+          <span class="stage-tag">Stage 03 · Choose</span>
+          <span class="stage-name">Act <em>with intention.</em></span>
+          <span class="stage-toggle">+</span>
+        </summary>
+        <div class="stage-body">
+          <p>From regulation and clarity, action becomes available &mdash; and deliberate.</p>
+          <p>Choosing is not the reward for the first two moves. It is the point of them. <strong>One step. Aligned. Owned.</strong> Not perfect, not exhaustive, not certain &mdash; but consistent with the person you intend to be under pressure.</p>
+          <p>This is where capacity expands, because action taken from clarity produces a different signal &mdash; to the system, to the situation, and to the people who depend on you.</p>
+          <p><em>The loop closes on action. Then it begins again.</em></p>
+          <div class="stage-cred">Grounded in: Ryan &amp; Deci (Self-Determination Theory) · Gollwitzer (implementation intentions) · Hayes (values-based action)</div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 · S.H.I.F.T. ═══ -->
+<section class="shift">
+  <div class="wrap">
+    <div class="chrome">04 — In Real Time</div>
+    <h2>S.H.I.F.T.&trade;<br><em>The acute deployment.</em></h2>
+    <p class="lede">The C³ Loop is the operating architecture. <strong>S.H.I.F.T.&trade; is its acute deployment</strong> &mdash; a four-move protocol designed to run when activation has overtaken metacognitive access. It is engineered for the moment, not the reflection.</p>
+
+    <div class="shift-rows">
+
+      <div class="shift-row">
+        <div class="shift-letter">S</div>
+        <div class="shift-content">
+          <h4>Stop.</h4>
+          <p>Interrupt the automatic response. Do not speak. Do not send. Do not move. The pattern locks if you let it.</p>
+        </div>
+      </div>
+
+      <div class="shift-row">
+        <div class="shift-letter">H</div>
+        <div class="shift-content">
+          <h4>Hold.</h4>
+          <p>Stabilise the system. One physiological sigh. Ground the body before you engage the mind.</p>
+        </div>
+      </div>
+
+      <div class="shift-row">
+        <div class="shift-letter">F</div>
+        <div class="shift-content">
+          <h4>Focus.</h4>
+          <p>Strip the narrative. Return to what is observable. What is real, what is within control &mdash; the rest is noise.</p>
+        </div>
+      </div>
+
+      <div class="shift-row">
+        <div class="shift-letter">T</div>
+        <div class="shift-content">
+          <h4>Take Action.</h4>
+          <p>One specific next step. The loop closes on action, not on insight.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="coda" style="color:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.15);">S.H.I.F.T. is how you run Centre &rarr; Clarify &rarr; Choose under pressure. It is not separate from the system. <strong style="color:#FFFFFF;">It is the system, deployed in thirty seconds.</strong></p>
+  </div>
+</section>
+
+<!-- ═══ 05 · APPLICATION — THE EIGHT ARMS ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="chrome">05 — Applied Across Contexts</div>
+    <h2>One system. <em>Eight contexts.</em></h2>
+    <p class="lede">The architecture does not change. The application calibrates to the population, the pressure, and the consequence of getting it wrong.</p>
+
+    <div class="arms">
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="health">
+        <span class="arm-pip"></span>
+        <div class="arm-name">EF Health <em>Mediminds</em></div>
+        <div class="arm-context">For chronic conditions, disorders of gut&ndash;brain interaction, and sustained nervous-system dysregulation. Restores agency over response &mdash; the foundation that resolution often requires.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="elite">
+        <span class="arm-pip"></span>
+        <div class="arm-name">EF Elite</div>
+        <div class="arm-context">For athletes, executives, and performers operating under cognitive and emotional load that defines outcomes. Decision quality under acute conditions. Sustained access to capacity when stakes are highest.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="corporate">
+        <span class="arm-pip"></span>
+        <div class="arm-name">EF Corporate</div>
+        <div class="arm-context">For leaders and executive teams whose performance depends on sustained, high-stakes judgement. Addresses the degradation of decision quality under sustained load. Delivered as engagement, not content.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="law">
+        <span class="arm-pip"></span>
+        <div class="arm-name">EF Law <em>incl. Family Law</em></div>
+        <div class="arm-context">For legal practitioners under sustained adversarial pressure. Treats composure as a clinical skill, not a personality trait. Supports decision quality and the long-arc sustainability of a legal career.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="women">
+        <span class="arm-pip"></span>
+        <div class="arm-name">EF Women <em>Lumina</em></div>
+        <div class="arm-context">For women carrying cognitive, hormonal, and relational load that often goes unnamed. Identity load, role complexity, invisible labour. Restoring access to one&rsquo;s own system within roles never designed to be sustainable.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="neurodiversity">
+        <span class="arm-pip"></span>
+        <div class="arm-name">EF Neurodiversity</div>
+        <div class="arm-context">For ADHD, autistic, and neurodivergent adults. Executive functioning, masking fatigue, sensory load. Built for the way you actually work, not the way environments expect you to.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="family">
+        <span class="arm-pip"></span>
+        <div class="arm-name">EF Family Systems</div>
+        <div class="arm-context">For parents and family systems navigating sustained pressure. System-level work, not parenting advice. Children calibrate to the nervous systems around them. Change the system, the symptoms often follow.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+      <a href="https://sarahanticich.co.nz/work-with-sarah" class="arm" data-arm="consulting">
+        <span class="arm-pip"></span>
+        <div class="arm-name">C³ Consulting</div>
+        <div class="arm-context">For boards, executive teams, and organisations whose performance challenges are structural rather than individual. Calibrates to board, executive, or senior team. Designed to be used inside the work, not in retreat from it.</div>
+        <div class="arm-cta">Read more →</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 · WHAT CHANGES ═══ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="chrome">06 — Outcomes</div>
+    <h2>Outcomes are observable. <em>Not promised.</em></h2>
+
+    <div class="changes">
+      <div>Reactivity reduces.</div>
+      <div>Thinking becomes more available.</div>
+      <div>Behaviour becomes more intentional.</div>
+      <div>Confidence increases.</div>
+    </div>
+
+    <p class="coda">Not because pressure has improved. <strong>Because the person is no longer being run by it.</strong> The pressure does not disappear. The relationship to it changes.</p>
+  </div>
+</section>
+
+<!-- ═══ 07 · EVIDENCE BASE ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="chrome">07 — Integrated Foundations</div>
+    <h2>One framework, <em>quietly informed by many.</em></h2>
+    <p class="lede">Three sciences sit at the centre of the architecture. A wider body of clinical and applied work shapes how they translate into practice &mdash; integrated where each tradition meaningfully strengthens the system, not stacked as a literature review.</p>
+
+    <div class="prose">
+      <p>The cognitive and behavioural traditions provide the structural scaffolding for change. <strong>Cognitive Behavioural Therapy</strong> (Beck) offers replicated methods for restructuring distorted thinking. <strong>Dialectical Behaviour Therapy</strong> contributes the capacity to hold contradiction without collapse. <strong>Acceptance and Commitment Therapy</strong> brings movement toward what matters, even in difficult internal weather.</p>
+
+      <p>Beneath these therapies sits the architecture of attention itself. <strong>Executive function research</strong>, anchored in the work of Russell Barkley, makes visible what most performance frameworks ignore: the cognitive systems that organise thought into action, what they cost, and how they degrade under sustained load.</p>
+
+      <p>Where regulation depends on relationship to self, the work of <strong>Kristin Neff</strong> and <strong>Paul Gilbert</strong> establishes self-compassion as a regulatory tool, not a sentiment. Their research demonstrates that warmth toward oneself is not a softening of standards &mdash; it is a precondition for sustained, high-stakes performance.</p>
+
+      <p>Underpinning all of this, <strong>contemporary neuroscience</strong> grounds the architecture in how the brain processes emotion, attention, motivation, and load. And <strong>positive psychology</strong> contributes the long-arc view: strengths, flourishing, and the conditions under which capacity expands rather than depletes.</p>
+    </div>
+
+    <p class="prose-coda">The result is a framework that does not borrow from these traditions selectively. <strong>It integrates what works &mdash; where it works &mdash; into one operating system.</strong></p>
+  </div>
+</section>
+
+<!-- ═══ CLOSING ═══ -->
+<section class="closing">
+  <p class="closing-line">Human first.<em>Then performance.</em></p>
+
+  <div class="closing-ctas">
+    <a href="https://sarahanticich.co.nz/contact" class="btn btn-primary">Begin enquiry</a>
+    <a href="https://form.jotform.com/252735834949876" class="btn btn-ghost">Register as a business</a>
+  </div>
+
+  <div class="closing-triptych">
+    <div>Centre. Clarify. Choose.</div>
+    <div>Stop. Hold. Focus. Take Action.</div>
+    <div>Auckland · Christchurch · Queenstown · Telehealth</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  &copy; Sarah Anticich Consulting 2026
+  <a href="https://sarahanticich.co.nz/">Home</a>
+  <a href="https://sarahanticich.co.nz/about">About</a>
+  <a href="https://sarahanticich.co.nz/work-with-sarah">Work with Sarah</a>
+  <a href="https://sarahanticich.co.nz/library">Library</a>
+  <a href="https://sarahanticich.co.nz/contact">Contact</a>
+</footer>
+
+<script src="../assets/js/nav.js"></script>
+</body>
+</html>
