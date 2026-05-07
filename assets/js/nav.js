@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="pages/how.html" class="nav-link">How</a>
     <a href="pages/about.html" class="nav-link nav-link-sarah">About Sarah</a>
     <div class="nav-dropdown">
-      <a class="nav-link nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
+      <a href="pages/programs.html" class="nav-link nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
       <div class="nav-dropdown-panel">
         <a href="pages/health.html" class="nav-dd-item"><span class="dd-dot" style="background:#5B8F7B;"></span>Executive Frame Health</a>
         <a href="health-dgbi.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ Executive Frame Health — DGBI</a>
