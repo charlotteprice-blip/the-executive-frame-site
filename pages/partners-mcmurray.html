@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McMurray Endoscopy &amp; Specialist Centre · Partnership · Executive Frame™</title>
+<meta name="description" content="Clinical partnership between McMurray Endoscopy &amp; Specialist Centre and Executive Frame™ Health. Coordinated care for patients with disorders of gut–brain interaction (DGBIs).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/ef-styles.css">
+<style id="mcmurray-css">
+:root{
+  --m-navy:#15212D;
+  --m-text:#0f1a14;
+  --m-mid:#3d4a3f;
+  --m-muted:#7a8590;
+  --m-line:rgba(15,26,20,0.08);
+  --m-line-soft:rgba(15,26,20,0.04);
+  --m-cream:#F7F4EE;
+  /* Health arm green — McMurray clinical green */
+  --h-green:#5B8F7B;
+  --h-green-2:#3d6d5c;
+  --h-tint:rgba(91,143,123,0.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Cormorant Garamond',serif;
+  background:#FFFFFF;
+  color:var(--m-text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ═══ NAV ═══════════════════════════════════════════ */
+.site-nav{
+  background:var(--m-navy);
+  padding:18px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.nb-brand{display:flex;flex-direction:column;text-decoration:none;flex-shrink:0;}
+.nb-top{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;letter-spacing:-0.005em;}
+.nb-top sup{font-size:0.4em;}
+.nb-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.55);margin-top:-2px;}
+.nl{display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+.nl a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;}
+.nl a:hover{color:#FFFFFF;}
+.nl .nav-cta{padding:10px 18px;border:1px solid rgba(255,255,255,0.4);border-radius:50px;}
+@media(max-width:760px){.nl{gap:14px;}.nl a{font-size:10px;}}
+
+/* ═══ HERO ═══════════════════════════════════════════ */
+.mc-hero{
+  background:#0d1c14;
+  background-image:
+    linear-gradient(rgba(76,175,130,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76,175,130,0.04) 1px, transparent 1px);
+  background-size:80px 80px;
+  background-position:center center;
+  color:#FFFFFF;
+  padding:96px 32px 80px;
+  border-bottom:3px solid var(--h-green);
+}
+@media(max-width:760px){.mc-hero{padding:64px 24px 56px;}}
+
+.mc-hero-wrap{
+  max-width:1080px;
+  margin:0 auto;
+}
+
+.mc-hero-eyebrow{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:rgba(76,175,130,0.7);
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.mc-hero-eyebrow::before{
+  content:"";
+  width:36px;
+  height:1px;
+  background:var(--h-green);
+}
+
+.mc-hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:64px;
+  font-weight:600;
+  line-height:1.05;
+  letter-spacing:-0.018em;
+  color:#FFFFFF;
+  margin:0 0 24px 0;
+  max-width:900px;
+}
+.mc-hero-h1 em{
+  font-style:italic;
+  font-weight:400;
+  color:rgba(255,255,255,0.65);
+}
+@media(max-width:760px){.mc-hero-h1{font-size:42px;}}
+
+.mc-hero-lede{
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;
+  line-height:1.6;
+  color:rgba(255,255,255,0.78);
+  margin:0;
+  max-width:760px;
+}
+
+.mc-partners-line{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-top:48px;
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.10);
+  flex-wrap:wrap;
+}
+.mc-partners-line-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+}
+.mc-partners-line-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  font-weight:600;
+  color:#FFFFFF;
+}
+.mc-partners-line-name em{
+  font-style:italic;
+  font-weight:400;
+  color:rgba(255,255,255,0.6);
+}
+
+/* ═══ PRIMARY ROUTING SECTION ═══════════════════════════ */
+.mc-routing{
+  padding:96px 32px;
+  background:#FFFFFF;
+}
+@media(max-width:760px){.mc-routing{padding:64px 24px;}}
+
+.mc-wrap{
+  max-width:1080px;
+  margin:0 auto;
+}
+
+.mc-eyebrow{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--m-muted);
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.mc-eyebrow::before{
+  content:"";
+  width:36px;
+  height:1px;
+  background:var(--m-text);
+  opacity:0.55;
+}
+
+.mc-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-0.012em;
+  color:var(--m-text);
+  margin:0 0 24px 0;
+  max-width:920px;
+}
+.mc-h2 em{font-style:italic;font-weight:400;color:var(--m-mid);}
+@media(max-width:760px){.mc-h2{font-size:32px;}}
+
+.mc-body{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;
+  line-height:1.65;
+  color:var(--m-mid);
+  margin:0 0 48px 0;
+  max-width:780px;
+}
+
+/* Two-up routing cards */
+.mc-routes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:48px;
+}
+@media(max-width:760px){.mc-routes{grid-template-columns:1fr;}}
+
+.mc-route{
+  background:#FFFFFF;
+  border:1px solid var(--m-line);
+  border-top:4px solid var(--h-green);
+  border-radius:3px;
+  padding:48px 40px;
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  color:inherit;
+  transition:all 0.2s ease;
+  position:relative;
+}
+.mc-route:hover{
+  border-color:var(--h-green);
+  box-shadow:0 4px 24px rgba(91,143,123,0.12);
+  transform:translateY(-2px);
+}
+@media(max-width:760px){.mc-route{padding:32px 24px;}}
+
+.mc-route-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--h-green-2);
+  margin-bottom:18px;
+}
+.mc-route-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  font-weight:600;
+  line-height:1.2;
+  color:var(--m-text);
+  margin:0 0 14px 0;
+  letter-spacing:-0.005em;
+}
+.mc-route-h em{font-style:italic;font-weight:500;color:var(--m-mid);}
+.mc-route-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  line-height:1.6;
+  color:var(--m-mid);
+  margin:0 0 28px 0;
+  flex-grow:1;
+}
+.mc-route-meta{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--m-muted);
+  padding-top:18px;
+  border-top:1px solid var(--m-line);
+  margin-bottom:14px;
+}
+.mc-route-arrow{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--h-green-2);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:auto;
+}
+.mc-route:hover .mc-route-arrow{
+  color:var(--h-green);
+}
+
+/* ═══ PARTNERSHIP CONTEXT SECTION ═══════════════════ */
+.mc-context{
+  background:var(--m-cream);
+  padding:96px 32px;
+}
+@media(max-width:760px){.mc-context{padding:64px 24px;}}
+
+.mc-context-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:start;
+  margin-top:48px;
+}
+@media(max-width:980px){.mc-context-grid{grid-template-columns:1fr;gap:32px;}}
+
+.mc-context-col h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:600;
+  color:var(--m-text);
+  margin:0 0 18px 0;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--m-line);
+}
+.mc-context-col p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  line-height:1.7;
+  color:var(--m-mid);
+  margin:0 0 18px 0;
+}
+.mc-context-col p strong{color:var(--m-text);font-weight:600;}
+.mc-context-col p em{font-style:italic;}
+
+.mc-context-cred{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.20em;
+  text-transform:uppercase;
+  color:var(--m-muted);
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid var(--m-line);
+}
+
+/* ═══ HOW IT WORKS — coordinated care flow ═══════════ */
+.mc-flow{
+  padding:96px 32px;
+  background:#FFFFFF;
+}
+@media(max-width:760px){.mc-flow{padding:64px 24px;}}
+
+.mc-flow-steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin-top:48px;
+  border:1px solid var(--m-line);
+  border-radius:3px;
+  overflow:hidden;
+}
+@media(max-width:980px){.mc-flow-steps{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.mc-flow-steps{grid-template-columns:1fr;}}
+
+.mc-flow-step{
+  padding:32px 24px;
+  border-right:1px solid var(--m-line);
+}
+.mc-flow-step:last-child{border-right:none;}
+@media(max-width:980px){
+  .mc-flow-step:nth-child(2){border-right:none;}
+  .mc-flow-step:nth-child(1),
+  .mc-flow-step:nth-child(2){border-bottom:1px solid var(--m-line);}
+}
+@media(max-width:560px){
+  .mc-flow-step{border-right:none !important;border-bottom:1px solid var(--m-line) !important;}
+  .mc-flow-step:last-child{border-bottom:none !important;}
+}
+
+.mc-flow-num{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:32px;
+  font-weight:600;
+  color:var(--h-green-2);
+  line-height:1;
+  margin-bottom:14px;
+}
+
+.mc-flow-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  font-weight:600;
+  color:var(--m-text);
+  margin:0 0 8px 0;
+  line-height:1.3;
+}
+
+.mc-flow-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;
+  line-height:1.6;
+  color:var(--m-mid);
+  margin:0;
+}
+
+/* ═══ DGBI LINK BLOCK ═══════════════════════════════ */
+.mc-dgbi{
+  background:var(--m-cream);
+  padding:64px 32px;
+  border-top:1px solid var(--m-line);
+}
+@media(max-width:760px){.mc-dgbi{padding:48px 24px;}}
+
+.mc-dgbi-card{
+  max-width:920px;
+  margin:0 auto;
+  background:#FFFFFF;
+  border:1px solid var(--m-line);
+  border-left:4px solid var(--h-green);
+  border-radius:3px;
+  padding:40px 48px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:32px;
+}
+@media(max-width:760px){
+  .mc-dgbi-card{
+    grid-template-columns:1fr;
+    padding:28px 24px;
+    gap:18px;
+  }
+}
+
+.mc-dgbi-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--h-green-2);
+  margin-bottom:8px;
+}
+.mc-dgbi-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:600;
+  color:var(--m-text);
+  margin:0 0 6px 0;
+  line-height:1.3;
+}
+.mc-dgbi-h em{font-style:italic;font-weight:500;color:var(--m-mid);}
+.mc-dgbi-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  line-height:1.55;
+  color:var(--m-mid);
+  margin:0;
+}
+.mc-dgbi-cta{
+  display:inline-flex;
+  align-items:center;
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 28px;
+  border-radius:2px;
+  background:var(--h-green);
+  color:#FFFFFF;
+  border:1px solid var(--h-green);
+  transition:all 0.2s ease;
+  white-space:nowrap;
+}
+.mc-dgbi-cta:hover{
+  background:transparent;
+  color:var(--h-green-2);
+}
+
+/* ═══ CONTACT BLOCK ═══════════════════════════════ */
+.mc-contact{
+  padding:96px 32px;
+  background:#FFFFFF;
+  text-align:center;
+}
+@media(max-width:760px){.mc-contact{padding:64px 24px;}}
+
+.mc-contact-wrap{max-width:680px;margin:0 auto;}
+
+.mc-contact h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;
+  font-weight:600;
+  color:var(--m-text);
+  margin:0 0 24px 0;
+  line-height:1.2;
+}
+.mc-contact h2 em{font-style:italic;font-weight:500;color:var(--m-mid);}
+
+.mc-contact p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  line-height:1.65;
+  color:var(--m-mid);
+  margin:0 0 32px 0;
+}
+
+.mc-contact-meta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  color:var(--m-mid);
+  padding-top:32px;
+  border-top:1px solid var(--m-line);
+}
+.mc-contact-meta strong{color:var(--m-text);font-weight:600;}
+.mc-contact-meta a{color:var(--h-green-2);text-decoration:none;border-bottom:1px solid var(--m-line);}
+.mc-contact-meta a:hover{border-bottom-color:var(--h-green-2);}
+
+/* ═══ CLOSING ═══════════════════════════════════════ */
+.mc-closing{
+  background:var(--m-navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:80px 80px;
+  background-position:center center;
+  color:#FFFFFF;
+  padding:80px 32px 64px;
+  text-align:center;
+}
+
+.mc-closing-line{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  font-weight:600;
+  line-height:1.1;
+  letter-spacing:-0.018em;
+  color:#FFFFFF;
+  margin:0;
+}
+.mc-closing-line em{
+  font-style:italic;
+  font-weight:400;
+  color:rgba(255,255,255,0.65);
+}
+@media(max-width:560px){.mc-closing-line{font-size:28px;}}
+
+.mc-closing-triptych{
+  margin-top:48px;
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.40);
+}
+
+/* ═══ FOOTER ═══════════════════════════════════════ */
+.mc-footer{
+  background:#0a141a;
+  color:rgba(255,255,255,0.55);
+  padding:32px;
+  text-align:center;
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+.mc-footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+
+
+/* ═══ FEATURED QUICK REFERRAL — primary CTA ═══════════════════ */
+.mc-quick-route{
+  display:block;
+  background:#5B8F7B;
+  color:#FFFFFF;
+  text-decoration:none;
+  padding:48px 56px;
+  border-radius:4px;
+  margin-top:48px;
+  margin-bottom:32px;
+  position:relative;
+  transition:all 0.2s ease;
+  box-shadow:0 4px 24px rgba(91,143,123,0.18);
+}
+.mc-quick-route:hover{
+  background:#3d6d5c;
+  transform:translateY(-2px);
+  box-shadow:0 6px 32px rgba(91,143,123,0.28);
+}
+@media(max-width:760px){.mc-quick-route{padding:32px 28px;}}
+
+.mc-quick-route-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.85);
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.mc-quick-route-tag::before{
+  content:"";
+  width:24px;
+  height:1px;
+  background:rgba(255,255,255,0.6);
+}
+
+.mc-quick-route-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  font-weight:600;
+  line-height:1.1;
+  letter-spacing:-0.012em;
+  color:#FFFFFF;
+  margin:0 0 14px 0;
+}
+.mc-quick-route-h em{
+  font-style:italic;
+  font-weight:400;
+  color:rgba(255,255,255,0.75);
+}
+@media(max-width:760px){.mc-quick-route-h{font-size:32px;}}
+
+.mc-quick-route-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  line-height:1.6;
+  color:rgba(255,255,255,0.85);
+  margin:0 0 28px 0;
+  max-width:560px;
+}
+
+.mc-quick-route-meta{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.55);
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,0.15);
+  margin-bottom:14px;
+}
+
+.mc-quick-route-arrow{
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#FFFFFF;
+}
+
+/* Secondary routes group — quieter */
+.mc-routes-secondary{
+  margin-top:48px;
+}
+.mc-routes-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:#7a8590;
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.mc-routes-tag::before{
+  content:"";
+  flex-shrink:0;
+  width:24px;
+  height:1px;
+  background:rgba(15,26,20,0.20);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════ -->
+<nav id="site-nav"></nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════ -->
+<section class="mc-hero">
+  <div class="mc-hero-wrap">
+    <div class="mc-hero-eyebrow">Clinical Partnership · EF Health</div>
+
+    <h1 class="mc-hero-h1">Coordinated care<br><em>for the gut and the system around it.</em></h1>
+
+    <p class="mc-hero-lede">McMurray Endoscopy &amp; Specialist Centre and Executive Frame&trade; Health work in close clinical partnership &mdash; matching gastroenterological care with the psychological architecture for disorders of gut&ndash;brain interaction (DGBIs) and chronic functional symptoms.</p>
+
+    <div class="mc-partners-line">
+      <span class="mc-partners-line-label">In partnership</span>
+      <span class="mc-partners-line-name">McMurray Endoscopy &amp; Specialist Centre <em>&middot; Executive Frame&trade; Health</em></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRIMARY ROUTING — TWO PATHWAYS ═══════════════════ -->
+<section class="mc-routing">
+  <div class="mc-wrap">
+    <div class="mc-eyebrow">Begin · Two pathways</div>
+    <h2 class="mc-h2">Choose the pathway <em>that fits.</em></h2>
+    <p class="mc-body">For clinicians referring patients into coordinated care, and for patients beginning their own intake. Both routes connect into the same clinical system &mdash; designed for ease of access without compromising clinical depth.</p>
+
+    <!-- PRIMARY — Quick Referral, larger, featured -->
+    <a href="partners-mcmurray-quick.html" class="mc-quick-route">
+      <div class="mc-quick-route-tag">Most clinicians use this &middot; Featured pathway</div>
+      <h3 class="mc-quick-route-h">Quick Referral. <em>Under a minute.</em></h3>
+      <p class="mc-quick-route-text">Four fields. Your name, patient details, one-line reason, urgency. Built for the moment between patients &mdash; not for sitting down to write a clinical letter.</p>
+      <div class="mc-quick-route-meta">4 fields &middot; ~30 seconds &middot; Routes directly to Dr Anticich</div>
+      <span class="mc-quick-route-arrow">Refer now &rarr;</span>
+    </a>
+
+    <div class="mc-routes-secondary">
+      <div class="mc-routes-tag">Or, if more clinical context is helpful</div>
+      <div class="mc-routes">
+
+        <a href="partners-mcmurray-referral.html" class="mc-route">
+          <div class="mc-route-tag">For Clinicians</div>
+          <h3 class="mc-route-h">Full clinical referral.</h3>
+          <p class="mc-route-text">A structured 5-section pathway covering presentation, symptom drivers, safety screening, and preferred intervention. For complex cases or where multidisciplinary input is needed.</p>
+          <div class="mc-route-meta">5 sections &middot; ~6 minutes</div>
+          <span class="mc-route-arrow">Begin referral &rarr;</span>
+        </a>
+
+        <a href="partners-mcmurray-intake.html" class="mc-route">
+          <div class="mc-route-tag">For Patients</div>
+          <h3 class="mc-route-h">Patient self-intake.</h3>
+          <p class="mc-route-text">For patients beginning their own intake. Covers presenting concerns, gut-focused anxiety, emotion sensitivity, and functional impact. Includes validated screening instruments.</p>
+          <div class="mc-route-meta">8 sections &middot; ~12 minutes</div>
+          <span class="mc-route-arrow">Begin intake &rarr;</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARTNERSHIP CONTEXT ═══════════════════════════ -->
+<section class="mc-context">
+  <div class="mc-wrap">
+    <div class="mc-eyebrow">The Partnership</div>
+    <h2 class="mc-h2">Two specialties. <em>One clinical conversation.</em></h2>
+
+    <div class="mc-context-grid">
+
+      <div class="mc-context-col">
+        <h3>McMurray Endoscopy &amp; Specialist Centre</h3>
+        <p>A specialist gastroenterology centre providing diagnostic endoscopy, colonoscopy, and clinical management for patients across the upper and lower gastrointestinal tract. McMurray sees a high volume of patients whose symptoms fall under the framework of <strong>disorders of gut&ndash;brain interaction</strong> &mdash; functional dyspepsia, IBS, abdominal pain, reflux, bloating, altered motility.</p>
+        <p>For many of these patients, structural investigation returns normal results &mdash; <em>and the symptoms remain.</em> This is where the clinical conversation often needs to widen.</p>
+        <div class="mc-context-cred">Specialist gastroenterology &middot; Auckland</div>
+      </div>
+
+      <div class="mc-context-col">
+        <h3>Executive Frame&trade; Health</h3>
+        <p>The clinical health arm of Executive Frame&trade;, led by Dr Sarah Anticich &mdash; clinical and industrial/organisational psychologist. EF Health works specifically with the <strong>psychological architecture of chronic and functional symptoms</strong>: gut-focused anxiety, visceral hypervigilance, autonomic dysregulation, and the cognitive-behavioural patterns that maintain symptoms over time.</p>
+        <p>The work integrates evidence-based gut-directed psychological intervention &mdash; gut-directed hypnotherapy, exposure-based protocols, autonomic regulation, and the C&sup3; Loop&trade; framework for sustained symptom management.</p>
+        <div class="mc-context-cred">Clinical psychology &middot; DGBI &middot; gut&ndash;brain interaction</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS — COORDINATED CARE FLOW ═══════════ -->
+<section class="mc-flow">
+  <div class="mc-wrap">
+    <div class="mc-eyebrow">How coordinated care works</div>
+    <h2 class="mc-h2">A clear pathway. <em>From referral through to ongoing care.</em></h2>
+
+    <div class="mc-flow-steps">
+
+      <div class="mc-flow-step">
+        <div class="mc-flow-num">01</div>
+        <h4 class="mc-flow-h">Referral received</h4>
+        <p class="mc-flow-text">A clinician submits a referral via the form above &mdash; or a patient self-refers through the intake pathway.</p>
+      </div>
+
+      <div class="mc-flow-step">
+        <div class="mc-flow-num">02</div>
+        <h4 class="mc-flow-h">Clinical triage</h4>
+        <p class="mc-flow-text">Reviewed within one business day. Pathway and timing matched to clinical presentation, urgency, and patient preference.</p>
+      </div>
+
+      <div class="mc-flow-step">
+        <div class="mc-flow-num">03</div>
+        <h4 class="mc-flow-h">Initial consultation</h4>
+        <p class="mc-flow-text">A focused session with Dr Anticich. Clinical assessment, formulation, and discussion of intervention pathway.</p>
+      </div>
+
+      <div class="mc-flow-step">
+        <div class="mc-flow-num">04</div>
+        <h4 class="mc-flow-h">Coordinated care</h4>
+        <p class="mc-flow-text">Communication maintained with the referring clinician where appropriate. Patient progress reviewed at agreed milestones.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DGBI CROSS-LINK BLOCK ═══════════════════════════ -->
+<section class="mc-dgbi">
+  <div class="mc-dgbi-card">
+    <div>
+      <div class="mc-dgbi-tag">Read more · The clinical foundation</div>
+      <h3 class="mc-dgbi-h">Executive Frame Health <em>&middot; DGBI</em></h3>
+      <p class="mc-dgbi-text">The full clinical framing of disorders of gut&ndash;brain interaction &mdash; what they are, how they present, and how the psychological work integrates with gastroenterological care.</p>
+    </div>
+    <a href="health-dgbi.html" class="mc-dgbi-cta">Read EF Health DGBI &rarr;</a>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══════════════════════════════════════ -->
+<section class="mc-contact">
+  <div class="mc-contact-wrap">
+    <div class="mc-eyebrow" style="justify-content:center;">Direct contact</div>
+    <h2>For specialists, GPs, <em>and allied health.</em></h2>
+    <p>Clinicians wanting to discuss a complex case, establish a referral relationship, or arrange a clinical conversation about a patient&rsquo;s presentation can reach out directly.</p>
+
+    <div class="mc-contact-meta">
+      <div><strong>Dr Sarah Anticich</strong> &middot; Clinical &amp; Industrial/Organisational Psychologist</div>
+      <div>Auckland &middot; Christchurch &middot; Queenstown &middot; Telehealth available</div>
+      <div><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSING — BRAND ANCHOR ═══════════════════════════ -->
+<section class="mc-closing">
+  <p class="mc-closing-line">Human first.<br><em>Then performance.</em></p>
+
+  <div class="mc-closing-triptych">
+    <div>Centre. Clarify. Choose.</div>
+    <div>Stop. Hold. Focus. Take Action.</div>
+    <div>Auckland &middot; Christchurch &middot; Queenstown &middot; Telehealth</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════ -->
+<footer class="mc-footer">
+  &copy; 2026 Sarah Anticich Consulting &middot; Executive Frame&trade; &middot; <a href="enquire.html">Contact</a> &middot; <a href="referral.html">Referrals</a>
+</footer>
+
+<script src="../assets/js/nav.js"></script>
+</body>
+</html>
