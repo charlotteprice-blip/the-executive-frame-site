@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EF|Health — The C³ Loop for Healthcare Professionals</title>
+<meta name="description" content="Performance architecture for healthcare professionals. The C³ Loop, calibrated to clinical practice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+:root {
+  --arm: #3d6d5c;
+  --arm-light: #5b8f7b;
+  --arm-dim: #2a5446;
+  --arm-rgb: 61,109,92;
+  --pale-bg: #D2DDD8;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-ef">EF</span><span class="nav-brand-arm">|Health</span>
+    <span class="nav-brand-sub">Human first. Then performance.</span>
+  </a>
+  <div class="nav-links">
+    <a href="framework.html">What</a>
+    <a href="science.html">Why</a>
+    <a href="method.html">How</a>
+    <a href="about-sarah.html">About Sarah</a>
+    <div class="nav-dropdown">
+      <a class="nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
+      <div class="nav-dropdown-panel">
+        <a href="health.html"><span class="nav-dot" style="background:#3d6d5c;"></span>EF|Health</a>
+        <a href="health-dgbi.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — DGBI</a>
+        <a href="health-elearning.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — eLearning</a>
+        <a href="health-store.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — Resources</a>
+        <a href="elite.html"><span class="nav-dot" style="background:#C9874E;"></span>EF|Elite</a>
+        <a href="corporate.html"><span class="nav-dot" style="background:#6B8AA8;"></span>EF|Corporate</a>
+        <a href="law.html"><span class="nav-dot" style="background:#4A5F7A;"></span>EF|Law</a>
+        <a href="law-family.html"  class="sub"><span class="nav-dot" style="background:#4A5F7A;"></span>↳ EF|Law — Family</a>
+        <a href="women.html"><span class="nav-dot" style="background:#C28699;"></span>EF|Women</a>
+        <a href="neurodiversity.html"><span class="nav-dot" style="background:#A593C2;"></span>EF|Neurodiversity</a>
+        <a href="family.html"><span class="nav-dot" style="background:#A89BAA;"></span>EF|Family</a>
+        <a href="consulting.html"><span class="nav-dot" style="background:#8FBFA8;"></span>C³ Consulting</a>
+      </div>
+    </div>
+    <a href="store.html">Store</a>
+    <a href="partners.html">Partners</a>
+    <a href="enquire.html" class="nav-cta">Intake →</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+
+  <svg class="hero-c3loop" width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" aria-label="The C³ Loop — Centre, Clarify, Choose">
+  <!-- OUTER ORBITAL RING -->
+  <circle cx="350" cy="350" r="290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <!-- INNER ORBITAL RING -->
+  <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+  <!-- THREE ORBITAL NODES on outer ring -->
+  <!-- CENTRE node · top -->
+  <circle cx="350" cy="60" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CLARIFY node · lower-right (≈120° from top) -->
+  <circle cx="601" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CHOOSE node · lower-left (≈240° from top) -->
+  <circle cx="99" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
+
+  <!-- CHOOSE small triangle indicator (per brand kit) -->
+  <polygon points="588,485 600,491 588,497" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- TETRAHEDRON · centred, apex up -->
+  <!-- Apex at 350,180. Base centre at 350,510.
+       Three base vertices forming triangle: left, right, back.
+       Front-left visible face (light), front-right visible face (mid),
+       base receding face (shadow). Apex bright dot on top. -->
+  <g class="c3-tetrahedron">
+    <!-- Base receding edge (shadow) -->
+    <polygon points="350,180 220,510 480,510" fill="#1d3c33" opacity="0.85"/>
+    <!-- Left visible face (light) -->
+    <polygon points="350,180 220,510 350,490" fill="#3d6d5c"/>
+    <!-- Right visible face (mid) -->
+    <polygon points="350,180 350,490 480,510" fill="#2a5446"/>
+    <!-- Thin shadow at base -->
+    <ellipse cx="350" cy="515" rx="135" ry="4" fill="#121C25" opacity="0.5"/>
+    <!-- Apex highlight dot -->
+    <circle cx="350" cy="180" r="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- ORBITAL LABELS · CENTRE top, CLARIFY lower-right, CHOOSE lower-left -->
+  <text x="350" y="40" text-anchor="middle"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CENTRE</text>
+  <text x="660" y="640" text-anchor="end"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CLARIFY</text>
+  <text x="40" y="640" text-anchor="start"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CHOOSE</text>
+</svg>
+
+  <div class="spectrum-bar">
+    <div style="flex:1.2;background:#3d6d5c;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
+  </div>
+
+  <div class="hero-overline">The Executive Frame™ Applied to Healthcare</div>
+  <div class="hero-title">EF<span>|HEALTH</span></div>
+  <div class="hero-subtitle">The C³ Loop for Healthcare Professionals</div>
+  <div class="hero-tagline">
+    Not wellness. Not resilience training.<br>
+    Capacity infrastructure for the clinical load of healthcare.
+  </div>
+  <div class="hero-body">
+    A specialist performance architecture for healthcare professionals — grounded in emotional intelligence, executive functioning, and self-determination theory. Built for the unique demands of clinical practice.
+  </div>
+  <div class="hero-actions">
+    <a href="#series" class="btn-primary">The C³ Health Series →</a>
+    <a href="#intake" class="btn-ghost">Register Interest</a>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hero-foot-line">Center → Clarify → Choose → Repeat</div>
+    <div class="hero-foot-tag">Human first. Then performance.</div>
+  </div>
+</div>
+
+<!-- ══════════ ARCHITECTURE — NAVY ══════════ -->
+<section id="architecture" class="band navy">
+  <div class="band-inner">
+    <div class="section-label">The Executive Frame™</div>
+    <div class="section-title">Three evidence bases. One biological sequence.</div>
+    <div class="section-subtitle">The Executive Frame™ is built on three converging sciences — each addressing a different layer of human performance. The C³ Loop is the operational mechanism that integrates all three into a single, repeating cycle.</div>
+
+    <div class="arch-grid">
+      <div class="arch-card">
+        <div class="arch-label">Step One · Stability</div>
+        <div class="arch-name">Center</div>
+        <div class="arch-pillar">Emotional Intelligence</div>
+        <div class="arch-desc">Emotional regulation before everything else. Access to the prefrontal cortex. The physiological foundation without which Clarity and Agency cannot be built. You cannot think clearly from inside threat activation — and sustained clinical exposure is repeated threat activation by design.</div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-label">Step Two · Clarity</div>
+        <div class="arch-name">Clarify</div>
+        <div class="arch-pillar">Executive Functioning</div>
+        <div class="arch-desc">Structured thinking under pressure. Working memory, inhibition, cognitive flexibility, and planning under load. Diagnostic reasoning protected from fatigue. Decision quality preserved when capacity compresses. You cannot act with intention from cognitive overwhelm.</div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-label">Step Three · Agency</div>
+        <div class="arch-name">Choose</div>
+        <div class="arch-pillar">Self-Determination Theory</div>
+        <div class="arch-desc">Professional authorship. Autonomy — genuine choice inside the constraints of clinical work. Competence — confidence grounded in evidence, not validation. Relatedness — the belonging that fuels purpose. A practice chosen, not survived.</div>
+      </div>
+    </div>
+
+    <div class="shft-strip">
+      <div class="shft-head">
+        <div class="shft-head-name">S.H.F.T.<sup>™</sup></div>
+        <div class="shft-head-sub">The real-time micro-intervention. 60 seconds. Anywhere.</div>
+      </div>
+      <div class="shft-steps">
+        <div class="shft-step"><span class="shft-step-letter">S</span><span class="shft-step-text">Slow — interrupt the threat response</span></div>
+        <div class="shft-step"><span class="shft-step-letter">H</span><span class="shft-step-text">Hold — physiological sigh, regulate</span></div>
+        <div class="shft-step"><span class="shft-step-letter">F</span><span class="shft-step-text">Focus — one next step</span></div>
+        <div class="shft-step"><span class="shft-step-letter">T</span><span class="shft-step-text">Time — sequence, protect choice</span></div>
+        <div class="shft-step"><span class="shft-step-letter plus">+</span><span class="shft-step-text">Plus — repair, reflect, integrate</span></div>
+      </div>
+    </div>
+
+    <div class="seq-quote">
+      <p>The sequence is non-negotiable. Center must precede Clarify because you cannot think clearly from inside threat activation. Clarify must precede Choose because you cannot act with intention from cognitive overwhelm. This is biology, not preference — and clinical practice runs on the same biology as any other human work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ C³ SERIES — PALE ══════════ -->
+<section id="series" class="band pale">
+  <div class="band-inner">
+    <div class="section-label">C³ Health Series · National Professional Development Programme 2026</div>
+    <div class="section-title">Six modules. The Executive Frame™ from day one.</div>
+    <div class="webinar-intro">The C³ Loop installed in the first years of clinical practice — before the patterns set, before the survival strategies calcify. Six modules designed for healthcare professionals, following the biological sequence: <strong>Center first. Then Clarify. Then Choose.</strong> Each module is standalone. Together, they build the full Loop.</div>
+
+    <div class="sequence-bar">
+      <div class="sb-line"></div>
+      <div class="sb-label">CENTER → CLARIFY → CHOOSE</div>
+      <div class="sb-line"></div>
+    </div>
+
+    <div class="webinar-grid">
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 1 · CENTER</div>
+        <div class="webinar-title">Autonomic State Drives Performance</div>
+        <div class="webinar-c3">The Neuroscience of the Executive Frame™</div>
+        <div class="webinar-quote">Your system has already made the call.</div>
+        <div class="webinar-desc">Your autonomic nervous system is the engine behind every decision, every patient interaction, every day in clinical practice. This module maps the biology of performance — the threat-reward axis, prefrontal access under load, and the C³ architecture that turns neuroscience into a daily operating system.</div>
+      </div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 2 · CENTER</div>
+        <div class="webinar-title">Regulation Before Response</div>
+        <div class="webinar-c3">S.H.F.T.™ Protocol &amp; Clinical Regulation</div>
+        <div class="webinar-quote">Delay the reaction. Protect the outcome.</div>
+        <div class="webinar-desc">S.H.F.T.™ installed for clinical environments. The physiological sigh — the fastest evidence-based method for downregulating sympathetic activation. Real-time tools for the ward and clinic, between-patient regulation, immediately usable tools that change how you walk into every high-stakes clinical moment.</div>
+      </div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 3 · CLARIFY</div>
+        <div class="webinar-title">Cognition Under Load</div>
+        <div class="webinar-c3">Executive Functioning &amp; Clinical Decision Architecture</div>
+        <div class="webinar-quote">Capacity drops. Confidence doesn't.</div>
+        <div class="webinar-desc">Working memory, inhibition, cognitive flexibility, and planning under clinical load. Triage cognition. Decision architecture for diagnostic reasoning under fatigue. The cognitive infrastructure for clinical complexity that protects decision quality when capacity compresses.</div>
+      </div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 4 · CLARIFY</div>
+        <div class="webinar-title">The Tunnel Effect</div>
+        <div class="webinar-c3">Relational Neuroscience &amp; Communication Under Clinical Pressure</div>
+        <div class="webinar-quote">When pressure narrows the brief.</div>
+        <div class="webinar-desc">When threat activation narrows clinical focus — compassion fatigue, difficult conversations with patients and families, high-acuity moments. This module builds the communication architecture and relational network that sustains clinical performance under pressure.</div>
+      </div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 5 · CHOOSE</div>
+        <div class="webinar-title">Agency Under Constraint</div>
+        <div class="webinar-c3">Self-Determination &amp; Sustainable Clinical Practice</div>
+        <div class="webinar-quote">Choice is still available — just harder to access.</div>
+        <div class="webinar-desc">Autonomy within health systems. Competence grounded in evidence not validation. Relatedness in interdisciplinary teams. The shift from surviving clinical practice to authoring it. This is the science of sustainable healthcare work.</div>
+      </div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 6 · THE FULL LOOP</div>
+        <div class="webinar-title">The C³ Performance System</div>
+        <div class="webinar-c3">Your Clinical Performance Architecture — Installed</div>
+        <div class="webinar-quote">Precision under pressure is a system, not a trait.</div>
+        <div class="webinar-desc">Center → Clarify → Choose → Repeat. The full C³ Loop integrated into a personal operating system for clinical practice. Your capacity plan built. Your tools mapped to your specific load profile. The architecture installed.</div>
+      </div>
+    </div>
+
+    <div class="delivery-strip">
+      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 1–2 (Center) · Q2 2026</span></div>
+      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 3–4 (Clarify) · Q2–Q3 2026</span></div>
+      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 5–6 (Choose + Loop) · Q3 2026</span></div>
+      <div class="delivery-item"><div class="delivery-dot"></div><span>On-demand</span></div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PATHWAY 01+02 — NAVY ══════════ -->
+<section id="pathway" class="band navy">
+  <div class="band-inner">
+    <div class="section-label">Choose Your Pathway</div>
+    <div class="section-title">Four ways in. One architecture.</div>
+    <div class="section-subtitle">The six modules are where most people start. From there, choose the depth and format that fits your role, your team, or your stage of practice.</div>
+
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">01</div>
+        <div class="pathway-name">Self-Paced Learning</div>
+      </div>
+      <div class="pathway-tagline">Start anywhere. Go at your own pace. No prerequisites.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">PROFESSIONAL DEVELOPMENT</div>
+          <div class="prog-name">The C³ Health Series</div>
+          <div class="prog-meta">6 MODULES · NATIONAL · ON-DEMAND</div>
+          <div class="prog-desc">The six-module national programme designed for healthcare professionals. Each module standalone. Available live and on-demand. The starting point for the full Executive Frame™ in clinical practice.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">eLEARNING</div>
+          <div class="prog-name">S.H.F.T.™ Introduction</div>
+          <div class="prog-meta">~20 MIN · SELF-PACED</div>
+          <div class="prog-desc">A real tool for the most common activation moments in clinical work. The physiological sigh, state recognition, and the 60-second reset. Portable, private, immediately usable on the ward or in clinic.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">eLEARNING</div>
+          <div class="prog-name">The C³ Loop Overview</div>
+          <div class="prog-meta">~60 MIN · SELF-PACED</div>
+          <div class="prog-desc">The complete framework introduced. All three steps, the S.H.F.T.™ protocol, and the clinical toolkit. A single-session orientation to the full architecture for healthcare.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">DIAGNOSTIC</div>
+          <div class="prog-name">C³ Capacity Assessment</div>
+          <div class="prog-meta">18 QUESTIONS · 5 MIN · FREE</div>
+          <div class="prog-desc">Identifies your first binding constraint across Center, Clarify, and Choose. Generates a personalised pathway showing exactly where to start in your clinical context.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">02</div>
+        <div class="pathway-name">CPD Workshops</div>
+      </div>
+      <div class="pathway-tagline">Applied. Scenario-based. CPD-accredited. No slides — just the work.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">CENTER</div>
+          <div class="prog-name">Composed Under Clinical Pressure</div>
+          <div class="prog-meta">3.5 CPD HRS · HALF DAY</div>
+          <div class="prog-desc">S.H.F.T.™ installed at applied depth. Personalised regulation strategy for shift work and between-patient resets. Escalation-repair skills applicable from the next shift.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CLARIFY</div>
+          <div class="prog-name">Structured Thinking Under Clinical Complexity</div>
+          <div class="prog-meta">3.5 CPD HRS · HALF DAY</div>
+          <div class="prog-desc">Diagnostic reasoning under fatigue. Cognitive triage system. Decision frameworks for high-acuity moments. Personalised decision quality architecture for your specialty.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CHOOSE</div>
+          <div class="prog-name">Practising on Your Own Terms</div>
+          <div class="prog-meta">3.5 CPD HRS · HALF DAY</div>
+          <div class="prog-desc">Agency within health systems. Competence-confidence protocol grounded in your own evidence. Purpose-alignment framework for sustainable clinical practice.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">FULL LOOP</div>
+          <div class="prog-name">The C³ Intensive</div>
+          <div class="prog-meta">7.0 CPD HRS · FULL DAY</div>
+          <div class="prog-desc">The complete Loop in a single day. Full C³ toolkit, personal capacity plan, and team application strategy. Works for departments, retreats, and conferences.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PATHWAY 03+04 — PALE ══════════ -->
+<section class="band pale">
+  <div class="band-inner">
+
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">03</div>
+        <div class="pathway-name">In-House Programmes</div>
+      </div>
+      <div class="pathway-tagline">When the whole team speaks the same language, the culture shifts.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">TEAM</div>
+          <div class="prog-name">Department Installation</div>
+          <div class="prog-meta">6–8 WEEKS · ONE WARD/DEPT</div>
+          <div class="prog-desc">Capacity assessment + sequential Center → Clarify → Choose build. Pre/post measurement. Team debrief. Ward-level or department-wide C³ operating system installation.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">ORGANISATION</div>
+          <div class="prog-name">Full Deployment</div>
+          <div class="prog-meta">12 WEEKS · ORGANISATION</div>
+          <div class="prog-desc">The C³ Loop installed across departments and seniority. Clinical staff, managers, leadership operating from the same architecture. Different entry points, shared vocabulary.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">LEADERSHIP</div>
+          <div class="prog-name">Clinical Leadership Programme</div>
+          <div class="prog-meta">12 MONTHS · QUARTERLY HALF-DAYS</div>
+          <div class="prog-desc">For clinical leads, charge nurses, HODs — autonomy-supportive leadership. Tone governance, cross-discipline alignment. When clinical leaders hold the Loop, the whole organisation operates differently.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CONFERENCE</div>
+          <div class="prog-name">Keynote &amp; Executive Briefing</div>
+          <div class="prog-meta">45–60 MIN · PLENARY OR CLOSED</div>
+          <div class="prog-desc">The neuroscience of capacity compression in healthcare. The talk clinicians describe to colleagues the following week. Executive briefing option for clinical directors and senior management.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">04</div>
+        <div class="pathway-name">Individual Supervision &amp; Psychology Support</div>
+      </div>
+      <div class="pathway-tagline">Clinical depth. One person's load profile. Registered psychologist.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">COACHING</div>
+          <div class="prog-name">C³ Performance Coaching</div>
+          <div class="prog-meta">8–12 SESSIONS · ONE-ON-ONE</div>
+          <div class="prog-desc">The C³ Loop applied to one person's specific load profile. For senior clinicians navigating complexity, burnout, role change, or the early signs of capacity compression.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CLINICAL</div>
+          <div class="prog-name">Psychology Support</div>
+          <div class="prog-meta">ONGOING · REGISTERED PSYCHOLOGIST</div>
+          <div class="prog-desc">Clinical psychology for healthcare workers experiencing burnout, compassion fatigue, moral injury, or sustained performance difficulty. Dual-registered. Confidential. Telehealth available.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">SUPERVISION</div>
+          <div class="prog-name">Professional Supervision</div>
+          <div class="prog-meta">MONTHLY · INDIVIDUAL OR GROUP</div>
+          <div class="prog-desc">Structured reflective practice for high-exposure clinical roles — ED, ICU, oncology, mental health. The space to process what the clinical work does to you and your practice.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">TRANSITION</div>
+          <div class="prog-name">Career &amp; Role Navigation</div>
+          <div class="prog-meta">6–8 SESSIONS · PSYCHOLOGIST-LED</div>
+          <div class="prog-desc">For clinicians at a crossroads — specialty decisions, management transition, return from leave. Values-aligned decision-making with clinical psychology support.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TOOLS + ASSESSMENT — NAVY ══════════ -->
+<section id="tools" class="band navy">
+  <div class="band-inner">
+    <div class="section-label">Health Toolkit</div>
+    <div class="section-title">Eight tools. Immediately usable.</div>
+    <div class="section-subtitle">Each usable without prior training. Designed for the real-time moments of your work.</div>
+
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-name">S.H.F.T.™ Desk Card</div>
+        <div class="tool-desc">Real-time escalation protocol for clinical environments. Portable, private, immediate.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Now–Do–Later</div>
+        <div class="tool-desc">Three-zone prioritisation for patient loads.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Clinical Handover Protocol</div>
+        <div class="tool-desc">Structured handover protecting cognitive load and patient safety.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Decision Map</div>
+        <div class="tool-desc">Clinical decision framework under time pressure and fatigue.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Capacity Check</div>
+        <div class="tool-desc">18-question self-assessment identifying the first binding constraint.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Shift Transition Protocol</div>
+        <div class="tool-desc">Between-shift decompression preventing carry-over activation.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Difficult Conversation Framework</div>
+        <div class="tool-desc">Patient and family communication under emotional load.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">After-Action Debrief</div>
+        <div class="tool-desc">Post-incident learning framework for clinical teams.</div>
+      </div>
+    </div>
+
+    <div class="assessment-block">
+      <div class="assessment-left">
+        <div class="assessment-overline">C³ Capacity Self-Assessment</div>
+        <div class="assessment-title">Where is your first binding constraint?</div>
+        <div class="assessment-meta">18 QUESTIONS · 5 MINUTES · A PERSONALISED PATHWAY</div>
+        <div class="assessment-desc">Identifies where your performance architecture is currently under strain — across Center (emotional regulation), Clarify (executive functioning), and Choose (autonomy, competence, connection). Your results show exactly where to start, calibrated to your clinical context and current load.</div>
+      </div>
+      <div class="assessment-right">
+        <div class="assess-axis"><div class="assess-dot"></div><span>Center: Emotional regulation &amp; nervous system stability</span></div>
+        <div class="assess-axis"><div class="assess-dot"></div><span>Clarify: Executive functioning &amp; cognitive performance</span></div>
+        <div class="assess-axis"><div class="assess-dot"></div><span>Choose: Autonomy, competence &amp; sustainable motivation</span></div>
+        <a href="assessment.html" class="btn-ghost">Take the Assessment →</a>
+      </div>
+    </div>
+
+    <div class="subarm-callout">
+      <div class="subarm-callout-text">
+        <div class="subarm-callout-label">Specialist sub-arms</div>
+        <h4>EF Health — DGBI &amp; eLearning pathways</h4>
+        <p>Two specialist pathways for healthcare: the seven-module DGBI clinical programme, and the self-paced eLearning version. Same framework, calibrated to gut-brain conditions.</p>
+      </div>
+      <a href="health-dgbi.html" class="btn-ghost">Explore EF Health — DGBI →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ CTA + INTAKE — PALE ══════════ -->
+<section id="intake" class="band pale">
+  <div class="band-inner">
+    <div class="cta-section">
+
+      <div class="spectrum-bar">
+    <div style="flex:1.2;background:#3d6d5c;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
+  </div>
+
+      <div class="cta-tagline">Human first. Then performance.</div>
+      <div class="cta-title">Start with the series.<br>Go as deep as you need.</div>
+      <div class="cta-sub">CENTER → CLARIFY → CHOOSE → REPEAT</div>
+
+      <div class="intake-wrap">
+        <div class="intake-label">INTAKE FORM</div>
+        <div class="intake-title">Begin your engagement.</div>
+        <div class="intake-sub">For individuals, teams, and organisations.</div>
+        <form>
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="text" placeholder="Role · organisation (optional)">
+          <select>
+            <option>I'm interested in...</option>
+            <option>C³ Health Series (6 modules)</option>
+            <option>Capacity Self-Assessment</option>
+            <option>CPD Workshop</option>
+            <option>Performance Coaching</option>
+            <option>Organisation-wide Programme</option>
+            <option>Conference Keynote</option>
+            <option>Other</option>
+            
+          </select>
+          <textarea placeholder="Anything that would help us route this well (optional)"></textarea>
+          <button class="btn-primary">Register Interest →</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-col footer-brand">
+    <div class="footer-mark">Executive Frame<sup style="font-size:0.45em;vertical-align:super;">™</sup></div>
+    <div class="footer-desc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</div>
+    <div class="footer-loc">Auckland · Christchurch · Queenstown · Telehealth available</div>
+    <div class="footer-mail"><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
+    <div class="footer-tag">Human first. Then performance.</div>
+  </div>
+
+  <div class="footer-col footer-arms-col">
+    <div class="footer-col-label">The eight arms</div>
+    <div class="footer-arms"><span class="current">EF|Health</span> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a><br><a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></div>
+    <div class="footer-quick">
+      <a href="enquire.html">Make a referral</a> ·
+      <a href="method.html">The S.H.I.F.T.™ Deck</a> ·
+      <a href="partners.html">Partner organisations</a>
+    </div>
+  </div>
+
+  <div class="footer-col footer-practice">
+    <div class="footer-col-label">Practice</div>
+    <div class="footer-practice-name">Dr Sarah Anticich</div>
+    <div class="footer-practice-creds">PhD, MAPS, MNZCCP</div>
+    <div class="footer-practice-role">Clinical Psychologist</div>
+    <div class="footer-practice-role">Industrial / Organisational Psychologist</div>
+    <div class="footer-practice-firm">Sarah Anticich Consulting</div>
+    <div class="footer-practice-copy">© 2026 — All rights reserved.</div>
+    <div class="footer-quick">
+      <a href="enquire.html">Contact</a> ·
+      <a href="enquire.html">Referrals</a> ·
+      <a href="enquire.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<div class="copyline">Site by Anticich Consulting · Built with care.</div>
+</body>
+</html>

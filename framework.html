@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What · The Architecture — Executive Frame™</title>
+<meta name="description" content="The C³ Loop in detail. The three-domain framework, the Tunnel model, the biological sequence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+:root {
+  --arm: #3d6d5c;
+  --arm-light: #5b8f7b;
+  --arm-dim: #2a5446;
+  --arm-rgb: 61,109,92;
+  --pale-bg: #D2DDD8;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-ef">Executive Frame</span><span class="nav-brand-arm" style="font-size:11px;letter-spacing:0.06em;vertical-align:super;margin-left:2px;">™</span>
+    <span class="nav-brand-sub">Human first. Then performance.</span>
+  </a>
+  <div class="nav-links">
+    <a href="framework.html" class="active">What</a>
+    <a href="science.html">Why</a>
+    <a href="method.html">How</a>
+    <a href="about-sarah.html">About Sarah</a>
+    <div class="nav-dropdown">
+      <a class="nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
+      <div class="nav-dropdown-panel">
+        <a href="health.html"><span class="nav-dot" style="background:#3d6d5c;"></span>EF|Health</a>
+        <a href="health-dgbi.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — DGBI</a>
+        <a href="health-elearning.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — eLearning</a>
+        <a href="health-store.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — Resources</a>
+        <a href="elite.html"><span class="nav-dot" style="background:#C9874E;"></span>EF|Elite</a>
+        <a href="corporate.html"><span class="nav-dot" style="background:#6B8AA8;"></span>EF|Corporate</a>
+        <a href="law.html"><span class="nav-dot" style="background:#4A5F7A;"></span>EF|Law</a>
+        <a href="law-family.html"  class="sub"><span class="nav-dot" style="background:#4A5F7A;"></span>↳ EF|Law — Family</a>
+        <a href="women.html"><span class="nav-dot" style="background:#C28699;"></span>EF|Women</a>
+        <a href="neurodiversity.html"><span class="nav-dot" style="background:#A593C2;"></span>EF|Neurodiversity</a>
+        <a href="family.html"><span class="nav-dot" style="background:#A89BAA;"></span>EF|Family</a>
+        <a href="consulting.html"><span class="nav-dot" style="background:#8FBFA8;"></span>C³ Consulting</a>
+      </div>
+    </div>
+    <a href="store.html">Store</a>
+    <a href="partners.html">Partners</a>
+    <a href="enquire.html" class="nav-cta">Intake →</a>
+  </div>
+</nav>
+
+<section class="about-hero">
+  <div class="about-hero-inner">
+    <div class="about-hero-left">
+      <div class="about-hero-eyebrow">What · The Framework</div>
+      <h1 class="about-hero-headline">
+        The architecture
+        <em>under the work.</em>
+      </h1>
+      <p class="about-hero-body">
+        Three moves held in sequence. Centre. Clarify. Choose. Each step is neurologically upstream of the next — skip Centre and Clarify becomes anxious; skip Clarify and Choose becomes reactive. The order matches how the regulatory system actually works. The sequence holds the work.
+      </p>
+      <div class="about-hero-actions">
+        <a href="science.html" class="btn-filled-light">The science</a>
+        <a href="method.html" class="btn-outlined-light">The method (S.H.I.F.T.™)</a>
+      </div>
+    </div>
+    <div class="about-hero-portrait" style="background: var(--bg-deep); display: flex; align-items: center; justify-content: center;">
+      <svg class="hero-c3loop" width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" aria-label="The C³ Loop — Centre, Clarify, Choose">
+  <!-- OUTER ORBITAL RING -->
+  <circle cx="350" cy="350" r="290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <!-- INNER ORBITAL RING -->
+  <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+  <!-- THREE ORBITAL NODES on outer ring -->
+  <!-- CENTRE node · top -->
+  <circle cx="350" cy="60" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CLARIFY node · lower-right (≈120° from top) -->
+  <circle cx="601" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CHOOSE node · lower-left (≈240° from top) -->
+  <circle cx="99" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
+
+  <!-- CHOOSE small triangle indicator (per brand kit) -->
+  <polygon points="588,485 600,491 588,497" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- TETRAHEDRON · centred, apex up -->
+  <!-- Apex at 350,180. Base centre at 350,510.
+       Three base vertices forming triangle: left, right, back.
+       Front-left visible face (light), front-right visible face (mid),
+       base receding face (shadow). Apex bright dot on top. -->
+  <g class="c3-tetrahedron">
+    <!-- Base receding edge (shadow) -->
+    <polygon points="350,180 220,510 480,510" fill="#273542" opacity="0.85"/>
+    <!-- Left visible face (light) -->
+    <polygon points="350,180 220,510 350,490" fill="#496278"/>
+    <!-- Right visible face (mid) -->
+    <polygon points="350,180 350,490 480,510" fill="#364B60"/>
+    <!-- Thin shadow at base -->
+    <ellipse cx="350" cy="515" rx="135" ry="4" fill="#121C25" opacity="0.5"/>
+    <!-- Apex highlight dot -->
+    <circle cx="350" cy="180" r="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- ORBITAL LABELS · CENTRE top, CLARIFY lower-right, CHOOSE lower-left -->
+  <text x="350" y="40" text-anchor="middle"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CENTRE</text>
+  <text x="660" y="640" text-anchor="end"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CLARIFY</text>
+  <text x="40" y="640" text-anchor="start"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CHOOSE</text>
+</svg>
+    </div>
+  </div>
+</section>
+
+<section class="band navy">
+  <div class="band-inner">
+    <div class="section-label">The Thesis · What the framework addresses</div>
+    <div class="section-title">You are not failing. You are overloaded.</div>
+    <div class="section-subtitle">Many performance breakdowns begin as regulatory ones. What can feel like overload is often a system carrying too much. The Executive Frame™ does not tell people to perform better — it maps what tends to narrow under pressure, and gives them architecture for each stage.</div>
+
+    <div class="arch-grid">
+      <div class="arch-card">
+        <div class="arch-label">Stage 01 · EI</div>
+        <div class="arch-name">Centre</div>
+        <div class="arch-pillar">Stabilise</div>
+        <div class="arch-desc">Bring the regulatory system back inside its working range. Heart rate, sleep, sensation — the body settles before the mind can read accurately. Perry's neurosequential principle, Goleman's EI, Linehan's distress tolerance.</div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-label">Stage 02 · EF</div>
+        <div class="arch-name">Clarify</div>
+        <div class="arch-pillar">Organise</div>
+        <div class="arch-desc">Separate fact from interpretation. Restore working memory, inhibition, and cognitive flexibility. Barkley's executive function research and Beck's cognitive model. Thinking that matches the actual situation.</div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-label">Stage 03 · SDT</div>
+        <div class="arch-name">Choose</div>
+        <div class="arch-pillar">Act intentionally</div>
+        <div class="arch-desc">Move deliberately. One step, on purpose, aligned with how you want to operate. Deci &amp; Ryan's self-determination theory, Dweck's growth orientation, McGonigal's stress-mindset science.</div>
+      </div>
+    </div>
+
+    <div class="shft-strip">
+      <div class="shft-head">
+        <div class="shft-head-name">The C³ Loop<sup>™</sup></div>
+        <div class="shft-head-sub">Centre. Clarify. Choose. Repeat.</div>
+      </div>
+      <div class="shft-steps">
+        <div class="shft-step"><span class="shft-step-letter">C¹</span><span class="shft-step-text">CENTRE — stabilise the regulatory system</span></div>
+        <div class="shft-step"><span class="shft-step-letter">C²</span><span class="shft-step-text">CLARIFY — organise thinking, separate fact from story</span></div>
+        <div class="shft-step"><span class="shft-step-letter">C³</span><span class="shft-step-text">CHOOSE — act intentionally, one step on purpose</span></div>
+        <div class="shft-step"><span class="shft-step-letter plus">↺</span><span class="shft-step-text">REPEAT — return to Centre. The loop is recursive.</span></div>
+      </div>
+    </div>
+
+    <div class="seq-quote">
+      <p>Skip Centre and Clarify becomes anxious. Skip Clarify and Choose becomes reactive. The sequence holds the work — and that is why the Executive Frame™ is sequential, not optional, not à la carte. This is biology, not preference.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band pale">
+  <div class="band-inner">
+    <div class="section-label">The Tunnel · The predictable degradation sequence</div>
+    <div class="section-title">What the architecture is built against.</div>
+    <div class="section-subtitle">Under sustained pressure, every system narrows in a predictable order. Naming it is the first move. The Tunnel is not a wellbeing failure — it is the shape pressure takes when the architecture is not yet installed.</div>
+
+    <div class="webinar-grid">
+      <div class="webinar-card">
+        <div class="webinar-mod">STAGE 01 · CENTRE COMPROMISED</div>
+        <div class="webinar-title">Instability</div>
+        <div class="webinar-c3">The body loses its steadiness</div>
+        <div class="webinar-quote">"Heart rate climbs. Sleep degrades. Sensation amplifies."</div>
+        <div class="webinar-desc">The regulatory system tilts out of range. Subcortical activation pre-loaded by prior exposure. The body can lose its steadiness — and cortical engagement degrades before the first word of the meeting, conversation, or matter.</div>
+      </div>
+      <div class="webinar-card">
+        <div class="webinar-mod">STAGE 02 · CLARIFY COMPROMISED</div>
+        <div class="webinar-title">Confusion</div>
+        <div class="webinar-c3">The mind loses its accuracy</div>
+        <div class="webinar-quote">"Cognitive distortions rise. Interpretation hardens."</div>
+        <div class="webinar-desc">Thinking narrows. Interpretation hardens around threat. The mind can lose its accuracy. The practitioner becomes more certain, not less — and the certainty has narrowed onto a channel that does not match the full field.</div>
+      </div>
+      <div class="webinar-card">
+        <div class="webinar-mod">STAGE 03 · CHOOSE COMPROMISED</div>
+        <div class="webinar-title">Constriction</div>
+        <div class="webinar-c3">Agency narrows to protection</div>
+        <div class="webinar-quote">"Behaviour collapses inward."</div>
+        <div class="webinar-desc">Avoidance, control, withdrawal. Decision space contracts. Agency can narrow to immediate protection — and the pattern, repeated, produces the career-level attrition the professions experience at clinically significant rates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band navy">
+  <div class="band-inner">
+    <div class="section-label">S.H.I.F.T.™ · Under sixty seconds</div>
+    <div class="section-title">The micro-intervention that interrupts the Tunnel.</div>
+    <div class="section-subtitle">When the Tunnel activates, you have seconds before the cascade completes. S.H.I.F.T. interrupts it. Not about being calm — about being strategic.</div>
+
+    <div class="shft-strip">
+      <div class="shft-head">
+        <div class="shft-head-name">S.H.I.F.T.<sup>™</sup></div>
+        <div class="shft-head-sub">Run in sequence · Under sixty seconds · Anywhere</div>
+      </div>
+      <div class="shft-steps">
+        <div class="shft-step"><span class="shft-step-letter">S</span><span class="shft-step-text">STOP — interrupt the reaction · Centre</span></div>
+        <div class="shft-step"><span class="shft-step-letter">H</span><span class="shft-step-text">HOLD — physiological sigh · Centre</span></div>
+        <div class="shft-step"><span class="shft-step-letter">F</span><span class="shft-step-text">FOCUS — fact, not story · Clarify</span></div>
+        <div class="shft-step"><span class="shft-step-letter plus">T</span><span class="shft-step-text">TAKE ACTION — one step, on purpose · Choose</span></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:32px;">
+      <a href="method.html" class="btn-ghost">The full S.H.I.F.T. Method →</a>
+    </div>
+  </div>
+</section>
+
+<section class="tagline-band pale">
+  <div class="tagline-band-eyebrow">The operational mechanism</div>
+  <div class="tagline-band-line">Centre. Clarify. <em>Choose.</em></div>
+  <div class="tagline-band-sub">Human first. Then performance. The architecture under what you already know how to do.</div>
+</section>
+
+<section class="band navy">
+  <div class="band-inner">
+    <div class="section-label">Next</div>
+    <div class="section-title">Where to go from here.</div>
+    <div class="webinar-grid">
+      <a href="science.html" class="webinar-card" style="text-decoration:none;">
+        <div class="webinar-mod">WHY · THE SCIENCE</div>
+        <div class="webinar-title">Three evidence bases</div>
+        <div class="webinar-desc">Perry, Goleman, Linehan. Barkley, Beck. Deci &amp; Ryan, Dweck, McGonigal. The clinical and psychological research base — in detail.</div>
+      </a>
+      <a href="method.html" class="webinar-card" style="text-decoration:none;">
+        <div class="webinar-mod">HOW · THE METHOD</div>
+        <div class="webinar-title">S.H.I.F.T.™ Protocol</div>
+        <div class="webinar-desc">The real-time micro-intervention. STOP. HOLD. FOCUS. TAKE ACTION.</div>
+      </a>
+      <a href="index.html#arms" class="webinar-card" style="text-decoration:none;">
+        <div class="webinar-mod">EIGHT ARMS</div>
+        <div class="webinar-title">Choose your context</div>
+        <div class="webinar-desc">Health, Elite, Corporate, Law, Women, Neurodiversity, Family, Consulting. Same framework, calibrated to context.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-col footer-brand">
+    <div class="footer-mark">Executive Frame<sup style="font-size:0.45em;vertical-align:super;">™</sup></div>
+    <div class="footer-desc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</div>
+    <div class="footer-loc">Auckland · Christchurch · Queenstown · Telehealth available</div>
+    <div class="footer-mail"><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
+    <div class="footer-tag">Human first. Then performance.</div>
+  </div>
+
+  <div class="footer-col footer-arms-col">
+    <div class="footer-col-label">The eight arms</div>
+    <div class="footer-arms"><span class="current">EF|Health</span> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a><br><a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></div>
+    <div class="footer-quick">
+      <a href="enquire.html">Make a referral</a> ·
+      <a href="method.html">The S.H.I.F.T.™ Deck</a> ·
+      <a href="partners.html">Partner organisations</a>
+    </div>
+  </div>
+
+  <div class="footer-col footer-practice">
+    <div class="footer-col-label">Practice</div>
+    <div class="footer-practice-name">Dr Sarah Anticich</div>
+    <div class="footer-practice-creds">PhD, MAPS, MNZCCP</div>
+    <div class="footer-practice-role">Clinical Psychologist</div>
+    <div class="footer-practice-role">Industrial / Organisational Psychologist</div>
+    <div class="footer-practice-firm">Sarah Anticich Consulting</div>
+    <div class="footer-practice-copy">© 2026 — All rights reserved.</div>
+    <div class="footer-quick">
+      <a href="enquire.html">Contact</a> ·
+      <a href="enquire.html">Referrals</a> ·
+      <a href="enquire.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<div class="copyline">Site by Anticich Consulting · Built with care.</div>
+</body>
+</html>
