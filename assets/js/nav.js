@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="/pages/programs.html" class="nav-link nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
       <div class="nav-dropdown-panel">
         <a href="/pages/health.html" class="nav-dd-item"><span class="dd-dot" style="background:#5B8F7B;"></span>Executive Frame Health</a>
+        <a href="/pages/health-patients.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ EF|Health — For Patients</a>
         <a href="/pages/health-dgbi.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ Executive Frame Health — DGBI</a>
         <a href="/pages/health-elearning.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ Executive Frame Health — eLearning</a>
+        <a href="/pages/health-store.html" class="nav-dd-item nav-dd-sub"><span class="dd-dot" style="background:#5B8F7B;"></span>↳ EF|Health — Resources</a>
         <a href="/pages/elite.html" class="nav-dd-item"><span class="dd-dot" style="background:#C9874E;"></span>Executive Frame Elite</a>
         <a href="/pages/corporate.html" class="nav-dd-item"><span class="dd-dot" style="background:#6B8AA8;"></span>Executive Frame Corporate</a>
         <a href="/pages/law.html" class="nav-dd-item"><span class="dd-dot" style="background:#8FA3B8;"></span>Executive Frame Law</a>
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="/pages/deck.html" class="nav-link nav-link-accent">The Deck</a>
     <a href="/pages/partners.html" class="nav-link nav-link-partners">For Partners</a>
     <a href="/pages/store.html" class="nav-link">Store</a>
+    <a href="/pages/assessment.html" class="nav-link nav-link-accent">Assessment</a>
     <a href="/pages/enquire.html" class="nav-link">Get in touch</a>
     <a href="/pages/referral.html" class="nav-cta">Make a referral</a>
   </div>
