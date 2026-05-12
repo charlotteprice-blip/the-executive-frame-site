@@ -3,2384 +3,286 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner Organisations · Executive Frame™</title>
-<meta name="description" content="Organisations running active Executive Frame™ programmes. Public partner summaries and dedicated staff portals.">
+<title>Partner Organisations — Executive Frame™</title>
+<meta name="description" content="Clinical, legal, and commercial partnerships. McMurray Gastroenterology, NZLS, Wynn Williams, Harcourts Gold.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/ef-styles.css">
-<style id="workbook-css">
-
-/* ════════════════════════════════════════════════════════════════════════
-   EF — WORKBOOK DESIGN SYSTEM
-   Shared stylesheet for executiveframe.co.nz
-   v1.0 · April 2026 · Sarah Anticich Consulting
-
-   Per-page tokens override the defaults below. Each page sets:
-     --arm, --arm-2, --arm-l, --arm-b, --arm-tint, --off, --border2
-   in an inline <style> block in the <head>.
-
-   Phase colours (--gold, --blue) stay constant across arms so the
-   C³ Centre/Clarify/Choose phase reading is consistent everywhere.
-   ════════════════════════════════════════════════════════════════════════ */
-
-:root{
-  /* DEFAULT ARM TOKENS — overridden per page */
-  --arm:        #5B8F7B;       /* arm hue — Centre, accents, links, buttons */
-  --arm-2:      #3d6d5c;       /* deeper arm — type on light surfaces */
-  --arm-l:      rgba(91,143,123,0.10);   /* callout fill */
-  --arm-b:      rgba(91,143,123,0.30);   /* tag border */
-  --arm-tint:   rgba(91,143,123,0.045);  /* alt-band surface tint */
-
-  /* PHASE COLOURS — preserved across all arms */
-  --gold:       #c48a18;
-  --gold-l:     rgba(196,138,24,0.09);
-  --blue:       #5a9de0;
-  --blue-l:     rgba(90,157,224,0.09);
-  --rose:       #c28699;
-  --rose-l:     rgba(194,134,153,0.10);
-
-  /* SURFACES — spine defaults; arm pages override --off and --border2 */
-  --dark:       #1e2a20;
-  --navy:       #15212D;
-  --white:      #fff;
-  --off:        #f4f8f6;
-  --border2:    #d8e8e0;
-  --text:       #0f1a14;
-  --mid:        #3a5040;
-  --muted:      #6a8070;
-}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
-  background:var(--off);
-  color:var(--text);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-.tm{font-size:0.52em;vertical-align:super;line-height:0;opacity:0.75;}
-a{color:inherit;}
-
-/* NAV ─────────────────────────────────────────────────────────────────── */
-nav.site-nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(30,42,32,0.97);
-  backdrop-filter:blur(14px);
-  padding:0 56px;height:62px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid rgba(91,143,123,0.18);
-}
-.nb-top{font-weight:800;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.88);text-decoration:none;}
-.nb-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--arm);margin-top:1px;}
-.nl{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
-.nl a{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.15s;}
-.nl a:hover,.nl a.active{color:rgba(255,255,255,0.92);}
-.nl a.cta{color:var(--arm);border:1px solid var(--arm-b);padding:6px 12px;border-radius:50px;}
-
-/* DROPDOWN — arms menu */
-.nl .dropdown{position:relative;}
-.nl .dropdown-trigger{cursor:pointer;}
-.nl .dropdown-panel{
-  position:absolute;top:100%;right:0;margin-top:8px;
-  background:rgba(30,42,32,0.98);
-  border:1px solid rgba(91,143,123,0.2);
-  border-radius:4px;
-  padding:10px 0;min-width:230px;
-  display:none;
-  box-shadow:0 16px 32px rgba(0,0,0,0.4);
-}
-.nl .dropdown:hover .dropdown-panel,
-.nl .dropdown:focus-within .dropdown-panel{display:block;}
-.nl .dropdown-panel a{
-  display:flex;align-items:center;gap:8px;
-  padding:8px 16px;color:rgba(255,255,255,0.7);
-  font-size:10px;letter-spacing:0.1em;
-}
-.nl .dropdown-panel a.sub{padding-left:30px;font-size:9px;color:rgba(255,255,255,0.5);}
-.nl .dropdown-panel a:hover{color:#fff;background:rgba(255,255,255,0.04);}
-.nl .dropdown-panel .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
-
-/* WRAP & SECTION ─────────────────────────────────────────────────────────── */
-.wrap{max-width:920px;margin:0 auto;padding:0 48px;}
-section{padding:72px 0;}
-.alt{background:var(--arm-tint);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);}
-.dark-s{background:var(--dark);}
-.navy-s{background:var(--navy);}
-
-/* TYPOGRAPHY ─────────────────────────────────────────────────────────────── */
-.eyebrow{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--arm);margin-bottom:10px;display:block;}
-.eyebrow-gold{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
-.eyebrow-blue{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;display:block;}
-
-.step-tag{display:inline-flex;align-items:center;gap:10px;font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-.step-tag .step-bar{width:24px;height:2px;background:var(--arm);border-radius:1px;}
-.step-tag .step-phase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--mid);font-weight:400;letter-spacing:0;text-transform:none;}
-
-h1,h2{font-weight:900;font-size:clamp(26px,4vw,46px);line-height:0.97;letter-spacing:-0.01em;color:var(--text);margin-bottom:14px;}
-h2.light,h1.light{color:rgba(255,255,255,0.94);}
-h2 em,h1 em{font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--arm);}
-h2.light em,h1.light em{color:var(--arm);}
-h3{font-weight:800;font-size:18px;color:var(--text);margin-bottom:8px;letter-spacing:-0.005em;}
-h4{font-weight:800;font-size:15px;color:var(--text);margin-bottom:6px;}
-.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--muted);margin-bottom:28px;line-height:1.55;}
-.tagline.light{color:rgba(255,255,255,0.55);}
-p.body{font-size:15px;color:var(--mid);line-height:1.78;margin-bottom:14px;}
-
-/* COVER (hero) ───────────────────────────────────────────────────────────── */
-.cover{background:var(--navy);padding:96px 0 76px;}
-.cover .mod-stage{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--arm);background:rgba(91,143,123,0.1);border:1px solid var(--arm-b);padding:5px 12px;border-radius:2px;margin-right:6px;margin-bottom:16px;}
-.cover .mod-stage.gold{color:var(--gold);background:var(--gold-l);border-color:rgba(196,138,24,0.3);}
-.cover .mod-stage.blue{color:var(--blue);background:var(--blue-l);border-color:rgba(90,157,224,0.3);}
-.cover .cta-row{margin-top:36px;padding-top:24px;border-top:1px solid var(--arm-b);display:flex;gap:10px;flex-wrap:wrap;}
-
-/* CARDS & CALLOUTS ───────────────────────────────────────────────────────── */
-.card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:26px 28px;margin-bottom:14px;}
-.card h4,.card h3{margin-bottom:8px;}
-.card p{font-size:14px;color:var(--mid);line-height:1.7;}
-.card-feature{background:linear-gradient(180deg,var(--arm-l) 0%,var(--white) 100%);border-color:var(--arm-b);}
-
-.cg{background:var(--arm-l);border-left:4px solid var(--arm);border-radius:0 3px 3px 0;padding:20px 24px;margin:18px 0;}
-.cg p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);line-height:1.7;}
-.cg p strong{font-style:normal;color:var(--text);font-weight:600;}
-.cgo{background:var(--gold-l);border-left:4px solid var(--gold);border-radius:0 3px 3px 0;padding:20px 24px;margin:18px 0;}
-.cgo p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);line-height:1.7;}
-.cgo p strong{font-style:normal;color:var(--text);font-weight:600;}
-.cb{background:var(--blue-l);border-left:4px solid var(--blue);border-radius:0 3px 3px 0;padding:20px 24px;margin:18px 0;}
-.cb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);line-height:1.7;}
-.cb p strong{font-style:normal;color:var(--text);font-weight:600;}
-
-/* GRIDS ──────────────────────────────────────────────────────────────────── */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:24px 0;}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:24px 0;}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin:24px 0;}
-
-/* TUNNEL ─────────────────────────────────────────────────────────────────── */
-.tunnel{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:32px 28px;margin:24px 0;}
-.tunnel-row{display:grid;grid-template-columns:160px 24px 1fr;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border2);}
-.tunnel-row:last-child{border-bottom:none;}
-.tunnel-stage{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text);font-weight:600;}
-.tunnel-arrow{color:var(--arm);font-size:18px;font-weight:900;text-align:center;}
-.tunnel-desc{font-size:13px;color:var(--mid);line-height:1.65;}
-.tunnel-desc em{font-family:'Cormorant Garamond',serif;font-style:italic;}
-
-/* SHIFT BLOCK ────────────────────────────────────────────────────────────── */
-.shift{background:var(--dark);border-radius:3px;padding:36px 38px;margin:28px 0;}
-.shift-h{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--arm);margin-bottom:6px;}
-.shift h3{color:rgba(255,255,255,0.95);font-size:24px;margin-bottom:24px;}
-.shift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:20px;}
-.shift-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:22px 20px;border-radius:2px;}
-.shift-letter{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--arm);line-height:1;margin-bottom:8px;}
-.shift-name{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:8px;}
-.shift-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.55;}
-
-/* C³ PILLAR STRIP ────────────────────────────────────────────────────────── */
-.pillar-strip{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr;gap:6px;margin:28px 0;align-items:stretch;}
-.pillar-block{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:22px 22px 24px;}
-.pillar-block.s{border-top:3px solid var(--arm);}
-.pillar-block.c{border-top:3px solid var(--gold);}
-.pillar-block.a{border-top:3px solid var(--blue);}
-.pillar-label{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;}
-.pillar-label.s{color:var(--arm-2);}
-.pillar-label.c{color:var(--gold);}
-.pillar-label.a{color:var(--blue);}
-.pillar-name{font-weight:800;font-size:18px;color:var(--text);margin-bottom:5px;}
-.pillar-desc{font-size:13px;color:var(--mid);line-height:1.6;}
-.pillar-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:22px;font-weight:900;}
-
-/* TOC (modules) ──────────────────────────────────────────────────────────── */
-.toc-grid{display:grid;grid-template-columns:1fr;gap:3px;margin:24px 0;}
-.toc-item{display:grid;grid-template-columns:62px 1fr 100px;background:var(--white);border:1px solid var(--border2);border-radius:3px;text-decoration:none;transition:border 0.15s,transform 0.15s;}
-.toc-item:hover{border-color:var(--arm);transform:translateX(2px);}
-.toc-n{background:var(--dark);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--arm);opacity:0.75;}
-.toc-c{padding:16px 22px;}
-.toc-tag{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--arm-2);margin-bottom:3px;}
-.toc-tag.gold{color:var(--gold);}
-.toc-tag.blue{color:var(--blue);}
-.toc-title{font-weight:700;font-size:15px;color:var(--text);}
-.toc-meta{display:flex;align-items:center;justify-content:center;background:var(--off);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
-
-/* PHASE ROWS (group modules into Centre/Clarify/Choose) ────────────────── */
-.phase-row{display:flex;align-items:center;gap:14px;margin:32px 0 14px;padding-bottom:12px;border-bottom:1px solid var(--border2);}
-.phase-row .phase-bar{width:32px;height:2px;border-radius:1px;flex-shrink:0;}
-.phase-row.s .phase-bar{background:var(--arm);}
-.phase-row.c .phase-bar{background:var(--gold);}
-.phase-row.a .phase-bar{background:var(--blue);}
-.phase-row .phase-label{font-size:10px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;}
-.phase-row.s .phase-label{color:var(--arm-2);}
-.phase-row.c .phase-label{color:var(--gold);}
-.phase-row.a .phase-label{color:var(--blue);}
-.phase-row .phase-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--mid);}
-
-/* PATHWAY CARDS ──────────────────────────────────────────────────────────── */
-.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:18px 0;}
-.path-grid-2{grid-template-columns:repeat(2,1fr);}
-.path-grid-1{grid-template-columns:1fr;}
-.path-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:24px 24px 22px;text-decoration:none;display:flex;flex-direction:column;}
-.path-card:hover{border-color:var(--arm);}
-.path-card .p-tag{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--arm-2);margin-bottom:8px;}
-.path-card h3{font-size:17px;margin-bottom:6px;}
-.path-card p{font-size:13px;color:var(--mid);line-height:1.6;flex-grow:1;}
-.path-card .modes{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap;}
-.path-card .mode{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--arm-l);color:var(--arm-2);}
-.path-feature{background:linear-gradient(180deg,var(--arm-l) 0%,var(--white) 100%);border-color:var(--arm-b);position:relative;}
-.path-feature::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--arm);}
-.path-feature .p-tag{color:var(--arm);}
-
-/* OUTCOME PANEL ──────────────────────────────────────────────────────────── */
-.outcome{background:var(--arm-l);border:1px solid var(--arm-b);border-radius:3px;padding:24px 28px;margin:22px 0;}
-.outcome .o-tag{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--arm-2);margin-bottom:8px;}
-.outcome p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text);line-height:1.6;}
-
-/* BUTTONS ───────────────────────────────────────────────────────────────── */
-.btn-p{background:var(--arm);color:var(--white);padding:13px 30px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background 0.15s;}
-.btn-p:hover{background:var(--arm-2);}
-.btn-s{background:transparent;color:var(--mid);padding:12px 28px;border-radius:50px;border:1px solid var(--border2);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:border-color 0.15s,color 0.15s;}
-.btn-s:hover{border-color:var(--arm);color:var(--arm-2);}
-.btn-gh{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);padding:11px 24px;border-radius:50px;border:1px solid rgba(255,255,255,0.14);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;}
-.btn-gh:hover{color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.3);}
-
-/* STATEMENT (the problem zone) ───────────────────────────────────────────── */
-.statement{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:48px 52px;margin:24px 0;position:relative;}
-.statement::before{content:"";display:block;width:40px;height:2px;background:var(--arm);margin-bottom:18px;}
-.statement p{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--mid);line-height:1.45;font-weight:400;}
-.statement p strong{font-weight:600;color:var(--text);font-style:normal;}
-.statement p em{font-style:italic;color:var(--arm-2);}
-
-/* ANCHORING LINES ────────────────────────────────────────────────────────── */
-.anchoring{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:28px 32px;margin:24px 0;}
-.anchoring-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-.anchoring ul{list-style:none;padding:0;margin:0;}
-.anchoring li{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);padding:8px 0;border-bottom:1px solid var(--border2);line-height:1.5;}
-.anchoring li:last-child{border-bottom:none;}
-.anchoring li.brand{color:var(--arm-2);font-weight:600;}
-.anchoring li.feet{color:var(--text);font-weight:600;}
-
-/* CLOSING ───────────────────────────────────────────────────────────────── */
-.closing{background:var(--navy);padding:80px 0;text-align:center;}
-.closing-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--arm);margin-bottom:16px;}
-.closing-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;color:rgba(255,255,255,0.92);line-height:1.3;max-width:680px;margin:0 auto 12px;}
-.closing-quote em{color:var(--arm);}
-.closing-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(255,255,255,0.4);margin-bottom:32px;}
-.closing-cta-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
-.closing-meta{font-size:10px;color:rgba(255,255,255,0.25);margin-top:36px;letter-spacing:0.16em;text-transform:uppercase;}
-
-/* TAGS ──────────────────────────────────────────────────────────────────── */
-.tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-.tag{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 9px;border-radius:2px;background:var(--arm-l);color:var(--arm-2);}
-.tag.gold{background:var(--gold-l);color:var(--gold);}
-.tag.blue{background:var(--blue-l);color:var(--blue);}
-
-/* SITE FOOTER ───────────────────────────────────────────────────────────── */
-.site-footer{background:var(--navy);padding:48px 0 36px;border-top:1px solid rgba(255,255,255,0.06);}
-.site-footer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
-.site-footer .ft-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:rgba(255,255,255,0.92);margin-bottom:6px;}
-.site-footer .ft-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
-.site-footer .ft-meta a{color:var(--arm);text-decoration:none;}
-.site-footer .ft-tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--arm);font-size:13px;margin-top:8px;}
-.site-footer .ft-arms-label{font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:10px;}
-.site-footer .ft-arms{font-size:11px;color:rgba(255,255,255,0.6);line-height:1.9;}
-.site-footer .ft-arms a{color:rgba(255,255,255,0.6);text-decoration:none;border-bottom:1px solid transparent;transition:color 0.15s,border-color 0.15s;}
-.site-footer .ft-arms a:hover{color:#fff;border-bottom-color:rgba(255,255,255,0.4);}
-.site-footer .ft-arms .current{color:var(--arm);}
-
-/* HOMEPAGE-SPECIFIC ─────────────────────────────────────────────────────── */
-.arms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin:24px 0;}
-.arm-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:24px 28px;text-decoration:none;display:flex;flex-direction:column;position:relative;transition:border 0.15s,transform 0.15s;}
-.arm-card:hover{transform:translateY(-2px);}
-.arm-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0;background:var(--arm-color,var(--arm));}
-.arm-card .a-tag{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--arm-color,var(--arm));margin-bottom:8px;margin-top:6px;}
-.arm-card h3{font-size:18px;margin-bottom:6px;color:var(--text);}
-.arm-card p{font-size:13px;color:var(--mid);line-height:1.6;flex-grow:1;}
-.arm-card .a-cta{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--arm-color,var(--arm));margin-top:14px;}
-
-/* Arm-card hue tokens — used on homepage and footer */
-.arm-card[data-arm="health"]         { --arm-color: #5B8F7B; }
-.arm-card[data-arm="elite"]          { --arm-color: #C9874E; }
-.arm-card[data-arm="corporate"]      { --arm-color: #6B8AA8; }
-.arm-card[data-arm="law"]            { --arm-color: #434F5B; }
-.arm-card[data-arm="women"]          { --arm-color: #C28699; }
-.arm-card[data-arm="neurodiversity"] { --arm-color: #8B7BA8; }
-.arm-card[data-arm="family"]         { --arm-color: #B68A6F; }
-.arm-card[data-arm="consulting"]     { --arm-color: #6FA0A4; }
-
-/* Triptych entries (homepage three-pillar) */
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:24px 0;}
-.triptych-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:28px 28px 26px;text-decoration:none;display:flex;flex-direction:column;}
-.triptych-card:hover{border-color:var(--arm);}
-.triptych-q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--arm);margin-bottom:8px;}
-.triptych-card h3{font-size:22px;margin-bottom:8px;}
-.triptych-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--mid);margin-bottom:10px;}
-.triptych-card p{font-size:13px;color:var(--mid);line-height:1.7;}
-.triptych-card .arrow{margin-top:14px;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--arm-2);}
-
-/* C³ LOOP CARD (homepage hero right) ───────────────────────────────────── */
-.loop-card{background:var(--white);border:1px solid var(--border2);border-radius:6px;padding:32px 36px 36px;max-width:480px;margin:0 auto;}
-.loop-card-h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;}
-.loop-card-h .cm{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500;color:var(--text);line-height:1;letter-spacing:-0.02em;}
-.loop-card-h .cm sup{font-size:0.42em;vertical-align:super;font-weight:500;}
-.loop-card-h .lt{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.32em;color:var(--muted);margin-left:4px;}
-.loop-card-rule{height:1px;background:var(--border2);margin:14px 0 8px;}
-.loop-card svg{width:100%;max-width:340px;margin:8px auto 0;display:block;aspect-ratio:1/1;}
-.loop-card-cap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--mid);text-align:center;margin-top:18px;line-height:1.55;max-width:360px;margin-left:auto;margin-right:auto;}
-.loop-card-cap strong{font-style:normal;font-weight:600;color:var(--text);}
-
-/* FORMS (enquire / assessment) ─────────────────────────────────────────── */
-.form-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:36px 40px;margin:18px 0;}
-.form-card label{display:block;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;margin-top:18px;}
-.form-card label:first-of-type{margin-top:0;}
-.form-card input[type="text"],
-.form-card input[type="email"],
-.form-card input[type="tel"]{
-  width:100%;border:none;border-bottom:1px solid var(--border2);
-  font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--text);
-  padding:8px 0;outline:none;background:transparent;
-}
-.form-card input:focus{border-bottom-color:var(--arm);}
-.form-card textarea{
-  width:100%;min-height:100px;
-  border:1px solid var(--border2);border-radius:3px;
-  background:var(--off);
-  font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--text);
-  padding:12px 14px;outline:none;resize:vertical;line-height:1.65;
-}
-.form-card textarea:focus{border-color:var(--arm);}
-.form-card .check-row{display:flex;align-items:flex-start;gap:10px;margin-top:14px;font-size:13px;color:var(--mid);}
-.form-card .check-row input{margin-top:3px;}
-.form-card .submit-row{margin-top:28px;padding-top:24px;border-top:1px solid var(--border2);}
-
-/* RESPONSIVE ────────────────────────────────────────────────────────────── */
-@media(max-width:920px){
-  .triptych{grid-template-columns:1fr;}
-  .arms-grid{grid-template-columns:1fr;}
-  .site-footer .wrap{grid-template-columns:1fr;}
-}
-@media(max-width:760px){
-  nav.site-nav{padding:0 20px;height:auto;flex-direction:column;align-items:flex-start;padding-top:12px;padding-bottom:12px;gap:8px;}
-  .nl{gap:10px;}
-  .wrap{padding:0 22px;}
-  .g2,.g3,.g4{grid-template-columns:1fr;}
-  .toc-item{grid-template-columns:48px 1fr;}
-  .toc-meta{display:none;}
-  .pillar-strip{grid-template-columns:1fr;}
-  .pillar-arrow{display:none;}
-  .shift-grid{grid-template-columns:1fr 1fr;}
-  .tunnel-row{grid-template-columns:1fr;gap:4px;}
-  .tunnel-arrow{display:none;}
-  .path-grid,.path-grid-2{grid-template-columns:1fr;}
-  .statement{padding:32px 28px;}
-  .statement p{font-size:18px;}
-  .closing-quote{font-size:24px;}
-  .form-card{padding:24px 22px;}
-}
-
-
-/* ════════════════════════════════════════════════════════════════
-   MOBILE FIXES
-   ════════════════════════════════════════════════════════════════ */
-
-/* Make dropdown trigger feel tappable */
-.nl .dropdown-trigger{cursor:pointer;user-select:none;}
-
-/* Dropdown panel: open via .is-open class (set by JS on tap) OR hover (desktop) */
-.nl .dropdown.is-open .dropdown-panel,
-.nl .dropdown:hover .dropdown-panel,
-.nl .dropdown:focus-within .dropdown-panel{display:block;}
-
-/* iOS form input fix — prevents auto-zoom when tapping a field (16px+ does this) */
-.form-card input[type="text"],
-.form-card input[type="email"],
-.form-card input[type="tel"],
-.form-card textarea{
-  font-size:16px;
-}
-
-@media(max-width:760px){
-  /* Nav: shorter, tighter, scrolls horizontally if needed */
-  nav.site-nav{
-    padding:10px 16px;
-    height:auto;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:8px;
-  }
-  nav.site-nav .nl{
-    width:100%;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    flex-wrap:nowrap;
-    padding-bottom:4px;
-    gap:12px;
-  }
-  nav.site-nav .nl > a,
-  nav.site-nav .nl > .dropdown{
-    flex-shrink:0;
-  }
-  nav.site-nav .nl a.cta{padding:6px 14px;}
-
-  /* Dropdown panel: full-width drawer-style on mobile */
-  .nl .dropdown-panel{
-    position:fixed;
-    top:auto;
-    left:8px;
-    right:8px;
-    margin-top:6px;
-    min-width:0;
-    max-height:65vh;
-    overflow-y:auto;
-    box-shadow:0 18px 40px rgba(0,0,0,0.55);
-  }
-  .nl .dropdown-panel a{
-    padding:12px 18px;
-    font-size:11px;
-  }
-  .nl .dropdown-panel a.sub{padding-left:34px;font-size:10px;}
-
-  /* Hero size — readable on small screens */
-  h1, h2{font-size:32px;line-height:1.05;}
-
-  /* Cover padding tighter on mobile */
-  .cover{padding:60px 0 50px;}
-
-  /* Make CTA rows wrap cleanly */
-  .cover .cta-row,
-  .closing-cta-row{flex-wrap:wrap;}
-  .cover .cta-row a,
-  .closing-cta-row a{flex:1 1 calc(50% - 5px);text-align:center;min-width:140px;}
-
-  /* Triptych and arms-grid stack on mobile */
-  .triptych,
-  .arms-grid{grid-template-columns:1fr;}
-
-  /* Store cards: price/button row stays clean */
-  .store-card .price-row{flex-wrap:wrap;}
-  .store-card .price{flex:1 1 100%;}
-  .store-card .buy{flex:0 0 auto;margin-left:auto;}
-
-  /* Section padding — tighter on mobile */
-  section{padding:48px 0;}
-
-  /* Form card padding */
-  .form-card{padding:24px 18px;}
-
-  /* Reduce huge font sizes on cover */
-  h1, h2, .h1, .h2{font-size:28px !important;}
-  .closing-quote{font-size:22px;line-height:1.3;}
-  .tagline{font-size:16px;}
-}
-
-
-</style>
-<style id="spine-overrides">
-:root{
-    --arm:        #4B677F;        /* Slate blue (brand kit Accent Blue) */
-    --arm-2:      #2d3540;        /* Deeper slate for type */
-    --arm-l:      rgba(75,103,127,0.09);    /* Callout fill */
-    --arm-b:      rgba(75,103,127,0.28);    /* Tag border */
-    --arm-tint:   rgba(75,103,127,0.04);    /* Alt-band tint */
-    --off:        #f6f7f8;        /* Cream off-white */
-    --border2:    #dfe2e7;        /* Border soft */
-}
-
-/* Spine-only utility — form layout helper */
-.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-@media(max-width:600px){.form-row-2{grid-template-columns:1fr;gap:0;}}
-
-/* Store card grid — reuses arm grammar but on neutral hue */
-.store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:24px 0;}
-@media(max-width:760px){.store-grid{grid-template-columns:1fr;}}
-.store-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:24px 26px;display:flex;flex-direction:column;}
-.store-card .product-tag{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--arm-2);margin-bottom:8px;}
-.store-card h3{font-size:18px;margin-bottom:8px;}
-.store-card p{font-size:13px;color:var(--mid);line-height:1.65;flex-grow:1;}
-.store-card .price-row{margin-top:18px;padding-top:14px;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
-.store-card .price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text);}
-.store-card .price small{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-left:4px;}
-.store-card .buy{background:var(--arm);color:#fff;padding:9px 18px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;}
-.store-card .buy:hover{background:var(--arm-2);}
-</style>
-<style id="designer-pass">
-/* ════════════════════════════════════════════════════════════════
-   SENIOR DESIGNER PASS — selective tightening, not crushing.
-   ════════════════════════════════════════════════════════════════ */
-
-/* 1. C³ Loop — constrain to one viewport */
-.c3-loop-svg{
-  max-width:380px !important;
-  max-height:420px !important;
-  width:100%;
-  height:auto;
-}
-.c3-loop-section{padding:8px 0 !important;}
-.c3-loop-h{margin-bottom:8px !important;}
-.c3-loop-divider{margin:14px auto 24px !important;}
-
-/* Loop legend — horizontal 4-up on desktop, stack on mobile */
-.c3-loop-legend{
-  max-width:880px !important;
-  margin:24px auto 0 !important;
-  padding-top:20px !important;
-  display:grid !important;
-  grid-template-columns:repeat(4, 1fr) !important;
-  gap:18px !important;
-  text-align:left;
-}
-.c3-lg-item{
-  grid-template-columns:24px 1fr !important;
-  grid-template-rows:auto auto !important;
-  gap:6px 12px !important;
-  padding-bottom:0 !important;
-  border-bottom:none !important;
-}
-.c3-lg-dash{align-self:center;grid-row:1;}
-.c3-lg-name{grid-column:2;grid-row:1;font-size:11px !important;letter-spacing:0.28em !important;}
-.c3-lg-verb{grid-column:2;grid-row:2;font-size:14px !important;}
-@media(max-width:760px){
-  .c3-loop-legend{grid-template-columns:1fr 1fr !important;gap:14px !important;}
-}
-@media(max-width:480px){
-  .c3-loop-legend{grid-template-columns:1fr !important;}
-}
-
-/* 2. S.H.I.F.T.™ — elevated treatment */
-.shift{
-  background:linear-gradient(135deg, var(--text) 0%, #1f2d24 100%) !important;
-  border-radius:6px;
-  padding:48px 40px !important;
-  box-shadow:0 8px 32px rgba(15,26,20,0.18);
-}
-.shift-h{
-  color:var(--arm) !important;
-  font-size:11px !important;
-  font-weight:700 !important;
-  letter-spacing:0.32em !important;
-  margin-bottom:16px !important;
-}
-.shift h3{
-  color:#fff !important;
-  font-family:'Montserrat', sans-serif !important;
-  font-size:32px !important;
-  font-weight:800 !important;
-  letter-spacing:-0.01em !important;
-  margin-bottom:32px !important;
-}
-.shift-grid, .shift-grid-5{
-  display:grid !important;
-  grid-template-columns:repeat(5, 1fr) !important;
-  gap:12px !important;
-}
-@media(max-width:980px){
-  .shift-grid, .shift-grid-5{grid-template-columns:repeat(3, 1fr) !important;}
-}
-@media(max-width:600px){
-  .shift-grid, .shift-grid-5{grid-template-columns:repeat(2, 1fr) !important;}
-}
-.shift-item{
-  background:rgba(255,255,255,0.04) !important;
-  border:1px solid rgba(255,255,255,0.08) !important;
-  border-radius:4px;
-  padding:24px 20px !important;
-  transition:background 0.2s, border-color 0.2s;
-}
-.shift-item:hover{
-  background:rgba(255,255,255,0.06) !important;
-  border-color:rgba(255,255,255,0.14) !important;
-}
-.shift-item .shift-letter{
-  font-family:'Cormorant Garamond', serif !important;
-  font-size:64px !important;
-  font-weight:500 !important;
-  line-height:1 !important;
-  margin-bottom:14px !important;
-  letter-spacing:-0.02em !important;
-}
-/* Per-letter colour accents — each gets a distinct hue */
-.shift-item:nth-child(1) .shift-letter{color:#c28699 !important;}  /* S — rose (Centre-aligned) */
-.shift-item:nth-child(2) .shift-letter{color:#c9874e !important;}  /* H — amber */
-.shift-item:nth-child(3) .shift-letter{color:#79859b !important;}  /* F — slate-blue */
-.shift-item:nth-child(4) .shift-letter{color:#5b8f7b !important;}  /* T — sage */
-.shift-item:nth-child(5) .shift-letter{color:#8b7ba8 !important;}  /* + — plum */
-.shift-item .shift-name{
-  font-family:'Montserrat', sans-serif !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  letter-spacing:0.24em !important;
-  text-transform:uppercase !important;
-  color:rgba(255,255,255,0.92) !important;
-  margin-bottom:10px !important;
-}
-.shift-item .shift-desc{
-  font-family:'Cormorant Garamond', serif !important;
-  font-style:italic !important;
-  font-size:14px !important;
-  line-height:1.55 !important;
-  color:rgba(255,255,255,0.7) !important;
-}
-
-/* 3. Selective tightening — hero padding only */
-.cover{padding:72px 0 56px !important;}
-@media(max-width:760px){.cover{padding:48px 0 40px !important;}}
-
-/* Card internals — slightly tighter */
-.card{padding:28px 28px !important;}
-
-/* 4. Eight arms accordion (framework page) */
-.arms-accordion{
-  margin-top:24px;
-  border-top:1px solid var(--border2);
-}
-.arm-row{
-  border-bottom:1px solid var(--border2);
-  position:relative;
-}
-.arm-row summary{
-  list-style:none;
-  cursor:pointer;
-  padding:20px 0;
-  display:grid;
-  grid-template-columns:auto 1fr auto auto;
-  gap:24px;
-  align-items:center;
-  transition:padding-left 0.2s;
-}
-.arm-row summary::-webkit-details-marker{display:none;}
-.arm-row summary:hover{padding-left:8px;}
-.arm-row .arm-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  flex-shrink:0;
-}
-.arm-row .arm-name{
-  font-family:'Cormorant Garamond', serif;
-  font-size:22px;
-  font-weight:600;
-  color:var(--text);
-  letter-spacing:-0.01em;
-}
-.arm-row .arm-tag{
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  color:var(--muted);
-  text-align:right;
-}
-.arm-row .arm-toggle{
-  width:24px;
-  height:24px;
-  border:1px solid var(--border2);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-  font-weight:300;
-  color:var(--mid);
-  transition:transform 0.2s, background 0.2s;
-}
-.arm-row[open] .arm-toggle{
-  transform:rotate(45deg);
-  background:var(--arm-l);
-  border-color:var(--arm-b);
-  color:var(--arm-2);
-}
-.arm-row .arm-content{
-  padding:0 0 28px 34px;
-  max-width:720px;
-}
-.arm-row .arm-content p{
-  font-family:'Cormorant Garamond', serif;
-  font-size:17px;
-  line-height:1.65;
-  color:var(--mid);
-  margin-bottom:16px;
-}
-.arm-row .arm-content .arm-link{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--arm-2);
-  text-decoration:none;
-  border-bottom:1px solid var(--arm-2);
-  padding-bottom:2px;
-}
-.arm-row .arm-content .arm-link:hover{opacity:0.7;}
-@media(max-width:760px){
-  .arm-row summary{grid-template-columns:auto 1fr auto;gap:14px;}
-  .arm-row .arm-tag{display:none;}
-  .arm-row .arm-name{font-size:18px;}
-  .arm-row .arm-content{padding-left:24px;}
-}
-</style>
-<style id="partners-css">
-/* Partner cards (public landing) */
-.partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px;}
-@media(max-width:760px){.partner-grid{grid-template-columns:1fr;}}
-.partner-card{background:var(--white);border:1px solid var(--border2);border-left:4px solid var(--arm);border-radius:4px;padding:32px 32px;display:flex;flex-direction:column;}
-.partner-card .org-tag{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-.partner-card h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--text);margin-bottom:10px;letter-spacing:-0.01em;}
-.partner-card .org-context{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);margin-bottom:14px;line-height:1.6;}
-.partner-card p{font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.65;color:var(--text);margin-bottom:18px;}
-.partner-card .partner-meta{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);padding-top:14px;border-top:1px solid var(--border2);margin-bottom:14px;}
-.partner-card .partner-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;}
-.partner-card .partner-cta a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:50px;}
-.partner-card .partner-cta a.staff{background:var(--arm);color:#fff;}
-.partner-card .partner-cta a.staff:hover{background:var(--arm-2);}
-.partner-card .partner-cta a.about{border:1px solid var(--border2);color:var(--arm-2);}
-.partner-card .partner-cta a.about:hover{border-color:var(--arm-b);}
-
-/* Password gate */
-.gate-section{padding:48px 0 64px;}
-.gate-card{max-width:540px;margin:0 auto;background:var(--white);border:1px solid var(--border2);border-radius:6px;padding:48px 44px;text-align:center;box-shadow:0 4px 24px rgba(15,26,20,0.04);}
-.gate-card .gate-icon{width:48px;height:48px;border-radius:50%;background:var(--arm-l);margin:0 auto 22px;display:flex;align-items:center;justify-content:center;color:var(--arm-2);font-size:22px;}
-.gate-card h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--text);margin-bottom:10px;letter-spacing:-0.01em;line-height:1.2;}
-.gate-card .gate-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--mid);margin-bottom:32px;line-height:1.55;}
-.gate-form{display:flex;flex-direction:column;gap:14px;}
-.gate-form input[type="password"]{width:100%;padding:14px 18px;border:1px solid var(--border2);border-radius:3px;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text);background:var(--off);text-align:center;letter-spacing:0.05em;}
-.gate-form input[type="password"]:focus{outline:none;border-color:var(--arm);background:var(--white);}
-.gate-form button{padding:14px 24px;background:var(--arm);color:#fff;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
-.gate-form button:hover{background:var(--arm-2);}
-.gate-error{margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#a94c4c;display:none;}
-.gate-error.show{display:block;}
-.gate-help{margin-top:24px;padding-top:20px;border-top:1px solid var(--border2);font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--muted);line-height:1.6;}
-.gate-help a{color:var(--arm-2);font-weight:600;text-decoration:none;border-bottom:1px solid var(--arm-2);}
-
-/* Locked content */
-#locked-content{display:none;}
-#locked-content.unlocked{display:block;}
-
-/* Programme module list */
-.module-list{display:grid;gap:8px;margin-top:24px;}
-.module-row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;padding:18px 0;border-bottom:1px solid var(--border2);align-items:center;}
-.module-row:last-child{border-bottom:none;}
-.module-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--mid);min-width:48px;}
-.module-info h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--text);margin-bottom:4px;letter-spacing:-0.005em;}
-.module-info p{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--mid);line-height:1.5;}
-.module-meta{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);}
-
-
-/* ═══ PARTNER CARDS — REDESIGNED FOR CONSISTENCY + IDENTITY ═══════ */
-
-.pp-partner-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:24px;
-  margin-top:48px;
-  max-width:920px;
-}
-
-.pp-card{
-  position:relative;
-  background:#FFFFFF;
-  border:1px solid var(--border2);
-  border-radius:6px;
-  padding:40px 48px 36px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  transition:all 0.25s ease;
-  /* Default colour tokens — overridden per partner */
-  --pp-c1:#15212D;       /* primary partner colour */
-  --pp-c2:#0f1a14;       /* deeper variant */
-  --pp-c3:#7a8590;       /* meta text */
-  --pp-c-tint:rgba(15,33,45,0.04);  /* hover tint */
-}
-@media(max-width:760px){
-  .pp-card{padding:28px 24px 24px;}
-}
-
-.pp-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:5px;
-  height:100%;
-  background:var(--pp-c1);
-  border-radius:6px 0 0 6px;
-}
-
-.pp-card:hover{
-  border-color:var(--pp-c1);
-  box-shadow:0 4px 32px var(--pp-c-tint), 0 1px 2px rgba(15,26,20,0.04);
-  transform:translateY(-1px);
-}
-
-/* Per-partner palette overrides */
-.pp-card[data-partner="mcmurray"]{
-  --pp-c1:#5B8F7B;
-  --pp-c2:#3d6d5c;
-  --pp-c-tint:rgba(91,143,123,0.10);
-}
-.pp-card[data-partner="wynn-williams"]{
-  --pp-c1:#1a2540;
-  --pp-c2:#0d1530;
-  --pp-c-accent:#c89968;
-  --pp-c-tint:rgba(26,37,64,0.10);
-}
-.pp-card[data-partner="harcourts-gold"]{
-  --pp-c1:#0a0a0a;
-  --pp-c2:#000000;
-  --pp-c-accent:#c8a85a;
-  --pp-c-tint:rgba(200,168,90,0.10);
-}
-.pp-card[data-partner="nzls"]{
-  --pp-c1:#1F4577;            /* NZLS Law Society Blue */
-  --pp-c2:#163359;            /* Deeper variant */
-  --pp-c-accent:#A89968;       /* Heritage gold (subtle nod to legal traditional) */
-  --pp-c-tint:rgba(31,69,119,0.10);
-}
-.pp-card[data-partner="nzls"] .pp-logo-rule{
-  background:var(--pp-c-accent);
-  height:1.5px;
-}
-
-
-/* TOP — logo block + tag */
-.pp-card-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:24px;
-  margin-bottom:8px;
-}
-
-/* LOGO BLOCK — typographic, distinct per partner */
-.pp-logo-block{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-.pp-logo-mark{
-  width:64px;
-  height:64px;
-  background:var(--pp-c1);
-  color:#FFFFFF;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  flex-shrink:0;
-  border-radius:3px;
-  position:relative;
-  font-family:'Cormorant Garamond',serif;
-}
-.pp-logo-letter{
-  font-size:36px;
-  font-weight:600;
-  line-height:1;
-  letter-spacing:-0.02em;
-  font-style:italic;
-}
-.pp-logo-rule{
-  display:block;
-  width:18px;
-  height:1px;
-  background:rgba(255,255,255,0.4);
-  margin-top:6px;
-}
-
-/* Wynn Williams gets a bronze accent rule */
-.pp-card[data-partner="wynn-williams"] .pp-logo-rule{
-  background:var(--pp-c-accent);
-  height:1.5px;
-}
-/* Harcourts gets a gold accent rule */
-.pp-card[data-partner="harcourts-gold"] .pp-logo-rule{
-  background:var(--pp-c-accent);
-  height:1.5px;
-}
-
-@media(max-width:560px){
-  .pp-logo-mark{width:52px;height:52px;}
-  .pp-logo-letter{font-size:28px;}
-  .pp-logo-rule{width:14px;}
-}
-
-.pp-logo-text{}
-.pp-logo-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:24px;
-  font-weight:600;
-  color:var(--text);
-  line-height:1.1;
-  letter-spacing:-0.005em;
-  margin-bottom:4px;
-}
-.pp-logo-sub{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:13px;
-  color:var(--muted);
-  letter-spacing:0;
-}
-@media(max-width:560px){
-  .pp-logo-name{font-size:20px;}
-  .pp-logo-sub{font-size:12px;}
-}
-
-/* CARD TAG — small caps badge top right */
-.pp-card-tag{
-  font-family:'Montserrat',sans-serif;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:var(--pp-c2);
-  background:var(--pp-c-tint);
-  padding:6px 12px;
-  border-radius:50px;
-  white-space:nowrap;
-  flex-shrink:0;
-}
-@media(max-width:560px){
-  .pp-card-top{flex-direction:column;align-items:flex-start;}
-  .pp-card-tag{align-self:flex-start;}
-}
-
-/* META ROW */
-.pp-card-meta{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:10px;
-  font-family:'Montserrat',sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:var(--pp-c3);
-  padding:8px 0;
-  border-top:1px solid var(--border2);
-  border-bottom:1px solid var(--border2);
-}
-.pp-card-dot{
-  width:3px;
-  height:3px;
-  border-radius:50%;
-  background:rgba(15,26,20,0.20);
-  display:inline-block;
-}
-
-/* H3 — partnership thesis line */
-.pp-card-h{
-  font-family:'Cormorant Garamond',serif;
-  font-size:28px;
-  font-weight:600;
-  line-height:1.2;
-  letter-spacing:-0.005em;
-  color:var(--text);
-  margin:6px 0 0 0;
-}
-.pp-card-h em{
-  font-style:italic;
-  font-weight:500;
-  color:var(--mid);
-}
-@media(max-width:560px){.pp-card-h{font-size:22px;}}
-
-/* DESCRIPTION */
-.pp-card-text{
-  font-family:'Cormorant Garamond',serif;
-  font-size:16px;
-  line-height:1.65;
-  color:var(--mid);
-  margin:0;
-  max-width:680px;
-}
-
-/* CTAs — clean two-button row */
-.pp-card-cta{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:8px;
-  padding-top:18px;
-  border-top:1px solid var(--border2);
-}
-
-.pp-cta-primary{
-  font-family:'Montserrat',sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  text-decoration:none;
-  padding:14px 28px;
-  border-radius:50px;
-  background:var(--pp-c1);
-  color:#FFFFFF;
-  border:1px solid var(--pp-c1);
-  transition:all 0.2s ease;
-}
-.pp-cta-primary:hover{
-  background:var(--pp-c2);
-  border-color:var(--pp-c2);
-}
-
-.pp-cta-secondary{
-  font-family:'Montserrat',sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  text-decoration:none;
-  padding:14px 22px;
-  border-radius:50px;
-  background:transparent;
-  color:var(--pp-c2);
-  border:1px solid var(--border2);
-  transition:all 0.2s ease;
-}
-.pp-cta-secondary:hover{
-  border-color:var(--pp-c1);
-  color:var(--pp-c1);
-}
-
-/* Hide the old partner-card styles' fallback rendering */
-.partner-grid{display:none !important;}
-</style>
-<style id="ft-secondary-css">
-.ft-secondary{
-  margin-top:14px;
-  padding-top:14px;
-  border-top:1px solid rgba(15,26,20,0.06);
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(15,26,20,0.45);
-}
-.ft-secondary a{
-  color:rgba(15,26,20,0.55);
-  text-decoration:none;
-  margin-right:6px;
-}
-.ft-secondary a:hover{color:var(--text);}
-</style>
-<style id="senior-polish-css">
-/* ════════════════════════════════════════════════════════════════
-   SENIOR POLISH PASS · Final design system overrides
-   ════════════════════════════════════════════════════════════════
-   Loaded last — establishes consistent type, spacing, buttons,
-   and the credibility details that compound to "considered."
-   ════════════════════════════════════════════════════════════════ */
-
-/* ─── Type scale enforcement (display) ─────────────────────────── */
-.cover h1, .hero-headline,
-section.cover h1{
-  font-family:'Cormorant Garamond', serif;
-  font-weight:600;
-  letter-spacing:-0.018em;
-  line-height:1.02;
-}
-
-/* H2 — section headings — strict scale */
-section h2:not(.shft-h2):not(.hero-headline){
-  font-family:'Cormorant Garamond', serif;
-  font-size:48px;
-  font-weight:600;
-  line-height:1.08;
-  letter-spacing:-0.012em;
-  margin-bottom:20px;
-}
-@media(max-width:760px){
-  section h2:not(.shft-h2):not(.hero-headline){font-size:36px;}
-}
-
-/* H3 — card / sub-section — strict scale */
-section h3{
-  font-family:'Cormorant Garamond', serif;
-  font-size:22px;
-  font-weight:600;
-  line-height:1.25;
-  letter-spacing:-0.005em;
-}
-
-/* Body — Cormorant for editorial copy */
-section p, section .tagline{
-  font-family:'Cormorant Garamond', serif;
-  font-size:17px;
-  line-height:1.65;
-  font-weight:400;
-}
-
-/* Eyebrows / small caps — strict, identical site-wide */
-.eyebrow,
-.eyebrow-gold,
-.eyebrow-blue,
-.eyebrow-rose,
-.step-tag,
-.closing-eyebrow,
-.product-tag,
-.org-tag{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-}
-
-/* Step-tags get a thin coloured bar treatment unified */
-.step-tag .step-bar{
-  display:inline-block;
-  width:24px;
-  height:1.5px;
-  background:var(--arm-2, #C9874E);
-  margin-right:14px;
-  vertical-align:middle;
-}
-.step-tag{
-  display:flex;
-  align-items:center;
-  gap:0;
-  margin-bottom:14px;
-  color:#5F6B77;
-}
-.step-tag .step-phase{
-  margin-left:10px;
-  font-style:normal;
-  text-transform:none;
-  letter-spacing:0.04em;
-  font-size:11px;
-  font-weight:400;
-  color:#8B95A1;
-}
-
-/* ─── Section spacing rhythm ────────────────────────────────────── */
-section{
-  padding:96px 0;
-}
-section.alt,
-section.cover,
-section.cover.hero-split{
-  padding:96px 0;
-}
-section.closing{
-  padding:104px 0 88px;
-}
-@media(max-width:980px){
-  section, section.alt, section.cover, section.cover.hero-split{padding:72px 0;}
-  section.closing{padding:80px 0 64px;}
-}
-@media(max-width:560px){
-  section, section.alt, section.cover, section.cover.hero-split{padding:56px 0;}
-  section.closing{padding:64px 0 48px;}
-}
-
-/* Tagline (intro paragraph after h2) */
-.tagline{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:19px;
-  line-height:1.6;
-  color:var(--mid, #5F6B77);
-  font-weight:400;
-  max-width:680px;
-  margin-bottom:0;
-}
-.tagline.light{color:rgba(255,255,255,0.7);}
-
-/* ─── Button system — 3 styles only ─────────────────────────────── */
-.btn-p, .btn-gh, .btn-s, .btn-line{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  padding:14px 28px;
-  border-radius:50px;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  transition:all 0.25s ease;
-  border:1px solid transparent;
-  cursor:pointer;
-}
-/* Primary — filled accent */
-.btn-p{
-  background:var(--text, #15212D);
-  color:#FFFFFF;
-}
-.btn-p:hover{
-  background:var(--arm-2, #2a3744);
-  transform:translateY(-1px);
-}
-section.cover .btn-p,
-.cover .btn-p,
-.shft-section-new .btn-p{
-  background:transparent;
-  border-color:rgba(255,255,255,0.35);
-  color:#FFFFFF;
-}
-section.cover .btn-p:hover,
-.cover .btn-p:hover,
-.shft-section-new .btn-p:hover{
-  border-color:#FFFFFF;
-  background:rgba(255,255,255,0.06);
-}
-
-/* Ghost — outline */
-.btn-gh{
-  background:transparent;
-  border-color:rgba(15,26,20,0.22);
-  color:var(--text, #15212D);
-}
-.btn-gh:hover{
-  border-color:var(--text, #15212D);
-  transform:translateY(-1px);
-}
-.cover .btn-gh,
-section.cover .btn-gh{
-  border-color:rgba(255,255,255,0.20);
-  color:rgba(255,255,255,0.85);
-}
-.cover .btn-gh:hover,
-section.cover .btn-gh:hover{
-  border-color:rgba(255,255,255,0.5);
-  color:#FFFFFF;
-}
-
-/* Secondary (smaller) — same as ghost but compact */
-.btn-s{
-  background:transparent;
-  padding:10px 20px;
-  font-size:10px;
-  letter-spacing:0.2em;
-  border-color:rgba(15,26,20,0.18);
-  color:var(--text, #15212D);
-}
-
-/* Line — text link with underline */
-.btn-line, .arm-link{
-  background:none;
-  padding:0 0 3px;
-  border:none;
-  border-radius:0;
-  border-bottom:1px solid var(--arm-2, #C9874E);
-  color:var(--arm-2, #C9874E);
-  letter-spacing:0.18em;
-  font-size:11px;
-  display:inline-block;
-}
-.btn-line:hover, .arm-link:hover{opacity:0.7;}
-
-/* CTA rows — consistent spacing */
-.cta-row, .closing-cta-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:36px;
-}
-
-/* ─── Cards — subtle premium feel ───────────────────────────────── */
-.card{
-  background:var(--white, #FFFFFF);
-  border:1px solid rgba(15,26,20,0.06);
-  border-radius:4px;
-  padding:32px 30px;
-  transition:border-color 0.3s ease, transform 0.3s ease;
-}
-.card:hover{
-  border-color:rgba(15,26,20,0.12);
-}
-
-/* ─── Closing sections — earned final moments ───────────────────── */
-section.closing{
-  text-align:center;
-  background:var(--off, #F7F4EE);
-  border-top:1px solid rgba(15,26,20,0.06);
-}
-section.closing .closing-quote{
-  font-family:'Cormorant Garamond', serif;
-  font-size:54px;
-  font-weight:500;
-  line-height:1.05;
-  letter-spacing:-0.015em;
-  color:var(--text);
-  margin:24px 0 28px;
-}
-section.closing .closing-quote em{
-  font-style:italic;
-  font-weight:500;
-  color:var(--mid, #5F6B77);
-}
-section.closing .closing-sub{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:19px;
-  line-height:1.55;
-  color:var(--mid, #5F6B77);
-  max-width:580px;
-  margin:0 auto 36px;
-}
-section.closing .closing-meta{
-  margin-top:48px;
-  padding-top:32px;
-  border-top:1px solid rgba(15,26,20,0.08);
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:var(--muted, #8B95A1);
-  max-width:600px;
-  margin-left:auto;
-  margin-right:auto;
-}
-@media(max-width:760px){
-  section.closing .closing-quote{font-size:38px;}
-}
-
-/* ─── Footer redesign — credibility moment ──────────────────────── */
-footer.site-footer{
-  background:#15212D;
-  color:rgba(255,255,255,0.72);
-  padding:72px 0 36px;
-  margin-top:0;
-}
-footer.site-footer .wrap{
-  max-width:1240px;
-  display:grid;
-  grid-template-columns:2fr 1.4fr 1fr;
-  gap:64px;
-  align-items:start;
-}
-@media(max-width:1100px){
-  footer.site-footer .wrap{grid-template-columns:1fr 1fr;gap:48px;}
-  footer.site-footer .ft-credentials{grid-column:1/3;}
-}
-@media(max-width:760px){
-  footer.site-footer .wrap{grid-template-columns:1fr !important;gap:36px;}
-  footer.site-footer .ft-credentials{grid-column:auto;}
-}
-footer.site-footer .ft-brand{
-  font-family:'Cormorant Garamond', serif;
-  font-size:24px;
-  font-weight:600;
-  color:#FFFFFF;
-  letter-spacing:-0.005em;
-  margin-bottom:14px;
-  line-height:1.2;
-}
-footer.site-footer .ft-meta{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:14px;
-  line-height:1.7;
-  color:rgba(255,255,255,0.55);
-  margin-bottom:24px;
-}
-footer.site-footer .ft-meta a{
-  color:rgba(255,255,255,0.85);
-  text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,0.2);
-  font-style:normal;
-}
-footer.site-footer .ft-meta a:hover{
-  color:#FFFFFF;
-  border-color:rgba(255,255,255,0.5);
-}
-footer.site-footer .ft-tag{
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-top:18px;
-}
-footer.site-footer .ft-arms-label{
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-bottom:18px;
-}
-footer.site-footer .ft-arms{
-  font-family:'Cormorant Garamond', serif;
-  font-size:14px;
-  line-height:2;
-  color:rgba(255,255,255,0.72);
-}
-footer.site-footer .ft-arms a{
-  color:rgba(255,255,255,0.72);
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  transition:all 0.2s;
-  display:inline-block;
-  margin-right:6px;
-}
-footer.site-footer .ft-arms a:hover{
-  color:#FFFFFF;
-  border-bottom-color:rgba(255,255,255,0.4);
-}
-footer.site-footer .ft-arms .current{
-  color:rgba(255,255,255,0.4);
-  margin-right:6px;
-}
-footer.site-footer .ft-secondary{
-  margin-top:24px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,0.08);
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-}
-footer.site-footer .ft-secondary a{
-  color:rgba(255,255,255,0.65);
-  text-decoration:none;
-  margin-right:14px;
-  display:inline-block;
-  margin-bottom:6px;
-}
-footer.site-footer .ft-secondary a:hover{
-  color:#FFFFFF;
-}
-
-/* Footer credentials column (NEW — replaces old empty column) */
-footer.site-footer .ft-credentials{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:13px;
-  line-height:1.7;
-  color:rgba(255,255,255,0.55);
-}
-footer.site-footer .ft-credentials .ft-cred-label{
-  font-family:'Montserrat', sans-serif;
-  font-style:normal;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-bottom:18px;
-  display:block;
-}
-
-/* Footer bottom strip — copyright + legal */
-footer.site-footer .ft-bottom{
-  max-width:1240px;
-  margin:64px auto 0;
-  padding:24px 48px 0;
-  border-top:1px solid rgba(255,255,255,0.08);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:24px;
-  flex-wrap:wrap;
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:500;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.35);
-}
-footer.site-footer .ft-bottom a{
-  color:rgba(255,255,255,0.5);
-  text-decoration:none;
-  margin-right:18px;
-}
-footer.site-footer .ft-bottom a:hover{color:#FFFFFF;}
-
-/* ─── Tighten card grids ────────────────────────────────────────── */
-.g3{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;}
-@media(max-width:980px){.g3{grid-template-columns:repeat(2, 1fr);}}
-@media(max-width:600px){.g3{grid-template-columns:1fr;}}
-
-.g2{display:grid;grid-template-columns:repeat(2, 1fr);gap:24px;}
-@media(max-width:760px){.g2{grid-template-columns:1fr;}}
-
-/* ─── Wrap container — refine outer margins ────────────────────── */
-.wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 48px;
-}
-@media(max-width:760px){.wrap{padding:0 24px;}}
-
-/* ─── Closing CTA spacing ──────────────────────────────────────── */
-section.closing .closing-cta-row{
-  justify-content:center;
-  margin-top:40px;
-}
-
-/* ─── Hero CTA group: refine spacing ───────────────────────────── */
-.cover.hero-split .hero-cta-row{
-  margin-bottom:40px;
-}
-
-/* ─── Sticky nav refinements ────────────────────────────────────── */
-.site-nav.site-nav-dark{
-  padding:18px 48px;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  box-shadow:0 1px 0 rgba(0,0,0,0.05);
-}
-@media(max-width:760px){
-  .site-nav.site-nav-dark{padding:16px 24px;}
-}
-
-/* ─── Body element baseline ─────────────────────────────────────── */
-body{
-  font-family:'Cormorant Garamond', serif;
-  color:var(--text, #15212D);
-  background:var(--off, #F7F4EE);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
-}
-</style>
-<style id="nav-dark-css">
-/* ════════════════════════════════════════════════════════════════
-   NAV — navy bar · 6 items + Make a referral CTA
-   ════════════════════════════════════════════════════════════════ */
-.site-nav.site-nav-dark{
-  background:#15212D;
-  border-bottom:1px solid rgba(203,214,226,0.10);
-  padding:18px 48px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:32px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  backdrop-filter:none;
-  box-shadow:0 1px 0 rgba(0,0,0,0.05);
-}
-
-/* Brand block */
-.site-nav.site-nav-dark .nb-brand{
-  display:flex;
-  flex-direction:column;
-  gap:2px;
-}
-.site-nav.site-nav-dark .nb-top{
-  font-family:'Cormorant Garamond', serif;
-  font-size:21px;
-  font-weight:600;
-  color:#FFFFFF;
-  text-decoration:none;
-  letter-spacing:-0.01em;
-  line-height:1.1;
-}
-.site-nav.site-nav-dark .nb-top .tm{
-  font-size:0.45em;
-  vertical-align:super;
-  font-weight:500;
-  margin-left:1px;
-}
-.site-nav.site-nav-dark .nb-sub{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:13px;
-  color:rgba(203,214,226,0.55);
-  font-weight:400;
-}
-
-/* Nav link list */
-.site-nav.site-nav-dark .nl{
-  display:flex;
-  align-items:center;
-  gap:32px;
-  flex-wrap:wrap;
-}
-
-/* Standard nav link */
-.site-nav.site-nav-dark .nav-link{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.78);
-  text-decoration:none;
-  padding:6px 0;
-  position:relative;
-  transition:color 0.2s;
-  cursor:pointer;
-  background:transparent;
-  border:none;
-}
-.site-nav.site-nav-dark .nav-link:hover{
-  color:#FFFFFF;
-}
-.site-nav.site-nav-dark .nav-link::after{
-  content:'';
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  height:1px;
-  background:#FFFFFF;
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform 0.25s;
-}
-.site-nav.site-nav-dark .nav-link:hover::after{
-  transform:scaleX(1);
-}
-
-/* Dropdown wrapper */
-.site-nav.site-nav-dark .nav-dropdown{
-  position:relative;
-}
-.site-nav.site-nav-dark .nav-dropdown-trigger{
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-.site-nav.site-nav-dark .nav-dropdown-trigger .caret{
-  font-size:10px;
-  letter-spacing:0;
-  opacity:0.7;
-  transition:transform 0.25s;
-  display:inline-block;
-}
-.site-nav.site-nav-dark .nav-dropdown:hover .caret{
-  transform:rotate(180deg);
-}
-
-/* Dropdown panel */
-.site-nav.site-nav-dark .nav-dropdown-panel{
-  position:absolute;
-  top:100%;
-  left:50%;
-  transform:translateX(-50%) translateY(8px);
-  background:#1c2935;
-  border:1px solid rgba(255,255,255,0.10);
-  border-radius:4px;
-  padding:14px 0;
-  min-width:280px;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity 0.25s, visibility 0.25s, transform 0.25s;
-  box-shadow:0 12px 40px rgba(0,0,0,0.4);
-  z-index:1001;
-  margin-top:8px;
-}
-.site-nav.site-nav-dark .nav-dropdown:hover .nav-dropdown-panel,
-.site-nav.site-nav-dark .nav-dropdown:focus-within .nav-dropdown-panel{
-  opacity:1;
-  visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-
-/* Bridge the gap between trigger and panel — prevents flicker */
-.site-nav.site-nav-dark .nav-dropdown::before{
-  content:'';
-  position:absolute;
-  top:100%;
-  left:0;
-  right:0;
-  height:16px;
-}
-
-/* Dropdown items */
-.site-nav.site-nav-dark .nav-dd-item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:9px 22px;
-  font-family:'Cormorant Garamond', serif;
-  font-size:15px;
-  font-weight:500;
-  color:rgba(255,255,255,0.78);
-  text-decoration:none;
-  letter-spacing:0;
-  text-transform:none;
-  transition:background 0.15s, color 0.15s;
-}
-.site-nav.site-nav-dark .nav-dd-item:hover{
-  background:rgba(255,255,255,0.04);
-  color:#FFFFFF;
-}
-.site-nav.site-nav-dark .nav-dd-sub{
-  padding-left:36px;
-  font-size:13px;
-  color:rgba(255,255,255,0.55);
-}
-.site-nav.site-nav-dark .nav-dd-divider{
-  border-top:1px solid rgba(255,255,255,0.08);
-  margin-top:8px;
-  padding-top:14px;
-}
-.site-nav.site-nav-dark .dd-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  flex-shrink:0;
-}
-
-/* CTA — Make a referral */
-.site-nav.site-nav-dark .nav-cta{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.20em;
-  text-transform:uppercase;
-  color:#FFFFFF;
-  text-decoration:none;
-  padding:10px 22px;
-  border:1px solid rgba(255,255,255,0.4);
-  border-radius:50px;
-  transition:all 0.25s;
-  white-space:nowrap;
-}
-.site-nav.site-nav-dark .nav-cta:hover{
-  border-color:#FFFFFF;
-  background:rgba(255,255,255,0.06);
-}
-
-/* Mobile / tablet adaptations */
-@media(max-width:1080px){
-  .site-nav.site-nav-dark{
-    padding:16px 24px;
-    gap:18px;
-  }
-  .site-nav.site-nav-dark .nl{gap:20px;}
-  .site-nav.site-nav-dark .nav-link{
-    font-size:10px;
-    letter-spacing:0.22em;
-  }
-  .site-nav.site-nav-dark .nav-cta{
-    font-size:10px;
-    padding:8px 16px;
-  }
-}
-@media(max-width:880px){
-  .site-nav.site-nav-dark{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:16px;
-  }
-  .site-nav.site-nav-dark .nl{
-    width:100%;
-    justify-content:flex-start;
-    gap:18px;
-  }
-  /* Mobile: dropdown panel sits below in-flow rather than absolute */
-  .site-nav.site-nav-dark .nav-dropdown-panel{
-    position:static;
-    transform:none;
-    opacity:1;
-    visibility:visible;
-    display:none;
-    box-shadow:none;
-    margin-top:6px;
-    background:rgba(255,255,255,0.03);
-    border-color:rgba(255,255,255,0.08);
-  }
-  .site-nav.site-nav-dark .nav-dropdown:hover .nav-dropdown-panel,
-  .site-nav.site-nav-dark .nav-dropdown:focus-within .nav-dropdown-panel{
-    transform:none;
-  }
-  /* On mobile, hover doesn't really work — keep dropdown visible always */
-  .site-nav.site-nav-dark .nav-dropdown:hover .nav-dropdown-panel{display:block;}
-}
-@media(max-width:560px){
-  .site-nav.site-nav-dark .nl{
-    gap:14px;
-  }
-  /* Hide subtitle below 560px */
-  .site-nav.site-nav-dark .nb-sub{display:none;}
-}
-
-/* Hide any remaining old nav patterns */
-.site-nav.site-nav-dark .dropdown:not(.nav-dropdown),
-.site-nav.site-nav-dark .cta:not(.nav-cta){display:none;}
-</style>
-<style id="callout-restyle">
-/* ════════════════════════════════════════════════════════════════
-   CALLOUT BOXES — restyled (editorial pull-quote, not sticker)
-   Loaded last in cascade so it overrides earlier .cgo / .statement rules.
-   ════════════════════════════════════════════════════════════════ */
-
-.cgo, .statement{
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  border-left:2px solid rgba(75,103,127,0.30) !important;
-  padding:6px 0 6px 28px !important;
-  margin:32px 0 !important;
-  position:relative;
-}
-
-.cgo p, .statement p{
-  font-family:'Cormorant Garamond', serif !important;
-  font-style:italic !important;
-  font-size:18px !important;
-  line-height:1.65 !important;
-  color:rgba(15,26,20,0.65) !important;
-  margin:0 !important;
-  font-weight:400 !important;
-  max-width:780px;
-}
-
-.cgo p strong, .statement p strong{
-  color:var(--text, #15212D) !important;
-  font-weight:600 !important;
-  font-style:normal !important;
-}
-
-.cgo p em, .statement p em{
-  color:rgba(15,26,20,0.55) !important;
-  font-style:italic !important;
-  font-weight:400 !important;
-}
-
-.cgo p a, .statement p a{
-  color:rgba(75,103,127,0.85) !important;
-  border-bottom:1px solid rgba(75,103,127,0.30) !important;
-  text-decoration:none !important;
-  transition:color 0.2s, border-color 0.2s;
-}
-.cgo p a:hover, .statement p a:hover{
-  color:var(--text, #15212D) !important;
-  border-bottom-color:var(--text, #15212D) !important;
-}
-
-/* On dark / hero sections — invert */
-.cover .cgo, .cover .statement,
-section.cover .cgo, section.cover .statement{
-  border-left-color:rgba(255,255,255,0.30) !important;
-}
-.cover .cgo p, .cover .statement p,
-section.cover .cgo p, section.cover .statement p{
-  color:rgba(255,255,255,0.70) !important;
-}
-.cover .cgo p strong, .cover .statement p strong,
-section.cover .cgo p strong, section.cover .statement p strong{
-  color:#FFFFFF !important;
-}
-
-@media(max-width:760px){
-  .cgo, .statement{
-    padding:4px 0 4px 20px !important;
-    margin:24px 0 !important;
-  }
-  .cgo p, .statement p{
-    font-size:16px !important;
-  }
-}
-</style>
-<style id="partner-minimal-css">
-/* ════════════════════════════════════════════════════════════════
-   PARTNER CARDS — minimal (name + access only, no descriptive text)
-   ════════════════════════════════════════════════════════════════ */
-.partner-card.partner-card-minimal{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-  min-height:200px;
-  padding:48px 36px;
-  gap:24px;
-}
-.partner-card.partner-card-minimal h3{
-  margin:0;
-  font-family:'Cormorant Garamond', serif;
-  font-size:32px;
-  font-weight:600;
-  color:var(--text);
-  letter-spacing:-0.005em;
-  line-height:1.1;
-}
-.partner-card.partner-card-minimal .partner-cta{
-  margin-top:0;
-}
-.partner-card.partner-card-minimal .partner-cta a.staff{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  color:#C9874E;
-  text-decoration:none;
-  border-bottom:1px solid rgba(201,135,78,0.4);
-  padding-bottom:3px;
-  display:inline-block;
-}
-.partner-card.partner-card-minimal .partner-cta a.staff:hover{
-  color:#a86a31;
-  border-bottom-color:#a86a31;
-}
-</style>
-<style id="subtitle-deitalic-css">
-/* ════════════════════════════════════════════════════════════════
-   SUBTITLE PARAGRAPHS — de-italicised site-wide
-   The introductory subtitle/paragraph patterns now read upright.
-   Editorial italics (h2 emphasis, inline quotes, dropdown summaries)
-   are preserved separately.
-   ════════════════════════════════════════════════════════════════ */
-
-.tagline,
-.hero-body,
-.shft-body,
-.arms-body,
-.arm-desc-dark,
-.arm-desc,
-.org-context,
-.partner-meta,
-.card-desc{
-  font-style:normal !important;
-}
-
-/* Slight tone calibration to compensate for visual weight loss
-   when italic is removed — the upright text reads slightly heavier
-   on the page, so we soften the colour very slightly to preserve
-   the original visual hierarchy. */
-.tagline{
-  color:var(--mid, #5F6B77);
-}
-.tagline.light{
-  color:rgba(255,255,255,0.62);
-}
-.hero-body{
-  color:rgba(255,255,255,0.65);
-}
-
-/* Make sure inline italic spans inside subtitle paragraphs still
-   work — i.e. if the writer DID use <em>...</em> for emphasis
-   inside a subtitle, that <em> stays italic. The rule above only
-   removes the wholesale paragraph-level italic. */
-.tagline em,
-.hero-body em,
-.shft-body em,
-.arms-body em,
-.arm-desc em,
-.arm-desc-dark em{
-  font-style:italic !important;
-}
-</style>
-<style id="partner-logo-css">
-/* ════════════════════════════════════════════════════════════════
-   PARTNER LOGOS — typographic frames linking to firm websites
-   Real logos can replace these later by changing the SVG/img source.
-   ════════════════════════════════════════════════════════════════ */
-
-.partner-card.partner-card-with-logo{
-  align-items:center !important;
-  text-align:center;
-  gap:24px !important;
-  padding:48px 36px !important;
-}
-
-.partner-logo-link{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-  width:100%;
-  max-width:280px;
-  margin:0 auto 8px;
-  transition:opacity 0.25s ease, transform 0.25s ease;
-}
-.partner-logo-link:hover{
-  opacity:0.85;
-  transform:translateY(-1px);
-}
-
-.partner-logo-frame{
-  border-top:1px solid rgba(15,26,20,0.20);
-  border-bottom:1px solid rgba(15,26,20,0.20);
-  padding:20px 0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
-}
-
-.partner-logo-text{
-  font-family:'Cormorant Garamond', serif;
-  font-size:24px;
-  font-weight:600;
-  color:var(--text, #15212D);
-  letter-spacing:-0.005em;
-  line-height:1.1;
-}
-
-.partner-logo-est{
-  font-family:'Montserrat', sans-serif;
-  font-size:9px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(15,26,20,0.5);
-}
-
-/* Hide the redundant h3 when a logo block is shown — the logo frame
-   carries the firm name with stronger typographic treatment */
-.partner-card.partner-card-with-logo h3{
-  display:none;
-}
-
-.partner-card.partner-card-with-logo .partner-cta{
-  margin-top:0;
-}
-</style>
-<style id="nav-defensive-css">
-
-/* ═══ NAV — defensive desktop visibility ═══════════════════════════ */
-@media(min-width:961px){
-  nav.site-nav{
-    display:flex !important;
-    align-items:center !important;
-    justify-content:space-between !important;
-    flex-wrap:nowrap !important;
-    overflow:visible !important;
-  }
-  nav.site-nav .nb-brand{
-    flex-shrink:0 !important;
-    min-width:0 !important;
-    max-width:38% !important;
-  }
-  nav.site-nav .nb-brand .nb-top{
-    white-space:nowrap !important;
-    overflow:hidden !important;
-    text-overflow:ellipsis !important;
-  }
-  nav.site-nav .nb-brand .nb-sub{
-    white-space:nowrap !important;
-    overflow:hidden !important;
-    text-overflow:ellipsis !important;
-  }
-  nav.site-nav .nl{
-    display:flex !important;
-    flex-shrink:1 !important;
-    flex-wrap:nowrap !important;
-    overflow:visible !important;
-  }
-}
-
-/* At medium widths (760-960px), allow nav links to wrap below brand */
-@media(min-width:761px) and (max-width:960px){
-  nav.site-nav{
-    flex-wrap:wrap !important;
-  }
-  nav.site-nav .nl{
-    width:100% !important;
-    margin-top:8px !important;
-    flex-wrap:wrap !important;
-    gap:14px !important;
-  }
-}
-</style>
-<style id="nav-deck-accent">
-
-/* Nav link accent — subtle distinction for The Deck */
-.nav-link-accent{
-  position:relative;
-}
-.nav-link-accent::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-4px;
-  transform:translateX(-50%);
-  width:14px;
-  height:1px;
-  background:rgba(255,255,255,0.4);
-  transition:background 0.2s,width 0.2s;
-}
-.nav-link-accent:hover::before{
-  background:rgba(255,255,255,0.85);
-  width:20px;
-}
-</style>
-<style id="nav-partners-accent">
-
-/* Nav link partners — subtle distinction */
-.nav-link-partners{
-  position:relative;
-}
-.nav-link-partners::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-4px;
-  transform:translateX(-50%);
-  width:14px;
-  height:1px;
-  background:rgba(91,143,123,0.6);  /* Health green tint — partnership signal */
-  transition:background 0.2s,width 0.2s;
-}
-.nav-link-partners:hover::before{
-  background:rgba(91,143,123,1);
-  width:20px;
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+:root {
+  --arm: #3d6d5c;
+  --arm-light: #5b8f7b;
+  --arm-dim: #2a5446;
+  --arm-rgb: 61,109,92;
+  --pale-bg: #D2DDD8;
 }
 </style>
 </head>
 <body>
-
 <nav id="site-nav"></nav>
 
-<section class="cover">
-<div class="wrap">
-  <span class="eyebrow">Partner Organisations</span>
-  <h1 class="light">Embedded with the organisations<br><em>we partner with.</em></h1>
-  <p class="tagline light" style="max-width:680px;">The Executive Frame™ is delivered inside organisations whose work asks a great deal of their people. Programmes are calibrated to the context — adversarial practice, regulated industries, high-pressure professional services. Each partner has its own dedicated portal with content tailored to that staff group.</p>
-</div>
-</section>
+<div class="hero">
+  <svg class="hero-c3loop" width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" aria-label="The C³ Loop — Centre, Clarify, Choose">
+  <!-- OUTER ORBITAL RING -->
+  <circle cx="350" cy="350" r="290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <!-- INNER ORBITAL RING -->
+  <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
 
-<section>
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>Current partners
-    <span class="step-phase">— organisations running active programmes</span>
+  <!-- THREE ORBITAL NODES on outer ring -->
+  <!-- CENTRE node · top -->
+  <circle cx="350" cy="60" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CLARIFY node · lower-right (≈120° from top) -->
+  <circle cx="601" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CHOOSE node · lower-left (≈240° from top) -->
+  <circle cx="99" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
+
+  <!-- CHOOSE small triangle indicator (per brand kit) -->
+  <polygon points="588,485 600,491 588,497" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- TETRAHEDRON · centred, apex up -->
+  <!-- Apex at 350,180. Base centre at 350,510.
+       Three base vertices forming triangle: left, right, back.
+       Front-left visible face (light), front-right visible face (mid),
+       base receding face (shadow). Apex bright dot on top. -->
+  <g class="c3-tetrahedron">
+    <!-- Base receding edge (shadow) -->
+    <polygon points="350,180 220,510 480,510" fill="#273542" opacity="0.85"/>
+    <!-- Left visible face (light) -->
+    <polygon points="350,180 220,510 350,490" fill="#496278"/>
+    <!-- Right visible face (mid) -->
+    <polygon points="350,180 350,490 480,510" fill="#364B60"/>
+    <!-- Thin shadow at base -->
+    <ellipse cx="350" cy="515" rx="135" ry="4" fill="#121C25" opacity="0.5"/>
+    <!-- Apex highlight dot -->
+    <circle cx="350" cy="180" r="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- ORBITAL LABELS · CENTRE top, CLARIFY lower-right, CHOOSE lower-left -->
+  <text x="350" y="40" text-anchor="middle"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CENTRE</text>
+  <text x="660" y="640" text-anchor="end"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CLARIFY</text>
+  <text x="40" y="640" text-anchor="start"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CHOOSE</text>
+</svg>
+  <div class="spectrum-bar">
+    <div style="flex:1.2;background:#3d6d5c;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
   </div>
-  <span class="eyebrow">Two doors per partner · public summary &amp; staff portal</span>
-  <h2>Active partnerships,<br><em>by organisation.</em></h2>
-  <p class="tagline" style="max-width:680px;">Each partner has a public summary card describing the partnership, and a private portal where staff access programme content using a password issued by their organisation.</p>
-
-  <div class="pp-partner-grid">
-
-    <!-- ═══ McMURRAY ═══════════════════════════════════════ -->
-    <div class="pp-card" data-partner="mcmurray">
-      <div class="pp-card-top">
-        <div class="pp-logo-block">
-          <div class="pp-logo-mark">
-            <span class="pp-logo-letter">M</span>
-            <span class="pp-logo-rule"></span>
-          </div>
-          <div class="pp-logo-text">
-            <div class="pp-logo-name">McMurray</div>
-            <div class="pp-logo-sub">Endoscopy &amp; Specialist Centre</div>
-          </div>
-        </div>
-        <div class="pp-card-tag">Clinical Partnership</div>
-      </div>
-
-      <div class="pp-card-meta">
-        <span>Auckland</span>
-        <span class="pp-card-dot"></span>
-        <span>Gastroenterology</span>
-        <span class="pp-card-dot"></span>
-        <span>Specialist medicine</span>
-      </div>
-
-      <h3 class="pp-card-h">Coordinated care for the gut <em>and the system around it.</em></h3>
-
-      <p class="pp-card-text">A clinical partnership delivering coordinated care for patients with disorders of gut&ndash;brain interaction (DGBIs). Three pathways: quick referral for clinicians, full clinical referral, and patient self-intake.</p>
-
-      <div class="pp-card-cta">
-        <a href="partners-mcmurray.html" class="pp-cta-primary">Visit partnership &rarr;</a>
-        <a href="partners-mcmurray-quick.html" class="pp-cta-secondary">Quick referral</a>
-      </div>
-    </div>
-
-        <!-- ═══ NZLS — NEW ZEALAND LAW SOCIETY ═══════════════════ -->
-    <div class="pp-card" data-partner="nzls">
-      <div class="pp-card-top">
-        <div class="pp-logo-block">
-          <div class="pp-logo-mark">
-            <span class="pp-logo-letter">N</span>
-            <span class="pp-logo-rule"></span>
-          </div>
-          <div class="pp-logo-text">
-            <div class="pp-logo-name">NZLS</div>
-            <div class="pp-logo-sub">Te K&#257;hui Ture o Aotearoa &middot; New Zealand Law Society</div>
-          </div>
-        </div>
-        <div class="pp-card-tag">CPD &amp; Programme Partnership</div>
-      </div>
-
-      <div class="pp-card-meta">
-        <span>National</span>
-        <span class="pp-card-dot"></span>
-        <span>Legal profession regulator</span>
-        <span class="pp-card-dot"></span>
-        <span>CPD-accredited delivery</span>
-      </div>
-
-      <h3 class="pp-card-h">Composure under sustained pressure, <em>at scale.</em></h3>
-
-      <p class="pp-card-text">A formal CPD and programme delivery partnership with the New Zealand Law Society. Executive Frame&trade; clinical content delivered to legal practitioners nationally &mdash; covering composure under adversarial pressure, sustained decision quality, and the long-arc psychological architecture of legal practice. Programmes available to members through NZLS-accredited channels.</p>
-
-      <div class="pp-card-cta">
-        <a href="https://www.lawsociety.org.nz/" target="_blank" rel="noopener" class="pp-cta-primary">NZLS website &uarr;</a>
-        <a href="enquire.html" class="pp-cta-secondary">Discuss programmes</a>
-      </div>
-    </div>
-
-    <!-- ═══ WYNN WILLIAMS ════════════════════════════════════ -->
-    <div class="pp-card" data-partner="wynn-williams">
-      <div class="pp-card-top">
-        <div class="pp-logo-block">
-          <div class="pp-logo-mark">
-            <span class="pp-logo-letter">W</span>
-            <span class="pp-logo-rule"></span>
-          </div>
-          <div class="pp-logo-text">
-            <div class="pp-logo-name">Wynn Williams</div>
-            <div class="pp-logo-sub">Est. 1859 &middot; Christchurch &middot; Auckland &middot; Queenstown</div>
-          </div>
-        </div>
-        <div class="pp-card-tag">Staff Portal</div>
-      </div>
-
-      <div class="pp-card-meta">
-        <span>National</span>
-        <span class="pp-card-dot"></span>
-        <span>Legal practice</span>
-        <span class="pp-card-dot"></span>
-        <span>Active programme</span>
-      </div>
-
-      <h3 class="pp-card-h">Composure as <em>a clinical skill.</em></h3>
-
-      <p class="pp-card-text">Programme content, workbooks, and S.H.I.F.T.&trade; resources for legal professionals operating under sustained adversarial pressure. Restricted to Wynn Williams staff via password issued by the firm.</p>
-
-      <div class="pp-card-cta">
-        <a href="partners-wynn-williams.html" class="pp-cta-primary">Staff portal &rarr;</a>
-        <a href="https://www.wynnwilliams.co.nz/" target="_blank" rel="noopener" class="pp-cta-secondary">Wynn Williams &uarr;</a>
-      </div>
-    </div>
-
-    <!-- ═══ HARCOURTS GOLD ═══════════════════════════════════ -->
-    <div class="pp-card" data-partner="harcourts-gold">
-      <div class="pp-card-top">
-        <div class="pp-logo-block">
-          <div class="pp-logo-mark">
-            <span class="pp-logo-letter">H</span>
-            <span class="pp-logo-rule"></span>
-          </div>
-          <div class="pp-logo-text">
-            <div class="pp-logo-name">Harcourts Gold</div>
-            <div class="pp-logo-sub">Christchurch &middot; Real estate</div>
-          </div>
-        </div>
-        <div class="pp-card-tag">Staff Portal</div>
-      </div>
-
-      <div class="pp-card-meta">
-        <span>Christchurch</span>
-        <span class="pp-card-dot"></span>
-        <span>Real estate</span>
-        <span class="pp-card-dot"></span>
-        <span>Active programme</span>
-      </div>
-
-      <h3 class="pp-card-h">Performance under pressure <em>without burning the people.</em></h3>
-
-      <p class="pp-card-text">Programme content for Harcourts Gold sales teams &mdash; sustained performance practices, regulation under transactional load, and the C&sup3; Loop&trade; for high-stakes negotiation. Restricted to staff via firm-issued password.</p>
-
-      <div class="pp-card-cta">
-        <a href="partners-harcourts-gold.html" class="pp-cta-primary">Staff portal &rarr;</a>
-        <a href="https://www.harcourtsgold.co.nz/" target="_blank" rel="noopener" class="pp-cta-secondary">Harcourts Gold &uarr;</a>
-      </div>
-    </div>
-
+  <div class="hero-overline">Partner Organisations</div>
+  <div class="hero-title">Working <span>together</span></div>
+  <div class="hero-subtitle">Clinical, legal, and commercial partnerships</div>
+  <div class="hero-tagline">
+    The Executive Frame™ integrated into the work of trusted organisations<br>
+    across healthcare, the legal profession, and the wider business community.
+  </div>
+  <div class="hero-body">
+    Each partnership is a formal working relationship — co-delivered clinical programmes, in-house staff portals, CPD-accredited delivery, or referral pathways. The list is small by design.
+  </div>
+  <div class="hero-foot">
+    <div class="hero-foot-line">Clinical · National legal body · Legal firm · Commercial</div>
+    <div class="hero-foot-tag">Each partner approves their own representation here.</div>
   </div>
 </div>
+
+<section class="band navy">
+  <div class="band-inner">
+    <div class="section-label">Active partnerships</div>
+    <div class="section-title">Four organisations. Four kinds of relationship.</div>
+    <div class="section-subtitle">A curated set — clinical referral, national CPD provision, firm-level staff portal, and commercial in-house work. Each card uses a typographic monogram in that partner's brand-appropriate palette; official logos are incorporated where supplied, with permission.</div>
+
+    <div class="partners-grid">
+
+      <div class="partner-card" data-partner="mcmurray">
+        <div class="partner-card-top">
+          <div class="partner-logo-block">
+            <div class="partner-logo-mark" style="--p-mark:#3D7A5E;">
+              <span class="partner-logo-letter">M</span>
+              <span class="partner-logo-rule"></span>
+            </div>
+            <div class="partner-logo-text">
+              <div class="partner-logo-name">McMurray</div>
+              <div class="partner-logo-sub">Gastroenterology &amp; Endoscopy · Christchurch</div>
+            </div>
+          </div>
+          <div class="partner-card-tag" style="--p-tag:#3D7A5E;">Clinical Referral Partnership</div>
+        </div>
+        <div class="partner-card-meta">
+          <span>Christchurch</span><span class="partner-card-dot"></span>
+          <span>Gastroenterology</span><span class="partner-card-dot"></span>
+          <span>Integrated EF|Health pathway</span>
+        </div>
+        <h3 class="partner-card-h">Where the gut–brain axis<br><em>meets clinical care.</em></h3>
+        <p class="partner-card-text">A formal clinical partnership with McMurray Gastroenterology. Patients with disorders of gut–brain interaction (DGBI) receive integrated medical and psychological care — gastroenterology assessment and treatment alongside the Executive Frame™ DGBI programme. Co-developed pathway. Shared clinical understanding of the gut–brain axis.</p>
+        <div class="partner-card-cta">
+          <a href="https://macmurray.co.nz/" target="_blank" rel="noopener" class="partner-cta-primary" style="--p-tag:#3D7A5E;">McMurray website ↗</a>
+          <a href="health-dgbi.html" class="partner-cta-secondary">Explore EF|Health — DGBI</a>
+        </div>
+      </div>
+
+      <div class="partner-card" data-partner="nzls">
+        <div class="partner-card-top">
+          <div class="partner-logo-block">
+            <div class="partner-logo-mark" style="--p-mark:#1F4577;">
+              <span class="partner-logo-letter">N</span>
+              <span class="partner-logo-rule" style="--p-mark:#A89968;"></span>
+            </div>
+            <div class="partner-logo-text">
+              <div class="partner-logo-name">NZLS</div>
+              <div class="partner-logo-sub">Te Kāhui Ture o Aotearoa · New Zealand Law Society</div>
+            </div>
+          </div>
+          <div class="partner-card-tag" style="--p-tag:#1F4577;">CPD &amp; Programme Partnership</div>
+        </div>
+        <div class="partner-card-meta">
+          <span>National</span><span class="partner-card-dot"></span>
+          <span>Legal profession regulator</span><span class="partner-card-dot"></span>
+          <span>CPD-accredited delivery</span>
+        </div>
+        <h3 class="partner-card-h">Composure under sustained pressure,<br><em>at scale.</em></h3>
+        <p class="partner-card-text">A formal CPD and programme delivery partnership with the New Zealand Law Society. Executive Frame™ clinical content delivered to legal practitioners nationally — covering composure under adversarial pressure, sustained decision quality, and the long-arc psychological architecture of legal practice. Programmes available to members through NZLS-accredited channels.</p>
+        <div class="partner-card-cta">
+          <a href="https://www.lawsociety.org.nz/" target="_blank" rel="noopener" class="partner-cta-primary" style="--p-tag:#1F4577;">NZLS website ↗</a>
+          <a href="law.html" class="partner-cta-secondary">Explore EF|Law</a>
+        </div>
+      </div>
+
+      <div class="partner-card" data-partner="wynn">
+        <div class="partner-card-top">
+          <div class="partner-logo-block">
+            <div class="partner-logo-mark" style="--p-mark:#1A2B3E;">
+              <span class="partner-logo-letter">W</span>
+              <span class="partner-logo-rule"></span>
+            </div>
+            <div class="partner-logo-text">
+              <div class="partner-logo-name">Wynn Williams</div>
+              <div class="partner-logo-sub">Est. 1859 · Staff Portal</div>
+            </div>
+          </div>
+          <div class="partner-card-tag" style="--p-tag:#1A2B3E;">Firm Partnership · Staff Portal</div>
+        </div>
+        <div class="partner-card-meta">
+          <span>Christchurch · Auckland</span><span class="partner-card-dot"></span>
+          <span>Legal firm</span><span class="partner-card-dot"></span>
+          <span>Internal practitioner support</span>
+        </div>
+        <h3 class="partner-card-h">Composure<br><em>as a clinical skill.</em></h3>
+        <p class="partner-card-text">An in-house programme partnership with Wynn Williams, one of New Zealand's longest-established law firms (est. 1859). Internal staff portal providing Executive Frame™ tools, supervision pathways, and the S.H.I.F.T.™ protocol calibrated to adversarial legal practice — confidential, available to practitioners across the firm.</p>
+        <div class="partner-card-cta">
+          <a href="https://wynnwilliams.co.nz/" target="_blank" rel="noopener" class="partner-cta-primary" style="--p-tag:#1A2B3E;">Wynn Williams website ↗</a>
+          <a href="law.html" class="partner-cta-secondary">Explore EF|Law</a>
+        </div>
+      </div>
+
+      <div class="partner-card" data-partner="harcourts">
+        <div class="partner-card-top">
+          <div class="partner-logo-block">
+            <div class="partner-logo-mark" style="--p-mark:#1A1A1A;">
+              <span class="partner-logo-letter">H</span>
+              <span class="partner-logo-rule" style="--p-mark:#C9A95C;"></span>
+            </div>
+            <div class="partner-logo-text">
+              <div class="partner-logo-name">Harcourts Gold</div>
+              <div class="partner-logo-sub">Christchurch · Staff Portal</div>
+            </div>
+          </div>
+          <div class="partner-card-tag" style="--p-tag:#1A1A1A;">Firm Partnership · Staff Portal</div>
+        </div>
+        <div class="partner-card-meta">
+          <span>Christchurch</span><span class="partner-card-dot"></span>
+          <span>Real estate</span><span class="partner-card-dot"></span>
+          <span>Internal team development</span>
+        </div>
+        <h3 class="partner-card-h">Performance under pressure,<br><em>without burning the people.</em></h3>
+        <p class="partner-card-text">An in-house programme partnership with Harcourts Gold Christchurch. Internal staff portal providing Executive Frame™ tools, leadership coaching pathways, and the S.H.I.F.T.™ protocol calibrated to the sustained-pressure environment of real estate practice — for sales consultants, property managers, and leadership.</p>
+        <div class="partner-card-cta">
+          <a href="https://www.harcourtsgold.co.nz/" target="_blank" rel="noopener" class="partner-cta-primary" style="--p-tag:#1A1A1A;">Harcourts Gold website ↗</a>
+          <a href="corporate.html" class="partner-cta-secondary">Explore EF|Corporate</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="partner-note">
+      <p>Each partner card uses a typographic monogram in that partner's brand-appropriate palette. Where partner organisations supply official logo assets and brand guidelines, those logos will be incorporated in their place — with permission, in line with each partner's identity standards.</p>
+    </div>
+  </div>
 </section>
 
-<section class="alt">
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>How partnerships work
-    <span class="step-phase">— calibrated delivery</span>
-  </div>
-  <span class="eyebrow">Three stages · diagnosis, design, embedded delivery</span>
-  <h2>Calibrated to the system —<br><em>not the catalogue.</em></h2>
-  <p class="tagline" style="max-width:680px;">Partner programmes are built specifically for the organisation. The framework stays the same. The applications, examples, language, and cadence are tuned to the work that organisation actually does.</p>
+<section class="band pale">
+  <div class="band-inner">
+    <div class="section-label">Become a partner</div>
+    <div class="section-title">For organisations interested in formal partnership.</div>
+    <div class="section-subtitle">Executive Frame™ partnerships take three primary forms — clinical referral pathways, CPD provider relationships, and in-house staff portal delivery. Each begins with a confidential scoping conversation.</div>
 
-  <div class="g3" style="margin-top:36px;">
-    <div class="card">
-      <div class="eyebrow" style="margin-bottom:8px;">Stage 01 · Diagnosis</div>
-      <h3>Read the system</h3>
-      <p>A diagnostic phase — what is the organisation actually carrying, where does the regulatory load concentrate, which functions tend to narrow under pressure. The work begins by reading the system, not naming the symptom.</p>
-    </div>
-    <div class="card">
-      <div class="eyebrow-gold" style="margin-bottom:8px;">Stage 02 · Design</div>
-      <h3>Build the programme</h3>
-      <p>Programme architecture calibrated to the diagnosis — selected modules from the relevant arm, paced to the organisation's cadence, and framed in language that fits the work. Workbook and digital materials produced for the staff group.</p>
-    </div>
-    <div class="card">
-      <div class="eyebrow-blue" style="margin-bottom:8px;">Stage 03 · Embedded delivery</div>
-      <h3>Run with the team</h3>
-      <p>Delivered in person, via cohort, or hybrid — depending on the organisation's structure. Partner staff access programme content, workbooks, and follow-up materials through their dedicated portal.</p>
+    <div class="webinar-grid">
+      <a href="enquire.html?type=partnership" class="webinar-card" style="text-decoration:none;">
+        <div class="webinar-mod">CLINICAL PARTNERSHIP</div>
+        <div class="webinar-title">Referral pathway integration</div>
+        <div class="webinar-c3">For specialist clinics and medical practices</div>
+        <div class="webinar-desc">Integrated clinical pathways where patients receive medical care and Executive Frame™ psychological support as a co-developed programme. McMurray Gastroenterology is the current model.</div>
+      </a>
+      <a href="enquire.html?type=partnership" class="webinar-card" style="text-decoration:none;">
+        <div class="webinar-mod">CPD &amp; PROFESSIONAL BODIES</div>
+        <div class="webinar-title">National CPD provider</div>
+        <div class="webinar-c3">For professional regulatory bodies</div>
+        <div class="webinar-desc">CPD-accredited programme delivery to a profession at scale. Module accreditation, certificate of completion, member-portal access. NZLS is the current model.</div>
+      </a>
+      <a href="enquire.html?type=partnership" class="webinar-card" style="text-decoration:none;">
+        <div class="webinar-mod">IN-HOUSE STAFF PORTAL</div>
+        <div class="webinar-title">Firm or organisation portal</div>
+        <div class="webinar-c3">For firms, agencies, and organisations</div>
+        <div class="webinar-desc">A confidential internal portal providing the Executive Frame™ tool suite, supervision pathways, and coaching access to staff. Wynn Williams and Harcourts Gold are current models.</div>
+      </a>
     </div>
   </div>
-</div>
 </section>
 
-<section class="closing">
-<div class="wrap">
-  <div class="closing-eyebrow">For organisations considering a partnership</div>
-  <p class="closing-quote">If your organisation is carrying<br><em>more than its architecture is built to hold —</em></p>
-  <p class="closing-sub">Partnership conversations begin with a structural diagnosis, not a sales call. The Executive Frame™ team will be in touch within one business day.</p>
-  <div class="closing-cta-row">
-    <a href="enquire.html?subject=Partnership+enquiry" class="btn-p">Enquire about a partnership</a>
-    <a href="consulting.html" class="btn-gh">C³ Consulting overview</a>
-  </div>
-  <div class="closing-meta">Human first. Then performance. The next best step, in any moment.</div>
-</div>
-</section>
-
-
-<!-- ═══ PARTNERSHIP PROTOCOL NOTE ═══════════════════════ -->
-<section style="background:#FFFFFF;padding:48px 32px 96px;border-top:1px solid rgba(15,26,20,0.06);">
-  <div style="max-width:920px;margin:0 auto;">
-    <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:#7a8590;margin-bottom:14px;">A note on partner identity</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.7;color:#3d4a3f;max-width:780px;margin:0;">Each partner card uses a typographic monogram in that partner&rsquo;s brand-appropriate palette. Where partner organisations supply official logo assets and brand guidelines, those logos will be incorporated in their place &mdash; with permission, in line with each partner&rsquo;s identity standards.</p>
-  </div>
+<section class="tagline-band navy">
+  <div class="tagline-band-eyebrow">Human first. Then performance.</div>
+  <div class="tagline-band-line">The list is <em>small by design.</em></div>
+  <div class="tagline-band-sub">Each partner is a working relationship — not a logo. Every card on this page is approved by the partner it represents.</div>
 </section>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <div>
-      <div class="ft-brand">Executive Frame<span style="font-size:0.45em;vertical-align:super;">™</span></div>
-      <div class="ft-meta">A structured psychological architecture for individuals, families, and organisations navigating pressure.<br><br>
-        Auckland · Christchurch · Queenstown · Telehealth available<br>
-        <a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
-      <div class="ft-tag">Human first. Then performance.</div>
-    </div>
+  <div class="footer-col footer-brand">
+    <div class="footer-mark">Executive Frame<sup style="font-size:0.45em;vertical-align:super;">™</sup></div>
+    <div class="footer-desc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</div>
+    <div class="footer-loc">Auckland · Christchurch · Queenstown · Telehealth available</div>
+    <div class="footer-mail"><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
+    <div class="footer-tag">Human first. Then performance.</div>
+  </div>
 
-    <div>
-      <div class="ft-arms-label">The eight arms</div>
-      <div class="ft-arms">
-        <a href="health.html">Executive Frame Health</a> · <a href="elite.html">Executive Frame Elite</a> · <a href="corporate.html">Executive Frame Corporate</a> · <a href="law.html">Executive Frame Law</a> · <a href="women.html">Executive Frame Women</a> · <a href="neurodiversity.html">Executive Frame Neurodiversity</a> · <a href="family.html">Executive Frame Family Systems</a> · <a href="consulting.html">C³ Consulting</a>
-      </div>
-      <div class="ft-secondary">
-        <a href="referral.html">Make a referral</a>
-        <a href="deck.html">The S.H.I.F.T.™ Deck</a>
-        <a href="partners.html">Partner organisations</a>
-      </div>
-    </div>
-
-    <div class="ft-credentials">
-      <span class="ft-cred-label">Practice</span>
-      Dr Sarah Anticich<br>
-      <em>PhD, MAPS, MNZCCP</em><br>
-      Clinical Psychologist<br>
-      Industrial / Organisational Psychologist<br><br>
-      Sarah Anticich Consulting<br>
-      © 2026 — All rights reserved.
+  <div class="footer-col footer-arms-col">
+    <div class="footer-col-label">The eight arms</div>
+    <div class="footer-arms"><span class="current">EF|Health</span> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a><br><a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></div>
+    <div class="footer-quick">
+      <a href="enquire.html">Make a referral</a> ·
+      <a href="method.html">The S.H.I.F.T.™ Deck</a> ·
+      <a href="partners.html">Partner organisations</a>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div>
-      <a href="enquire.html">Contact</a>
-      <a href="referral.html">Referrals</a>
-      <a href="enquire.html?subject=Privacy">Privacy</a>
+
+  <div class="footer-col footer-practice">
+    <div class="footer-col-label">Practice</div>
+    <div class="footer-practice-name">Dr Sarah Anticich</div>
+    <div class="footer-practice-creds">PhD, MAPS, MNZCCP</div>
+    <div class="footer-practice-role">Clinical Psychologist</div>
+    <div class="footer-practice-role">Industrial / Organisational Psychologist</div>
+    <div class="footer-practice-firm">Sarah Anticich Consulting</div>
+    <div class="footer-practice-copy">© 2026 — All rights reserved.</div>
+    <div class="footer-quick">
+      <a href="enquire.html">Contact</a> ·
+      <a href="enquire.html">Referrals</a> ·
+      <a href="enquire.html">Privacy</a>
     </div>
-    <div>Site by Anticich Consulting · Built with care.</div>
   </div>
 </footer>
 
+<div class="copyline">Site by Anticich Consulting · Built with care.</div>
 <script src="../assets/js/nav.js"></script>
 </body>
 </html>

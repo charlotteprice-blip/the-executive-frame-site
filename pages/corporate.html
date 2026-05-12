@@ -3,2235 +3,512 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EF™ Corporate — Human first. Then performance.</title>
-<meta name="description" content="The Executive Frame™ for organisations.">
+<title>EF|Corporate — The C³ Loop for Leaders &amp; Teams</title>
+<meta name="description" content="Performance architecture for leaders and organisations. The C³ Loop, calibrated to senior work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/ef-styles.css">
-<style id="workbook-css">
-/* ════════════════════════════════════════════════════════════════════════
-   EF — WORKBOOK DESIGN SYSTEM
-   Shared stylesheet for executiveframe.co.nz
-   v1.0 · April 2026 · Sarah Anticich Consulting
-
-   Per-page tokens override the defaults below. Each page sets:
-     --arm, --arm-2, --arm-l, --arm-b, --arm-tint, --off, --border2
-   in an inline <style> block in the <head>.
-
-   Phase colours (--gold, --blue) stay constant across arms so the
-   C³ Centre/Clarify/Choose phase reading is consistent everywhere.
-   ════════════════════════════════════════════════════════════════════════ */
-
-:root{
-  /* DEFAULT ARM TOKENS — overridden per page */
-  --arm:        #5B8F7B;       /* arm hue — Centre, accents, links, buttons */
-  --arm-2:      #3d6d5c;       /* deeper arm — type on light surfaces */
-  --arm-l:      rgba(91,143,123,0.10);   /* callout fill */
-  --arm-b:      rgba(91,143,123,0.30);   /* tag border */
-  --arm-tint:   rgba(91,143,123,0.045);  /* alt-band surface tint */
-
-  /* PHASE COLOURS — preserved across all arms */
-  --gold:       #c48a18;
-  --gold-l:     rgba(196,138,24,0.09);
-  --blue:       #5a9de0;
-  --blue-l:     rgba(90,157,224,0.09);
-  --rose:       #c28699;
-  --rose-l:     rgba(194,134,153,0.10);
-
-  /* SURFACES — spine defaults; arm pages override --off and --border2 */
-  --dark:       #1e2a20;
-  --navy:       #15212D;
-  --white:      #fff;
-  --off:        #f4f8f6;
-  --border2:    #d8e8e0;
-  --text:       #0f1a14;
-  --mid:        #3a5040;
-  --muted:      #6a8070;
-}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
-  background:var(--off);
-  color:var(--text);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-.tm{font-size:0.52em;vertical-align:super;line-height:0;opacity:0.75;}
-a{color:inherit;}
-
-/* NAV ─────────────────────────────────────────────────────────────────── */
-nav.site-nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(30,42,32,0.97);
-  backdrop-filter:blur(14px);
-  padding:0 56px;height:62px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid rgba(91,143,123,0.18);
-}
-.nb-top{font-weight:800;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.88);text-decoration:none;}
-.nb-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--arm);margin-top:1px;}
-.nl{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
-.nl a{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.15s;}
-.nl a:hover,.nl a.active{color:rgba(255,255,255,0.92);}
-.nl a.cta{color:var(--arm);border:1px solid var(--arm-b);padding:6px 12px;border-radius:50px;}
-
-/* DROPDOWN — arms menu */
-.nl .dropdown{position:relative;}
-.nl .dropdown-trigger{cursor:pointer;}
-.nl .dropdown-panel{
-  position:absolute;top:100%;right:0;margin-top:8px;
-  background:rgba(30,42,32,0.98);
-  border:1px solid rgba(91,143,123,0.2);
-  border-radius:4px;
-  padding:10px 0;min-width:230px;
-  display:none;
-  box-shadow:0 16px 32px rgba(0,0,0,0.4);
-}
-.nl .dropdown:hover .dropdown-panel,
-.nl .dropdown:focus-within .dropdown-panel{display:block;}
-.nl .dropdown-panel a{
-  display:flex;align-items:center;gap:8px;
-  padding:8px 16px;color:rgba(255,255,255,0.7);
-  font-size:10px;letter-spacing:0.1em;
-}
-.nl .dropdown-panel a.sub{padding-left:30px;font-size:9px;color:rgba(255,255,255,0.5);}
-.nl .dropdown-panel a:hover{color:#fff;background:rgba(255,255,255,0.04);}
-.nl .dropdown-panel .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
-
-/* WRAP & SECTION ─────────────────────────────────────────────────────────── */
-.wrap{max-width:920px;margin:0 auto;padding:0 48px;}
-section{padding:72px 0;}
-.alt{background:var(--arm-tint);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);}
-.dark-s{background:var(--dark);}
-.navy-s{background:var(--navy);}
-
-/* TYPOGRAPHY ─────────────────────────────────────────────────────────────── */
-.eyebrow{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--arm);margin-bottom:10px;display:block;}
-.eyebrow-gold{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
-.eyebrow-blue{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;display:block;}
-
-.step-tag{display:inline-flex;align-items:center;gap:10px;font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-.step-tag .step-bar{width:24px;height:2px;background:var(--arm);border-radius:1px;}
-.step-tag .step-phase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--mid);font-weight:400;letter-spacing:0;text-transform:none;}
-
-h1,h2{font-weight:900;font-size:clamp(26px,4vw,46px);line-height:0.97;letter-spacing:-0.01em;color:var(--text);margin-bottom:14px;}
-h2.light,h1.light{color:rgba(255,255,255,0.94);}
-h2 em,h1 em{font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--arm);}
-h2.light em,h1.light em{color:var(--arm);}
-h3{font-weight:800;font-size:18px;color:var(--text);margin-bottom:8px;letter-spacing:-0.005em;}
-h4{font-weight:800;font-size:15px;color:var(--text);margin-bottom:6px;}
-.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--muted);margin-bottom:28px;line-height:1.55;}
-.tagline.light{color:rgba(255,255,255,0.55);}
-p.body{font-size:15px;color:var(--mid);line-height:1.78;margin-bottom:14px;}
-
-/* COVER (hero) ───────────────────────────────────────────────────────────── */
-.cover{background:var(--navy);padding:96px 0 76px;}
-.cover .mod-stage{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--arm);background:rgba(91,143,123,0.1);border:1px solid var(--arm-b);padding:5px 12px;border-radius:2px;margin-right:6px;margin-bottom:16px;}
-.cover .mod-stage.gold{color:var(--gold);background:var(--gold-l);border-color:rgba(196,138,24,0.3);}
-.cover .mod-stage.blue{color:var(--blue);background:var(--blue-l);border-color:rgba(90,157,224,0.3);}
-.cover .cta-row{margin-top:36px;padding-top:24px;border-top:1px solid var(--arm-b);display:flex;gap:10px;flex-wrap:wrap;}
-
-/* CARDS & CALLOUTS ───────────────────────────────────────────────────────── */
-.card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:26px 28px;margin-bottom:14px;}
-.card h4,.card h3{margin-bottom:8px;}
-.card p{font-size:14px;color:var(--mid);line-height:1.7;}
-.card-feature{background:linear-gradient(180deg,var(--arm-l) 0%,var(--white) 100%);border-color:var(--arm-b);}
-
-.cg{background:var(--arm-l);border-left:4px solid var(--arm);border-radius:0 3px 3px 0;padding:20px 24px;margin:18px 0;}
-.cg p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);line-height:1.7;}
-.cg p strong{font-style:normal;color:var(--text);font-weight:600;}
-.cgo{background:var(--gold-l);border-left:4px solid var(--gold);border-radius:0 3px 3px 0;padding:20px 24px;margin:18px 0;}
-.cgo p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);line-height:1.7;}
-.cgo p strong{font-style:normal;color:var(--text);font-weight:600;}
-.cb{background:var(--blue-l);border-left:4px solid var(--blue);border-radius:0 3px 3px 0;padding:20px 24px;margin:18px 0;}
-.cb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);line-height:1.7;}
-.cb p strong{font-style:normal;color:var(--text);font-weight:600;}
-
-/* GRIDS ──────────────────────────────────────────────────────────────────── */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:24px 0;}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:24px 0;}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin:24px 0;}
-
-/* TUNNEL ─────────────────────────────────────────────────────────────────── */
-.tunnel{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:32px 28px;margin:24px 0;}
-.tunnel-row{display:grid;grid-template-columns:160px 24px 1fr;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border2);}
-.tunnel-row:last-child{border-bottom:none;}
-.tunnel-stage{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text);font-weight:600;}
-.tunnel-arrow{color:var(--arm);font-size:18px;font-weight:900;text-align:center;}
-.tunnel-desc{font-size:13px;color:var(--mid);line-height:1.65;}
-.tunnel-desc em{font-family:'Cormorant Garamond',serif;font-style:italic;}
-
-/* SHIFT BLOCK ────────────────────────────────────────────────────────────── */
-.shift{background:var(--dark);border-radius:3px;padding:36px 38px;margin:28px 0;}
-.shift-h{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--arm);margin-bottom:6px;}
-.shift h3{color:rgba(255,255,255,0.95);font-size:24px;margin-bottom:24px;}
-.shift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:20px;}
-.shift-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:22px 20px;border-radius:2px;}
-.shift-letter{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--arm);line-height:1;margin-bottom:8px;}
-.shift-name{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:8px;}
-.shift-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.55;}
-
-/* C³ PILLAR STRIP ────────────────────────────────────────────────────────── */
-.pillar-strip{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr;gap:6px;margin:28px 0;align-items:stretch;}
-.pillar-block{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:22px 22px 24px;}
-.pillar-block.s{border-top:3px solid var(--arm);}
-.pillar-block.c{border-top:3px solid var(--gold);}
-.pillar-block.a{border-top:3px solid var(--blue);}
-.pillar-label{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;}
-.pillar-label.s{color:var(--arm-2);}
-.pillar-label.c{color:var(--gold);}
-.pillar-label.a{color:var(--blue);}
-.pillar-name{font-weight:800;font-size:18px;color:var(--text);margin-bottom:5px;}
-.pillar-desc{font-size:13px;color:var(--mid);line-height:1.6;}
-.pillar-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:22px;font-weight:900;}
-
-/* TOC (modules) ──────────────────────────────────────────────────────────── */
-.toc-grid{display:grid;grid-template-columns:1fr;gap:3px;margin:24px 0;}
-.toc-item{display:grid;grid-template-columns:62px 1fr 100px;background:var(--white);border:1px solid var(--border2);border-radius:3px;text-decoration:none;transition:border 0.15s,transform 0.15s;}
-.toc-item:hover{border-color:var(--arm);transform:translateX(2px);}
-.toc-n{background:var(--dark);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--arm);opacity:0.75;}
-.toc-c{padding:16px 22px;}
-.toc-tag{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--arm-2);margin-bottom:3px;}
-.toc-tag.gold{color:var(--gold);}
-.toc-tag.blue{color:var(--blue);}
-.toc-title{font-weight:700;font-size:15px;color:var(--text);}
-.toc-meta{display:flex;align-items:center;justify-content:center;background:var(--off);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
-
-/* PHASE ROWS (group modules into Centre/Clarify/Choose) ────────────────── */
-.phase-row{display:flex;align-items:center;gap:14px;margin:32px 0 14px;padding-bottom:12px;border-bottom:1px solid var(--border2);}
-.phase-row .phase-bar{width:32px;height:2px;border-radius:1px;flex-shrink:0;}
-.phase-row.s .phase-bar{background:var(--arm);}
-.phase-row.c .phase-bar{background:var(--gold);}
-.phase-row.a .phase-bar{background:var(--blue);}
-.phase-row .phase-label{font-size:10px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;}
-.phase-row.s .phase-label{color:var(--arm-2);}
-.phase-row.c .phase-label{color:var(--gold);}
-.phase-row.a .phase-label{color:var(--blue);}
-.phase-row .phase-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--mid);}
-
-/* PATHWAY CARDS ──────────────────────────────────────────────────────────── */
-.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:18px 0;}
-.path-grid-2{grid-template-columns:repeat(2,1fr);}
-.path-grid-1{grid-template-columns:1fr;}
-.path-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:24px 24px 22px;text-decoration:none;display:flex;flex-direction:column;}
-.path-card:hover{border-color:var(--arm);}
-.path-card .p-tag{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--arm-2);margin-bottom:8px;}
-.path-card h3{font-size:17px;margin-bottom:6px;}
-.path-card p{font-size:13px;color:var(--mid);line-height:1.6;flex-grow:1;}
-.path-card .modes{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap;}
-.path-card .mode{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--arm-l);color:var(--arm-2);}
-.path-feature{background:linear-gradient(180deg,var(--arm-l) 0%,var(--white) 100%);border-color:var(--arm-b);position:relative;}
-.path-feature::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--arm);}
-.path-feature .p-tag{color:var(--arm);}
-
-/* OUTCOME PANEL ──────────────────────────────────────────────────────────── */
-.outcome{background:var(--arm-l);border:1px solid var(--arm-b);border-radius:3px;padding:24px 28px;margin:22px 0;}
-.outcome .o-tag{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--arm-2);margin-bottom:8px;}
-.outcome p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text);line-height:1.6;}
-
-/* BUTTONS ───────────────────────────────────────────────────────────────── */
-.btn-p{background:var(--arm);color:var(--white);padding:13px 30px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background 0.15s;}
-.btn-p:hover{background:var(--arm-2);}
-.btn-s{background:transparent;color:var(--mid);padding:12px 28px;border-radius:50px;border:1px solid var(--border2);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:border-color 0.15s,color 0.15s;}
-.btn-s:hover{border-color:var(--arm);color:var(--arm-2);}
-.btn-gh{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);padding:11px 24px;border-radius:50px;border:1px solid rgba(255,255,255,0.14);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;}
-.btn-gh:hover{color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.3);}
-
-/* STATEMENT (the problem zone) ───────────────────────────────────────────── */
-.statement{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:48px 52px;margin:24px 0;position:relative;}
-.statement::before{content:"";display:block;width:40px;height:2px;background:var(--arm);margin-bottom:18px;}
-.statement p{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--mid);line-height:1.45;font-weight:400;}
-.statement p strong{font-weight:600;color:var(--text);font-style:normal;}
-.statement p em{font-style:italic;color:var(--arm-2);}
-
-/* ANCHORING LINES ────────────────────────────────────────────────────────── */
-.anchoring{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:28px 32px;margin:24px 0;}
-.anchoring-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-.anchoring ul{list-style:none;padding:0;margin:0;}
-.anchoring li{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mid);padding:8px 0;border-bottom:1px solid var(--border2);line-height:1.5;}
-.anchoring li:last-child{border-bottom:none;}
-.anchoring li.brand{color:var(--arm-2);font-weight:600;}
-.anchoring li.feet{color:var(--text);font-weight:600;}
-
-/* CLOSING ───────────────────────────────────────────────────────────────── */
-.closing{background:var(--navy);padding:80px 0;text-align:center;}
-.closing-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--arm);margin-bottom:16px;}
-.closing-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;color:rgba(255,255,255,0.92);line-height:1.3;max-width:680px;margin:0 auto 12px;}
-.closing-quote em{color:var(--arm);}
-.closing-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(255,255,255,0.4);margin-bottom:32px;}
-.closing-cta-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
-.closing-meta{font-size:10px;color:rgba(255,255,255,0.25);margin-top:36px;letter-spacing:0.16em;text-transform:uppercase;}
-
-/* TAGS ──────────────────────────────────────────────────────────────────── */
-.tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-.tag{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 9px;border-radius:2px;background:var(--arm-l);color:var(--arm-2);}
-.tag.gold{background:var(--gold-l);color:var(--gold);}
-.tag.blue{background:var(--blue-l);color:var(--blue);}
-
-/* SITE FOOTER ───────────────────────────────────────────────────────────── */
-.site-footer{background:var(--navy);padding:48px 0 36px;border-top:1px solid rgba(255,255,255,0.06);}
-.site-footer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
-.site-footer .ft-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:rgba(255,255,255,0.92);margin-bottom:6px;}
-.site-footer .ft-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
-.site-footer .ft-meta a{color:var(--arm);text-decoration:none;}
-.site-footer .ft-tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--arm);font-size:13px;margin-top:8px;}
-.site-footer .ft-arms-label{font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:10px;}
-.site-footer .ft-arms{font-size:11px;color:rgba(255,255,255,0.6);line-height:1.9;}
-.site-footer .ft-arms a{color:rgba(255,255,255,0.6);text-decoration:none;border-bottom:1px solid transparent;transition:color 0.15s,border-color 0.15s;}
-.site-footer .ft-arms a:hover{color:#fff;border-bottom-color:rgba(255,255,255,0.4);}
-.site-footer .ft-arms .current{color:var(--arm);}
-
-/* HOMEPAGE-SPECIFIC ─────────────────────────────────────────────────────── */
-.arms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin:24px 0;}
-.arm-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:24px 28px;text-decoration:none;display:flex;flex-direction:column;position:relative;transition:border 0.15s,transform 0.15s;}
-.arm-card:hover{transform:translateY(-2px);}
-.arm-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0;background:var(--arm-color,var(--arm));}
-.arm-card .a-tag{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--arm-color,var(--arm));margin-bottom:8px;margin-top:6px;}
-.arm-card h3{font-size:18px;margin-bottom:6px;color:var(--text);}
-.arm-card p{font-size:13px;color:var(--mid);line-height:1.6;flex-grow:1;}
-.arm-card .a-cta{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--arm-color,var(--arm));margin-top:14px;}
-
-/* Arm-card hue tokens — used on homepage and footer */
-.arm-card[data-arm="health"]         { --arm-color: #5B8F7B; }
-.arm-card[data-arm="elite"]          { --arm-color: #C9874E; }
-.arm-card[data-arm="corporate"]      { --arm-color: #6B8AA8; }
-.arm-card[data-arm="law"]            { --arm-color: #434F5B; }
-.arm-card[data-arm="women"]          { --arm-color: #C28699; }
-.arm-card[data-arm="neurodiversity"] { --arm-color: #8B7BA8; }
-.arm-card[data-arm="family"]         { --arm-color: #B68A6F; }
-.arm-card[data-arm="consulting"]     { --arm-color: #6FA0A4; }
-
-/* Triptych entries (homepage three-pillar) */
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:24px 0;}
-.triptych-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:28px 28px 26px;text-decoration:none;display:flex;flex-direction:column;}
-.triptych-card:hover{border-color:var(--arm);}
-.triptych-q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--arm);margin-bottom:8px;}
-.triptych-card h3{font-size:22px;margin-bottom:8px;}
-.triptych-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--mid);margin-bottom:10px;}
-.triptych-card p{font-size:13px;color:var(--mid);line-height:1.7;}
-.triptych-card .arrow{margin-top:14px;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--arm-2);}
-
-/* C³ LOOP CARD (homepage hero right) ───────────────────────────────────── */
-.loop-card{background:var(--white);border:1px solid var(--border2);border-radius:6px;padding:32px 36px 36px;max-width:480px;margin:0 auto;}
-.loop-card-h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;}
-.loop-card-h .cm{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500;color:var(--text);line-height:1;letter-spacing:-0.02em;}
-.loop-card-h .cm sup{font-size:0.42em;vertical-align:super;font-weight:500;}
-.loop-card-h .lt{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.32em;color:var(--muted);margin-left:4px;}
-.loop-card-rule{height:1px;background:var(--border2);margin:14px 0 8px;}
-.loop-card svg{width:100%;max-width:340px;margin:8px auto 0;display:block;aspect-ratio:1/1;}
-.loop-card-cap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--mid);text-align:center;margin-top:18px;line-height:1.55;max-width:360px;margin-left:auto;margin-right:auto;}
-.loop-card-cap strong{font-style:normal;font-weight:600;color:var(--text);}
-
-/* FORMS (enquire / assessment) ─────────────────────────────────────────── */
-.form-card{background:var(--white);border:1px solid var(--border2);border-radius:3px;padding:36px 40px;margin:18px 0;}
-.form-card label{display:block;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;margin-top:18px;}
-.form-card label:first-of-type{margin-top:0;}
-.form-card input[type="text"],
-.form-card input[type="email"],
-.form-card input[type="tel"]{
-  width:100%;border:none;border-bottom:1px solid var(--border2);
-  font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--text);
-  padding:8px 0;outline:none;background:transparent;
-}
-.form-card input:focus{border-bottom-color:var(--arm);}
-.form-card textarea{
-  width:100%;min-height:100px;
-  border:1px solid var(--border2);border-radius:3px;
-  background:var(--off);
-  font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--text);
-  padding:12px 14px;outline:none;resize:vertical;line-height:1.65;
-}
-.form-card textarea:focus{border-color:var(--arm);}
-.form-card .check-row{display:flex;align-items:flex-start;gap:10px;margin-top:14px;font-size:13px;color:var(--mid);}
-.form-card .check-row input{margin-top:3px;}
-.form-card .submit-row{margin-top:28px;padding-top:24px;border-top:1px solid var(--border2);}
-
-/* RESPONSIVE ────────────────────────────────────────────────────────────── */
-@media(max-width:920px){
-  .triptych{grid-template-columns:1fr;}
-  .arms-grid{grid-template-columns:1fr;}
-  .site-footer .wrap{grid-template-columns:1fr;}
-}
-@media(max-width:760px){
-  nav.site-nav{padding:0 20px;height:auto;flex-direction:column;align-items:flex-start;padding-top:12px;padding-bottom:12px;gap:8px;}
-  .nl{gap:10px;}
-  .wrap{padding:0 22px;}
-  .g2,.g3,.g4{grid-template-columns:1fr;}
-  .toc-item{grid-template-columns:48px 1fr;}
-  .toc-meta{display:none;}
-  .pillar-strip{grid-template-columns:1fr;}
-  .pillar-arrow{display:none;}
-  .shift-grid{grid-template-columns:1fr 1fr;}
-  .tunnel-row{grid-template-columns:1fr;gap:4px;}
-  .tunnel-arrow{display:none;}
-  .path-grid,.path-grid-2{grid-template-columns:1fr;}
-  .statement{padding:32px 28px;}
-  .statement p{font-size:18px;}
-  .closing-quote{font-size:24px;}
-  .form-card{padding:24px 22px;}
-}
-
-
-/* ════════════════════════════════════════════════════════════════
-   MOBILE FIXES
-   ════════════════════════════════════════════════════════════════ */
-
-/* Make dropdown trigger feel tappable */
-.nl .dropdown-trigger{cursor:pointer;user-select:none;}
-
-/* Dropdown panel: open via .is-open class (set by JS on tap) OR hover (desktop) */
-.nl .dropdown.is-open .dropdown-panel,
-.nl .dropdown:hover .dropdown-panel,
-.nl .dropdown:focus-within .dropdown-panel{display:block;}
-
-/* iOS form input fix — prevents auto-zoom when tapping a field (16px+ does this) */
-.form-card input[type="text"],
-.form-card input[type="email"],
-.form-card input[type="tel"],
-.form-card textarea{
-  font-size:16px;
-}
-
-@media(max-width:760px){
-  /* Nav: shorter, tighter, scrolls horizontally if needed */
-  nav.site-nav{
-    padding:10px 16px;
-    height:auto;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:8px;
-  }
-  nav.site-nav .nl{
-    width:100%;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    flex-wrap:nowrap;
-    padding-bottom:4px;
-    gap:12px;
-  }
-  nav.site-nav .nl > a,
-  nav.site-nav .nl > .dropdown{
-    flex-shrink:0;
-  }
-  nav.site-nav .nl a.cta{padding:6px 14px;}
-
-  /* Dropdown panel: full-width drawer-style on mobile */
-  .nl .dropdown-panel{
-    position:fixed;
-    top:auto;
-    left:8px;
-    right:8px;
-    margin-top:6px;
-    min-width:0;
-    max-height:65vh;
-    overflow-y:auto;
-    box-shadow:0 18px 40px rgba(0,0,0,0.55);
-  }
-  .nl .dropdown-panel a{
-    padding:12px 18px;
-    font-size:11px;
-  }
-  .nl .dropdown-panel a.sub{padding-left:34px;font-size:10px;}
-
-  /* Hero size — readable on small screens */
-  h1, h2{font-size:32px;line-height:1.05;}
-
-  /* Cover padding tighter on mobile */
-  .cover{padding:60px 0 50px;}
-
-  /* Make CTA rows wrap cleanly */
-  .cover .cta-row,
-  .closing-cta-row{flex-wrap:wrap;}
-  .cover .cta-row a,
-  .closing-cta-row a{flex:1 1 calc(50% - 5px);text-align:center;min-width:140px;}
-
-  /* Triptych and arms-grid stack on mobile */
-  .triptych,
-  .arms-grid{grid-template-columns:1fr;}
-
-  /* Store cards: price/button row stays clean */
-  .store-card .price-row{flex-wrap:wrap;}
-  .store-card .price{flex:1 1 100%;}
-  .store-card .buy{flex:0 0 auto;margin-left:auto;}
-
-  /* Section padding — tighter on mobile */
-  section{padding:48px 0;}
-
-  /* Form card padding */
-  .form-card{padding:24px 18px;}
-
-  /* Reduce huge font sizes on cover */
-  h1, h2, .h1, .h2{font-size:28px !important;}
-  .closing-quote{font-size:22px;line-height:1.3;}
-  .tagline{font-size:16px;}
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-  /* EF™ Corporate — arm hue tokens */
-  :root{
-    --arm:        #6B8AA8;
-    --arm-2:      #4d6b88;
-    --arm-l:      rgba(107,138,168,0.10);
-    --arm-b:      rgba(107,138,168,0.30);
-    --arm-tint:   rgba(107,138,168,0.045);
-    --off:        #f4f6f9;
-    --border2:    #d4dce5;
-  }
-</style>
-<style id="designer-pass">
-/* ════════════════════════════════════════════════════════════════
-   SENIOR DESIGNER PASS — selective tightening, not crushing.
-   ════════════════════════════════════════════════════════════════ */
-
-/* 1. C³ Loop — constrain to one viewport */
-.c3-loop-svg{
-  max-width:380px !important;
-  max-height:420px !important;
-  width:100%;
-  height:auto;
-}
-.c3-loop-section{padding:8px 0 !important;}
-.c3-loop-h{margin-bottom:8px !important;}
-.c3-loop-divider{margin:14px auto 24px !important;}
-
-/* Loop legend — horizontal 4-up on desktop, stack on mobile */
-.c3-loop-legend{
-  max-width:880px !important;
-  margin:24px auto 0 !important;
-  padding-top:20px !important;
-  display:grid !important;
-  grid-template-columns:repeat(4, 1fr) !important;
-  gap:18px !important;
-  text-align:left;
-}
-.c3-lg-item{
-  grid-template-columns:24px 1fr !important;
-  grid-template-rows:auto auto !important;
-  gap:6px 12px !important;
-  padding-bottom:0 !important;
-  border-bottom:none !important;
-}
-.c3-lg-dash{align-self:center;grid-row:1;}
-.c3-lg-name{grid-column:2;grid-row:1;font-size:11px !important;letter-spacing:0.28em !important;}
-.c3-lg-verb{grid-column:2;grid-row:2;font-size:14px !important;}
-@media(max-width:760px){
-  .c3-loop-legend{grid-template-columns:1fr 1fr !important;gap:14px !important;}
-}
-@media(max-width:480px){
-  .c3-loop-legend{grid-template-columns:1fr !important;}
-}
-
-/* 2. S.H.I.F.T.™ — elevated treatment */
-.shift{
-  background:linear-gradient(135deg, var(--text) 0%, #1f2d24 100%) !important;
-  border-radius:6px;
-  padding:48px 40px !important;
-  box-shadow:0 8px 32px rgba(15,26,20,0.18);
-}
-.shift-h{
-  color:var(--arm) !important;
-  font-size:11px !important;
-  font-weight:700 !important;
-  letter-spacing:0.32em !important;
-  margin-bottom:16px !important;
-}
-.shift h3{
-  color:#fff !important;
-  font-family:'Montserrat', sans-serif !important;
-  font-size:32px !important;
-  font-weight:800 !important;
-  letter-spacing:-0.01em !important;
-  margin-bottom:32px !important;
-}
-.shift-grid, .shift-grid-5{
-  display:grid !important;
-  grid-template-columns:repeat(5, 1fr) !important;
-  gap:12px !important;
-}
-@media(max-width:980px){
-  .shift-grid, .shift-grid-5{grid-template-columns:repeat(3, 1fr) !important;}
-}
-@media(max-width:600px){
-  .shift-grid, .shift-grid-5{grid-template-columns:repeat(2, 1fr) !important;}
-}
-.shift-item{
-  background:rgba(255,255,255,0.04) !important;
-  border:1px solid rgba(255,255,255,0.08) !important;
-  border-radius:4px;
-  padding:24px 20px !important;
-  transition:background 0.2s, border-color 0.2s;
-}
-.shift-item:hover{
-  background:rgba(255,255,255,0.06) !important;
-  border-color:rgba(255,255,255,0.14) !important;
-}
-.shift-item .shift-letter{
-  font-family:'Cormorant Garamond', serif !important;
-  font-size:64px !important;
-  font-weight:500 !important;
-  line-height:1 !important;
-  margin-bottom:14px !important;
-  letter-spacing:-0.02em !important;
-}
-/* Per-letter colour accents — each gets a distinct hue */
-.shift-item:nth-child(1) .shift-letter{color:#c28699 !important;}  /* S — rose (Centre-aligned) */
-.shift-item:nth-child(2) .shift-letter{color:#c9874e !important;}  /* H — amber */
-.shift-item:nth-child(3) .shift-letter{color:#79859b !important;}  /* F — slate-blue */
-.shift-item:nth-child(4) .shift-letter{color:#5b8f7b !important;}  /* T — sage */
-.shift-item:nth-child(5) .shift-letter{color:#8b7ba8 !important;}  /* + — plum */
-.shift-item .shift-name{
-  font-family:'Montserrat', sans-serif !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  letter-spacing:0.24em !important;
-  text-transform:uppercase !important;
-  color:rgba(255,255,255,0.92) !important;
-  margin-bottom:10px !important;
-}
-.shift-item .shift-desc{
-  font-family:'Cormorant Garamond', serif !important;
-  font-style:italic !important;
-  font-size:14px !important;
-  line-height:1.55 !important;
-  color:rgba(255,255,255,0.7) !important;
-}
-
-/* 3. Selective tightening — hero padding only */
-.cover{padding:72px 0 56px !important;}
-@media(max-width:760px){.cover{padding:48px 0 40px !important;}}
-
-/* Card internals — slightly tighter */
-.card{padding:28px 28px !important;}
-
-/* 4. Eight arms accordion (framework page) */
-.arms-accordion{
-  margin-top:24px;
-  border-top:1px solid var(--border2);
-}
-.arm-row{
-  border-bottom:1px solid var(--border2);
-  position:relative;
-}
-.arm-row summary{
-  list-style:none;
-  cursor:pointer;
-  padding:20px 0;
-  display:grid;
-  grid-template-columns:auto 1fr auto auto;
-  gap:24px;
-  align-items:center;
-  transition:padding-left 0.2s;
-}
-.arm-row summary::-webkit-details-marker{display:none;}
-.arm-row summary:hover{padding-left:8px;}
-.arm-row .arm-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  flex-shrink:0;
-}
-.arm-row .arm-name{
-  font-family:'Cormorant Garamond', serif;
-  font-size:22px;
-  font-weight:600;
-  color:var(--text);
-  letter-spacing:-0.01em;
-}
-.arm-row .arm-tag{
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  color:var(--muted);
-  text-align:right;
-}
-.arm-row .arm-toggle{
-  width:24px;
-  height:24px;
-  border:1px solid var(--border2);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-  font-weight:300;
-  color:var(--mid);
-  transition:transform 0.2s, background 0.2s;
-}
-.arm-row[open] .arm-toggle{
-  transform:rotate(45deg);
-  background:var(--arm-l);
-  border-color:var(--arm-b);
-  color:var(--arm-2);
-}
-.arm-row .arm-content{
-  padding:0 0 28px 34px;
-  max-width:720px;
-}
-.arm-row .arm-content p{
-  font-family:'Cormorant Garamond', serif;
-  font-size:17px;
-  line-height:1.65;
-  color:var(--mid);
-  margin-bottom:16px;
-}
-.arm-row .arm-content .arm-link{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--arm-2);
-  text-decoration:none;
-  border-bottom:1px solid var(--arm-2);
-  padding-bottom:2px;
-}
-.arm-row .arm-content .arm-link:hover{opacity:0.7;}
-@media(max-width:760px){
-  .arm-row summary{grid-template-columns:auto 1fr auto;gap:14px;}
-  .arm-row .arm-tag{display:none;}
-  .arm-row .arm-name{font-size:18px;}
-  .arm-row .arm-content{padding-left:24px;}
-}
-</style>
-<style id="method-grid-css">
-/* Method grid — six clickable method buttons per arm */
-.method-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:14px;
-  margin-top:32px;
-}
-@media(max-width:900px){.method-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:540px){.method-grid{grid-template-columns:1fr;}}
-
-.method-btn{
-  display:block;
-  background:var(--white);
-  border:1px solid var(--border2);
-  border-left:3px solid var(--arm);
-  border-radius:3px;
-  padding:20px 22px;
-  text-decoration:none;
-  transition:all 0.2s;
-  position:relative;
-}
-.method-btn:hover{
-  border-color:var(--arm-b);
-  border-left-color:var(--arm);
-  background:var(--arm-tint);
-  transform:translateY(-2px);
-  box-shadow:0 4px 16px rgba(15,26,20,0.06);
-}
-.method-btn .m-row{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:6px;
-}
-.method-btn .m-label{
-  font-family:'Cormorant Garamond', serif;
-  font-size:20px;
-  font-weight:600;
-  color:var(--text);
-  letter-spacing:-0.005em;
-}
-.method-btn .m-badge{
-  font-family:'Montserrat', sans-serif;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  color:var(--muted);
-  background:rgba(15,26,20,0.04);
-  padding:3px 8px;
-  border-radius:2px;
-  white-space:nowrap;
-}
-.method-btn .m-sub{
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.20em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:14px;
-}
-.method-btn .m-cta{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  color:var(--arm-2);
-}
-</style>
-<style id="ft-secondary-css">
-.ft-secondary{
-  margin-top:14px;
-  padding-top:14px;
-  border-top:1px solid rgba(15,26,20,0.06);
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(15,26,20,0.45);
-}
-.ft-secondary a{
-  color:rgba(15,26,20,0.55);
-  text-decoration:none;
-  margin-right:6px;
-}
-.ft-secondary a:hover{color:var(--text);}
-</style>
-<style id="senior-polish-css">
-/* ════════════════════════════════════════════════════════════════
-   SENIOR POLISH PASS · Final design system overrides
-   ════════════════════════════════════════════════════════════════
-   Loaded last — establishes consistent type, spacing, buttons,
-   and the credibility details that compound to "considered."
-   ════════════════════════════════════════════════════════════════ */
-
-/* ─── Type scale enforcement (display) ─────────────────────────── */
-.cover h1, .hero-headline,
-section.cover h1{
-  font-family:'Cormorant Garamond', serif;
-  font-weight:600;
-  letter-spacing:-0.018em;
-  line-height:1.02;
-}
-
-/* H2 — section headings — strict scale */
-section h2:not(.shft-h2):not(.hero-headline){
-  font-family:'Cormorant Garamond', serif;
-  font-size:48px;
-  font-weight:600;
-  line-height:1.08;
-  letter-spacing:-0.012em;
-  margin-bottom:20px;
-}
-@media(max-width:760px){
-  section h2:not(.shft-h2):not(.hero-headline){font-size:36px;}
-}
-
-/* H3 — card / sub-section — strict scale */
-section h3{
-  font-family:'Cormorant Garamond', serif;
-  font-size:22px;
-  font-weight:600;
-  line-height:1.25;
-  letter-spacing:-0.005em;
-}
-
-/* Body — Cormorant for editorial copy */
-section p, section .tagline{
-  font-family:'Cormorant Garamond', serif;
-  font-size:17px;
-  line-height:1.65;
-  font-weight:400;
-}
-
-/* Eyebrows / small caps — strict, identical site-wide */
-.eyebrow,
-.eyebrow-gold,
-.eyebrow-blue,
-.eyebrow-rose,
-.step-tag,
-.closing-eyebrow,
-.product-tag,
-.org-tag{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-}
-
-/* Step-tags get a thin coloured bar treatment unified */
-.step-tag .step-bar{
-  display:inline-block;
-  width:24px;
-  height:1.5px;
-  background:var(--arm-2, #C9874E);
-  margin-right:14px;
-  vertical-align:middle;
-}
-.step-tag{
-  display:flex;
-  align-items:center;
-  gap:0;
-  margin-bottom:14px;
-  color:#5F6B77;
-}
-.step-tag .step-phase{
-  margin-left:10px;
-  font-style:normal;
-  text-transform:none;
-  letter-spacing:0.04em;
-  font-size:11px;
-  font-weight:400;
-  color:#8B95A1;
-}
-
-/* ─── Section spacing rhythm ────────────────────────────────────── */
-section{
-  padding:96px 0;
-}
-section.alt,
-section.cover,
-section.cover.hero-split{
-  padding:96px 0;
-}
-section.closing{
-  padding:104px 0 88px;
-}
-@media(max-width:980px){
-  section, section.alt, section.cover, section.cover.hero-split{padding:72px 0;}
-  section.closing{padding:80px 0 64px;}
-}
-@media(max-width:560px){
-  section, section.alt, section.cover, section.cover.hero-split{padding:56px 0;}
-  section.closing{padding:64px 0 48px;}
-}
-
-/* Tagline (intro paragraph after h2) */
-.tagline{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:19px;
-  line-height:1.6;
-  color:var(--mid, #5F6B77);
-  font-weight:400;
-  max-width:680px;
-  margin-bottom:0;
-}
-.tagline.light{color:rgba(255,255,255,0.7);}
-
-/* ─── Button system — 3 styles only ─────────────────────────────── */
-.btn-p, .btn-gh, .btn-s, .btn-line{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  padding:14px 28px;
-  border-radius:50px;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  transition:all 0.25s ease;
-  border:1px solid transparent;
-  cursor:pointer;
-}
-/* Primary — filled accent */
-.btn-p{
-  background:var(--text, #15212D);
-  color:#FFFFFF;
-}
-.btn-p:hover{
-  background:var(--arm-2, #2a3744);
-  transform:translateY(-1px);
-}
-section.cover .btn-p,
-.cover .btn-p,
-.shft-section-new .btn-p{
-  background:transparent;
-  border-color:rgba(255,255,255,0.35);
-  color:#FFFFFF;
-}
-section.cover .btn-p:hover,
-.cover .btn-p:hover,
-.shft-section-new .btn-p:hover{
-  border-color:#FFFFFF;
-  background:rgba(255,255,255,0.06);
-}
-
-/* Ghost — outline */
-.btn-gh{
-  background:transparent;
-  border-color:rgba(15,26,20,0.22);
-  color:var(--text, #15212D);
-}
-.btn-gh:hover{
-  border-color:var(--text, #15212D);
-  transform:translateY(-1px);
-}
-.cover .btn-gh,
-section.cover .btn-gh{
-  border-color:rgba(255,255,255,0.20);
-  color:rgba(255,255,255,0.85);
-}
-.cover .btn-gh:hover,
-section.cover .btn-gh:hover{
-  border-color:rgba(255,255,255,0.5);
-  color:#FFFFFF;
-}
-
-/* Secondary (smaller) — same as ghost but compact */
-.btn-s{
-  background:transparent;
-  padding:10px 20px;
-  font-size:10px;
-  letter-spacing:0.2em;
-  border-color:rgba(15,26,20,0.18);
-  color:var(--text, #15212D);
-}
-
-/* Line — text link with underline */
-.btn-line, .arm-link{
-  background:none;
-  padding:0 0 3px;
-  border:none;
-  border-radius:0;
-  border-bottom:1px solid var(--arm-2, #C9874E);
-  color:var(--arm-2, #C9874E);
-  letter-spacing:0.18em;
-  font-size:11px;
-  display:inline-block;
-}
-.btn-line:hover, .arm-link:hover{opacity:0.7;}
-
-/* CTA rows — consistent spacing */
-.cta-row, .closing-cta-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:36px;
-}
-
-/* ─── Cards — subtle premium feel ───────────────────────────────── */
-.card{
-  background:var(--white, #FFFFFF);
-  border:1px solid rgba(15,26,20,0.06);
-  border-radius:4px;
-  padding:32px 30px;
-  transition:border-color 0.3s ease, transform 0.3s ease;
-}
-.card:hover{
-  border-color:rgba(15,26,20,0.12);
-}
-
-/* ─── Closing sections — earned final moments ───────────────────── */
-section.closing{
-  text-align:center;
-  background:var(--off, #F7F4EE);
-  border-top:1px solid rgba(15,26,20,0.06);
-}
-section.closing .closing-quote{
-  font-family:'Cormorant Garamond', serif;
-  font-size:54px;
-  font-weight:500;
-  line-height:1.05;
-  letter-spacing:-0.015em;
-  color:var(--text);
-  margin:24px 0 28px;
-}
-section.closing .closing-quote em{
-  font-style:italic;
-  font-weight:500;
-  color:var(--mid, #5F6B77);
-}
-section.closing .closing-sub{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:19px;
-  line-height:1.55;
-  color:var(--mid, #5F6B77);
-  max-width:580px;
-  margin:0 auto 36px;
-}
-section.closing .closing-meta{
-  margin-top:48px;
-  padding-top:32px;
-  border-top:1px solid rgba(15,26,20,0.08);
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:var(--muted, #8B95A1);
-  max-width:600px;
-  margin-left:auto;
-  margin-right:auto;
-}
-@media(max-width:760px){
-  section.closing .closing-quote{font-size:38px;}
-}
-
-/* ─── Footer redesign — credibility moment ──────────────────────── */
-footer.site-footer{
-  background:#15212D;
-  color:rgba(255,255,255,0.72);
-  padding:72px 0 36px;
-  margin-top:0;
-}
-footer.site-footer .wrap{
-  max-width:1240px;
-  display:grid;
-  grid-template-columns:2fr 1.4fr 1fr;
-  gap:64px;
-  align-items:start;
-}
-@media(max-width:1100px){
-  footer.site-footer .wrap{grid-template-columns:1fr 1fr;gap:48px;}
-  footer.site-footer .ft-credentials{grid-column:1/3;}
-}
-@media(max-width:760px){
-  footer.site-footer .wrap{grid-template-columns:1fr !important;gap:36px;}
-  footer.site-footer .ft-credentials{grid-column:auto;}
-}
-footer.site-footer .ft-brand{
-  font-family:'Cormorant Garamond', serif;
-  font-size:24px;
-  font-weight:600;
-  color:#FFFFFF;
-  letter-spacing:-0.005em;
-  margin-bottom:14px;
-  line-height:1.2;
-}
-footer.site-footer .ft-meta{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:14px;
-  line-height:1.7;
-  color:rgba(255,255,255,0.55);
-  margin-bottom:24px;
-}
-footer.site-footer .ft-meta a{
-  color:rgba(255,255,255,0.85);
-  text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,0.2);
-  font-style:normal;
-}
-footer.site-footer .ft-meta a:hover{
-  color:#FFFFFF;
-  border-color:rgba(255,255,255,0.5);
-}
-footer.site-footer .ft-tag{
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-top:18px;
-}
-footer.site-footer .ft-arms-label{
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-bottom:18px;
-}
-footer.site-footer .ft-arms{
-  font-family:'Cormorant Garamond', serif;
-  font-size:14px;
-  line-height:2;
-  color:rgba(255,255,255,0.72);
-}
-footer.site-footer .ft-arms a{
-  color:rgba(255,255,255,0.72);
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  transition:all 0.2s;
-  display:inline-block;
-  margin-right:6px;
-}
-footer.site-footer .ft-arms a:hover{
-  color:#FFFFFF;
-  border-bottom-color:rgba(255,255,255,0.4);
-}
-footer.site-footer .ft-arms .current{
-  color:rgba(255,255,255,0.4);
-  margin-right:6px;
-}
-footer.site-footer .ft-secondary{
-  margin-top:24px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,0.08);
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-}
-footer.site-footer .ft-secondary a{
-  color:rgba(255,255,255,0.65);
-  text-decoration:none;
-  margin-right:14px;
-  display:inline-block;
-  margin-bottom:6px;
-}
-footer.site-footer .ft-secondary a:hover{
-  color:#FFFFFF;
-}
-
-/* Footer credentials column (NEW — replaces old empty column) */
-footer.site-footer .ft-credentials{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:13px;
-  line-height:1.7;
-  color:rgba(255,255,255,0.55);
-}
-footer.site-footer .ft-credentials .ft-cred-label{
-  font-family:'Montserrat', sans-serif;
-  font-style:normal;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-bottom:18px;
-  display:block;
-}
-
-/* Footer bottom strip — copyright + legal */
-footer.site-footer .ft-bottom{
-  max-width:1240px;
-  margin:64px auto 0;
-  padding:24px 48px 0;
-  border-top:1px solid rgba(255,255,255,0.08);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:24px;
-  flex-wrap:wrap;
-  font-family:'Montserrat', sans-serif;
-  font-size:10px;
-  font-weight:500;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.35);
-}
-footer.site-footer .ft-bottom a{
-  color:rgba(255,255,255,0.5);
-  text-decoration:none;
-  margin-right:18px;
-}
-footer.site-footer .ft-bottom a:hover{color:#FFFFFF;}
-
-/* ─── Tighten card grids ────────────────────────────────────────── */
-.g3{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;}
-@media(max-width:980px){.g3{grid-template-columns:repeat(2, 1fr);}}
-@media(max-width:600px){.g3{grid-template-columns:1fr;}}
-
-.g2{display:grid;grid-template-columns:repeat(2, 1fr);gap:24px;}
-@media(max-width:760px){.g2{grid-template-columns:1fr;}}
-
-/* ─── Wrap container — refine outer margins ────────────────────── */
-.wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 48px;
-}
-@media(max-width:760px){.wrap{padding:0 24px;}}
-
-/* ─── Closing CTA spacing ──────────────────────────────────────── */
-section.closing .closing-cta-row{
-  justify-content:center;
-  margin-top:40px;
-}
-
-/* ─── Hero CTA group: refine spacing ───────────────────────────── */
-.cover.hero-split .hero-cta-row{
-  margin-bottom:40px;
-}
-
-/* ─── Sticky nav refinements ────────────────────────────────────── */
-.site-nav.site-nav-dark{
-  padding:18px 48px;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  box-shadow:0 1px 0 rgba(0,0,0,0.05);
-}
-@media(max-width:760px){
-  .site-nav.site-nav-dark{padding:16px 24px;}
-}
-
-/* ─── Body element baseline ─────────────────────────────────────── */
-body{
-  font-family:'Cormorant Garamond', serif;
-  color:var(--text, #15212D);
-  background:var(--off, #F7F4EE);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
-}
-</style>
-<style id="nav-dark-css">
-/* ════════════════════════════════════════════════════════════════
-   NAV — navy bar · 6 items + Make a referral CTA
-   ════════════════════════════════════════════════════════════════ */
-.site-nav.site-nav-dark{
-  background:#15212D;
-  border-bottom:1px solid rgba(203,214,226,0.10);
-  padding:18px 48px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:32px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  backdrop-filter:none;
-  box-shadow:0 1px 0 rgba(0,0,0,0.05);
-}
-
-/* Brand block */
-.site-nav.site-nav-dark .nb-brand{
-  display:flex;
-  flex-direction:column;
-  gap:2px;
-}
-.site-nav.site-nav-dark .nb-top{
-  font-family:'Cormorant Garamond', serif;
-  font-size:21px;
-  font-weight:600;
-  color:#FFFFFF;
-  text-decoration:none;
-  letter-spacing:-0.01em;
-  line-height:1.1;
-}
-.site-nav.site-nav-dark .nb-top .tm{
-  font-size:0.45em;
-  vertical-align:super;
-  font-weight:500;
-  margin-left:1px;
-}
-.site-nav.site-nav-dark .nb-sub{
-  font-family:'Cormorant Garamond', serif;
-  font-style:italic;
-  font-size:13px;
-  color:rgba(203,214,226,0.55);
-  font-weight:400;
-}
-
-/* Nav link list */
-.site-nav.site-nav-dark .nl{
-  display:flex;
-  align-items:center;
-  gap:32px;
-  flex-wrap:wrap;
-}
-
-/* Standard nav link */
-.site-nav.site-nav-dark .nav-link{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.78);
-  text-decoration:none;
-  padding:6px 0;
-  position:relative;
-  transition:color 0.2s;
-  cursor:pointer;
-  background:transparent;
-  border:none;
-}
-.site-nav.site-nav-dark .nav-link:hover{
-  color:#FFFFFF;
-}
-.site-nav.site-nav-dark .nav-link::after{
-  content:'';
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  height:1px;
-  background:#FFFFFF;
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform 0.25s;
-}
-.site-nav.site-nav-dark .nav-link:hover::after{
-  transform:scaleX(1);
-}
-
-/* Dropdown wrapper */
-.site-nav.site-nav-dark .nav-dropdown{
-  position:relative;
-}
-.site-nav.site-nav-dark .nav-dropdown-trigger{
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-.site-nav.site-nav-dark .nav-dropdown-trigger .caret{
-  font-size:10px;
-  letter-spacing:0;
-  opacity:0.7;
-  transition:transform 0.25s;
-  display:inline-block;
-}
-.site-nav.site-nav-dark .nav-dropdown:hover .caret{
-  transform:rotate(180deg);
-}
-
-/* Dropdown panel */
-.site-nav.site-nav-dark .nav-dropdown-panel{
-  position:absolute;
-  top:100%;
-  left:50%;
-  transform:translateX(-50%) translateY(8px);
-  background:#1c2935;
-  border:1px solid rgba(255,255,255,0.10);
-  border-radius:4px;
-  padding:14px 0;
-  min-width:280px;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity 0.25s, visibility 0.25s, transform 0.25s;
-  box-shadow:0 12px 40px rgba(0,0,0,0.4);
-  z-index:1001;
-  margin-top:8px;
-}
-.site-nav.site-nav-dark .nav-dropdown:hover .nav-dropdown-panel,
-.site-nav.site-nav-dark .nav-dropdown:focus-within .nav-dropdown-panel{
-  opacity:1;
-  visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-
-/* Bridge the gap between trigger and panel — prevents flicker */
-.site-nav.site-nav-dark .nav-dropdown::before{
-  content:'';
-  position:absolute;
-  top:100%;
-  left:0;
-  right:0;
-  height:16px;
-}
-
-/* Dropdown items */
-.site-nav.site-nav-dark .nav-dd-item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:9px 22px;
-  font-family:'Cormorant Garamond', serif;
-  font-size:15px;
-  font-weight:500;
-  color:rgba(255,255,255,0.78);
-  text-decoration:none;
-  letter-spacing:0;
-  text-transform:none;
-  transition:background 0.15s, color 0.15s;
-}
-.site-nav.site-nav-dark .nav-dd-item:hover{
-  background:rgba(255,255,255,0.04);
-  color:#FFFFFF;
-}
-.site-nav.site-nav-dark .nav-dd-sub{
-  padding-left:36px;
-  font-size:13px;
-  color:rgba(255,255,255,0.55);
-}
-.site-nav.site-nav-dark .nav-dd-divider{
-  border-top:1px solid rgba(255,255,255,0.08);
-  margin-top:8px;
-  padding-top:14px;
-}
-.site-nav.site-nav-dark .dd-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  flex-shrink:0;
-}
-
-/* CTA — Make a referral */
-.site-nav.site-nav-dark .nav-cta{
-  font-family:'Montserrat', sans-serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.20em;
-  text-transform:uppercase;
-  color:#FFFFFF;
-  text-decoration:none;
-  padding:10px 22px;
-  border:1px solid rgba(255,255,255,0.4);
-  border-radius:50px;
-  transition:all 0.25s;
-  white-space:nowrap;
-}
-.site-nav.site-nav-dark .nav-cta:hover{
-  border-color:#FFFFFF;
-  background:rgba(255,255,255,0.06);
-}
-
-/* Mobile / tablet adaptations */
-@media(max-width:1080px){
-  .site-nav.site-nav-dark{
-    padding:16px 24px;
-    gap:18px;
-  }
-  .site-nav.site-nav-dark .nl{gap:20px;}
-  .site-nav.site-nav-dark .nav-link{
-    font-size:10px;
-    letter-spacing:0.22em;
-  }
-  .site-nav.site-nav-dark .nav-cta{
-    font-size:10px;
-    padding:8px 16px;
-  }
-}
-@media(max-width:880px){
-  .site-nav.site-nav-dark{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:16px;
-  }
-  .site-nav.site-nav-dark .nl{
-    width:100%;
-    justify-content:flex-start;
-    gap:18px;
-  }
-  /* Mobile: dropdown panel sits below in-flow rather than absolute */
-  .site-nav.site-nav-dark .nav-dropdown-panel{
-    position:static;
-    transform:none;
-    opacity:1;
-    visibility:visible;
-    display:none;
-    box-shadow:none;
-    margin-top:6px;
-    background:rgba(255,255,255,0.03);
-    border-color:rgba(255,255,255,0.08);
-  }
-  .site-nav.site-nav-dark .nav-dropdown:hover .nav-dropdown-panel,
-  .site-nav.site-nav-dark .nav-dropdown:focus-within .nav-dropdown-panel{
-    transform:none;
-  }
-  /* On mobile, hover doesn't really work — keep dropdown visible always */
-  .site-nav.site-nav-dark .nav-dropdown:hover .nav-dropdown-panel{display:block;}
-}
-@media(max-width:560px){
-  .site-nav.site-nav-dark .nl{
-    gap:14px;
-  }
-  /* Hide subtitle below 560px */
-  .site-nav.site-nav-dark .nb-sub{display:none;}
-}
-
-/* Hide any remaining old nav patterns */
-.site-nav.site-nav-dark .dropdown:not(.nav-dropdown),
-.site-nav.site-nav-dark .cta:not(.nav-cta){display:none;}
-</style>
-<style id="callout-restyle">
-/* ════════════════════════════════════════════════════════════════
-   CALLOUT BOXES — restyled (editorial pull-quote, not sticker)
-   Loaded last in cascade so it overrides earlier .cgo / .statement rules.
-   ════════════════════════════════════════════════════════════════ */
-
-.cgo, .statement{
-  background:transparent !important;
-  border:none !important;
-  border-radius:0 !important;
-  border-left:2px solid rgba(75,103,127,0.30) !important;
-  padding:6px 0 6px 28px !important;
-  margin:32px 0 !important;
-  position:relative;
-}
-
-.cgo p, .statement p{
-  font-family:'Cormorant Garamond', serif !important;
-  font-style:italic !important;
-  font-size:18px !important;
-  line-height:1.65 !important;
-  color:rgba(15,26,20,0.65) !important;
-  margin:0 !important;
-  font-weight:400 !important;
-  max-width:780px;
-}
-
-.cgo p strong, .statement p strong{
-  color:var(--text, #15212D) !important;
-  font-weight:600 !important;
-  font-style:normal !important;
-}
-
-.cgo p em, .statement p em{
-  color:rgba(15,26,20,0.55) !important;
-  font-style:italic !important;
-  font-weight:400 !important;
-}
-
-.cgo p a, .statement p a{
-  color:rgba(75,103,127,0.85) !important;
-  border-bottom:1px solid rgba(75,103,127,0.30) !important;
-  text-decoration:none !important;
-  transition:color 0.2s, border-color 0.2s;
-}
-.cgo p a:hover, .statement p a:hover{
-  color:var(--text, #15212D) !important;
-  border-bottom-color:var(--text, #15212D) !important;
-}
-
-/* On dark / hero sections — invert */
-.cover .cgo, .cover .statement,
-section.cover .cgo, section.cover .statement{
-  border-left-color:rgba(255,255,255,0.30) !important;
-}
-.cover .cgo p, .cover .statement p,
-section.cover .cgo p, section.cover .statement p{
-  color:rgba(255,255,255,0.70) !important;
-}
-.cover .cgo p strong, .cover .statement p strong,
-section.cover .cgo p strong, section.cover .statement p strong{
-  color:#FFFFFF !important;
-}
-
-@media(max-width:760px){
-  .cgo, .statement{
-    padding:4px 0 4px 20px !important;
-    margin:24px 0 !important;
-  }
-  .cgo p, .statement p{
-    font-size:16px !important;
-  }
-}
-</style>
-<style id="hero-h1-clean-css">
-/* ════════════════════════════════════════════════════════════════
-   HERO H1 — "Then performance." upright + lighter
-   Replaces the italic with an upright, lower-weight, muted variant.
-   Visual hierarchy preserved (Human first leads), italic removed.
-   ════════════════════════════════════════════════════════════════ */
-
-.hero-h1-clean .hero-h1-then{
-  display:block;
-  font-style:normal;        /* upright, NOT italic */
-  font-weight:400;          /* lighter than the 600 used for "Human first." */
-  color:#7d8794;            /* same muted blue-grey as before */
-  letter-spacing:-0.01em;
-  line-height:1.0;
-}
-
-/* For the framework hero specifically — slightly larger context */
-.hero-headline.hero-h1-clean .hero-h1-then{
-  font-weight:400;
-}
-
-/* On dark cover backgrounds, the colour stays muted */
-.cover .hero-h1-clean .hero-h1-then,
-section.cover .hero-h1-clean .hero-h1-then{
-  color:rgba(255,255,255,0.45);
-}
-</style>
-<style id="subtitle-deitalic-css">
-/* ════════════════════════════════════════════════════════════════
-   SUBTITLE PARAGRAPHS — de-italicised site-wide
-   The introductory subtitle/paragraph patterns now read upright.
-   Editorial italics (h2 emphasis, inline quotes, dropdown summaries)
-   are preserved separately.
-   ════════════════════════════════════════════════════════════════ */
-
-.tagline,
-.hero-body,
-.shft-body,
-.arms-body,
-.arm-desc-dark,
-.arm-desc,
-.org-context,
-.partner-meta,
-.card-desc{
-  font-style:normal !important;
-}
-
-/* Slight tone calibration to compensate for visual weight loss
-   when italic is removed — the upright text reads slightly heavier
-   on the page, so we soften the colour very slightly to preserve
-   the original visual hierarchy. */
-.tagline{
-  color:var(--mid, #5F6B77);
-}
-.tagline.light{
-  color:rgba(255,255,255,0.62);
-}
-.hero-body{
-  color:rgba(255,255,255,0.65);
-}
-
-/* Make sure inline italic spans inside subtitle paragraphs still
-   work — i.e. if the writer DID use <em>...</em> for emphasis
-   inside a subtitle, that <em> stays italic. The rule above only
-   removes the wholesale paragraph-level italic. */
-.tagline em,
-.hero-body em,
-.shft-body em,
-.arms-body em,
-.arm-desc em,
-.arm-desc-dark em{
-  font-style:italic !important;
-}
-</style>
-<style id="nav-defensive-css">
-
-/* ═══ NAV — defensive desktop visibility ═══════════════════════════ */
-@media(min-width:961px){
-  nav.site-nav{
-    display:flex !important;
-    align-items:center !important;
-    justify-content:space-between !important;
-    flex-wrap:nowrap !important;
-    overflow:visible !important;
-  }
-  nav.site-nav .nb-brand{
-    flex-shrink:0 !important;
-    min-width:0 !important;
-    max-width:38% !important;
-  }
-  nav.site-nav .nb-brand .nb-top{
-    white-space:nowrap !important;
-    overflow:hidden !important;
-    text-overflow:ellipsis !important;
-  }
-  nav.site-nav .nb-brand .nb-sub{
-    white-space:nowrap !important;
-    overflow:hidden !important;
-    text-overflow:ellipsis !important;
-  }
-  nav.site-nav .nl{
-    display:flex !important;
-    flex-shrink:1 !important;
-    flex-wrap:nowrap !important;
-    overflow:visible !important;
-  }
-}
-
-/* At medium widths (760-960px), allow nav links to wrap below brand */
-@media(min-width:761px) and (max-width:960px){
-  nav.site-nav{
-    flex-wrap:wrap !important;
-  }
-  nav.site-nav .nl{
-    width:100% !important;
-    margin-top:8px !important;
-    flex-wrap:wrap !important;
-    gap:14px !important;
-  }
-}
-</style>
-<style id="nav-deck-accent">
-
-/* Nav link accent — subtle distinction for The Deck */
-.nav-link-accent{
-  position:relative;
-}
-.nav-link-accent::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-4px;
-  transform:translateX(-50%);
-  width:14px;
-  height:1px;
-  background:rgba(255,255,255,0.4);
-  transition:background 0.2s,width 0.2s;
-}
-.nav-link-accent:hover::before{
-  background:rgba(255,255,255,0.85);
-  width:20px;
-}
-</style>
-<style id="nav-partners-accent">
-
-/* Nav link partners — subtle distinction */
-.nav-link-partners{
-  position:relative;
-}
-.nav-link-partners::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-4px;
-  transform:translateX(-50%);
-  width:14px;
-  height:1px;
-  background:rgba(91,143,123,0.6);  /* Health green tint — partnership signal */
-  transition:background 0.2s,width 0.2s;
-}
-.nav-link-partners:hover::before{
-  background:rgba(91,143,123,1);
-  width:20px;
+:root {
+  --arm: #6B8AA8;
+  --arm-light: #8FAACC;
+  --arm-dim: #4f6a82;
+  --arm-rgb: 107,138,168;
+  --pale-bg: #D2DCE7;
 }
 </style>
 </head>
 <body>
-
 <nav id="site-nav"></nav>
 
-<!-- ════════════════ STEP 01 — THE HOOK ════════════════ -->
-<section class="cover">
-<div class="wrap">
-  <div class="tag-row" style="margin-bottom:18px;">
-    <span class="mod-stage ">EF™ Corporate · Step 01 / 08</span>
-    <span class="mod-stage gold">Leaders · Teams · Organisations</span>
-    <span class="mod-stage blue">Workshops · Cohorts · Embedded</span>
-  </div>
-  <span class="eyebrow">EF™ Corporate · Dr Sarah Anticich</span>
-  <h1 class="light hero-h1-clean">Human first.<br><span class="hero-h1-then">Then performance.</span></h1>
-  <p class="tagline light" style="max-width:640px;">The Executive Frame™ for organisations — leadership development, team programs, and culture work for performance that compounds rather than depletes.</p>
-  <div class="cta-row">
-    <a href="#modules" class="btn-p">The modules</a>
-    <a href="#model" class="btn-gh">The framework</a>
-    <a href="#begin" class="btn-gh">Begin</a>
-  </div>
-</div>
-</section>
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
 
-<!-- ════════════════ STEP 02 — THE PROBLEM ════════════════ -->
-<section id="problem">
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>Step 02 / 08
-    <span class="step-phase">— The problem</span>
-  </div>
-  <span class="eyebrow">Performance that depletes the people producing it</span>
-  <h2>Many organisational challenges<br><em>turn out to be nervous-system challenges at scale.</em></h2>
-  <p class="tagline" style="max-width:680px;">Burnout, attrition, decision drift, and culture erosion are downstream of one upstream signal: the regulatory load on the people doing the work.</p>
+  <svg class="hero-c3loop" width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" aria-label="The C³ Loop — Centre, Clarify, Choose">
+  <!-- OUTER ORBITAL RING -->
+  <circle cx="350" cy="350" r="290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <!-- INNER ORBITAL RING -->
+  <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
 
-  <div class="statement">
-    <p>High performance and human sustainability are <strong>not in tension</strong>. The cultures that compound capacity are the ones that took regulatory load seriously enough to design around it. <em>Better architecture. Not more pressure.</em></p>
-  </div>
+  <!-- THREE ORBITAL NODES on outer ring -->
+  <!-- CENTRE node · top -->
+  <circle cx="350" cy="60" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CLARIFY node · lower-right (≈120° from top) -->
+  <circle cx="601" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
+  <!-- CHOOSE node · lower-left (≈240° from top) -->
+  <circle cx="99" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
 
-  <div class="cgo">
-    <p>This is not wellbeing programming. <strong>This tends to be organisational architecture work</strong> — diagnosing the conditions that produce sustained performance, and rebuilding the parts that quietly extract it.</p>
-  </div>
-</div>
-</section>
+  <!-- CHOOSE small triangle indicator (per brand kit) -->
+  <polygon points="588,485 600,491 588,497" fill="rgba(255,255,255,0.55)"/>
 
-<!-- ════════════════ STEP 03 — THE MODEL ════════════════ -->
-<section class="alt" id="model">
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>Step 03 / 08
-    <span class="step-phase">— The model</span>
-  </div>
-  <span class="eyebrow">Centre · Clarify · Choose</span>
-  <h2>Three moves<br><em>held in sequence.</em></h2>
-  <p class="tagline" style="max-width:680px;">Every module follows the same internal logic — the Executive Frame™. The sequence is not optional.</p>
+  <!-- TETRAHEDRON · centred, apex up -->
+  <!-- Apex at 350,180. Base centre at 350,510.
+       Three base vertices forming triangle: left, right, back.
+       Front-left visible face (light), front-right visible face (mid),
+       base receding face (shadow). Apex bright dot on top. -->
+  <g class="c3-tetrahedron">
+    <!-- Base receding edge (shadow) -->
+    <polygon points="350,180 220,510 480,510" fill="#2f4256" opacity="0.85"/>
+    <!-- Left visible face (light) -->
+    <polygon points="350,180 220,510 350,490" fill="#6B8AA8"/>
+    <!-- Right visible face (mid) -->
+    <polygon points="350,180 350,490 480,510" fill="#4f6a82"/>
+    <!-- Thin shadow at base -->
+    <ellipse cx="350" cy="515" rx="135" ry="4" fill="#121C25" opacity="0.5"/>
+    <!-- Apex highlight dot -->
+    <circle cx="350" cy="180" r="5" fill="#FFFFFF"/>
+  </g>
 
-  <div class="pillar-strip">
-    <div class="pillar-block s">
-      <div class="pillar-label s">Stage 01 · EI</div>
-      <div class="pillar-name">Centre</div>
-      <div class="pillar-desc">Stabilise the system before changing it. Leaders cannot decide clearly from a state of sustained physiological load — and neither can their teams.</div>
-    </div>
-    <div class="pillar-arrow">→</div>
-    <div class="pillar-block c">
-      <div class="pillar-label c">Stage 02 · EF</div>
-      <div class="pillar-name">Clarify</div>
-      <div class="pillar-desc">Make invisible work and unspoken load visible. Separate signal from noise. Restore the cognitive accuracy that complex decisions require.</div>
-    </div>
-    <div class="pillar-arrow">→</div>
-    <div class="pillar-block a">
-      <div class="pillar-label a">Stage 03 · SDT</div>
-      <div class="pillar-name">Choose</div>
-      <div class="pillar-desc">Decide from mission, not from whichever fire burns loudest. Translate clarity into structural decisions that compound capacity.</div>
-    </div>
+  <!-- ORBITAL LABELS · CENTRE top, CLARIFY lower-right, CHOOSE lower-left -->
+  <text x="350" y="40" text-anchor="middle"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CENTRE</text>
+  <text x="660" y="640" text-anchor="end"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CLARIFY</text>
+  <text x="40" y="640" text-anchor="start"
+        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
+        letter-spacing="10" fill="rgba(255,255,255,0.55)">CHOOSE</text>
+</svg>
+
+  <div class="spectrum-bar">
+    <div style="flex:1.2;background:#6B8AA8;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
   </div>
 
-  <div class="cg" style="margin-top:32px;">
-    <p>The order is not a preference. <strong>Centre. Clarify. Choose.</strong> Skip Centre and Clarify becomes anxious analysis. Skip Clarify and Choose becomes reactive policy.</p>
+  <div class="hero-overline">The Executive Frame™ Applied to Organisations</div>
+  <div class="hero-title">EF<span>|CORPORATE</span></div>
+  <div class="hero-subtitle">The C³ Loop for Leaders, Teams &amp; Organisations</div>
+  <div class="hero-tagline">
+    Not wellness. Not engagement surveys.<br>
+    Capacity infrastructure for sustained organisational performance.
   </div>
-</div>
-</section>
-
-<!-- ════════════════ STEP 05 — WHAT WE OFFER ════════════════ -->
-<section id="offer">
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>Step 05 / 08
-    <span class="step-phase">— What we offer</span>
+  <div class="hero-body">
+    A specialist performance architecture for leaders, teams, and organisations carrying sustained operational load. Performance without burning the people. Composure as a leadership skill, calibrated to the room.
   </div>
-  <span class="eyebrow">Engagements · scoped jointly</span>
-  <h2>For leaders, teams,<br><em>and organisations.</em></h2>
-  <p class="tagline" style="max-width:680px;">Executive Frame Corporate is delivered as workshops, cohort programs, or embedded consulting — calibrated to the demand profile of the organisation. Always with a clear handover plan.</p>
+  <div class="hero-actions">
+    <a href="#series" class="btn-primary">The C³ Corporate Series →</a>
+    <a href="#intake" class="btn-ghost">Register Interest</a>
+  </div>
 
-  <div class="g2">
-    <div class="card card-feature">
-      <div class="eyebrow" style="margin-bottom:8px;">Five-module curriculum</div>
-      <h3>Executive Frame Corporate — full programme</h3>
-      <p>Leadership Load, Team Regulation, Decision Quality, Culture & Conditions, Sustainability. The architecture of organisations that compound capacity rather than extract it.</p>
-      <a href="#modules" class="btn-p" style="margin-top:14px;align-self:flex-start;">Explore the modules</a>
-    </div>
-    <div class="card">
-      <div class="eyebrow-blue" style="margin-bottom:8px;">By engagement</div>
-      <h3>Bespoke scope</h3>
-      <p>Specific organisational problems — leadership team coherence, post-restructure stabilisation, culture diagnostic — addressed through scoped engagements. Each calibrated to the system in front of us.</p>
-      <a href="enquire.html" class="btn-s" style="margin-top:14px;align-self:flex-start;">Enquire</a>
-    </div>
+  <div class="hero-foot">
+    <div class="hero-foot-line">Center → Clarify → Choose → Repeat</div>
+    <div class="hero-foot-tag">Human first. Then performance.</div>
   </div>
 </div>
+
+<!-- ══════════ ARCHITECTURE — NAVY ══════════ -->
+<section id="architecture" class="band navy">
+  <div class="band-inner">
+    <div class="section-label">The Executive Frame™</div>
+    <div class="section-title">Three evidence bases. One biological sequence.</div>
+    <div class="section-subtitle">The Executive Frame™ is built on three converging sciences — each addressing a different layer of human performance. The C³ Loop is the operational mechanism that integrates all three into a single, repeating cycle.</div>
+
+    <div class="arch-grid">
+      <div class="arch-card">
+        <div class="arch-label">Step One · Stability</div>
+        <div class="arch-name">Center</div>
+        <div class="arch-pillar">Emotional Intelligence</div>
+        <div class="arch-desc">Emotional regulation before strategic decision-making. Decisions made from dysregulation produce dysregulation downstream. Settle the senior team before changing the system around them. The physiological substrate of sustainable leadership.</div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-label">Step Two · Clarity</div>
+        <div class="arch-name">Clarify</div>
+        <div class="arch-pillar">Executive Functioning</div>
+        <div class="arch-desc">Strategic thinking protected from reactivity. Separate the work from the conditions that make the work harder than it needs to be. Name the architectural issues. Surface the structural drivers of recurring symptoms.</div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-label">Step Three · Agency</div>
+        <div class="arch-name">Choose</div>
+        <div class="arch-pillar">Self-Determination Theory</div>
+        <div class="arch-desc">Lead from architecture, not reactivity. Build the conditions for sustained, values-aligned action across the organisation. Capacity built inside the system, not extracted from it.</div>
+      </div>
+    </div>
+
+    <div class="shft-strip">
+      <div class="shft-head">
+        <div class="shft-head-name">S.H.F.T.<sup>™</sup></div>
+        <div class="shft-head-sub">The real-time micro-intervention. 60 seconds. Anywhere.</div>
+      </div>
+      <div class="shft-steps">
+        <div class="shft-step"><span class="shft-step-letter">S</span><span class="shft-step-text">Slow — interrupt the threat response</span></div>
+        <div class="shft-step"><span class="shft-step-letter">H</span><span class="shft-step-text">Hold — physiological sigh, regulate</span></div>
+        <div class="shft-step"><span class="shft-step-letter">F</span><span class="shft-step-text">Focus — one next step</span></div>
+        <div class="shft-step"><span class="shft-step-letter">T</span><span class="shft-step-text">Time — sequence, protect choice</span></div>
+        <div class="shft-step"><span class="shft-step-letter plus">+</span><span class="shft-step-text">Plus — repair, reflect, integrate</span></div>
+      </div>
+    </div>
+
+    <div class="seq-quote">
+      <p>The sequence is non-negotiable. Center must precede Clarify because strategic decisions made from sustained dysregulation produce more dysregulation downstream. Clarify must precede Choose because organisational architecture cannot be redesigned from cognitive overwhelm. This is biology — and organisations run on the same biology as any other human work.</p>
+    </div>
+  </div>
 </section>
 
-<!-- ════════════════ MODULES (Step 5 continued) ════════════════ -->
-<section class="alt" id="modules">
-<div class="wrap">
-  <span class="eyebrow">The five modules · curriculum</span>
-  <h2>The complete sequence —<br><em>the order the system tends to need.</em></h2>
-  <p class="tagline" style="max-width:680px;">Five clinically-named modules — leadership load, team regulation, decision quality, culture, sustainability. Each grounded in research.</p>
+<!-- ══════════ C³ SERIES — PALE ══════════ -->
+<section id="series" class="band pale">
+  <div class="band-inner">
+    <div class="section-label">C³ Corporate Series · National Professional Development Programme 2026</div>
+    <div class="section-title">Six modules. The Executive Frame™ from day one.</div>
+    <div class="webinar-intro">The C³ Loop installed across leaders, teams, and organisations carrying sustained load. Six modules designed for leadership and team contexts, following the biological sequence: <strong>Center first. Then Clarify. Then Choose.</strong> Each module is standalone. Together, they build the full Loop.</div>
 
-  <div class="phase-row s">
-    <span class="phase-bar"></span>
-    <span class="phase-label">Phase 01 · Centre</span>
-    <span class="phase-name">Stabilise the system before changing it.</span>
-  </div>
-
-  <div class="toc-grid">
-    <a href="#" class="toc-item">
-      <div class="toc-n">01</div>
-      <div class="toc-c">
-        <div class="toc-tag ">Centre · Leadership</div>
-        <div class="toc-title">Leadership Load — the work senior leaders carry that no one names</div>
-      </div>
-      <div class="toc-meta">~55 min</div>
-    </a>
-    <a href="#" class="toc-item">
-      <div class="toc-n">02</div>
-      <div class="toc-c">
-        <div class="toc-tag ">Centre · Team</div>
-        <div class="toc-title">Team Regulation — teams regulate together, or fail to</div>
-      </div>
-      <div class="toc-meta">~50 min</div>
-    </a>
-  </div>
-
-  <h3 style="margin-top:32px;">The Tunnel — narrowing at organisational scale</h3>
-  <p class="body">Organisations under sustained pressure narrow in a predictable order. Naming the order is the first move toward redesigning around it.</p>
-  <div class="tunnel">
-    <div class="tunnel-row">
-      <div class="tunnel-stage">Reactivity</div>
-      <div class="tunnel-arrow">→</div>
-      <div class="tunnel-desc">Decision rhythm collapses. Strategic work is displaced by whichever fire burns loudest. <em>Leadership becomes triage.</em></div>
+    <div class="sequence-bar">
+      <div class="sb-line"></div>
+      <div class="sb-label">CENTER → CLARIFY → CHOOSE</div>
+      <div class="sb-line"></div>
     </div>
-    <div class="tunnel-row">
-      <div class="tunnel-stage">Constriction</div>
-      <div class="tunnel-arrow">→</div>
-      <div class="tunnel-desc">Information narrows. Dissent dries up. Surface-level metrics replace honest signal. <em>The system stops telling the truth to itself.</em></div>
-    </div>
-    <div class="tunnel-row">
-      <div class="tunnel-stage">Extraction</div>
-      <div class="tunnel-arrow">→</div>
-      <div class="tunnel-desc">Performance is sustained by individual heroism, not architecture. People burn out, then attrite. <em>Capacity depletes faster than it rebuilds.</em></div>
-    </div>
-  </div>
 
-  <div class="phase-row c">
-    <span class="phase-bar"></span>
-    <span class="phase-label">Phase 02 · Clarify</span>
-    <span class="phase-name">See the system clearly. Restore decision quality.</span>
-  </div>
-
-  <div class="toc-grid">
-    <a href="#" class="toc-item">
-      <div class="toc-n">03</div>
-      <div class="toc-c">
-        <div class="toc-tag gold">Clarify · Decision</div>
-        <div class="toc-title">Decision Quality — when the system is unsettled, the decisions degrade</div>
+    <div class="webinar-grid">
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 1 · CENTER</div>
+        <div class="webinar-title">Autonomic State Drives Leadership</div>
+        <div class="webinar-c3">The Neuroscience of Performance at Scale</div>
+        <div class="webinar-quote">"Your system has already made the call."</div>
+        <div class="webinar-desc">Your autonomic nervous system shapes every decision, every interaction, every meeting. This module maps the biology of leadership — threat-reward axis, prefrontal access under load, and the C³ architecture that turns neuroscience into a daily operating system for senior work.</div>
       </div>
-      <div class="toc-meta">~50 min</div>
-    </a>
-    <a href="#" class="toc-item">
-      <div class="toc-n">04</div>
-      <div class="toc-c">
-        <div class="toc-tag gold">Clarify · Culture</div>
-        <div class="toc-title">Culture & Conditions — the architecture, not the slogan</div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 2 · CENTER</div>
+        <div class="webinar-title">Regulation Before Response</div>
+        <div class="webinar-c3">S.H.F.T.™ Protocol &amp; Leadership Regulation</div>
+        <div class="webinar-quote">"Delay the reaction. Protect the outcome."</div>
+        <div class="webinar-desc">S.H.F.T.™ installed for senior environments. The physiological sigh — the fastest evidence-based method for downregulating sympathetic activation. Real-time tools for board meetings, hard conversations, the email that derails an afternoon.</div>
       </div>
-      <div class="toc-meta">~55 min</div>
-    </a>
-  </div>
-
-  <div class="phase-row a">
-    <span class="phase-bar"></span>
-    <span class="phase-label">Phase 03 · Choose</span>
-    <span class="phase-name">Design for capacity to compound, not deplete.</span>
-  </div>
-
-  <div class="toc-grid">
-    <a href="#" class="toc-item">
-      <div class="toc-n">05</div>
-      <div class="toc-c">
-        <div class="toc-tag blue">Choose · Sustainability</div>
-        <div class="toc-title">Sustainability — burnout as a recurring system feature is solvable</div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 3 · CLARIFY</div>
+        <div class="webinar-title">Cognition Under Load</div>
+        <div class="webinar-c3">Executive Functioning &amp; Strategic Decision Architecture</div>
+        <div class="webinar-quote">"Capacity drops. Confidence doesn't."</div>
+        <div class="webinar-desc">Working memory, inhibition, cognitive flexibility under organisational load. Strategic clarity under fatigue. Decision architecture for complex matters. The cognitive infrastructure for organisational complexity that protects decision quality when capacity compresses.</div>
       </div>
-      <div class="toc-meta">~50 min</div>
-    </a>
-  </div>
-
-  <div class="anchoring" style="margin-top:36px;">
-    <div class="anchoring-eyebrow">— Anchoring lines · come back to these</div>
-    <ul>
-      <li class="brand">High performance and human sustainability are not in tension.</li>
-      <li class="feet">Better architecture. Not more pressure.</li>
-      <li class="">Many organisational challenges turn out to be nervous-system challenges at scale.</li>
-      <li class="">Human first. Then performance.</li>
-      <li class="">Capacity compounds in the right architecture.</li>
-      <li class="">Culture is the architecture, not the slogan.</li>
-    </ul>
-  </div>
-</div>
-</section>
-
-<!-- ════════════════ STEPS 06 + 07 — PATHWAYS ════════════════ -->
-<section id="pathways">
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>Step 06 / 08
-    <span class="step-phase">— Workshops and keynotes</span>
-  </div>
-  <span class="eyebrow">The light-touch path · single sessions</span>
-  <h2>An entry point<br><em>or a single intervention.</em></h2>
-  <div class="g2 path-grid-1" style="grid-template-columns:1fr;">
-    <a href="#" class="path-card path-feature">
-      <div class="p-tag">D.01 · Workshops · keynotes</div>
-      <h3>Workshops & keynotes</h3>
-      <p>Half-day, full-day, or conference-format sessions on the Executive Frame™ in organisational life. A way for organisations to test the framework before committing to deeper work.</p>
-      <div class="modes"><span class="mode">In-person</span><span class="mode">Hybrid</span><span class="mode">Conference</span></div>
-    </a>
-  </div>
-
-
-  <div class="step-tag" style="margin-top:48px;">
-    <span class="step-bar"></span>Step 07 / 08
-    <span class="step-phase">— Cohort and embedded engagements</span>
-  </div>
-  <span class="eyebrow">The deeper paths · sustained engagement</span>
-  <h2>Where it needs to be<br><em>more than a session.</em></h2>
-  <p class="tagline" style="max-width:680px;">The same framework, two pathways for sustained engagement. Always with a clear handover plan — capacity stays inside the organisation.</p>
-
-  <div class="path-grid path-grid-2">
-    <a href="#" class="path-card">
-      <div class="p-tag">D.02 · Cohort programs</div>
-      <h3>Leader programs</h3>
-      <p>Multi-session cohort programs for senior teams or leadership tiers. Built on S.H.I.F.T.™ and the C³ Loop. The work of leadership in the conditions you actually operate in, not the ones you wish you had.</p>
-      <div class="modes"><span class="mode">In-person</span><span class="mode">Hybrid</span><span class="mode">6–12 sessions</span></div>
-    </a>
-    <a href="#" class="path-card">
-      <div class="p-tag">D.03 · Embedded consulting</div>
-      <h3>Strategic partnerships</h3>
-      <p>Longer-term partnerships diagnosing and rebuilding organisational architecture. Quarterly or multi-year engagements. We work alongside the leadership team, not above them.</p>
-      <div class="modes"><span class="mode">On-site</span><span class="mode">Quarterly</span><span class="mode">Multi-year</span></div>
-    </a>
-  </div>
-
-  <div class="cg" style="margin-top:24px;">
-    <p>Not sure which fits? <strong>The intake helps you (and us) work out the right pathway.</strong> Five minutes, no commitment. <a href="assessment.html" style="color:var(--arm-2);font-weight:600;">Take the intake →</a></p>
-  </div>
-</div>
-</section>
-
-<!-- ════════════════ STEP 04 — THE TOOL ════════════════ -->
-<section class="alt" id="tool">
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>Step 04 / 08
-    <span class="step-phase">— The tool</span>
-  </div>
-  <span class="eyebrow">S.H.I.F.T.™ · the real-time reset</span>
-  <h2>When everything feels urgent —<br><em>run the system.</em></h2>
-  <p class="tagline" style="max-width:680px;">S.H.I.F.T.™ is the real-time reset for the moments when teams narrow under load and the room is in the Tunnel. Stop · Hold · Focus · Take Action. Four movements, under sixty seconds. Run individually or together.</p>
-
-  <div class="shift">
-    <div class="shift-h">The four movements</div>
-    <h3>S.H.I.F.T.™</h3>
-    <div class="shift-grid shift-grid-5">
-      <div class="shift-item">
-        <div class="shift-letter">S</div>
-        <div class="shift-name">Stop</div>
-        <div class="shift-desc">Notice activation. Name it. Interrupt the urgency to react.</div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 4 · CLARIFY</div>
+        <div class="webinar-title">The Tunnel Effect</div>
+        <div class="webinar-c3">Relational Neuroscience &amp; Communication Under Organisational Pressure</div>
+        <div class="webinar-quote">"When pressure narrows the brief."</div>
+        <div class="webinar-desc">When threat activation narrows leadership focus — escalation cycles, attrition spikes, the partner whose tone derails the room. This module builds the communication architecture and relational network that sustains team performance under load.</div>
       </div>
-      <div class="shift-item">
-        <div class="shift-letter">H</div>
-        <div class="shift-name">Hold</div>
-        <div class="shift-desc">Physiological Sigh. Double inhale, long exhale. Fastest voluntary vagal activation.</div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 5 · CHOOSE</div>
+        <div class="webinar-title">Agency Under Constraint</div>
+        <div class="webinar-c3">Self-Determination &amp; Sustainable Leadership Practice</div>
+        <div class="webinar-quote">"Choice is still available — just harder to access."</div>
+        <div class="webinar-desc">Autonomy within organisational systems. Competence grounded in evidence not validation. Relatedness in leadership teams. The shift from surviving senior roles to authoring them. This is the science of leadership that compounds rather than erodes.</div>
       </div>
-      <div class="shift-item">
-        <div class="shift-letter">F</div>
-        <div class="shift-name">Focus</div>
-        <div class="shift-desc">One next step. Not the whole problem. Working memory is at 2–3 items.</div>
-      </div>
-      <div class="shift-item">
-        <div class="shift-letter">T</div>
-        <div class="shift-name">Take Action</div>
-        <div class="shift-desc">Delay interpretation. Stay present. The meaning-making can wait.</div>
-      </div>
-      <div class="shift-item">
-        <div class="shift-letter">T</div>
-        <div class="shift-name">Plus</div>
-        <div class="shift-desc">When regulation returns — reflect, learn, decide. Agency lives here.</div>
+      <div class="webinar-card">
+        <div class="webinar-mod">MODULE 6 · THE FULL LOOP</div>
+        <div class="webinar-title">The C³ Performance System</div>
+        <div class="webinar-c3">Your Leadership Architecture — Installed</div>
+        <div class="webinar-quote">"Precision under pressure is a system, not a trait."</div>
+        <div class="webinar-desc">Center → Clarify → Choose → Repeat. The full C³ Loop integrated into a personal operating system for senior work. Your capacity plan built. Your tools mapped to your role, your load profile. The architecture installed.</div>
       </div>
     </div>
-    </div>
-  </div>
 
-  <div class="outcome">
-    <div class="o-tag">The principle</div>
-    <p>Performance without the people is not performance — <strong>it is extraction.</strong> S.H.I.F.T. meets the team where it actually is, then builds from there.</p>
-  </div>
-</div>
-</section>
-
-<!-- ════════════════ STEP 08 — BEGIN ════════════════ -->
-<section>
-<div class="wrap">
-  <div class="step-tag">
-    <span class="step-bar"></span>How Executive Frame Corporate works
-    <span class="step-phase">— six ways into the framework</span>
-  </div>
-  <span class="eyebrow">Six methods · one architecture</span>
-  <h2>How Executive Frame Corporate<br><em>actually runs.</em></h2>
-  <p class="tagline" style="max-width:680px;">Executive Frame Corporate applies the framework to organisational contexts — leaders, teams, and organisations carrying sustained operational pressure.</p>
-
-  <div class="method-grid">
-  <a href="store.html#elearning" class="method-btn">
-    <div class="m-row">
-      <span class="m-label">eLearning</span>
+    <div class="delivery-strip">
+      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 1–2 (Center) · Q2 2026</span></div>
+      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 3–4 (Clarify) · Q2–Q3 2026</span></div>
+      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 5–6 (Choose + Loop) · Q3 2026</span></div>
+      <div class="delivery-item"><div class="delivery-dot"></div><span>On-demand</span></div>
       
     </div>
-    <div class="m-sub">Self-paced</div>
-    <div class="m-cta">Explore →</div>
-  </a>
-  <a href="enquire.html?arm=corporate&type=workbook" class="method-btn">
-    <div class="m-row">
-      <span class="m-label">Workbook</span>
-      <span class="m-badge">Enquire</span>
-    </div>
-    <div class="m-sub">Structured reflection</div>
-    <div class="m-cta">Register interest →</div>
-  </a>
-  <a href="enquire.html?arm=corporate&type=workshop" class="method-btn">
-    <div class="m-row">
-      <span class="m-label">Workshop</span>
-      
-    </div>
-    <div class="m-sub">Shared language</div>
-    <div class="m-cta">Explore →</div>
-  </a>
-  <a href="enquire.html?arm=corporate&type=group" class="method-btn">
-    <div class="m-row">
-      <span class="m-label">Group programme</span>
-      
-    </div>
-    <div class="m-sub">Cohort delivery</div>
-    <div class="m-cta">Explore →</div>
-  </a>
-  <a href="enquire.html?arm=corporate&type=individual" class="method-btn">
-    <div class="m-row">
-      <span class="m-label">Individual</span>
-      
-    </div>
-    <div class="m-sub">One-to-one</div>
-    <div class="m-cta">Explore →</div>
-  </a>
-  <a href="consulting.html" class="method-btn">
-    <div class="m-row">
-      <span class="m-label">Consulting</span>
-      
-    </div>
-    <div class="m-sub">Systems-level</div>
-    <div class="m-cta">Explore →</div>
-  </a>
   </div>
-
-  <div style="text-align:center;margin-top:36px;">
-    <a href="method.html" class="btn-p">The S.H.I.F.T.™ Method in full →</a>
-  </div>
-</div>
 </section>
 
-<hr class="divider">
+<!-- ══════════ PATHWAY 01+02 — NAVY ══════════ -->
+<section id="pathway" class="band navy">
+  <div class="band-inner">
+    <div class="section-label">Choose Your Pathway</div>
+    <div class="section-title">Four ways in. One architecture.</div>
+    <div class="section-subtitle">The six modules are where most people start. From there, choose the depth and format that fits your role, your team, or your stage of practice.</div>
 
-
-<section class="closing" id="begin">
-<div class="wrap">
-  <div class="closing-eyebrow">Step 08 / 08 — Begin</div>
-  <p class="closing-quote">Better architecture. <em>Not more pressure.</em></p>
-  <p class="closing-sub">Centre. Clarify. Choose.</p>
-  <div class="closing-cta-row">
-    <a href="enquire.html" class="btn-p">Get in touch</a>
-    <a href="assessment.html" class="btn-gh">Start with intake</a>
-    <a href="index.html#arms" class="btn-gh">All programs</a>
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">01</div>
+        <div class="pathway-name">Self-Paced Learning</div>
+      </div>
+      <div class="pathway-tagline">Start anywhere. Build the architecture on your own time.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">PROFESSIONAL DEVELOPMENT</div>
+          <div class="prog-name">The C³ Corporate Series</div>
+          <div class="prog-meta">6 MODULES · ON-DEMAND</div>
+          <div class="prog-desc">The six-module programme designed for leaders and teams. Each module standalone. Available live and on-demand. The starting point for the full Executive Frame™ in organisational practice.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">eLEARNING</div>
+          <div class="prog-name">S.H.F.T.™ Introduction</div>
+          <div class="prog-meta">~20 MIN · SELF-PACED</div>
+          <div class="prog-desc">A real tool for the moments leadership narrows. The physiological sigh, state recognition, and the 60-second reset. Portable, private, immediately usable in meetings, between calls.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">eLEARNING</div>
+          <div class="prog-name">The C³ Loop Overview</div>
+          <div class="prog-meta">~60 MIN · SELF-PACED</div>
+          <div class="prog-desc">The complete framework introduced. All three steps, the S.H.F.T.™ protocol, and the leadership toolkit. A single-session orientation to the full architecture.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">DIAGNOSTIC</div>
+          <div class="prog-name">C³ Capacity Assessment</div>
+          <div class="prog-meta">18 QUESTIONS · 5 MIN · FREE</div>
+          <div class="prog-desc">Identifies your first binding constraint across Center, Clarify, and Choose. Generates a personalised pathway showing exactly where to start in your role context.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">02</div>
+        <div class="pathway-name">Leadership Workshops</div>
+      </div>
+      <div class="pathway-tagline">Applied. Scenario-based. Calibrated to your team's load profile.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">CENTER</div>
+          <div class="prog-name">Composed Under Organisational Pressure</div>
+          <div class="prog-meta">HALF DAY</div>
+          <div class="prog-desc">S.H.F.T.™ installed at applied depth. Personalised regulation strategy for high-stakes meetings, escalations, and between-matter resets. Skills applicable from the next interaction.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CLARIFY</div>
+          <div class="prog-name">Strategic Thinking Under Complexity</div>
+          <div class="prog-meta">HALF DAY</div>
+          <div class="prog-desc">Decision-making under load. Cognitive triage for competing priorities. Decision frameworks for senior work. Personalised decision architecture for your role and team.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CHOOSE</div>
+          <div class="prog-name">Leading on Your Own Terms</div>
+          <div class="prog-meta">HALF DAY</div>
+          <div class="prog-desc">Agency within organisational systems. Competence-confidence protocol grounded in your own evidence. Purpose-alignment framework for sustainable leadership.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">FULL LOOP</div>
+          <div class="prog-name">The C³ Intensive</div>
+          <div class="prog-meta">FULL DAY</div>
+          <div class="prog-desc">The complete Loop in a single day. Full C³ toolkit, personal capacity plan, and team application strategy. Works for executive teams, off-sites, and retreats.</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="closing-meta">Auckland · Christchurch · Queenstown · Telehealth available</div>
-</div>
+</section>
+
+<!-- ══════════ PATHWAY 03+04 — PALE ══════════ -->
+<section class="band pale">
+  <div class="band-inner">
+
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">03</div>
+        <div class="pathway-name">In-House Programmes</div>
+      </div>
+      <div class="pathway-tagline">When the whole team speaks the same language, the culture shifts.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">TEAM</div>
+          <div class="prog-name">Team Installation</div>
+          <div class="prog-meta">6–8 WEEKS · ONE TEAM</div>
+          <div class="prog-desc">Capacity assessment + sequential Center → Clarify → Choose build. Pre/post measurement. Team debrief. Team-level C³ operating system installation.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">ORGANISATION</div>
+          <div class="prog-name">Full Deployment</div>
+          <div class="prog-meta">12 WEEKS · ORGANISATION</div>
+          <div class="prog-desc">The C³ Loop installed across departments and seniority. Staff, managers, leadership operating from the same architecture. Different entry points, shared vocabulary.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">LEADERSHIP</div>
+          <div class="prog-name">Executive Leadership Programme</div>
+          <div class="prog-meta">12 MONTHS · QUARTERLY</div>
+          <div class="prog-desc">For senior leaders and executive teams — autonomy-supportive leadership. Tone governance, cross-function alignment. When leaders hold the Loop, the whole organisation operates differently.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CONFERENCE</div>
+          <div class="prog-name">Keynote &amp; Executive Briefing</div>
+          <div class="prog-meta">45–60 MIN</div>
+          <div class="prog-desc">The neuroscience of organisational capacity compression. The talk leaders describe to colleagues the following week. Executive briefing option for boards and senior leadership.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pathway-block">
+      <div class="pathway-head">
+        <div class="pathway-num">04</div>
+        <div class="pathway-name">Individual Coaching &amp; Psychology Support</div>
+      </div>
+      <div class="pathway-tagline">Clinical depth. One leader's specific load profile. Registered psychologist.</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-label">COACHING</div>
+          <div class="prog-name">C³ Performance Coaching</div>
+          <div class="prog-meta">8–12 SESSIONS · ONE-ON-ONE</div>
+          <div class="prog-desc">The C³ Loop applied to one leader's specific load profile. For senior leaders navigating complexity, transformation, transition, or the early signs of capacity compression.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">CLINICAL</div>
+          <div class="prog-name">Psychology Support</div>
+          <div class="prog-meta">ONGOING · REGISTERED PSYCHOLOGIST</div>
+          <div class="prog-desc">Clinical psychology for leaders experiencing burnout, decision fatigue, or sustained performance difficulty. Dual-registered. Confidential. Telehealth available.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">SUPERVISION</div>
+          <div class="prog-name">Executive Supervision</div>
+          <div class="prog-meta">MONTHLY · INDIVIDUAL OR GROUP</div>
+          <div class="prog-desc">Structured reflective practice for senior roles. The space to process what the leadership work does to you and your practice — without it leaking into the team.</div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-label">TRANSITION</div>
+          <div class="prog-name">Career &amp; Role Navigation</div>
+          <div class="prog-meta">6–8 SESSIONS · PSYCHOLOGIST-LED</div>
+          <div class="prog-desc">For leaders at a crossroads — promotion, transition, return from leave, board entry. Values-aligned decision-making with clinical psychology support.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TOOLS + ASSESSMENT — NAVY ══════════ -->
+<section id="tools" class="band navy">
+  <div class="band-inner">
+    <div class="section-label">Corporate Toolkit</div>
+    <div class="section-title">Eight tools. Immediately usable.</div>
+    <div class="section-subtitle">Each usable without prior training. Designed for the real-time moments of your work.</div>
+
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-name">S.H.F.T.™ Desk Card</div>
+        <div class="tool-desc">Real-time escalation protocol for senior environments.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Now–Do–Later</div>
+        <div class="tool-desc">Three-zone prioritisation for executive load.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Pre-Meeting Worksheet</div>
+        <div class="tool-desc">Structured preparation for high-stakes meetings.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Decision Map</div>
+        <div class="tool-desc">Strategic decision framework under load.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Capacity Check</div>
+        <div class="tool-desc">18-question self-assessment for your binding constraint.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Between-Meeting Reset</div>
+        <div class="tool-desc">Decompression protocol preventing carry-over.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Difficult Conversation Framework</div>
+        <div class="tool-desc">Communication architecture for hard conversations.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">After-Action Debrief</div>
+        <div class="tool-desc">Post-decision learning framework for leadership teams.</div>
+      </div>
+    </div>
+
+    <div class="assessment-block">
+      <div class="assessment-left">
+        <div class="assessment-overline">C³ Capacity Self-Assessment</div>
+        <div class="assessment-title">Where is your first binding constraint?</div>
+        <div class="assessment-meta">18 QUESTIONS · 5 MINUTES · A PERSONALISED PATHWAY</div>
+        <div class="assessment-desc">Identifies where your leadership architecture is currently under strain — across Center (emotional regulation), Clarify (executive functioning), and Choose (autonomy, competence, connection). Your results show exactly where to start, calibrated to your role and current load.</div>
+      </div>
+      <div class="assessment-right">
+        <div class="assess-axis"><div class="assess-dot"></div><span>Center: Emotional regulation &amp; nervous system stability</span></div>
+        <div class="assess-axis"><div class="assess-dot"></div><span>Clarify: Executive functioning &amp; cognitive performance</span></div>
+        <div class="assess-axis"><div class="assess-dot"></div><span>Choose: Autonomy, competence &amp; sustainable motivation</span></div>
+        <a href="assessment.html" class="btn-ghost">Take the Assessment →</a>
+      </div>
+    </div>
+
+    <div class="subarm-callout">
+      <div class="subarm-callout-text">
+        <div class="subarm-callout-label">Systems-level</div>
+        <h4>When the issue is architectural, see C³ Consulting</h4>
+        <p>For organisations where recurring conflict, decision drift, and attrition spikes are downstream of structural conditions — not personality issues. Embedded multi-quarter engagement.</p>
+      </div>
+      <a href="consulting.html" class="btn-ghost">Explore C³ Consulting →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ CTA + INTAKE — PALE ══════════ -->
+<section id="intake" class="band pale">
+  <div class="band-inner">
+    <div class="cta-section">
+
+      <div class="spectrum-bar">
+    <div style="flex:1.2;background:#6B8AA8;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
+  </div>
+
+      <div class="cta-tagline">Human first. Then performance.</div>
+      <div class="cta-title">Start with the series.<br>Go as deep as you need.</div>
+      <div class="cta-sub">CENTER → CLARIFY → CHOOSE → REPEAT</div>
+
+      <div class="intake-wrap">
+        <div class="intake-label">INTAKE FORM</div>
+        <div class="intake-title">Begin your engagement.</div>
+        <div class="intake-sub">For individuals, teams, and organisations.</div>
+        <form>
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="text" placeholder="Role · organisation (optional)">
+          <select>
+            <option>I'm interested in...</option>
+            <option>C³ Corporate Series (6 modules)</option>
+            <option>Capacity Self-Assessment</option>
+            <option>Leadership Workshop</option>
+            <option>Performance Coaching</option>
+            <option>Team or Organisation Programme</option>
+            <option>Conference Keynote</option>
+            <option>Other</option>
+            
+          </select>
+          <textarea placeholder="Anything that would help us route this well (optional)"></textarea>
+          <button class="btn-primary">Register Interest →</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <div>
-      <div class="ft-brand">Executive Frame<span style="font-size:0.45em;vertical-align:super;">™</span></div>
-      <div class="ft-meta">A structured psychological architecture for individuals, families, and organisations navigating pressure.<br><br>
-        Auckland · Christchurch · Queenstown · Telehealth available<br>
-        <a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
-      <div class="ft-tag">Human first. Then performance.</div>
-    </div>
+  <div class="footer-col footer-brand">
+    <div class="footer-mark">Executive Frame<sup style="font-size:0.45em;vertical-align:super;">™</sup></div>
+    <div class="footer-desc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</div>
+    <div class="footer-loc">Auckland · Christchurch · Queenstown · Telehealth available</div>
+    <div class="footer-mail"><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
+    <div class="footer-tag">Human first. Then performance.</div>
+  </div>
 
-    <div>
-      <div class="ft-arms-label">The eight arms</div>
-      <div class="ft-arms">
-        <a href="health.html">Executive Frame Health</a> · <a href="elite.html">Executive Frame Elite</a> · <span class="current">Executive Frame Corporate</span> · <a href="law.html">Executive Frame Law</a> · <a href="women.html">Executive Frame Women</a> · <a href="neurodiversity.html">Executive Frame Neurodiversity</a> · <a href="family.html">Executive Frame Family Systems</a> · <a href="consulting.html">C³ Consulting</a>
-      </div>
-      <div class="ft-secondary">
-        <a href="referral.html">Make a referral</a>
-        <a href="deck.html">The S.H.I.F.T.™ Deck</a>
-        <a href="partners.html">Partner organisations</a>
-      </div>
-    </div>
-
-    <div class="ft-credentials">
-      <span class="ft-cred-label">Practice</span>
-      Dr Sarah Anticich<br>
-      <em>PhD, MAPS, MNZCCP</em><br>
-      Clinical Psychologist<br>
-      Industrial / Organisational Psychologist<br><br>
-      Sarah Anticich Consulting<br>
-      © 2026 — All rights reserved.
+  <div class="footer-col footer-arms-col">
+    <div class="footer-col-label">The eight arms</div>
+    <div class="footer-arms"><a href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <span class="current">EF|Corporate</span> · <a href="law.html">EF|Law</a><br><a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></div>
+    <div class="footer-quick">
+      <a href="enquire.html">Make a referral</a> ·
+      <a href="method.html">The S.H.I.F.T.™ Deck</a> ·
+      <a href="partners.html">Partner organisations</a>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div>
-      <a href="enquire.html">Contact</a>
-      <a href="referral.html">Referrals</a>
-      <a href="enquire.html?subject=Privacy">Privacy</a>
+
+  <div class="footer-col footer-practice">
+    <div class="footer-col-label">Practice</div>
+    <div class="footer-practice-name">Dr Sarah Anticich</div>
+    <div class="footer-practice-creds">PhD, MAPS, MNZCCP</div>
+    <div class="footer-practice-role">Clinical Psychologist</div>
+    <div class="footer-practice-role">Industrial / Organisational Psychologist</div>
+    <div class="footer-practice-firm">Sarah Anticich Consulting</div>
+    <div class="footer-practice-copy">© 2026 — All rights reserved.</div>
+    <div class="footer-quick">
+      <a href="enquire.html">Contact</a> ·
+      <a href="enquire.html">Referrals</a> ·
+      <a href="enquire.html">Privacy</a>
     </div>
-    <div>Site by Anticich Consulting · Built with care.</div>
   </div>
 </footer>
 
-
-<script>
-(function(){
-  // Tap-to-open dropdown for mobile (desktop hover still works)
-  document.querySelectorAll('.nl .dropdown').forEach(function(d){
-    var trigger = d.querySelector('.dropdown-trigger');
-    if(!trigger) return;
-    trigger.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      d.classList.toggle('is-open');
-    });
-  });
-  // Tap outside closes any open dropdown
-  document.addEventListener('click', function(e){
-    document.querySelectorAll('.nl .dropdown.is-open').forEach(function(d){
-      if(!d.contains(e.target)) d.classList.remove('is-open');
-    });
-  });
-})();
-</script><script src="../assets/js/nav.js"></script>
+<div class="copyline">Site by Anticich Consulting · Built with care.</div>
+<script src="../assets/js/nav.js"></script>
 </body>
 </html>
