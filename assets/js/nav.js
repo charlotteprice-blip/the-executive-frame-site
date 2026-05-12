@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="/pages/deck.html" class="nav-link nav-link-accent">The Deck</a>
     <a href="/pages/partners.html" class="nav-link nav-link-partners">For Partners</a>
     <a href="/pages/store.html" class="nav-link">Store</a>
-    <a href="/pages/assessment.html" class="nav-link nav-link-accent">Assessment</a>
     <a href="/pages/enquire.html" class="nav-link">Get in touch</a>
     <a href="/pages/referral.html" class="nav-cta">Make a referral</a>
   </div>
