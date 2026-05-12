@@ -1972,7 +1972,12 @@ footer.site-footer {
 .nav-dropdown:hover .nav-dropdown-panel,
 .nav-dropdown-panel:hover { display: block; }
 
-/* Fix: bridge gap between trigger and panel to prevent flicker */
-.nav-dropdown-panel { margin-top: 0; }
-.nav-dropdown-trigger { padding-bottom: 12px; }
-.nav-dropdown { padding-bottom: 0; }
+/* Fix: invisible pseudo-element bridge to keep dropdown open */
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 12px;
+}
