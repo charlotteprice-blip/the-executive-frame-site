@@ -1967,3 +1967,7 @@ footer.site-footer {
   line-height: 1.55;
 }
 .tagline-band.pale .tagline-band-sub { color: var(--pale-text-sec); }
+
+/* Fix: keep dropdown open when moving mouse into panel */
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown-panel:hover { display: block; }
