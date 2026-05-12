@@ -2697,7 +2697,7 @@ section.cover .hero-h1-clean .hero-h1-then{
   width:20px;
 }
 
-/* Fix: prevent nav dropdown from being clipped */
+/* Fix: nav dropdown scrollable */
 .site-nav { overflow: visible !important; }
-.nav-dropdown { overflow: visible !important; position: static; }
-.nav-dropdown-panel { max-height: none !important; overflow: visible !important; position: absolute; z-index: 9999; }
+.nav-dropdown { overflow: visible !important; }
+.nav-dropdown-panel { max-height: 80vh !important; overflow-y: auto !important; position: absolute; z-index: 9999; width: 280px !important; }
