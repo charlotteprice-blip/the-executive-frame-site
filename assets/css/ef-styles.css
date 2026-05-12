@@ -2696,3 +2696,8 @@ section.cover .hero-h1-clean .hero-h1-then{
   background:rgba(91,143,123,1);
   width:20px;
 }
+
+/* Fix: prevent nav dropdown from being clipped */
+.site-nav { overflow: visible !important; }
+.nav-dropdown { overflow: visible !important; position: static; }
+.nav-dropdown-panel { max-height: none !important; overflow: visible !important; position: absolute; z-index: 9999; }
