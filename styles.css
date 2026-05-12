@@ -1971,3 +1971,8 @@ footer.site-footer {
 /* Fix: keep dropdown open when moving mouse into panel */
 .nav-dropdown:hover .nav-dropdown-panel,
 .nav-dropdown-panel:hover { display: block; }
+
+/* Fix: bridge gap between trigger and panel to prevent flicker */
+.nav-dropdown-panel { margin-top: 0; }
+.nav-dropdown-trigger { padding-bottom: 12px; }
+.nav-dropdown { padding-bottom: 0; }
