@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///Users/sarahanticich/Dropbox/Mac/Downloads/family_12.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EF|Family — The C³ Loop for Family Systems</title>
+<meta name="description" content="Performance architecture for parents and family systems. Co-regulation as a learnable skill.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./EF_Family — The C³ Loop for Family Systems_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --navy: #15212D;
+    --navy-deep: #121C25;
+    --navy-soft: #1B2832;
+    --white: #FFFFFF;
+    --slate-text: #8B95A1;
+    --slate-muted: #5F6B77;
+
+    --apricot: #E8A88C;
+    --apricot-soft: #F0BBA3;
+    --apricot-deep: #C88566;
+    --apricot-light: #F5D4C2;       /* lighter band — peach cream */
+    --apricot-light-ink: #4A2818;   /* deeper ink for legibility on light */
+    --apricot-tint: rgba(232, 168, 140, 0.10);
+    --apricot-tint-strong: rgba(232, 168, 140, 0.18);
+    --apricot-line: rgba(232, 168, 140, 0.32);
+    --apricot-ink: #2A1810;
+
+    --border: rgba(139, 149, 161, 0.14);
+    --border-strong: rgba(139, 149, 161, 0.22);
+
+    --serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+    --sans: 'Montserrat', -apple-system, system-ui, sans-serif;
+    --slab: 'Montserrat', -apple-system, system-ui, sans-serif;
+
+    /* New: cream / off-white differentiation tone */
+    --cream: #F5EFE7;
+    --cream-deep: #EDE3D6;
+    --cream-ink: #1F2A33;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(21, 33, 45, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 1240px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .brand { display: flex; align-items: baseline; gap: 14px; text-decoration: none; color: var(--white); }
+  .brand-mark { font-family: var(--slab); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+  .brand-mark .pipe { color: var(--white); opacity: 0.5; }
+  .brand-mark .arm { color: var(--apricot); }
+  .brand-tag { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--slate-text); font-weight: 400; }
+  .nav-links { display: flex; align-items: center; gap: 28px; font-size: 13px; letter-spacing: 0.04em; }
+  .nav-links a { color: var(--slate-text); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { padding: 9px 18px; background: var(--apricot); color: var(--apricot-ink) !important; border-radius: 2px; font-weight: 500; transition: all 0.2s; }
+  .nav-cta:hover { background: var(--apricot-soft); }
+
+  /* HERO — match live site */
+  .hero { padding: 70px 32px 100px; max-width: 1100px; margin: 0 auto; text-align: center; }
+
+  /* C³ Loop SVG mark — sits under the wordmark */
+  .hero-loop { width: 200px; height: 200px; margin: 24px auto 36px; position: relative; opacity: 0; animation: fadeUp 1s 0.7s forwards; }
+  .hero-loop svg { width: 100%; height: 100%; }
+  .hero-loop .ring { fill: none; stroke: rgba(232, 168, 140, 0.22); stroke-width: 0.5; }
+  .hero-loop .node { fill: rgba(232, 168, 140, 0.55); }
+  .hero-loop .node-apex { fill: #FFFFFF; }
+  .hero-loop .label { font-family: var(--sans); font-size: 7px; letter-spacing: 0.32em; fill: var(--slate-text); text-transform: uppercase; font-weight: 500; }
+  .hero-loop .tet-light { fill: var(--apricot-soft); }
+  .hero-loop .tet-mid { fill: var(--apricot); }
+  .hero-loop .tet-dark { fill: var(--apricot-deep); }
+  .hero-loop .tet-base { fill: #2A1810; opacity: 0.55; }
+
+  /* signature gradient line — six stops, matches live site */
+  .signature-stops { display: flex; justify-content: center; gap: 4px; margin: 0 auto 32px; opacity: 0; animation: fadeUp 1s 0.8s forwards; }
+  .signature-stops span { display: block; width: 38px; height: 4px; border-radius: 1px; }
+  .signature-stops .s1 { background: #978B9F; }
+  .signature-stops .s2 { background: #B88A7A; }
+  .signature-stops .s3 { background: #E8A88C; }
+  .signature-stops .s4 { background: #79859B; }
+  .signature-stops .s5 { background: #5A7283; }
+  .signature-stops .s6 { background: #416460; }
+
+  .hero-eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 500; color: var(--white); margin-bottom: 28px; opacity: 0; animation: fadeUp 1s 0.2s forwards; }
+
+  .hero-wordmark { font-family: var(--sans); font-weight: 800; font-size: clamp(56px, 9vw, 108px); line-height: 1; letter-spacing: -0.025em; margin-bottom: 24px; opacity: 0; animation: fadeUp 1s 0.3s forwards; }
+  .hero-wordmark .ef { color: var(--white); }
+  .hero-wordmark .pipe { color: var(--white); opacity: 0.55; margin: 0 -0.02em; font-weight: 400; }
+  .hero-wordmark .arm { color: var(--apricot); }
+
+  .hero-subtitle { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.4vw, 30px); color: var(--apricot-soft); margin-bottom: 0; font-weight: 400; opacity: 0; animation: fadeUp 1s 0.5s forwards; }
+
+  .hero-thesis { font-family: var(--serif); font-style: italic; font-size: clamp(17px, 1.7vw, 20px); color: var(--apricot); max-width: 680px; margin: 0 auto 36px; line-height: 1.65; font-weight: 400; opacity: 0; animation: fadeUp 1s 0.9s forwards; }
+  .hero-thesis .lead { display: block; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(22px, 2.4vw, 28px); color: var(--apricot); margin-bottom: 14px; letter-spacing: -0.005em; }
+  .hero-thesis span.line { display: block; color: var(--apricot-soft); }
+
+  .hero-body { font-size: 15px; color: var(--slate-text); max-width: 640px; margin: 0 auto 44px; line-height: 1.75; font-weight: 300; opacity: 0; animation: fadeUp 1s 1.0s forwards; }
+
+  .hero-ctas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s 1.1s forwards; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn { display: inline-block; padding: 14px 26px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; cursor: pointer; border: 1px solid transparent; font-weight: 600; }
+  .btn-primary { background: var(--apricot); color: var(--apricot-ink); }
+  .btn-primary:hover { background: var(--apricot-soft); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--apricot-line); }
+  .btn-ghost:hover { border-color: var(--apricot); background: var(--apricot-tint); }
+
+  /* APRICOT BLOCK — section header band */
+  .apricot-block { position: relative; background: var(--apricot); color: var(--apricot-ink); padding: 80px 32px; text-align: center; overflow: hidden; }
+  .apricot-block::before, .apricot-block::after { content: ''; position: absolute; border-radius: 50%; border: 1px solid rgba(42, 24, 16, 0.08); pointer-events: none; }
+  .apricot-block::before { width: 400px; height: 400px; top: -200px; left: -100px; }
+  .apricot-block::after { width: 280px; height: 280px; bottom: -140px; right: -80px; }
+  .apricot-block .block-inner { position: relative; z-index: 1; }
+  .apricot-block .num { font-family: var(--sans); font-weight: 800; font-size: 11px; letter-spacing: 0.32em; color: var(--apricot-ink); opacity: 0.55; margin-bottom: 8px; display: block; }
+  .apricot-block .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600; margin-bottom: 22px; opacity: 0.62; }
+  .apricot-block h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 4.8vw, 56px); line-height: 1.08; letter-spacing: -0.012em; max-width: 920px; margin: 0 auto; }
+  .apricot-block h2 em { font-style: italic; font-weight: 400; color: var(--white); }
+  .apricot-block .sub { font-family: var(--serif); font-style: italic; font-size: 19px; max-width: 620px; margin: 24px auto 0; opacity: 0.78; font-weight: 400; }
+
+  /* LIGHT APRICOT BLOCK — alternate band */
+  .apricot-block.light { background: var(--apricot-light); color: var(--apricot-light-ink); }
+  .apricot-block.light::before, .apricot-block.light::after { border-color: rgba(74, 40, 24, 0.07); }
+  .apricot-block.light .num { color: var(--apricot-light-ink); }
+  .apricot-block.light h2 em { color: var(--apricot-deep); }
+  .apricot-block.light .sub { opacity: 0.68; }
+
+  /* CREAM BLOCK — neutral tone for breathing room */
+  .cream-block { position: relative; background: var(--cream); color: var(--cream-ink); padding: 96px 32px; overflow: hidden; }
+  .cream-block::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 60px; background: var(--apricot); }
+  .cream-block .cream-head { text-align: center; max-width: 740px; margin: 0 auto 64px; position: relative; z-index: 1; }
+  .cream-block .num { font-family: var(--sans); font-weight: 700; font-size: 11px; letter-spacing: 0.32em; color: var(--apricot-deep); margin-bottom: 14px; display: block; }
+  .cream-block .eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600; color: var(--apricot-deep); margin-bottom: 22px; }
+  .cream-block h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 4.8vw, 56px); line-height: 1.08; letter-spacing: -0.012em; }
+  .cream-block h2 em { font-style: italic; font-weight: 400; color: var(--apricot-deep); }
+  .cream-block .sub { font-family: var(--serif); font-style: italic; font-size: 19px; max-width: 620px; margin: 24px auto 0; color: var(--slate-low); font-weight: 400; }
+
+  /* SECTIONS */
+  .section { padding: 80px 32px; max-width: 1100px; margin: 0 auto; }
+
+  /* FRAMEWORK — sits inside cream block, navy cells */
+  .framework-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .framework-cell { padding: 40px 30px 36px; background: var(--navy); position: relative; overflow: hidden; border-radius: 2px; transition: transform 0.3s; }
+  .framework-cell:hover { transform: translateY(-3px); }
+  .framework-cell::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--apricot); }
+  .framework-cell .cell-num { font-family: var(--sans); font-weight: 700; font-size: 11px; letter-spacing: 0.24em; color: var(--apricot); margin-bottom: 16px; }
+  .framework-cell .step { font-family: var(--sans); font-size: 10px; letter-spacing: 0.32em; color: var(--slate-text); text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
+  .framework-cell .verb { font-family: var(--serif); font-weight: 500; font-size: 36px; margin-bottom: 4px; color: var(--white); line-height: 1.1; }
+  .framework-cell .domain { font-family: var(--serif); font-style: italic; font-size: 14.5px; color: var(--apricot-soft); margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid rgba(232, 168, 140, 0.18); }
+  .framework-cell p { font-size: 14px; color: var(--slate-text); line-height: 1.7; font-weight: 300; }
+  @media (max-width: 760px) { .framework-grid { grid-template-columns: 1fr; } }
+
+  /* SH*FT — DEEP APRICOT BLOCK (third tone — protocol block) */
+  .shft { background: var(--apricot-deep); color: var(--white); padding: 90px 32px; position: relative; overflow: hidden; }
+  .shft::before { content: ''; position: absolute; top: -50%; left: -10%; width: 60%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 60%); pointer-events: none; }
+  .shft-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .shft-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 44px; flex-wrap: wrap; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+  .shft-eyebrow { font-family: var(--sans); font-weight: 800; font-size: 40px; letter-spacing: -0.02em; color: var(--white); }
+  .shft-eyebrow .star { color: var(--apricot-light); }
+  .shft-title { font-family: var(--serif); font-style: italic; font-size: 22px; font-weight: 400; opacity: 0.85; max-width: 460px; text-align: right; }
+  .shft-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .shft-cell { padding: 26px 22px 28px; background: rgba(255,255,255,0.06); border-radius: 2px; transition: background 0.25s; }
+  .shft-cell:hover { background: rgba(255,255,255,0.12); }
+  .shft-letter { font-family: var(--serif); font-weight: 600; font-size: 56px; color: var(--apricot-light); margin-bottom: 4px; line-height: 1; }
+  .shft-word { font-family: var(--sans); font-size: 11px; margin-bottom: 12px; letter-spacing: 0.18em; font-weight: 600; text-transform: uppercase; }
+  .shft-cell p { font-size: 13px; line-height: 1.55; opacity: 0.78; font-weight: 300; }
+  @media (max-width: 760px) {
+    .shft-grid { grid-template-columns: repeat(2, 1fr); }
+    .shft-head { flex-direction: column; align-items: start; }
+    .shft-title { text-align: left; }
+  }
+
+  /* ACCORDION */
+  .accordion { border-top: 1px solid var(--border); }
+  .accordion-item { border-bottom: 1px solid var(--border); }
+  .accordion-header { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 28px 4px; background: transparent; border: none; color: var(--white); cursor: pointer; text-align: left; font-family: var(--sans); transition: padding 0.3s; }
+  .accordion-header:hover { padding-left: 12px; }
+  .accordion-header:hover .accordion-title { color: var(--apricot-soft); }
+  .accordion-left { display: flex; align-items: center; gap: 24px; flex: 1; }
+  .accordion-number { background: var(--apricot); color: var(--apricot-ink); font-family: var(--slab); font-weight: 700; font-size: 14px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 1px; flex-shrink: 0; }
+  .accordion-title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.25; transition: color 0.2s; }
+  .accordion-meta { font-size: 12px; color: var(--slate-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-right: 20px; white-space: nowrap; }
+  .accordion-icon { width: 22px; height: 22px; flex-shrink: 0; position: relative; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+  .accordion-icon::before, .accordion-icon::after { content: ''; position: absolute; background: var(--apricot); }
+  .accordion-icon::before { width: 100%; height: 1px; top: 50%; left: 0; transform: translateY(-50%); }
+  .accordion-icon::after { width: 1px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
+  .accordion-item.open .accordion-icon { transform: rotate(45deg); }
+  .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
+  .accordion-item.open .accordion-body { max-height: 2600px; }
+  .accordion-body-inner { padding: 8px 4px 44px 68px; color: var(--slate-text); font-size: 15px; line-height: 1.7; }
+  .accordion-body-inner > p { margin-bottom: 18px; max-width: 680px; }
+  .accordion-body-inner strong { color: var(--white); font-weight: 500; }
+  @media (max-width: 640px) {
+    .accordion-header { flex-direction: column; align-items: flex-start; gap: 14px; position: relative; }
+    .accordion-meta { margin-right: 0; }
+    .accordion-icon { position: absolute; right: 4px; top: 30px; }
+    .accordion-title { font-size: 22px; }
+    .accordion-body-inner { padding-left: 4px; }
+  }
+
+  /* MODULE LIST */
+  .module-list { display: grid; gap: 0; margin-top: 12px; }
+  .module-row { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid var(--border); align-items: start; }
+  .module-row:first-child { border-top: none; padding-top: 8px; }
+  .module-tag { background: var(--apricot); color: var(--apricot-ink); padding: 7px 12px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600; border-radius: 1px; text-align: center; }
+  .module-title { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--white); margin-bottom: 6px; line-height: 1.25; }
+  .module-sub { font-family: var(--serif); font-style: italic; color: var(--slate-muted); font-size: 14px; margin-bottom: 10px; }
+  .module-row p { font-size: 14px; color: var(--slate-text); line-height: 1.65; }
+  @media (max-width: 640px) {
+    .module-row { grid-template-columns: 1fr; gap: 10px; }
+    .module-tag { justify-self: start; }
+  }
+
+  /* OFFER CARDS */
+  .offer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 12px; }
+  .offer-card { background: var(--navy-soft); border: 1px solid var(--border); border-radius: 2px; transition: all 0.25s; overflow: hidden; }
+  .offer-card .offer-tag { background: var(--apricot); color: var(--apricot-ink); padding: 9px 18px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600; }
+  .offer-card .offer-inner { padding: 22px 22px 24px; }
+  .offer-card:hover { border-color: var(--apricot-line); transform: translateY(-2px); }
+  .offer-title { font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--white); margin-bottom: 6px; line-height: 1.2; }
+  .offer-meta { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate-muted); margin-bottom: 14px; }
+  .offer-card p { font-size: 14px; color: var(--slate-text); line-height: 1.6; }
+  .offer-card.featured { background: linear-gradient(180deg, var(--apricot-tint), var(--navy-soft) 70%); border-color: var(--apricot-line); }
+  @media (max-width: 720px) { .offer-grid { grid-template-columns: 1fr; } }
+
+  /* CTA BLOCK — apricot */
+  .cta-block { background: var(--apricot); color: var(--apricot-ink); padding: 120px 32px; text-align: center; position: relative; overflow: hidden; }
+  .cta-block::before, .cta-block::after { content: ''; position: absolute; border-radius: 50%; border: 1px solid rgba(42, 24, 16, 0.08); pointer-events: none; }
+  .cta-block::before { width: 500px; height: 500px; top: -250px; left: -150px; }
+  .cta-block::after { width: 380px; height: 380px; bottom: -190px; right: -120px; }
+  .cta-block-inner { max-width: 560px; margin: 0 auto; position: relative; z-index: 1; }
+  .cta-block .num { font-family: var(--sans); font-weight: 800; font-size: 11px; letter-spacing: 0.32em; color: var(--apricot-ink); opacity: 0.55; margin-bottom: 14px; display: block; }
+  .cta-block .eyebrow { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 28px; opacity: 0.62; }
+  .cta-block h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 4.8vw, 56px); line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.012em; }
+  .cta-block h2 em { font-style: italic; color: var(--white); font-weight: 400; }
+  .cta-block .lede { font-family: var(--serif); font-style: italic; font-size: 19px; margin-bottom: 48px; opacity: 0.78; }
+
+  /* FORM */
+  .form { display: grid; gap: 18px; text-align: left; }
+  .form-row { display: flex; flex-direction: column; gap: 8px; }
+  .form-row label { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--apricot-ink); opacity: 0.72; }
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--apricot-ink);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(42, 24, 16, 0.18);
+    border-radius: 2px;
+    transition: all 0.2s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .form-row input::placeholder,
+  .form-row textarea::placeholder { color: rgba(42, 24, 16, 0.4); }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.85);
+    border-color: var(--navy);
+  }
+  .form-row select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3e%3cpath fill='none' stroke='%232A1810' stroke-width='1.5' d='M1 1l5 5 5-5'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    padding-right: 44px;
+    cursor: pointer;
+  }
+  .form-row textarea { resize: vertical; min-height: 90px; font-family: var(--sans); line-height: 1.5; }
+  .form-row.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-row.two-up > div { display: flex; flex-direction: column; gap: 8px; }
+  @media (max-width: 540px) {
+    .form-row.two-up { grid-template-columns: 1fr; }
+  }
+  .form-submit { margin-top: 14px; }
+  .form-submit button {
+    width: 100%;
+    padding: 16px 26px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .form-submit button:hover { background: var(--navy-deep); transform: translateY(-1px); }
+  .form-fine { font-family: var(--sans); font-size: 12px; color: rgba(42, 24, 16, 0.55); margin-top: 14px; line-height: 1.5; }
+  .form-success { padding: 28px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(42, 24, 16, 0.18); border-radius: 2px; text-align: center; }
+  .form-success h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin-bottom: 8px; color: var(--navy); }
+  .form-success p { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--slate-low); }
+
+  /* FOOTER */
+  footer { background: var(--navy-deep); border-top: 1px solid var(--border); padding: 56px 32px 32px; color: var(--slate-muted); font-size: 13px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-col h4 { font-family: var(--slab); font-weight: 600; font-size: 14px; color: var(--white); margin-bottom: 14px; letter-spacing: 0.02em; }
+  .footer-col p, .footer-col a { color: var(--slate-muted); text-decoration: none; line-height: 1.7; display: block; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--apricot-soft); }
+  .footer-arms { font-size: 12.5px; line-height: 1.9; }
+  .footer-arms a { display: inline; }
+  .footer-arms .current { color: var(--apricot-ink); background: var(--apricot); padding: 2px 8px; border-radius: 1px; font-weight: 500; }
+  .footer-base { max-width: 1100px; margin: 0 auto; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+  @media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; gap: 28px; } }
+
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.8s, transform 0.8s; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* NEXT WORKSHOP BANNER — sits under nav */
+  .next-banner { background: var(--apricot); color: var(--apricot-ink); padding: 0; border-bottom: 1px solid rgba(42, 24, 16, 0.12); position: relative; overflow: hidden; }
+  .next-banner-inner { max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .next-banner-left { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .next-banner-tag { font-family: var(--sans); font-weight: 700; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; background: var(--apricot-ink); color: var(--apricot); padding: 5px 10px; border-radius: 1px; white-space: nowrap; }
+  .next-banner-text { font-family: var(--sans); font-size: 13.5px; font-weight: 500; color: var(--apricot-ink); }
+  .next-banner-text strong { font-weight: 700; }
+  .next-banner-text em { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 15px; padding: 0 4px; }
+  .next-banner-text .dot { opacity: 0.5; margin: 0 8px; }
+  .next-banner-cta { font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--apricot-ink); text-decoration: none; padding: 8px 16px; border: 1px solid var(--apricot-ink); border-radius: 2px; transition: all 0.2s; white-space: nowrap; }
+  .next-banner-cta:hover { background: var(--apricot-ink); color: var(--apricot); }
+  @media (max-width: 720px) {
+    .next-banner-inner { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px 20px; }
+    .next-banner-left { justify-content: center; text-align: center; }
+    .next-banner-cta { text-align: center; }
+  }
+
+  /* EVENT CARD — inside Parenting in the Wild accordion */
+  .event-card { background: linear-gradient(135deg, var(--apricot-tint-strong), var(--navy-soft) 80%); border: 1px solid var(--apricot-line); border-radius: 2px; padding: 0; margin-bottom: 24px; overflow: hidden; position: relative; }
+  .event-card-header { background: var(--apricot); color: var(--apricot-ink); padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .event-card-header .label { font-family: var(--sans); font-weight: 700; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; }
+  .event-card-header .status { font-family: var(--sans); font-weight: 600; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; }
+  .event-card-body { padding: 28px 30px 30px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: start; }
+  .event-card-main h4 { font-family: var(--serif); font-weight: 500; font-size: 26px; color: var(--white); line-height: 1.2; margin-bottom: 10px; }
+  .event-card-main h4 em { font-style: italic; color: var(--apricot-soft); font-weight: 400; }
+  .event-card-desc { font-family: var(--serif); font-style: italic; font-size: 15.5px; color: var(--slate-text); line-height: 1.55; margin-bottom: 18px; font-weight: 400; }
+  .event-card-meta { display: grid; gap: 14px; padding-left: 24px; border-left: 1px solid rgba(232, 168, 140, 0.22); }
+  .event-meta-row { display: grid; gap: 4px; }
+  .event-meta-row .key { font-family: var(--sans); font-weight: 600; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--apricot); }
+  .event-meta-row .val { font-family: var(--serif); font-size: 17px; color: var(--white); font-weight: 500; line-height: 1.3; }
+  .event-meta-row .val em { font-style: italic; color: var(--apricot-soft); font-weight: 400; font-size: 14px; display: block; margin-top: 2px; }
+  .event-card-cta { display: inline-block; margin-top: 18px; padding: 12px 22px; font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; background: var(--apricot); color: var(--apricot-ink); text-decoration: none; border-radius: 2px; transition: all 0.2s; }
+  .event-card-cta:hover { background: var(--apricot-soft); transform: translateY(-1px); }
+  @media (max-width: 640px) {
+    .event-card-body { grid-template-columns: 1fr; gap: 22px; }
+    .event-card-meta { padding-left: 0; border-left: none; padding-top: 18px; border-top: 1px solid rgba(232, 168, 140, 0.18); }
+  }
+
+  /* ORIGIN BLOCK — Parenting in the Tunnel · authenticity statement */
+  .origin { background: var(--navy-deep); padding: 100px 32px; position: relative; overflow: hidden; }
+  .origin::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 56px; background: var(--apricot); }
+  .origin-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
+  .origin .eyebrow { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--apricot); margin-bottom: 28px; margin-top: 24px; }
+  .origin h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 4.2vw, 46px); line-height: 1.12; letter-spacing: -0.012em; color: var(--white); margin-bottom: 24px; }
+  .origin h2 em { font-style: italic; color: var(--apricot-soft); font-weight: 400; }
+  .origin .lede { font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.55; color: var(--apricot-soft); margin-bottom: 36px; font-weight: 400; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .origin p { font-size: 15.5px; color: var(--slate-text); line-height: 1.78; margin-bottom: 18px; font-weight: 300; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .origin p:last-of-type { margin-bottom: 0; }
+  .origin strong { color: var(--white); font-weight: 500; }
+  .origin .signoff { margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(232, 168, 140, 0.22); display: inline-block; }
+  .origin .signoff-pair { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .origin .signoff-person { text-align: center; }
+  .origin .signoff-amp { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--apricot); font-weight: 400; }
+  .origin .signoff-name { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--white); font-weight: 500; line-height: 1.2; }
+  .origin .signoff-name a { color: var(--apricot-soft); text-decoration: none; border-bottom: 1px solid rgba(232, 168, 140, 0.32); transition: all 0.2s; padding-bottom: 1px; }
+  .origin .signoff-name a:hover { color: var(--apricot); border-bottom-color: var(--apricot); }
+  .origin .signoff-role { font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-muted); margin-top: 8px; font-weight: 500; }
+  .origin .signoff-tag { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--apricot); margin-top: 22px; font-weight: 600; }
+  @media (max-width: 540px) {
+    .origin .signoff-pair { flex-direction: column; gap: 18px; }
+    .origin .signoff-amp { font-size: 22px; }
+  }
+
+  /* CLINIC STRIP — top of page, sits above nav */
+  .clinic-strip { background: var(--navy-deep); border-bottom: 1px solid var(--border); padding: 14px 32px; }
+  .clinic-strip-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; font-family: var(--sans); font-size: 12px; }
+  .clinic-quote { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--apricot-soft); font-weight: 400; letter-spacing: 0.01em; }
+  .clinic-quote .attr { font-style: normal; color: var(--slate-muted); font-family: var(--sans); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin-left: 12px; font-weight: 500; }
+  .clinic-attribution { color: var(--slate-text); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; font-size: 11px; white-space: nowrap; }
+  .clinic-attribution .name { color: var(--white); font-weight: 600; }
+  .clinic-attribution a.name.link { text-decoration: none; border-bottom: 1px solid rgba(232, 168, 140, 0.28); transition: all 0.2s; padding-bottom: 1px; }
+  .clinic-attribution a.name.link:hover { color: var(--apricot); border-bottom-color: var(--apricot); }
+  .clinic-attribution .sep { opacity: 0.4; margin: 0 8px; }
+  @media (max-width: 760px) {
+    .clinic-strip-inner { flex-direction: column; gap: 8px; text-align: center; }
+    .clinic-quote { font-size: 13px; }
+    .clinic-quote .attr { display: block; margin-left: 0; margin-top: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CLINIC STRIP — top of page -->
+<div class="clinic-strip">
+  <div class="clinic-strip-inner">
+    <div class="clinic-quote">
+      "In every outthrust headland, in every curving beach, in every grain of sand there is the story of the earth."<span class="attr">— Rachel Carson</span>
+    </div>
+    <div class="clinic-attribution">
+      <span class="name">Dr Sarah Anticich</span><span class="sep">&amp;</span><a href="https://carsonpsychology.com/" target="_blank" rel="noopener" class="name link">Rose Carson</a><span class="sep">·</span>Co-developed
+    </div>
+  </div>
+</div>
+
+<!-- NEXT WORKSHOP BANNER -->
+<div class="next-banner">
+  <div class="next-banner-inner">
+    <div class="next-banner-left">
+      <span class="next-banner-tag">Next Workshop</span>
+      <span class="next-banner-text"><strong>13 June 2026</strong><span class="dot">·</span><em>Parenting in the Wild</em><span class="dot">·</span>Christchurch</span>
+    </div>
+    <a href="https://tally.so/r/1ADR8g" class="next-banner-cta">Enrol →</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://www.executiveframe.co.nz/" class="brand">
+      <span class="brand-mark">EF<span class="pipe">|</span><span class="arm">Family</span></span>
+      <span class="brand-tag">Human first. Then performance.</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://www.executiveframe.co.nz/">What</a>
+      <a href="https://www.executiveframe.co.nz/science">Why</a>
+      <a href="https://www.executiveframe.co.nz/method">How</a>
+      <a href="https://www.executiveframe.co.nz/about-sarah">About</a>
+      <a href="file:///Users/sarahanticich/Dropbox/Mac/Downloads/family_12.html#intake" class="nav-cta">Enquire →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+
+  <div class="hero-eyebrow">The Executive Frame™ applied to family systems</div>
+
+  <div class="hero-wordmark">
+    <span class="ef">EF</span><span class="pipe">|</span><span class="arm">FAMILY</span>
+  </div>
+
+  <div class="hero-subtitle">The C³ Loop for Parents &amp; Family Systems</div>
+
+  <!-- C³ Loop mark — now under the title -->
+  <div class="hero-loop" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle class="ring" cx="100" cy="100" r="88"></circle>
+      <circle class="ring" cx="100" cy="100" r="60"></circle>
+      <circle class="node" cx="100" cy="12" r="2.4"></circle>
+      <circle class="node" cx="36" cy="148" r="2.4"></circle>
+      <circle class="node" cx="164" cy="148" r="2.4"></circle>
+      <circle class="node-apex" cx="100" cy="40" r="2"></circle>
+      <circle class="node" cx="60" cy="148" r="1.6"></circle>
+      <circle class="node" cx="140" cy="148" r="1.6"></circle>
+      <polygon class="node" points="138,146 142,148 138,150"></polygon>
+      <polygon class="tet-mid" points="100,40 65,148 100,142"></polygon>
+      <polygon class="tet-light" points="100,40 135,148 100,142"></polygon>
+      <polygon class="tet-base" points="65,148 135,148 100,142"></polygon>
+      <line x1="100" y1="40" x2="100" y2="142" stroke="#1B1108" stroke-width="0.4" opacity="0.4"></line>
+      <text class="label" x="100" y="6" text-anchor="middle">CENTRE</text>
+      <text class="label" x="32" y="164" text-anchor="middle">CHOOSE</text>
+      <text class="label" x="168" y="164" text-anchor="middle">CLARIFY</text>
+    </svg>
+  </div>
+
+  <!-- six-stop signature gradient -->
+  <div class="signature-stops" aria-hidden="true">
+    <span class="s1"></span><span class="s2"></span><span class="s3"></span>
+    <span class="s4"></span><span class="s5"></span><span class="s6"></span>
+  </div>
+
+  <p class="hero-thesis">
+    <span class="lead">Parenting in the Tunnel</span>
+    <span class="line">Created by psychologists. Built by parents.</span>
+    <span class="line">Made for the hard moments no one prepares you for.</span>
+  </p>
+
+  <p class="hero-body">A specialist performance architecture for parents, children, and family systems navigating sustained pressure. Co-regulation as a learnable skill, not an instinct. Built on the neuroscience of how families actually settle and how children regulate through their parents.</p>
+
+  <div class="hero-ctas">
+    <a href="file:///Users/sarahanticich/Dropbox/Mac/Downloads/family_12.html#parent-series" class="btn btn-primary">The Parent Series →</a>
+    <a href="file:///Users/sarahanticich/Dropbox/Mac/Downloads/family_12.html#intake" class="btn btn-ghost">Register Interest</a>
+  </div>
+</section>
+
+<!-- 01 — FRAMEWORK · CREAM BLOCK -->
+<section class="cream-block">
+  <div class="cream-head">
+    <span class="num">01 — Architecture</span>
+    <div class="eyebrow">The Executive Frame™</div>
+    <h2>Three evidence bases. <em>One biological sequence.</em></h2>
+    <p class="sub">The framework is built on three converging sciences. The C³ Loop integrates them into a single repeating cycle.</p>
+  </div>
+
+  <div class="framework-grid">
+    <div class="framework-cell">
+      <div class="cell-num">— I</div>
+      <div class="step">Stability</div>
+      <div class="verb">Centre</div>
+      <div class="domain">Emotional regulation</div>
+      <p>The parental nervous system has to settle before the family system can. Children regulate through their parents — the body is the first signal.</p>
+    </div>
+    <div class="framework-cell">
+      <div class="cell-num">— II</div>
+      <div class="step">Clarity</div>
+      <div class="verb">Clarify</div>
+      <div class="domain">Executive functioning</div>
+      <p>Separate behaviour from interpretation. What is yours, what is your child's, what is the system's. Reduce the cognitive load on the family.</p>
+    </div>
+    <div class="framework-cell">
+      <div class="cell-num">— III</div>
+      <div class="step">Agency</div>
+      <div class="verb">Choose</div>
+      <div class="domain">Self-determination</div>
+      <p>Choose responses that grow the system, not extract from it. Lead the family from architecture, not reactivity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 — PATHWAYS · LIGHT APRICOT HEADER -->
+<div class="apricot-block light reveal in">
+  <div class="block-inner">
+    <span class="num">02 — Engagement</span>
+    <div class="eyebrow">Choose your pathway</div>
+    <h2>Four ways in. <em>One architecture.</em></h2>
+    <p class="sub">Start with the Parent Series, or enter where the load lives.</p>
+  </div>
+</div>
+
+<section class="section reveal in">
+  <div class="accordion">
+
+    <div class="accordion-item" id="parent-series">
+      <button class="accordion-header" aria-expanded="false">
+        <div class="accordion-left">
+          <span class="accordion-number">01</span>
+          <span class="accordion-title">The Parent Series</span>
+        </div>
+        <span class="accordion-meta">Three Modules · The Executive Frame™ for Family Life</span>
+        <span class="accordion-icon"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p>Three standalone modules. One integrated Loop — <strong>Centre → Clarify → Choose.</strong> The Executive Frame™ for family life.</p>
+
+          <div class="module-list">
+            <div class="module-row">
+              <div class="module-tag">M1 · Centre</div>
+              <div>
+                <div class="module-title">Regulation Before Reaction</div>
+                <div class="module-sub">Because nobody has ever said their best parenting happened while yelling from another room.</div>
+                <p>SH*FT™ for everyday family pressure. Practical nervous-system regulation tools for rushed mornings, bedtime escalation, public meltdowns, and the familiar moment when everyone in the house is suddenly running out of capacity at once.</p>
+              </div>
+            </div>
+            <div class="module-row">
+              <div class="module-tag">M2 · Clarify</div>
+              <div>
+                <div class="module-title">Stress Changes the Conversation</div>
+                <div class="module-sub">Which is why discussions about lunchboxes sometimes become existential.</div>
+                <p>Relational neuroscience under pressure. Learn how threat physiology narrows thinking, amplifies emotional reactivity, and disrupts communication — and how families can create conversations that stabilise rather than escalate.</p>
+              </div>
+            </div>
+            <div class="module-row">
+              <div class="module-tag">M3 · Choose</div>
+              <div>
+                <div class="module-title">Repair Is More Important Than Perfection</div>
+                <div class="module-sub">Which is fortunate for everyone involved.</div>
+                <p>The neuroscience of recovery, emotional safety, and relational repair. Learn how healthy families reconnect after difficult moments, reduce shame, and create cultures of belonging, flexibility, and resilience over time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        <div class="accordion-left">
+          <span class="accordion-number">02</span>
+          <span class="accordion-title">Self-Paced Learning</span>
+        </div>
+        <span class="accordion-meta">Start anywhere · Your pace</span>
+        <span class="accordion-icon"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p>For parents in the trenches. Built for use in the room, not just on the page.</p>
+          <div class="offer-grid">
+            <div class="offer-card featured">
+              <div class="offer-tag">Signature · Parenting in the Wild</div>
+              <div class="offer-inner">
+                <div class="offer-title">The C³ Loop for Real Family Life</div>
+                <div class="offer-meta">Self-paced · On-demand</div>
+                <p>The on-demand companion for the supermarket meltdown, the bedtime spiral, the school-morning collapse, and the conversation that somehow became about everything. Co-regulation in motion — not just theory in a workbook.</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-tag">eLearning</div>
+              <div class="offer-inner">
+                <div class="offer-title">SH*FT for Parents</div>
+                <div class="offer-meta">Catch the spiral before it catches the whole house</div>
+                <p>A fast, practical reset for real-time family stress. State recognition, the physiological sigh, and nervous-system tools designed for the exact moment everyone's capacity disappears at once.</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-tag">Workbook</div>
+              <div class="offer-inner">
+                <div class="offer-title">The C³ Family Toolkit</div>
+                <div class="offer-meta">Calm. Connection. Capacity. On paper so your brain doesn't have to hold it all.</div>
+                <p>Printable scaffolds, scripts, repair prompts, and visual supports that reduce cognitive load and help families communicate more clearly under pressure.</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-tag">Diagnostic</div>
+              <div class="offer-inner">
+                <div class="offer-title">The Family Capacity Scan</div>
+                <div class="offer-meta">Find the pressure point before the pressure becomes the culture</div>
+                <p>A rapid assessment identifying where your family system is getting stuck — regulation, overload, communication, or recovery — and where the first meaningful shift can begin.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        <div class="accordion-left">
+          <span class="accordion-number">03</span>
+          <span class="accordion-title">Parenting in the Wild</span>
+        </div>
+        <span class="accordion-meta">3-Part Series · Neurodivergent Families</span>
+        <span class="accordion-icon"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p>A three-part series for parents of neurodivergent children — ADHD, autism, sensory profiles, demand-avoidance, twice-exceptional. Not strategies for fixing the child. <strong>Architecture for the parent who has to hold a system the world wasn't built for.</strong> Live and on-demand formats available.</p>
+
+          <!-- FEATURED EVENT -->
+          <div class="event-card">
+            <div class="event-card-header">
+              <span class="label">★ Next Workshop · Now Enrolling</span>
+              <span class="status">Limited Places</span>
+            </div>
+            <div class="event-card-body">
+              <div class="event-card-main">
+                <h4>Parenting in the Wild<br><em>Live workshop · Part 01</em></h4>
+                <p class="event-card-desc">Navigating the Tunnel — for parents in the acute load. Co-regulation, capacity, and the architecture that holds when the household doesn't.</p>
+                <a href="https://tally.so/r/1ADR8g" class="event-card-cta">Enrol Now →</a>
+              </div>
+              <div class="event-card-meta">
+                <div class="event-meta-row">
+                  <span class="key">Date</span>
+                  <span class="val">Saturday 13 June 2026<em>9:00am – 1:00pm NZT</em></span>
+                </div>
+                <div class="event-meta-row">
+                  <span class="key">Location</span>
+                  <span class="val">Christchurch<em>Venue confirmed on enrolment</em></span>
+                </div>
+                <div class="event-meta-row">
+                  <span class="key">Format</span>
+                  <span class="val">Half-day intensive<em>In person · Small cohort</em></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-grid">
+            <div class="offer-card featured">
+              <div class="offer-tag">Part 01 · Navigating the Tunnel</div>
+              <div class="offer-inner">
+                <div class="offer-title">When Pressure Narrows the System</div>
+                <div class="offer-meta">Half day · Diagnosis &amp; acute load</div>
+                <p>The diagnosis. The school call. The night that goes wrong. The Tunnel is the predictable degradation sequence under sustained pressure — and neurodivergent parenting compresses it. Map the Tunnel. Recognise the narrowing. Recover capacity before the system breaks.</p>
+              </div>
+            </div>
+            <div class="offer-card featured">
+              <div class="offer-tag">Part 02 · Daily Load</div>
+              <div class="offer-inner">
+                <div class="offer-title">The Architecture of Repeating Pressure</div>
+                <div class="offer-meta">Half day · Co-regulation in practice</div>
+                <p>Mornings. Transitions. Homework. Bedtime. The recurring load that compounds in neurodivergent households. SH*FT™ for the real moments — and the cognitive triage that separates what's developmental, what's the sensory profile, what's the system, what's yours.</p>
+              </div>
+            </div>
+            <div class="offer-card featured">
+              <div class="offer-tag">Part 03 · The Long Game</div>
+              <div class="offer-inner">
+                <div class="offer-title">Sustainable Family Architecture</div>
+                <div class="offer-meta">Half day · Identity, agency, futures</div>
+                <p>Beyond crisis management. Identity work for the parent. Agency for the child. The competence-confidence loop grounded in your evidence, not external scripts. Building a family system that compounds — across years, not just episodes.</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-tag">Full Series</div>
+              <div class="offer-inner">
+                <div class="offer-title">Parenting in the Wild · Intensive</div>
+                <div class="offer-meta">Three parts · Single cohort</div>
+                <p>All three parts delivered as a sequenced series. Same cohort across the arc. The full Loop installed for neurodivergent family systems.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        <div class="accordion-left">
+          <span class="accordion-number">04</span>
+          <span class="accordion-title">Psychology &amp; Clinical Support</span>
+        </div>
+        <span class="accordion-meta">Registered psychologist · Confidential</span>
+        <span class="accordion-icon"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p>Clinical depth for one family's specific load. Dual-registered psychologist. Confidential. Telehealth available across New Zealand and internationally.</p>
+
+          <div class="offer-grid">
+            <div class="offer-card featured">
+              <div class="offer-tag">Clinical · Ongoing</div>
+              <div class="offer-inner">
+                <div class="offer-title">Psychology &amp; Clinical Support</div>
+                <div class="offer-meta">For families carrying sustained difficulty</div>
+                <p>Registered psychological care for parents, children, and family systems experiencing anxiety, behavioural change, neurodivergent load, illness, transition, or recurring patterns that won't shift on their own. Clinically grounded. Confidential. Built around the specific shape of your family's load — not a template.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ORIGIN · PARENTING IN THE TUNNEL -->
+<section class="origin">
+  <div class="origin-inner">
+    <div class="eyebrow">Parenting in the Tunnel</div>
+    <h2>We built this because <em>we have lived inside it.</em></h2>
+    <p class="lede">We are psychologists. We are also parents. This work was not designed in a lecture theatre — it was developed from those parenting moments where you feel alone, in the tunnel, and the light feels a long way away.</p>
+
+    <p>The Tunnel is what happens when sustained pressure narrows a family system — when capacity drops, communication frays, and the part of you that knows what to do quietly goes offline. <strong>We didn't theorise our way to this framework. We needed it.</strong></p>
+
+    <p>Every protocol in the Executive Frame™ has been used in our own homes — on the mornings that came apart, the bedtimes that spiralled, the conversations that started about shoes and ended somewhere far harder. The work is clinical. The standards are clinical. But it was built by people who have stood in the middle of their own family's hard moments and needed somewhere to put their feet.</p>
+
+    <p>This is what we offer parents now. <strong>Not strategies for fixing a child.</strong> Not a curriculum for performing parenting well. A psychological architecture built from the inside, by clinicians who know what the tunnel actually feels like.</p>
+
+    <div class="signoff">
+      <div class="signoff-pair">
+        <div class="signoff-person">
+          <div class="signoff-name">Dr Sarah Anticich</div>
+          <div class="signoff-role">Clinical &amp; I/O Psychologist</div>
+        </div>
+        <div class="signoff-amp">&amp;</div>
+        <div class="signoff-person">
+          <div class="signoff-name"><a href="https://carsonpsychology.com/" target="_blank" rel="noopener">Rose Carson</a></div>
+          <div class="signoff-role">Clinical Psychologist · Carson Psychology</div>
+        </div>
+      </div>
+      <div class="signoff-tag">Co-developed &amp; co-facilitated · Parents</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 — SH*FT · DEEP APRICOT PROTOCOL BLOCK -->
+<section class="shft reveal">
+  <div class="shft-inner">
+    <div class="shft-head">
+      <div>
+        <div style="font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.32em; opacity: 0.7; margin-bottom: 10px;">03 — PROTOCOL</div>
+        <div class="shft-eyebrow">SH<span class="star">*</span>FT<span style="font-size:24px;opacity:0.7;">™</span></div>
+      </div>
+      <p class="shft-title">The real-time micro-intervention.<br>60 seconds. Anywhere.</p>
+    </div>
+    <div class="shft-grid">
+      <div class="shft-cell"><div class="shft-letter">S</div><div class="shft-word">Slow</div><p>Interrupt the threat response.</p></div>
+      <div class="shft-cell"><div class="shft-letter">H</div><div class="shft-word">Hold</div><p>Physiological sigh. Regulate.</p></div>
+      <div class="shft-cell"><div class="shft-letter">F</div><div class="shft-word">Focus</div><p>One next step.</p></div>
+      <div class="shft-cell"><div class="shft-letter">T</div><div class="shft-word">Time</div><p>Sequence. Protect choice.</p></div>
+      <div class="shft-cell"><div class="shft-letter">+</div><div class="shft-word">Plus</div><p>Repair. Reflect. Integrate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — BEGIN · APRICOT CTA BLOCK with form -->
+<section class="cta-block reveal" id="intake">
+  <div class="cta-block-inner">
+    <span class="num">04 — Begin</span>
+    <div class="eyebrow">Register your interest</div>
+    <h2>Start with the series.<br><em>Go as deep as you need.</em></h2>
+    <p class="lede">A short form. We'll reply within two working days.</p>
+
+    <form class="form" id="register-form" onsubmit="return handleRegister(event)">
+
+      <div class="form-row two-up">
+        <div>
+          <label for="firstName">First name</label>
+          <input type="text" id="firstName" name="firstName" required="">
+        </div>
+        <div>
+          <label for="lastName">Last name</label>
+          <input type="text" id="lastName" name="lastName" required="">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required="">
+      </div>
+
+      <div class="form-row">
+        <label for="interest">I'm interested in</label>
+        <select id="interest" name="interest" required="">
+          <option value="" disabled="" selected="">Select an option</option>
+          <option>The Parent Series (three modules)</option>
+          <option>Parenting in the Wild</option>
+          <option>SH*FT for Parents</option>
+          <option>The C³ Family Toolkit</option>
+          <option>The Family Capacity Scan</option>
+          <option>Psychology &amp; Clinical Support</option>
+          <option>Not sure yet — I'd like to talk</option>
+        </select>
+      </div>
+
+      <div class="form-row two-up">
+        <div>
+          <label for="role">I am a</label>
+          <select id="role" name="role" required="">
+            <option value="" disabled="" selected="">Select</option>
+            <option>Parent</option>
+            <option>Caregiver / Whānau</option>
+            <option>Clinician</option>
+            <option>School or organisation</option>
+          </select>
+        </div>
+        <div>
+          <label for="timing">When</label>
+          <select id="timing" name="timing" required="">
+            <option value="" disabled="" selected="">Select</option>
+            <option>As soon as possible</option>
+            <option>In the next month or two</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="location">Location</label>
+        <select id="location" name="location" required="">
+          <option value="" disabled="" selected="">Select</option>
+          <option>Auckland</option>
+          <option>Christchurch</option>
+          <option>Queenstown</option>
+          <option>Telehealth</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="notes">Anything else (optional)</label>
+        <textarea id="notes" name="notes" placeholder="A short note about your context, what&#39;s prompted you to enquire, or any questions."></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit">Register Interest →</button>
+      </div>
+
+      <p class="form-fine">Your information is held in confidence. Sarah Anticich Consulting · consultant@sarahanticich.co.nz</p>
+    </form>
+
+    <div id="register-success" class="form-success" style="display:none;">
+      <h3>Thank you.</h3>
+      <p>Your enquiry has been received. We'll be in touch within two working days.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Executive Frame™</h4>
+      <p>A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
+      <p style="margin-top: 12px;">Auckland · Christchurch · Queenstown · Telehealth</p>
+      <p style="margin-top: 12px;"><a href="mailto:consultant@sarahanticich.co.nz" style="display:inline;">consultant@sarahanticich.co.nz</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>The Eight Arms</h4>
+      <div class="footer-arms">
+        <a href="https://www.executiveframe.co.nz/health">EF|Health</a> ·
+        <a href="https://www.executiveframe.co.nz/elite">EF|Elite</a> ·
+        <a href="https://www.executiveframe.co.nz/corporate">EF|Corporate</a> ·
+        <a href="https://www.executiveframe.co.nz/law">EF|Law</a> ·
+        <a href="https://www.executiveframe.co.nz/women">EF|Women</a> ·
+        <a href="https://www.executiveframe.co.nz/neurodiversity">EF|Neurodiversity</a> ·
+        <span class="current">EF|Family</span> ·
+        <a href="https://www.executiveframe.co.nz/consulting">C³|Consulting</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <p><strong style="color: var(--white); font-weight: 500;">Dr Sarah Anticich</strong></p>
+      <p>PhD, MAPS, MNZCCP</p>
+      <p>Clinical Psychologist</p>
+      <p>Industrial / Organisational Psychologist</p>
+      <p style="margin-top: 12px;">Sarah Anticich Consulting</p>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 Executive Frame™ · All rights reserved.</span>
+    <span><a href="https://www.executiveframe.co.nz/enquire" style="display: inline;">Contact</a> · <a href="https://www.executiveframe.co.nz/enquire" style="display: inline;">Referrals</a> · <a href="https://www.executiveframe.co.nz/enquire" style="display: inline;">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+  function handleRegister(e) {
+    e.preventDefault();
+    const form = document.getElementById('register-form');
+    const success = document.getElementById('register-success');
+    // In production, this would POST to a form handler. For now: show success state.
+    form.style.display = 'none';
+    success.style.display = 'block';
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  }
+
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.accordion-item.open').forEach(o => {
+        if (o !== item) {
+          o.classList.remove('open');
+          o.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('open');
+      header.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section, .apricot-block, .shft, .cta-block').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+
+  if (window.location.hash === '#parent-series') {
+    const el = document.getElementById('parent-series');
+    if (el) {
+      el.classList.add('open');
+      el.querySelector('.accordion-header').setAttribute('aria-expanded', 'true');
+    }
+  }
+  document.querySelectorAll('a[href="#parent-series"]').forEach(a => {
+    a.addEventListener('click', () => {
+      const el = document.getElementById('parent-series');
+      if (el && !el.classList.contains('open')) {
+        el.classList.add('open');
+        el.querySelector('.accordion-header').setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+
+
+</body></html>
