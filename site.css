@@ -413,3 +413,6 @@ h2{font-size:clamp(27px,3.3vw,42px)}
 .nform .note a{color:var(--accent);text-decoration:none}
 .ef-ok{display:none;font-family:'Cormorant Garamond',serif;font-size:23px;font-style:italic;color:var(--ink);line-height:1.5}
 @media(max-width:640px){.nform,.ef-ok{padding:30px 22px}}
+
+/* dropdown hover bridge */
+.nav .dd::after{content:'';position:absolute;top:100%;left:0;width:100%;height:14px}
