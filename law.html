@@ -3,526 +3,464 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EF|Law — The C³ Loop for Legal Practitioners</title>
-<meta name="description" content="Performance architecture for legal practitioners. The C³ Loop, calibrated to adversarial practice. NZLS CPD-approved.">
+<title>EF|Law — Executive Frame™ · A performance architecture for lawyers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>:root{--accent:#C0654A;--accent-ink:#FFFFFF}</style>
 <style>
-:root {
-  --arm: #4A5F7A;
-  --arm-light: #6B85A8;
-  --arm-dim: #34465c;
-  --arm-rgb: 74,95,122;
-  --pale-bg: #C8D5E2;
-}
+  :root{
+    --navy:#15212D; --navy-2:#1B2935;
+    --cream:#F9F7F2; --cream-2:#F1EEE7; --cream-tint:#F0ECE4;
+    --ink:#27333D; --ink-soft:#5A6670;
+    --rust:#C0654A; --rust-2:#B65C42;
+    --white:#FFFFFF; --slate:#8B95A1; --slate-light:#A8B1BB;
+    --line-cream:#DCD3C4; --line-navy:rgba(255,255,255,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.65}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+  section{padding:90px 0}
+  .navy{background:var(--navy);color:var(--white)}
+  .cream{background:var(--cream);color:var(--ink)}
+  .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--rust);margin-bottom:26px;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:30px;height:1.5px;background:var(--rust)}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.08;letter-spacing:-.005em}
+  h2{font-size:clamp(27px,3.3vw,42px)} h2 em{font-style:italic;font-weight:500;color:var(--rust)}
+  .navy h2 em{color:var(--rust-2)}
+  .lead{font-size:17px;line-height:1.75;max-width:680px;margin-top:24px}
+  .navy .lead{color:var(--slate-light)} .cream .lead{color:var(--ink-soft)}
+  a.btn{display:inline-block;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:15px 30px;border-radius:2px;transition:all .25s}
+  a.btn.solid{background:var(--rust);color:#fff} a.btn.solid:hover{background:var(--rust-2)}
+  a.btn.line{border:1px solid var(--line-navy);color:#fff} a.btn.line:hover{border-color:var(--slate);background:var(--navy-2)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+  /* hero */
+  .hero{padding-top:80px;padding-bottom:96px}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(48px,7vw,92px);line-height:.92;letter-spacing:-.01em;margin:6px 0 28px}
+  .wordmark .law{font-style:italic;color:var(--rust)}
+  .hero h1{font-size:clamp(26px,3.2vw,38px);max-width:760px}
+  .hero h1 em{font-style:italic;color:var(--rust)}
+  .chips{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:34px;font-size:13px;color:var(--slate-light)}
+  .chip{border:1px solid var(--line-navy);border-radius:3px;padding:9px 18px;font-family:'Cormorant Garamond',serif;font-size:17px}
+  .chip.c{color:var(--rust);border-color:rgba(192,101,74,.5)}
+  .tag{display:inline-block;margin-top:30px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);border:1px solid rgba(192,101,74,.4);border-radius:3px;padding:10px 18px}
+  .sub{font-size:14.5px;color:var(--slate);margin-top:22px}
+
+  /* opportunity rows */
+  .quote-band{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.6vw,28px);line-height:1.45;color:var(--ink);border-left:3px solid var(--rust);padding-left:26px;margin:48px 0 8px;max-width:820px}
+  .rows{margin-top:30px}
+  .rowhead{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:18px 0;border-bottom:1px solid var(--line-cream);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:30px 0;border-bottom:1px solid var(--line-cream)}
+  .row2 .l h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:23px;color:var(--ink);line-height:1.2}
+  .row2 .l .src{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--rust);margin-top:10px}
+  .row2 .r{font-size:14.5px;color:var(--ink-soft);line-height:1.7}
+
+  /* science loop + cards */
+  .sci-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center;margin-top:30px}
+  svg.loop{width:100%;max-width:300px}
+  .sci-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:54px;border:1px solid var(--line-navy);border-radius:3px;overflow:hidden}
+  .sci-card{padding:30px 26px;border-right:1px solid var(--line-navy)}
+  .sci-card:last-child{border-right:none}
+  .sci-card .n{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--slate);margin-bottom:6px}
+  .sci-card .t{font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:12px}
+  .sci-card .d{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:16px}
+  .sci-card .q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--slate-light)}
+  .sci-card .steps{font-size:11px;letter-spacing:.12em;color:var(--slate-muted,#5F6B77);margin-top:14px}
+
+  /* tunnel */
+  .tunnel-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center;margin-top:30px}
+  svg.funnel{width:100%}
+  .shift-intro{margin-top:48px;font-size:14.5px;color:var(--ink-soft);max-width:860px;line-height:1.7}
+  .shift-intro b{color:var(--ink)}
+  table{width:100%;border-collapse:collapse;margin-top:26px}
+  .cream th{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);text-align:left;padding:14px 16px;border-bottom:2px solid var(--ink)}
+  .cream td{padding:18px 16px;border-bottom:1px solid var(--line-cream);font-size:14px;color:var(--ink-soft);vertical-align:top}
+  .cream td.step{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink)}
+  .cream td.fn{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rust)}
+  .cream td.ph{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .navy th{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);text-align:left;padding:14px 16px;border-bottom:2px solid var(--slate)}
+  .navy td{padding:18px 16px;border-bottom:1px solid var(--line-navy);font-size:14px;color:var(--slate-light);vertical-align:top}
+  .navy td.num{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--rust)}
+  .navy td.mod{color:#fff;font-weight:500}
+  .navy td.it{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--slate-light)}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px;border-top:1px solid var(--line-navy);padding-top:44px}
+  .stat .big{font-family:'Cormorant Garamond',serif;font-size:64px;line-height:1;color:var(--rust)}
+  .stat .lbl{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:14px 0 8px}
+  .stat .sd{font-size:13px;color:var(--slate-light);line-height:1.55}
+
+  /* module cards */
+  .mods{margin-top:40px;display:grid;gap:22px}
+  .mod{display:grid;grid-template-columns:64px 1fr;background:var(--white);border:1px solid var(--line-cream);border-radius:4px;overflow:hidden}
+  .mod .tab{background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:28px;gap:18px}
+  .mod .tab .mn{font-family:'Cormorant Garamond',serif;font-size:26px}
+  .mod .tab .ph{writing-mode:vertical-rl;transform:rotate(180deg);font-size:9.5px;letter-spacing:.22em;color:var(--slate)}
+  .mod .body{padding:28px 30px}
+  .mod .me{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:10px}
+  .mod h3{font-size:27px;color:var(--ink)}
+  .mod .msub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:4px}
+  .mod .mq{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--rust);border-left:2px solid var(--rust);padding-left:14px;margin:16px 0}
+  .mod .mb{font-size:14px;color:var(--ink-soft);line-height:1.65}
+  .mod .inst{background:var(--cream-tint);border-radius:3px;padding:16px 18px;margin-top:18px;font-size:13px;color:var(--ink-soft);line-height:1.6}
+  .mod .inst b{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:6px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .pill{font-size:12px;color:var(--ink-soft);border:1px solid var(--line-cream);border-radius:40px;padding:7px 14px}
+
+  /* clinician */
+  .clin{display:grid;grid-template-columns:1.3fr 1fr;gap:46px}
+  .clin .box{border:1px solid var(--line-navy);border-radius:4px;padding:26px 28px}
+  .clin .box .lbl{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+  .clin .box p,.clin .box a{font-size:14px;color:var(--slate-light);line-height:1.8;text-decoration:none}
+  .bigquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(24px,3.2vw,34px);line-height:1.4;margin-top:54px;border-top:1px solid var(--line-navy);padding-top:44px;max-width:900px}
+  .bigquote .who{display:block;font-style:normal;font-family:'Inter';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin-top:22px}
+
+  /* close */
+  .close{text-align:center}
+  .close h2{max-width:760px;margin:0 auto}
+  .close .lead{margin:24px auto 0;text-align:center}
+  .close .cta-row{justify-content:center}
+  .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--slate-light);margin-top:50px}
+
+  /* footer */
+  footer{background:#111B24;padding:54px 0 40px;border-top:1px solid var(--line-navy)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  .foot h4{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:12px}
+  .foot p,.foot a{font-size:13px;color:var(--slate);line-height:1.7;text-decoration:none} .foot a:hover{color:#fff}
+  .foot .fl{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#5F6B77;margin-bottom:12px}
+  .copyright{margin-top:40px;padding-top:22px;border-top:1px solid var(--line-navy);font-size:12px;color:#5F6B77}
+
+  @media(max-width:840px){
+    .sci-grid,.tunnel-grid,.clin{grid-template-columns:1fr;gap:30px}
+    .rowhead,.row2{grid-template-columns:1fr;gap:8px}
+    .rowhead span:last-child{display:none}
+    .sci-cards{grid-template-columns:1fr} .sci-card{border-right:none;border-bottom:1px solid var(--line-navy)}
+    .stats,.foot-grid{grid-template-columns:1fr;gap:26px}
+    section{padding:60px 0} .wrap{padding:0 24px}
+  }
 </style>
-</head>
-<body>
-<nav class="site-nav">
-  <a href="index.html" class="nav-brand">
-    <span class="nav-brand-ef">EF</span><span class="nav-brand-arm">|Law</span>
-    <span class="nav-brand-sub">Human first. Then performance.</span>
-  </a>
-  <div class="nav-links">
-    <a href="index.html">What</a>
-    <a href="science.html">Why</a>
-    <a href="method.html">How</a>
-    <a href="about-sarah.html">About Sarah</a>
-    <div class="nav-dropdown">
-      <a class="nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
-      <div class="nav-dropdown-panel">
-        <a href="health.html"><span class="nav-dot" style="background:#3d6d5c;"></span>EF|Health</a>
-        <a href="health-dgbi.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — DGBI</a>
-        <a href="health-elearning.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — eLearning</a>
-        <a href="health-store.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — Resources</a>
-        <a href="elite.html"><span class="nav-dot" style="background:#C9874E;"></span>EF|Elite</a>
-        <a href="corporate.html"><span class="nav-dot" style="background:#6B8AA8;"></span>EF|Corporate</a>
-        <a href="law.html"><span class="nav-dot" style="background:#4A5F7A;"></span>EF|Law</a>
-        <a href="law-family.html"  class="sub"><span class="nav-dot" style="background:#4A5F7A;"></span>↳ EF|Law — Family</a>
-        <a href="women.html"><span class="nav-dot" style="background:#C28699;"></span>EF|Women</a>
-        <a href="neurodiversity.html"><span class="nav-dot" style="background:#A593C2;"></span>EF|Neurodiversity</a>
-        <a href="family.html"><span class="nav-dot" style="background:#A89BAA;"></span>EF|Family</a>
-        <a href="consulting.html"><span class="nav-dot" style="background:#8FBFA8;"></span>C³ Consulting</a>
+<script>document.documentElement.classList.add('reveal-on')</script></head>
+<body><div class="grain"></div><nav class="nav"><div class="bar">
+<a class="brand" href="index.html">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
+<div class="links">
+<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a><a class="l" href="about-sarah.html">About Sarah</a>
+<div class="dd"><a class="l" href="#">Programmes ▾</a><div class="dd-menu">
+<a href="law.html">EF|Law</a><a class="sub" href="law-family.html">↳ EF|Law — Family</a>
+<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a><a class="sub" href="health-elearning.html">↳ EF|Health — eLearning</a>
+<a href="corporate.html">EF|Corporate</a><a href="elite.html">EF|Elite</a><a href="women.html">EF|Women</a>
+<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="consulting.html">C³ Consulting</a>
+</div></div>
+<a class="l" href="library.html">Library</a><a class="l" href="store.html">Store</a><a class="l" href="partners.html">Partners</a>
+<a class="l intake" href="intake.html">Intake →</a>
+</div></div></nav>
+
+<!-- HERO -->
+<section class="hero navy">
+  <div class="wrap">
+    <div class="eyebrow">Executive Frame™ · for the legal profession</div>
+    <div class="wordmark">EF<span class="law">|Law</span></div>
+    <h1>You trained for the law.<br><em>This is what sustains it.</em></h1>
+    <p class="sub">Wellbeing webinar series for early-career lawyers · 0–7 PQE · CPD-approved · delivered nationally, in partnership with the New Zealand Law Society.</p>
+    <div class="chips">
+      <span class="chip c">Centre</span> →
+      <span class="chip c">Clarify</span> →
+      <span class="chip c">Choose</span>
+      <span style="color:var(--slate)">→ repeat</span>
+    </div>
+    <div><span class="tag">Not wellness — capacity infrastructure</span></div>
+    <div class="cta-row">
+      <a class="btn solid" href="https://tally.so/r/1ADR8g">Reserve a place →</a>
+      <a class="btn line" href="https://www.executiveframe.co.nz/enquire">Bring EF|Law to your firm →</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE OPPORTUNITY -->
+<section class="cream">
+  <div class="wrap">
+    <div class="eyebrow">The opportunity</div>
+    <h2>You trained for the law.<br><em>This is what sustains it.</em></h2>
+    <p class="lead">Legal training builds technical capability. EF|Law builds the human capacity that sustains it — the infrastructure for performing well across a full career.</p>
+    <p class="lead">The conditions of practice — cognitive load, adversarial intensity, time compression, relational demand — place measurable pressure on the nervous system. EF|Law gives lawyers the architecture to meet it with clarity and composure that deepen rather than erode.</p>
+    <div class="quote-band">EF|Law builds the competencies that let great lawyers keep being great — across the pressures, across the years.</div>
+
+    <div class="rows">
+      <div class="rowhead"><span>Why this matters now</span><span>The science</span></div>
+      <div class="row2">
+        <div class="l"><h4>The pace of practice is outrunning the tools most lawyers have to meet it.</h4><div class="src">Cognitive load · attentional narrowing under sustained demand</div></div>
+        <div class="r">Always-on communication and accelerating velocity are compressing the recovery windows performance depends on. The nervous system never evolved for this pace. Closing the gap is a professional skill, not a personal project.</div>
+      </div>
+      <div class="row2">
+        <div class="l"><h4>Pressure narrows thinking — and that is a neurobiological response, not a personal failing.</h4><div class="src">Polyvagal theory · threat appraisal · cortisol and cognitive function</div></div>
+        <div class="r">When load exceeds capacity, the system enters a constrained state: attention narrows, reactivity rises, deliberate choice contracts. Understanding the biology is the first step in working with it.</div>
+      </div>
+      <div class="row2">
+        <div class="l"><h4>EF|Law builds the competencies that let lawyers thrive under demand, not merely meet it.</h4><div class="src">Neuroplasticity · successive skill acquisition · biologically sequenced learning</div></div>
+        <div class="r">EF|Law installs three competencies — emotional regulation, cognitive execution, sustainable motivation — in the order the research requires. Each builds on the last. All are calibrated to legal practice.</div>
+      </div>
+      <div class="row2">
+        <div class="l"><h4>The early-career window is the highest-leverage moment to build this foundation.</h4><div class="src">Neuroplasticity research · Hebbian learning · habit-formation science</div></div>
+        <div class="r">The capacity to build durable infrastructure is greatest in the first seven years. The patterns set now shape the whole arc of a career — which is why EF|Law is calibrated to this window.</div>
       </div>
     </div>
-    <a href="store.html">Store</a>
-    <a href="partners.html">Partners</a>
-    <a href="https://tally.so/r/1ADR8g" class="nav-cta" target="_blank">Intake →</a>
   </div>
-</nav>
+</section>
 
-<!-- ══════════ HERO ══════════ -->
-<div class="hero">
-
-  <svg class="hero-c3loop" width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" aria-label="The C³ Loop — Centre, Clarify, Choose">
-  <!-- OUTER ORBITAL RING -->
-  <circle cx="350" cy="350" r="290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-  <!-- INNER ORBITAL RING -->
-  <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-
-  <!-- THREE ORBITAL NODES on outer ring -->
-  <!-- CENTRE node · top -->
-  <circle cx="350" cy="60" r="4" fill="rgba(255,255,255,0.80)"/>
-  <!-- CLARIFY node · lower-right (≈120° from top) -->
-  <circle cx="601" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
-  <!-- CHOOSE node · lower-left (≈240° from top) -->
-  <circle cx="99" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
-
-  <!-- CHOOSE small triangle indicator (per brand kit) -->
-  <polygon points="588,485 600,491 588,497" fill="rgba(255,255,255,0.55)"/>
-
-  <!-- TETRAHEDRON · centred, apex up -->
-  <!-- Apex at 350,180. Base centre at 350,510.
-       Three base vertices forming triangle: left, right, back.
-       Front-left visible face (light), front-right visible face (mid),
-       base receding face (shadow). Apex bright dot on top. -->
-  <g class="c3-tetrahedron">
-    <!-- Base receding edge (shadow) -->
-    <polygon points="350,180 220,510 480,510" fill="#34465c" opacity="0.85"/>
-    <!-- Left visible face (light) -->
-    <polygon points="350,180 220,510 350,490" fill="#6B85A8"/>
-    <!-- Right visible face (mid) -->
-    <polygon points="350,180 350,490 480,510" fill="#4A5F7A"/>
-    <!-- Thin shadow at base -->
-    <ellipse cx="350" cy="515" rx="135" ry="4" fill="#121C25" opacity="0.5"/>
-    <!-- Apex highlight dot -->
-    <circle cx="350" cy="180" r="5" fill="#FFFFFF"/>
-  </g>
-
-  <!-- ORBITAL LABELS · CENTRE top, CLARIFY lower-right, CHOOSE lower-left -->
-  <text x="350" y="40" text-anchor="middle"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CENTRE</text>
-  <text x="660" y="640" text-anchor="end"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CLARIFY</text>
-  <text x="40" y="640" text-anchor="start"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CHOOSE</text>
-</svg>
-
-  <div class="spectrum-bar">
-    <div style="flex:1.2;background:#4A5F7A;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
+<!-- THE SCIENCE -->
+<section class="navy">
+  <div class="wrap">
+    <div class="eyebrow">The science</div>
+    <h2>The C³ Loop™ <em>in practice.</em></h2>
+    <div class="sci-grid">
+      <svg class="loop" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-label="The C3 Loop">
+        <circle cx="150" cy="150" r="110" fill="none" stroke="#8B95A1" stroke-opacity="0.3" stroke-width="1"/>
+        <circle cx="150" cy="60" r="26" fill="none" stroke="#C0654A" stroke-width="1.4"/>
+        <circle cx="228" cy="195" r="26" fill="none" stroke="#8B95A1" stroke-width="1.2"/>
+        <circle cx="72" cy="195" r="26" fill="none" stroke="#8B95A1" stroke-width="1.2"/>
+        <circle cx="150" cy="150" r="6" fill="#C0654A"/>
+        <text x="150" y="66" text-anchor="middle" font-family="Cormorant Garamond" font-size="22" fill="#fff">01</text>
+        <text x="228" y="201" text-anchor="middle" font-family="Cormorant Garamond" font-size="22" fill="#fff">02</text>
+        <text x="72" y="201" text-anchor="middle" font-family="Cormorant Garamond" font-size="22" fill="#fff">03</text>
+        <text x="150" y="28" text-anchor="middle" font-family="Inter" font-size="10" letter-spacing="2" fill="#8B95A1">CENTRE</text>
+        <text x="228" y="240" text-anchor="middle" font-family="Inter" font-size="10" letter-spacing="2" fill="#8B95A1">CLARIFY</text>
+        <text x="72" y="240" text-anchor="middle" font-family="Inter" font-size="10" letter-spacing="2" fill="#8B95A1">CHOOSE</text>
+        <text x="150" y="138" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="13" fill="#C0654A">repeat</text>
+      </svg>
+      <div>
+        <p class="lead" style="margin-top:0">The Executive Frame™ is a clinician-developed architecture grounded in three robust evidence bases — emotional intelligence, executive function, and self-determination theory. Together they form the C³ Loop™.</p>
+        <p class="lead">Three moves, held in sequence: Centre, Clarify, Choose. Each step is neurologically upstream of the next — skip Centre and Clarify turns anxious; skip Clarify and Choose turns reactive. The order matches how the regulatory system actually works.</p>
+      </div>
+    </div>
+    <div class="sci-cards">
+      <div class="sci-card"><div class="n">01</div><div class="t">Centre</div><div class="d">Emotional Intelligence</div><div class="q">Is the system steady enough to think clearly?</div><div class="steps">Slow · Hold</div></div>
+      <div class="sci-card"><div class="n">02</div><div class="t">Clarify</div><div class="d">Executive Function</div><div class="q">Is thinking organised enough to execute well?</div><div class="steps">*Focus</div></div>
+      <div class="sci-card"><div class="n">03</div><div class="t">Choose</div><div class="d">Self-Determination Theory</div><div class="q">Is ownership intact enough to act deliberately?</div><div class="steps">Time · +Plus</div></div>
+    </div>
   </div>
+</section>
 
-  <div class="hero-overline">The Executive Frame™ Applied to Legal Practice</div>
-  <div class="hero-title">EF<span>|LAW</span></div>
-  <div class="hero-subtitle">The C³ Loop for Legal Practitioners</div>
-  <div class="hero-tagline">
-    Not wellness. Not resilience training.<br>
-    Capacity infrastructure for the adversarial load of legal work.
+<!-- THE TUNNEL + S.H.*F.T. -->
+<section class="cream">
+  <div class="wrap">
+    <div class="eyebrow">The Tunnel™ of disruption</div>
+    <h2>Working inside pressure —<br><em>with precision and composure.</em></h2>
+    <div class="tunnel-grid">
+      <svg class="funnel" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" aria-label="The Tunnel">
+        <polygon points="10,20 350,95 350,125 10,200" fill="#15212D"/>
+        <text x="24" y="118" font-family="Inter" font-size="11" letter-spacing="1.5" fill="#fff">LOAD ENTERS</text>
+        <text x="24" y="134" font-family="Cormorant Garamond" font-style="italic" font-size="13" fill="#C0654A">wide field of choice</text>
+        <text x="270" y="100" font-family="Inter" font-size="9" letter-spacing="1" fill="#cdd3da">DELIBERATE</text>
+        <text x="270" y="112" font-family="Inter" font-size="9" letter-spacing="1" fill="#cdd3da">CHOICE</text>
+        <text x="270" y="126" font-family="Cormorant Garamond" font-style="italic" font-size="12" fill="#C0654A">compresses</text>
+        <circle cx="350" cy="110" r="5" fill="#C0654A"/>
+      </svg>
+      <div>
+        <p class="lead" style="margin-top:0">Every lawyer knows the Tunnel — the state when load hits its ceiling: attention narrows, reactivity rises, the space for deliberate choice compresses. A predictable neurobiological response to adversarial load, relational demand, and time compression without recovery.</p>
+        <p class="lead">Understanding the Tunnel is not about managing weakness. It is about navigating a known biological state with the tools neuroscience has developed for exactly this purpose.</p>
+      </div>
+    </div>
+    <p class="shift-intro">The <b>S.H.*F.T.™ Protocol</b> is a five-step, sub-90-second micro-intervention — the real-time procedure for working through the Tunnel with composure and intention intact. Installed across the series; portable as a desk card.</p>
+    <table>
+      <thead><tr><th>Step</th><th>Action</th><th>Function</th><th>C³ Phase</th></tr></thead>
+      <tbody>
+        <tr><td class="step">Slow</td><td>Interrupt urgency. Name the state. Reorient attention.</td><td class="fn">Regulation onset</td><td class="ph">Centre</td></tr>
+        <tr><td class="step">Hold</td><td>Stabilise physiology. Lower intensity. Contain escalation.</td><td class="fn">Regulation consolidation</td><td class="ph">Centre</td></tr>
+        <tr><td class="step">*Focus</td><td>One executable next step. Today's problem only.</td><td class="fn">Cognitive restoration</td><td class="ph">Clarify</td></tr>
+        <tr><td class="step">Time</td><td>Delay interpretation. Protect autonomy.</td><td class="fn">Agency protection</td><td class="ph">Choose</td></tr>
+        <tr><td class="step">+Plus</td><td>Repair, reflect, integrate. Restore the full sequence.</td><td class="fn">C³ recovery</td><td class="ph">Choose</td></tr>
+      </tbody>
+    </table>
   </div>
-  <div class="hero-body">
-    A specialist performance architecture for legal practitioners — grounded in emotional intelligence, executive functioning, and self-determination theory. Built for the courtroom, the conference room, the contested file, and the long arc of a legal career. <strong>EF|LAW is being proposed to the New Zealand Law Society as a national capacity offer for 2026 — two cohorts under one architecture (early-career webinar series and family law specialist stream).</strong> <a href='nzls-partnership.html' style='color:inherit;border-bottom:1px solid currentColor;text-decoration:none;'>Read the partnership proposal →</a>
-  </div>
-  <div class="hero-actions">
-    <a href="#series" class="btn-primary">The C³ Law Series →</a>
-    <a href="#intake" class="btn-ghost">Register Interest</a>
-  </div>
+</section>
 
-  <div class="hero-foot">
-    <div class="hero-foot-line">Center → Clarify → Choose → Repeat</div>
-    <div class="hero-foot-tag">Human first. Then performance.</div>
+<!-- THE PROGRAMME -->
+<section class="navy">
+  <div class="wrap">
+    <div class="eyebrow">The programme</div>
+    <h2>Six modules. Three competencies.<br><em>One operating system.</em></h2>
+    <p class="lead">Each module is a standalone 60-minute workshop installing one competency from the Executive Frame™. Together they assemble the complete C³ Loop. Every module is CPD-approved, delivered live, and built around a real-time tool participants use the next day.</p>
+    <table>
+      <thead><tr><th>#</th><th>Module</th><th>C³ Phase</th><th>Real-time tool</th><th>CPD</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="mod">State Before Strategy</td><td class="it">Centre</td><td class="it">The Capacity Check</td><td>1.0 hr</td></tr>
+        <tr><td class="num">2</td><td class="mod">The 90-Second Reset</td><td class="it">Centre</td><td class="it">S.H.*F.T.™ &amp; the Physiological Sigh</td><td>1.0 hr</td></tr>
+        <tr><td class="num">3</td><td class="mod">Thinking Clearly Under Pressure</td><td class="it">Clarify</td><td class="it">Now–Do–Later · The Decision Map</td><td>1.0 hr</td></tr>
+        <tr><td class="num">4</td><td class="mod">The Tunnel</td><td class="it">Clarify</td><td class="it">The Emotional Airlock</td><td>1.0 hr</td></tr>
+        <tr><td class="num">5</td><td class="mod">Choice Under Constraint</td><td class="it">Choose</td><td class="it">Agency Map · Reframe Check</td><td>1.0 hr</td></tr>
+        <tr><td class="num">6</td><td class="mod">System, Not Trait</td><td class="it">Full Loop</td><td class="it">Sustainable Performance Map</td><td>1.0 hr</td></tr>
+      </tbody>
+    </table>
+    <div class="stats">
+      <div class="stat"><div class="big">6.0</div><div class="lbl">CPD hours</div><div class="sd">The complete series, each session individually NZLS CPD-approved.</div></div>
+      <div class="stat"><div class="big">90s</div><div class="lbl">Real-time tool</div><div class="sd">Every module ends with a portable tool deployable the following day.</div></div>
+      <div class="stat"><div class="big">0–7</div><div class="lbl">PQE window</div><div class="sd">Calibrated to the highest-leverage moment in a legal career.</div></div>
+    </div>
   </div>
+</section>
+
+<!-- THE SIX MODULES -->
+<section class="cream">
+  <div class="wrap">
+    <div class="eyebrow">The six modules</div>
+    <h2>What each module <em>builds.</em></h2>
+    <p class="lead">Each stands alone and compounds across the series. The science is named, the application is legal, and every module ends with a real-time tool.</p>
+    <div class="mods">
+
+      <div class="mod"><div class="tab"><div class="mn">01</div><div class="ph">CENTRE</div></div><div class="body">
+        <div class="me">Centre · Autonomic state · Neuroscience</div>
+        <h3>State Before Strategy</h3><div class="msub">The hidden driver of legal performance</div>
+        <div class="mq">"Your system has already made the call."</div>
+        <div class="mb">The autonomic nervous system drives every decision. This module maps the biology of performance — the threat–reward axis, prefrontal access under load — and why good lawyers don't always perform at their best. With what to do about it.</div>
+        <div class="inst"><b>Installed this module</b>The C³ Loop as a working model · The Capacity Check · understanding of your personal first binding constraint.</div>
+        <div class="pills"><span class="pill">The Capacity Check</span><span class="pill">C³ Loop map</span><span class="pill">Threat–reward axis diagram</span></div>
+      </div></div>
+
+      <div class="mod"><div class="tab"><div class="mn">02</div><div class="ph">CENTRE</div></div><div class="body">
+        <div class="me">Centre · S.H.*F.T.™ · EI operationalised</div>
+        <h3>The 90-Second Reset</h3><div class="msub">Protecting judgement under pressure</div>
+        <div class="mq">"Delay the reaction. Protect the outcome."</div>
+        <div class="mb">S.H.*F.T.™ in full, anchored by the physiological sigh — the fastest evidence-based way to downregulate sympathetic activation in real time. Emotional intelligence becomes portable tools for the hostile email, the difficult call, the meeting you didn't see coming.</div>
+        <div class="inst"><b>Installed this module</b>The complete S.H.*F.T.™ Protocol · the physiological sigh as a real-time reset · Slow and Hold embedded as daily practice.</div>
+        <div class="pills"><span class="pill">S.H.*F.T.™ desk card</span><span class="pill">Physiological sigh protocol</span><span class="pill">The Pause Protocol</span></div>
+      </div></div>
+
+      <div class="mod"><div class="tab"><div class="mn">03</div><div class="ph">CLARIFY</div></div><div class="body">
+        <div class="me">Clarify · Executive function · Decision architecture</div>
+        <h3>Thinking Clearly Under Pressure</h3><div class="msub">When everything feels urgent</div>
+        <div class="mq">"Capacity drops. Confidence doesn't."</div>
+        <div class="mb">Executive function — working memory, inhibition, flexibility, planning — is the infrastructure legal complexity demands. Under load it degrades predictably: dropped steps, rework loops, the 4pm decision you'd never make at 9am. Now–Do–Later and a decision architecture separate clarity from fatigue.</div>
+        <div class="inst"><b>Installed this module</b>Now–Do–Later triage system · The Decision Map · *Focus installed as the Centre → Clarify pivot.</div>
+        <div class="pills"><span class="pill">Now–Do–Later</span><span class="pill">The Decision Map</span><span class="pill">The File Finish Line</span></div>
+      </div></div>
+
+      <div class="mod"><div class="tab"><div class="mn">04</div><div class="ph">CLARIFY</div></div><div class="body">
+        <div class="me">Clarify · Relational neuroscience · The Tunnel</div>
+        <h3>The Tunnel</h3><div class="msub">Managing conflict, clients and communication under pressure</div>
+        <div class="mq">"When pressure narrows the brief."</div>
+        <div class="mb">In the Tunnel, threat activation narrows the world and every interaction turns reactive — opposing counsel reads as more hostile than they are, client distress becomes yours. This module builds the communication architecture for holding hard conversations with composure.</div>
+        <div class="inst"><b>Installed this module</b>The Emotional Airlock · The Email Escalation Protocol · relational co-regulation as a performance tool.</div>
+        <div class="pills"><span class="pill">The Emotional Airlock</span><span class="pill">Email Escalation Protocol</span><span class="pill">After-Action Debrief</span></div>
+      </div></div>
+
+      <div class="mod"><div class="tab"><div class="mn">05</div><div class="ph">CHOOSE</div></div><div class="body">
+        <div class="me">Choose · Self-determination theory · Sustainable practice</div>
+        <h3>Choice Under Constraint</h3><div class="msub">Building agency in a demanding profession</div>
+        <div class="mq">"Choice is still available — just harder to access."</div>
+        <div class="mb">Autonomy, competence, relatedness — Deci &amp; Ryan's Self-Determination Theory is the most robustly evidenced model of sustainable motivation in existence. Genuine choice inside real constraints; confidence grounded in evidence, not reassurance. The science of a practice that lasts.</div>
+        <div class="inst"><b>Installed this module</b>Agency map · Micro-choice protocol · Competence–confidence loop · Time and +Plus embedded as daily Choose-phase practices.</div>
+        <div class="pills"><span class="pill">Agency map</span><span class="pill">Competence–confidence loop</span><span class="pill">The Reframe Check</span></div>
+      </div></div>
+
+      <div class="mod"><div class="tab"><div class="mn">06</div><div class="ph">LOOP</div></div><div class="body">
+        <div class="me">Full Loop · Performance architecture · Career infrastructure</div>
+        <h3>System, Not Trait</h3><div class="msub">The architecture of sustainable legal performance</div>
+        <div class="mq">"Precision under pressure is a system, not a trait."</div>
+        <div class="mb">Centre → Clarify → Choose → Repeat. The prior five modules were the installation; this is the integration — capacity plan built, tools mapped to your load profile. Six modules become career-long infrastructure.</div>
+        <div class="inst"><b>Installed this module</b>Your Sustainable Performance Map · personal capacity plan · 30-day C³ check-in protocol · the full loop running as a self-sustaining practice.</div>
+        <div class="pills"><span class="pill">Sustainable Performance Map</span><span class="pill">Capacity plan template</span><span class="pill">30-day C³ protocol</span></div>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MEASURABLE RESULTS -->
+<section class="cream">
+  <div class="wrap">
+    <div class="eyebrow">Measurable results</div>
+    <h2>What <em>shifts.</em></h2>
+    <p class="lead">The Executive Frame™ targets measurable dimensions of professional functioning, observed in clinical practice with lawyers, health professionals, and senior leaders across Aotearoa New Zealand.</p>
+    <table>
+      <thead><tr><th>Domain</th><th>What builds and improves</th><th>C³ Phase</th></tr></thead>
+      <tbody>
+        <tr><td class="step" style="font-size:18px">Emotional regulation</td><td>Greater composure under stakes. More consistent tone in correspondence. Less rumination, faster recovery.</td><td class="ph" style="color:var(--rust)">Centre</td></tr>
+        <tr><td class="step" style="font-size:18px">Cognitive performance</td><td>Sharper prioritisation across matters. Fewer rework cycles. More reliable execution under load.</td><td class="ph" style="color:var(--rust)">Clarify</td></tr>
+        <tr><td class="step" style="font-size:18px">Decision quality</td><td>Stronger judgement at the end of a long day. Clearer urgent-from-important. Better-calibrated risk advice under pressure.</td><td class="ph" style="color:var(--rust)">Clarify</td></tr>
+        <tr><td class="step" style="font-size:18px">Professional confidence</td><td>Evidence-based self-assessment that builds genuine competence. Greater readiness for senior and leadership roles.</td><td class="ph" style="color:var(--rust)">Choose</td></tr>
+        <tr><td class="step" style="font-size:18px">Engagement &amp; purpose</td><td>A stronger sense of autonomy, competence, and connection. Sustained motivation across the arc of a career.</td><td class="ph" style="color:var(--rust)">Choose</td></tr>
+        <tr><td class="step" style="font-size:18px">Team functioning</td><td>Shared regulation language that cuts friction. Stronger handover discipline and mutual support under load.</td><td class="ph" style="color:var(--rust)">All three</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SPECIFICATION -->
+<section class="navy">
+  <div class="wrap">
+    <div class="eyebrow">Delivery &amp; partnership</div>
+    <h2><em>Specification.</em></h2>
+    <table style="margin-top:34px">
+      <tbody>
+        <tr><td class="it" style="width:200px;color:var(--rust)">Format</td><td>Six standalone 60-minute workshops, each installing one competency. Available individually or as a complete series.</td></tr>
+        <tr><td class="it" style="color:var(--rust)">Delivery</td><td>National, delivered live via webinar. Accessible to all NZLS members regardless of location, firm size, or practice area.</td></tr>
+        <tr><td class="it" style="color:var(--rust)">CPD</td><td>Each session submitted for NZLS CPD approval. The complete series represents 6.0 CPD hours.</td></tr>
+        <tr><td class="it" style="color:var(--rust)">Facilitation</td><td>All sessions clinician-led by Dr Sarah Anticich — the evidence base applied with clinical precision and professional authority.</td></tr>
+        <tr><td class="it" style="color:var(--rust)">Cohort</td><td>Designed for early-career lawyers (0–7 PQE). Applicable across all practice areas, firm sizes, and employment contexts.</td></tr>
+        <tr><td class="it" style="color:var(--rust)">Resources</td><td>Each session includes a portable real-time tool — suitable for member portal, firm intranet, or workshop handout.</td></tr>
+        <tr><td class="it" style="color:var(--rust)">Partnership</td><td>Delivered in partnership with Te Kāhui Ture o Aotearoa | New Zealand Law Society.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- THE CLINICIAN -->
+<section class="navy">
+  <div class="wrap">
+    <div class="eyebrow">The clinician</div>
+    <h2>Dr Sarah <em>Anticich.</em></h2>
+    <p class="lead">A registered Clinical, Organisational, and Industrial Psychologist specialising in performance under pressure — a rare integration of therapeutic depth and organisational application, and the foundation under EF|Law. She is the creator of the Executive Frame™ and the C³ Loop™, developed through sustained clinical work with lawyers, health professionals, and senior leaders across Aotearoa New Zealand.</p>
+    <div class="clin" style="margin-top:38px">
+      <div class="box"><div class="lbl">Qualifications</div><p>PhD · PGDipClinPsych · MSc(Hons) · BA(Hons) · BSc · MNZCCP<br>Registered Clinical Psychologist<br>Registered Organisational &amp; Industrial Psychologist</p></div>
+      <div class="box"><div class="lbl">To discuss EF|Law 2026</div><p><a href="mailto:consultant@sarahanticich.co.nz">consultant@sarahanticich.co.nz</a><br>Auckland · Christchurch · Queenstown<br>National delivery via webinar</p></div>
+    </div>
+    <div class="bigquote">"Precision under pressure is a system, not a trait. The C³ Loop is that system — and every lawyer who builds it carries it for the rest of their career."
+      <span class="who">Dr Sarah Anticich · Clinical, Organisational &amp; Industrial Psychologist</span></div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="navy close" style="padding-top:30px">
+  <div class="wrap">
+    <h2>Sharp mind. <em>Made sustainable.</em></h2>
+    <p class="lead">Reserve a place in the 2026 series, add it to your CPD plan, or bring EF|Law to your firm.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="https://tally.so/r/1ADR8g">Reserve a place →</a>
+      <a class="btn line" href="https://www.executiveframe.co.nz/enquire">Bring EF|Law to your firm →</a>
+    </div>
+    <div class="tagline">Human first. Then performance.</div>
+  </div>
+</section>
+
+
+
+<footer><div class="wrap">
+<hr class="foot-rule">
+<div class="foot-grid">
+<div class="fcol">
+<h4 class="fbrand">Executive Frame<sup>™</sup></h4>
+<p class="fdesc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
+<p class="floc">Auckland · Christchurch · Queenstown · Telehealth available</p>
+<p><a class="fmail" href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></p>
+<p class="ftag">Human first. Then performance.</p>
 </div>
-
-<!-- ══════════ ARCHITECTURE — NAVY ══════════ -->
-<section id="architecture" class="band navy">
-  <div class="band-inner">
-    <div class="section-label">The Executive Frame™</div>
-    <div class="section-title">Three evidence bases. One biological sequence.</div>
-    <div class="section-subtitle">The Executive Frame™ is built on three converging sciences — each addressing a different layer of human performance. The C³ Loop is the operational mechanism that integrates all three into a single, repeating cycle.</div>
-
-    <div class="arch-grid">
-      <div class="arch-card">
-        <div class="arch-label">Step One · Stability</div>
-        <div class="arch-name">Center</div>
-        <div class="arch-pillar">Emotional Intelligence</div>
-        <div class="arch-desc">Emotional regulation before everything else. You cannot think clearly from inside threat activation — and adversarial work is sustained threat activation by design. The physiological foundation without which legal reasoning cannot run cleanly.</div>
-      </div>
-      <div class="arch-card">
-        <div class="arch-label">Step Two · Clarity</div>
-        <div class="arch-name">Clarify</div>
-        <div class="arch-pillar">Executive Functioning</div>
-        <div class="arch-desc">Strategic thinking under pressure. Legal reasoning protected from reactivity — the difference between strategic advocacy and reactive defence. Working memory, inhibition, cognitive flexibility under contested-matter load.</div>
-      </div>
-      <div class="arch-card">
-        <div class="arch-label">Step Three · Agency</div>
-        <div class="arch-name">Choose</div>
-        <div class="arch-pillar">Self-Determination Theory</div>
-        <div class="arch-desc">Professional authorship. Autonomy within legal systems. Competence grounded in evidence, not validation. Relatedness inside an adversarial profession. A career chosen, not survived.</div>
-      </div>
-    </div>
-
-    <div class="shft-strip">
-      <div class="shft-head">
-        <div class="shft-head-name">S.H.F.T.<sup>™</sup></div>
-        <div class="shft-head-sub">The real-time micro-intervention. 60 seconds. Anywhere.</div>
-      </div>
-      <div class="shft-steps">
-        <div class="shft-step"><span class="shft-step-letter">S</span><span class="shft-step-text">Slow — interrupt the threat response</span></div>
-        <div class="shft-step"><span class="shft-step-letter">H</span><span class="shft-step-text">Hold — physiological sigh, regulate</span></div>
-        <div class="shft-step"><span class="shft-step-letter">F</span><span class="shft-step-text">Focus — one next step</span></div>
-        <div class="shft-step"><span class="shft-step-letter">T</span><span class="shft-step-text">Time — sequence, protect choice</span></div>
-        <div class="shft-step"><span class="shft-step-letter plus">+</span><span class="shft-step-text">Plus — repair, reflect, integrate</span></div>
-      </div>
-    </div>
-
-    <div class="seq-quote">
-      <p>The sequence is non-negotiable. Center must precede Clarify because you cannot think clearly from inside threat activation. Clarify must precede Choose because you cannot act with intention from cognitive overwhelm. This is biology — and adversarial practice runs on the same biology as any other human work.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ C³ SERIES — PALE ══════════ -->
-<section id="series" class="band pale">
-  <div class="band-inner">
-    <div class="section-label">C³ Law Series · National Professional Development Programme 2026</div>
-    <div class="section-title">Six modules. The Executive Frame™ from day one.</div>
-    <div class="webinar-intro">The C³ Loop installed in the first years of legal practice — before the patterns set, before the survival strategies calcify. Six modules designed for legal practitioners, following the biological sequence: <strong>Center first. Then Clarify. Then Choose.</strong> Each module is standalone. Together, they build the full Loop. NZLS CPD-approved.</div>
-
-    <div class="sequence-bar">
-      <div class="sb-line"></div>
-      <div class="sb-label">CENTER → CLARIFY → CHOOSE</div>
-      <div class="sb-line"></div>
-    </div>
-
-    <div class="webinar-grid">
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 1 · CENTER</div>
-        <div class="webinar-title">Autonomic State Drives Performance</div>
-        <div class="webinar-c3">The Neuroscience of the Executive Frame™</div>
-        <div class="webinar-quote">Your system has already made the call.</div>
-        <div class="webinar-desc">Your autonomic nervous system is the engine behind every decision, every cross-examination, every client meeting. This module maps the biology of performance — threat-reward axis, prefrontal access under load, and the C³ architecture that turns neuroscience into a daily operating system for legal work.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 2 · CENTER</div>
-        <div class="webinar-title">Regulation Before Response</div>
-        <div class="webinar-c3">S.H.F.T.™ Protocol &amp; Adversarial Regulation</div>
-        <div class="webinar-quote">Delay the reaction. Protect the outcome.</div>
-        <div class="webinar-desc">S.H.F.T.™ installed for adversarial environments. The physiological sigh — the fastest evidence-based method for downregulating sympathetic activation. Real-time tools for cross-examination, hostile correspondence, contested interlocutory work, between-matter regulation.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 3 · CLARIFY</div>
-        <div class="webinar-title">Cognition Under Load</div>
-        <div class="webinar-c3">Executive Functioning &amp; Legal Decision Architecture</div>
-        <div class="webinar-quote">Capacity drops. Confidence doesn't.</div>
-        <div class="webinar-desc">Working memory, inhibition, cognitive flexibility, and planning under adversarial load. Strategic reasoning. Decision architecture for contested matters under fatigue. The cognitive infrastructure for legal complexity that protects judgment quality when capacity compresses.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 4 · CLARIFY</div>
-        <div class="webinar-title">The Tunnel Effect</div>
-        <div class="webinar-c3">Relational Neuroscience &amp; Communication Under Adversarial Pressure</div>
-        <div class="webinar-quote">When pressure narrows the brief.</div>
-        <div class="webinar-desc">When threat activation narrows legal focus — hostile opposing counsel, distressed clients, contested hearings, secondary distress from family-law exposure. This module builds the communication architecture and relational network that sustains professional performance under sustained adversarial load.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 5 · CHOOSE</div>
-        <div class="webinar-title">Agency Under Constraint</div>
-        <div class="webinar-c3">Self-Determination &amp; Sustainable Legal Practice</div>
-        <div class="webinar-quote">Choice is still available — just harder to access.</div>
-        <div class="webinar-desc">Autonomy within legal systems and chambers. Competence grounded in evidence, not validation. Relatedness inside an adversarial profession. The shift from surviving legal practice to authoring it. The science of a career that compounds rather than erodes.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 6 · THE FULL LOOP</div>
-        <div class="webinar-title">The C³ Performance System</div>
-        <div class="webinar-c3">Your Legal Performance Architecture — Installed</div>
-        <div class="webinar-quote">Precision under pressure is a system, not a trait.</div>
-        <div class="webinar-desc">Center → Clarify → Choose → Repeat. The full C³ Loop integrated into a personal operating system for legal practice. Your capacity plan built. Your tools mapped to your specific load profile. The architecture installed.</div>
-      </div>
-    </div>
-
-    <div class="delivery-strip">
-      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 1–2 (Center) · Q2 2026</span></div>
-      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 3–4 (Clarify) · Q2–Q3 2026</span></div>
-      <div class="delivery-item"><div class="delivery-dot"></div><span>Modules 5–6 (Choose + Loop) · Q3 2026</span></div>
-      <div class="delivery-item"><div class="delivery-dot"></div><span>On-demand</span></div>
-      
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ PATHWAY 01+02 — NAVY ══════════ -->
-<section id="pathway" class="band navy">
-  <div class="band-inner">
-    <div class="section-label">Choose Your Pathway</div>
-    <div class="section-title">Four ways in. One architecture.</div>
-    <div class="section-subtitle">The six modules are where most people start. From there, choose the depth and format that fits your role, your team, or your stage of practice.</div>
-
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">01</div>
-        <div class="pathway-name">Self-Paced Learning</div>
-      </div>
-      <div class="pathway-tagline">Start anywhere. Go at your own pace. No prerequisites.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">PROFESSIONAL DEVELOPMENT</div>
-          <div class="prog-name">The C³ Law Series</div>
-          <div class="prog-meta">6 MODULES · NATIONAL · ON-DEMAND</div>
-          <div class="prog-desc">The six-module national programme designed for legal practitioners. Each module standalone. Available live and on-demand. The starting point for the full Executive Frame™ in legal practice. NZLS CPD-approved.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">eLEARNING</div>
-          <div class="prog-name">S.H.F.T.™ Introduction</div>
-          <div class="prog-meta">~20 MIN · SELF-PACED</div>
-          <div class="prog-desc">A real tool for activation moments in legal work. The physiological sigh, state recognition, and the 60-second reset. Portable, private, immediately usable between matters or mid-hearing.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">eLEARNING</div>
-          <div class="prog-name">The C³ Loop Overview</div>
-          <div class="prog-meta">~60 MIN · SELF-PACED</div>
-          <div class="prog-desc">The complete framework introduced. All three steps, the S.H.F.T.™ protocol, and the practitioner toolkit. A single-session orientation to the full architecture for legal practice.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">DIAGNOSTIC</div>
-          <div class="prog-name">C³ Capacity Assessment</div>
-          <div class="prog-meta">18 QUESTIONS · 5 MIN · FREE</div>
-          <div class="prog-desc">Identifies your first binding constraint across Center, Clarify, and Choose. Generates a personalised pathway showing exactly where to start in your specific area of practice.</div>
-        </div>
-      </div>
-    </div>
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">02</div>
-        <div class="pathway-name">CPD Workshops</div>
-      </div>
-      <div class="pathway-tagline">Applied. Scenario-based. NZLS CPD-eligible. No slides — just the work.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">CENTER</div>
-          <div class="prog-name">Composed Under Adversarial Pressure</div>
-          <div class="prog-meta">3.5 CPD HRS · HALF DAY</div>
-          <div class="prog-desc">S.H.F.T.™ installed at applied depth. Personalised regulation strategy for cross-examination, contested hearings, and between-matter resets. Skills applicable from the next file.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">CLARIFY</div>
-          <div class="prog-name">Structured Thinking Under Legal Complexity</div>
-          <div class="prog-meta">3.5 CPD HRS · HALF DAY</div>
-          <div class="prog-desc">Legal reasoning under fatigue. Cognitive triage system. Decision frameworks for contested matters. Personalised decision quality architecture for your area of practice.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">CHOOSE</div>
-          <div class="prog-name">Practising on Your Own Terms</div>
-          <div class="prog-meta">3.5 CPD HRS · HALF DAY</div>
-          <div class="prog-desc">Agency within legal systems. Competence-confidence protocol grounded in your own evidence. Purpose-alignment framework for sustainable legal practice — from year one to senior partner.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">FULL LOOP</div>
-          <div class="prog-name">The C³ Intensive</div>
-          <div class="prog-meta">7.0 CPD HRS · FULL DAY</div>
-          <div class="prog-desc">The complete Loop in a single day. Full C³ toolkit, personal capacity plan, and team application strategy. Works for chambers, firms, retreats, and conferences.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ PATHWAY 03+04 — PALE ══════════ -->
-<section class="band pale">
-  <div class="band-inner">
-
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">03</div>
-        <div class="pathway-name">In-House Programmes</div>
-      </div>
-      <div class="pathway-tagline">When the whole chambers, firm, or team speaks the same language, the culture shifts.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">TEAM</div>
-          <div class="prog-name">Chambers or Firm Installation</div>
-          <div class="prog-meta">6–8 WEEKS · ONE TEAM</div>
-          <div class="prog-desc">Capacity assessment + sequential Center → Clarify → Choose build. Pre/post measurement. Team debrief. Chambers-level or firm-level C³ operating system installation.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">FIRM-WIDE</div>
-          <div class="prog-name">Full Deployment</div>
-          <div class="prog-meta">12 WEEKS · ORGANISATION</div>
-          <div class="prog-desc">The C³ Loop installed across practice groups and seniority. Practitioners, partners, in-house counsel operating from the same architecture. Different entry points, shared vocabulary.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">LEADERSHIP</div>
-          <div class="prog-name">Senior Practitioner Programme</div>
-          <div class="prog-meta">12 MONTHS · QUARTERLY</div>
-          <div class="prog-desc">For partners, heads of chambers, supervising practitioners — autonomy-supportive leadership. Tone governance, cross-practice alignment. When senior leaders hold the Loop, the whole firm operates differently.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">CONFERENCE</div>
-          <div class="prog-name">Keynote &amp; Executive Briefing</div>
-          <div class="prog-meta">45–60 MIN</div>
-          <div class="prog-desc">The neuroscience of capacity compression in adversarial practice. The talk practitioners describe to colleagues the following week. Executive briefing for managing partners.</div>
-        </div>
-      </div>
-    </div>
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">04</div>
-        <div class="pathway-name">Individual Supervision &amp; Psychology Support</div>
-      </div>
-      <div class="pathway-tagline">Clinical depth. One person's load profile. Registered psychologist. Confidential.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">COACHING</div>
-          <div class="prog-name">C³ Performance Coaching</div>
-          <div class="prog-meta">8–12 SESSIONS · ONE-ON-ONE</div>
-          <div class="prog-desc">The C³ Loop applied to one practitioner's specific load profile. For senior practitioners navigating complex matters, burnout, role change, or the early signs of capacity compression.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">CLINICAL</div>
-          <div class="prog-name">Psychology Support</div>
-          <div class="prog-meta">ONGOING · REGISTERED PSYCHOLOGIST</div>
-          <div class="prog-desc">Clinical psychology for legal practitioners experiencing burnout, vicarious trauma, secondary distress, or sustained performance difficulty. Dual-registered. Confidential. Telehealth available.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">SUPERVISION</div>
-          <div class="prog-name">Professional Supervision</div>
-          <div class="prog-meta">MONTHLY · INDIVIDUAL OR GROUP</div>
-          <div class="prog-desc">Structured reflective practice for high-exposure legal roles — family law, criminal defence, child protection, complex civil work. The space to process what the legal work does to you and your practice.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">TRANSITION</div>
-          <div class="prog-name">Career &amp; Role Navigation</div>
-          <div class="prog-meta">6–8 SESSIONS · PSYCHOLOGIST-LED</div>
-          <div class="prog-desc">For practitioners at a crossroads — area of practice decisions, partnership transition, return from leave, bar transition. Values-aligned decision-making with clinical psychology support.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ TOOLS + ASSESSMENT — NAVY ══════════ -->
-<section id="tools" class="band navy">
-  <div class="band-inner">
-    <div class="section-label">Law Toolkit</div>
-    <div class="section-title">Eight tools. Immediately usable.</div>
-    <div class="section-subtitle">Each usable without prior training. Designed for the real-time moments of your work.</div>
-
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-name">S.H.F.T.™ Desk Card</div>
-        <div class="tool-desc">Real-time escalation protocol for adversarial moments.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Now–Do–Later</div>
-        <div class="tool-desc">Three-zone prioritisation for contested matter loads.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Pre-Meeting Worksheet</div>
-        <div class="tool-desc">Structured preparation for client meetings and contested calls.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Decision Map</div>
-        <div class="tool-desc">Legal decision framework under time pressure and fatigue.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Capacity Check</div>
-        <div class="tool-desc">18-question self-assessment identifying your binding constraint.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Between-Matter Reset</div>
-        <div class="tool-desc">Decompression protocol preventing carry-over across files.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Cognitive Bias Field Guide</div>
-        <div class="tool-desc">Beck-informed reference to distortions active in legal reasoning.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">After-Action Debrief</div>
-        <div class="tool-desc">Post-hearing learning framework for practitioners and teams.</div>
-      </div>
-    </div>
-
-    <div class="assessment-block">
-      <div class="assessment-left">
-        <div class="assessment-overline">C³ Capacity Self-Assessment</div>
-        <div class="assessment-title">Where is your first binding constraint?</div>
-        <div class="assessment-meta">18 QUESTIONS · 5 MINUTES · A PERSONALISED PATHWAY</div>
-        <div class="assessment-desc">Identifies where your performance architecture is currently under strain — across Center (emotional regulation), Clarify (executive functioning), and Choose (autonomy, competence, connection). Your results show exactly where to start, calibrated to your area of practice and current load.</div>
-      </div>
-      <div class="assessment-right">
-        <div class="assess-axis"><div class="assess-dot"></div><span>Center: Emotional regulation &amp; nervous system stability</span></div>
-        <div class="assess-axis"><div class="assess-dot"></div><span>Clarify: Executive functioning &amp; cognitive performance</span></div>
-        <div class="assess-axis"><div class="assess-dot"></div><span>Choose: Autonomy, competence &amp; sustainable motivation</span></div>
-        <a href="assessment.html" class="btn-ghost">Take the Assessment →</a>
-      </div>
-    </div>
-
-    <div class="subarm-callout">
-      <div class="subarm-callout-text">
-        <div class="subarm-callout-label">Specialist sub-arm</div>
-        <h4>EF|Law — Family</h4>
-        <p>For family lawyers carrying the prolonged emotional exposure, secondary distress, and identity strain that family law work specifically produces. Confidential, calibrated to the context.</p>
-      </div>
-      <a href="law-family.html" class="btn-ghost">Explore EF|Law — Family →</a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════ CTA + INTAKE — PALE ══════════ -->
-<section id="intake" class="band pale">
-  <div class="band-inner">
-    <div class="cta-section">
-
-      <div class="spectrum-bar">
-    <div style="flex:1.2;background:#4A5F7A;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
-  </div>
-
-      <div class="cta-tagline">Human first. Then performance.</div>
-      <div class="cta-title">Start with the series.<br>Go as deep as you need.</div>
-      <div class="cta-sub">CENTER → CLARIFY → CHOOSE → REPEAT</div>
-
-      <div class="intake-wrap">
-        <div class="intake-label">INTAKE FORM</div>
-        <div class="intake-title">Begin your engagement.</div>
-        <div class="intake-sub">For individuals, teams, and organisations.</div>
-        <iframe data-tally-src="https://tally.so/embed/1ADR8g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Client Intake — Executive Frame™"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-col footer-brand">
-    <div class="footer-mark">Executive Frame<sup style="font-size:0.45em;vertical-align:super;">™</sup></div>
-    <div class="footer-desc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</div>
-    <div class="footer-loc">Auckland · Christchurch · Queenstown · Telehealth available</div>
-    <div class="footer-mail"><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
-    <div class="footer-tag">Human first. Then performance.</div>
-  </div>
-
-  <div class="footer-col footer-arms-col">
-    <div class="footer-col-label">The eight arms</div>
-    <div class="footer-arms"><a href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <span class="current">EF|Law</span><br><a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></div>
-    <div class="footer-quick">
-      <a href="enquire.html">Make a referral</a> ·
-      <a href="method.html">The S.H.I.F.T.™ Deck</a> ·
-      <a href="partners.html">Partner organisations</a>
-    </div>
-  </div>
-
-  <div class="footer-col footer-practice">
-    <div class="footer-col-label">Practice</div>
-    <div class="footer-practice-name">Dr Sarah Anticich</div>
-    <div class="footer-practice-creds">PhD, MAPS, MNZCCP</div>
-    <div class="footer-practice-role">Clinical Psychologist</div>
-    <div class="footer-practice-role">Industrial / Organisational Psychologist</div>
-    <div class="footer-practice-firm">Sarah Anticich Consulting</div>
-    <div class="footer-practice-copy">© 2026 — All rights reserved.</div>
-    <div class="footer-quick">
-      <a href="enquire.html">Contact</a> ·
-      <a href="enquire.html">Referrals</a> ·
-      <a href="enquire.html">Privacy</a>
-    </div>
-  </div>
-</footer>
-
-<div class="copyline">Site by Anticich Consulting · Built with care.</div>
-</body>
+<div class="fcol">
+<div class="fl">The Eight Arms</div>
+<p class="farms"><a class="acc" href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a> · <a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></p>
+<p class="flinks2"><a href="enquire.html">Make a referral</a> · <a href="resources.html">The S.H.I.F.T.™ Deck</a> · <a href="partners.html">Partner organisations</a></p>
+</div>
+<div class="fcol">
+<div class="fl">Practice</div>
+<h4 class="fname">Dr Sarah Anticich</h4>
+<p class="fcred acc">PhD, MAPS, MNZCCP</p>
+<p class="fital">Clinical Psychologist</p>
+<p class="fital">Industrial / Organisational Psychologist</p>
+<p class="fmuted">Sarah Anticich Consulting</p>
+<p class="fmuted">© 2026 — All rights reserved.</p>
+<p class="flinks2"><a href="enquire.html">Contact</a> · <a href="enquire.html">Referrals</a> · <a href="enquire.html">Privacy</a></p>
+</div>
+</div>
+<div class="foot-base">Site by Anticich Consulting · Built with care.</div>
+</div></footer><script src="site.js" defer></script></body>
 </html>

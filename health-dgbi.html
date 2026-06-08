@@ -1,520 +1,76 @@
-<!DOCTYPE html>
-<html lang="en-NZ">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EF|Health — DGBI · Specialist sub-arm</title>
-<meta name="description" content="The C³ Loop for disorders of gut-brain interaction. Co-delivered with gastroenterology partners.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-:root {
-  --arm: #3d6d5c;
-  --arm-light: #5b8f7b;
-  --arm-dim: #2a5446;
-  --arm-rgb: 61,109,92;
-  --pale-bg: #D2DDD8;
-}
-</style>
-</head>
-<body>
-<nav class="site-nav">
-  <a href="index.html" class="nav-brand">
-    <span class="nav-brand-ef">EF</span><span class="nav-brand-arm">|Health</span>
-    <span class="nav-brand-sub">Human first. Then performance.</span>
-  </a>
-  <div class="nav-links">
-    <a href="index.html">What</a>
-    <a href="science.html">Why</a>
-    <a href="method.html">How</a>
-    <a href="about-sarah.html">About Sarah</a>
-    <div class="nav-dropdown">
-      <a class="nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
-      <div class="nav-dropdown-panel">
-        <a href="health.html"><span class="nav-dot" style="background:#3d6d5c;"></span>EF|Health</a>
-        <a href="health-dgbi.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — DGBI</a>
-        <a href="health-elearning.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — eLearning</a>
-        <a href="health-store.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — Resources</a>
-        <a href="elite.html"><span class="nav-dot" style="background:#C9874E;"></span>EF|Elite</a>
-        <a href="corporate.html"><span class="nav-dot" style="background:#6B8AA8;"></span>EF|Corporate</a>
-        <a href="law.html"><span class="nav-dot" style="background:#4A5F7A;"></span>EF|Law</a>
-        <a href="law-family.html"  class="sub"><span class="nav-dot" style="background:#4A5F7A;"></span>↳ EF|Law — Family</a>
-        <a href="women.html"><span class="nav-dot" style="background:#C28699;"></span>EF|Women</a>
-        <a href="neurodiversity.html"><span class="nav-dot" style="background:#A593C2;"></span>EF|Neurodiversity</a>
-        <a href="family.html"><span class="nav-dot" style="background:#A89BAA;"></span>EF|Family</a>
-        <a href="consulting.html"><span class="nav-dot" style="background:#8FBFA8;"></span>C³ Consulting</a>
-      </div>
-    </div>
-    <a href="store.html">Store</a>
-    <a href="partners.html">Partners</a>
-    <a href="https://tally.so/r/1ADR8g" class="nav-cta" target="_blank">Intake →</a>
-  </div>
-</nav>
-
-<!-- ══════════ HERO ══════════ -->
-<div class="hero">
-
-  <svg class="hero-c3loop" width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" aria-label="The C³ Loop — Centre, Clarify, Choose">
-  <!-- OUTER ORBITAL RING -->
-  <circle cx="350" cy="350" r="290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-  <!-- INNER ORBITAL RING -->
-  <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-
-  <!-- THREE ORBITAL NODES on outer ring -->
-  <!-- CENTRE node · top -->
-  <circle cx="350" cy="60" r="4" fill="rgba(255,255,255,0.80)"/>
-  <!-- CLARIFY node · lower-right (≈120° from top) -->
-  <circle cx="601" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
-  <!-- CHOOSE node · lower-left (≈240° from top) -->
-  <circle cx="99" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
-
-  <!-- CHOOSE small triangle indicator (per brand kit) -->
-  <polygon points="588,485 600,491 588,497" fill="rgba(255,255,255,0.55)"/>
-
-  <!-- TETRAHEDRON · centred, apex up -->
-  <!-- Apex at 350,180. Base centre at 350,510.
-       Three base vertices forming triangle: left, right, back.
-       Front-left visible face (light), front-right visible face (mid),
-       base receding face (shadow). Apex bright dot on top. -->
-  <g class="c3-tetrahedron">
-    <!-- Base receding edge (shadow) -->
-    <polygon points="350,180 220,510 480,510" fill="#1d3c33" opacity="0.85"/>
-    <!-- Left visible face (light) -->
-    <polygon points="350,180 220,510 350,490" fill="#3d6d5c"/>
-    <!-- Right visible face (mid) -->
-    <polygon points="350,180 350,490 480,510" fill="#2a5446"/>
-    <!-- Thin shadow at base -->
-    <ellipse cx="350" cy="515" rx="135" ry="4" fill="#121C25" opacity="0.5"/>
-    <!-- Apex highlight dot -->
-    <circle cx="350" cy="180" r="5" fill="#FFFFFF"/>
-  </g>
-
-  <!-- ORBITAL LABELS · CENTRE top, CLARIFY lower-right, CHOOSE lower-left -->
-  <text x="350" y="40" text-anchor="middle"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CENTRE</text>
-  <text x="660" y="640" text-anchor="end"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CLARIFY</text>
-  <text x="40" y="640" text-anchor="start"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CHOOSE</text>
-</svg>
-
-  <div class="spectrum-bar">
-    <div style="flex:1.2;background:#3d6d5c;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
-  </div>
-
-  <div class="hero-overline">Specialist Sub-Arm · Disorders of Gut-Brain Interaction</div>
-  <div class="hero-title">EF<span>|HEALTH — DGBI</span></div>
-  <div class="hero-subtitle">The C³ Loop for Gut-Brain Disorders</div>
-  <div class="hero-tagline">
-    Not a behaviour change programme. Not symptom management.<br>
-    Capacity infrastructure for the gut-brain axis under sustained load.
-  </div>
-  <div class="hero-body">
-    A specialist clinical programme for adults living with IBS, functional dyspepsia, and other disorders of gut-brain interaction. Grounded in the neuroscience of the gut-brain axis, integrating regulation, cognitive flexibility, and self-determined practice. Co-delivered with gastroenterology partners.
-  </div>
-  <div class="hero-actions">
-    <a href="#series" class="btn-primary">The C³ Health Series →</a>
-    <a href="#intake" class="btn-ghost">Register Interest</a>
-  </div>
-
-  <div class="hero-foot">
-    <div class="hero-foot-line">Center → Clarify → Choose → Repeat</div>
-    <div class="hero-foot-tag">Human first. Then performance.</div>
-  </div>
+<!DOCTYPE html><html lang="en-NZ"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>EF|Health — DGBI — Executive Frame™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add('reveal-on')</script>
+<style>:root{--accent:#6E9E86;--accent-ink:#0E1A14}</style></head>
+<body><div class="grain"></div><nav class="nav"><div class="bar">
+<a class="brand" href="index.html">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
+<div class="links">
+<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a><a class="l" href="about-sarah.html">About Sarah</a>
+<div class="dd"><a class="l" href="#">Programmes ▾</a><div class="dd-menu">
+<a href="law.html">EF|Law</a><a class="sub" href="law-family.html">↳ EF|Law — Family</a>
+<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a><a class="sub" href="health-elearning.html">↳ EF|Health — eLearning</a>
+<a href="corporate.html">EF|Corporate</a><a href="elite.html">EF|Elite</a><a href="women.html">EF|Women</a>
+<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="consulting.html">C³ Consulting</a>
+</div></div>
+<a class="l" href="resources.html">Resources</a><a class="l" href="partners.html">Partners</a>
+<a class="l intake" href="intake.html">Intake →</a>
+</div></div></nav><main><section class="hero navy"><div class="wrap"><div class="grid"><div>
+<div class="eyebrow">EF|Health · for patients · gut–brain</div><h1>EF|Health — <em>DGBI.</em></h1><p class="lead">Integrated psychological care for disorders of gut–brain interaction — the Executive Frame, calibrated to gut–brain conditions and delivered alongside gastroenterology partners.</p>
+<div class="cta-row"><a class="btn solid" href="intake.html">Start with an intake →</a><a class="btn line" href="https://www.executiveframe.co.nz/assessment.html">Take the Capacity Check →</a></div>
+</div><div class="loop-wrap"><svg class="loop" viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" aria-label="The C3 Loop">
+<g fill="none" stroke="#8B95A1" stroke-opacity="0.20" stroke-width="1"><circle cx="180" cy="190" r="150"/><circle cx="180" cy="190" r="104"/></g>
+<g><circle cx="180" cy="40" r="5" fill="#8B95A1"/><circle cx="287" cy="297" r="5" fill="#8B95A1"/><circle cx="73" cy="297" r="5" fill="#8B95A1"/>
+<animateTransform attributeName="transform" type="rotate" from="0 180 190" to="360 180 190" dur="64s" repeatCount="indefinite"/></g>
+<g>
+<polygon points="180,108 126,256 180,242" fill="#6E9E86"/><polygon points="180,108 180,242 234,256" fill="#517463"/><polygon points="126,256 234,256 180,242" fill="#374F43"/>
+<line x1="180" y1="108" x2="180" y2="242" stroke="#88AF9B" stroke-width="1" opacity="0.5"/>
+<circle cx="180" cy="108" r="4" fill="#fff"><animate attributeName="opacity" values="1;0.45;1" dur="4.5s" repeatCount="indefinite"/></circle>
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" keyTimes="0;0.5;1" dur="7.5s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" repeatCount="indefinite"/></g>
+<ellipse cx="180" cy="258" rx="58" ry="7" fill="#121C25" opacity="0.5"><animate attributeName="rx" values="58;52;58" dur="7.5s" repeatCount="indefinite"/></ellipse>
+<text x="180" y="22" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CENTRE</text>
+<text x="300" y="330" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CLARIFY</text>
+<text x="60" y="330" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CHOOSE</text></svg></div></div></div></section>
+<section class="cream"><div class="wrap"><div class="eyebrow">What's inside</div><h2>The programme, <em>at a glance.</em></h2>
+<div class="cards" style="margin-top:40px"><div class="card"><div class="ce">Centre</div><h3>Regulate the system</h3><p>Settle the nervous system that drives gut–brain symptoms — the body steadies before the mind can read it.</p><div class="rule"></div></div><div class="card"><div class="ce">Clarify</div><h3>Understand the signal</h3><p>Separate symptom from story. The gut–brain axis explained, without alarm.</p><div class="rule"></div></div><div class="card"><div class="ce">Choose</div><h3>Live alongside it</h3><p>Values-aligned action at your own pace — function restored, not waited for.</p><div class="rule"></div></div></div></div></section>
+<section class="navy"><div class="wrap"><div class="eyebrow">The science</div>
+<h2>Three evidence bases. <em>One sequence.</em></h2>
+<p class="lead">Executive Frame rests on three of the most established fields in applied psychology. They converge on one order — steady first, think second, act third.</p>
+<div class="sci-cards">
+<div class="sci-card"><div class="n">01</div><div class="t">Centre</div><div class="d">Emotional Intelligence</div><div class="q">Perry · Goleman · Linehan</div></div>
+<div class="sci-card"><div class="n">02</div><div class="t">Clarify</div><div class="d">Executive Functioning</div><div class="q">Barkley · Beck · Ericsson</div></div>
+<div class="sci-card"><div class="n">03</div><div class="t">Choose</div><div class="d">Self-Determination Theory</div><div class="q">Deci &amp; Ryan · Dweck · McGonigal</div></div>
+</div></div></section>
+<section class="navy close"><div class="wrap"><div class="eyebrow" style="justify-content:center">Work with us</div>
+<h2>Start where you are.</h2><p class="lead">Begin with a short, confidential intake and we'll match you to the right pathway.</p>
+<div class="cta-row"><a class="btn solid" href="intake.html">Start with an intake →</a><a class="btn line" href="https://www.executiveframe.co.nz/enquire">Get in touch →</a></div>
+<div class="tagline">Human first. Then performance.</div></div></section></main><footer><div class="wrap">
+<hr class="foot-rule">
+<div class="foot-grid">
+<div class="fcol">
+<h4 class="fbrand">Executive Frame<sup>™</sup></h4>
+<p class="fdesc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
+<p class="floc">Auckland · Christchurch · Queenstown · Telehealth available</p>
+<p><a class="fmail" href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></p>
+<p class="ftag">Human first. Then performance.</p>
 </div>
-
-<!-- ══════════ ARCHITECTURE — NAVY ══════════ -->
-<section id="architecture" class="band navy">
-  <div class="band-inner">
-    <div class="section-label">The Executive Frame™</div>
-    <div class="section-title">Three evidence bases. One biological sequence.</div>
-    <div class="section-subtitle">The Executive Frame™ is built on three converging sciences — each addressing a different layer of human performance. The C³ Loop is the operational mechanism that integrates all three into a single, repeating cycle.</div>
-
-    <div class="arch-grid">
-      <div class="arch-card">
-        <div class="arch-label">Step One · Stability</div>
-        <div class="arch-name">Center</div>
-        <div class="arch-pillar">Emotional Intelligence</div>
-        <div class="arch-desc">The gut-brain axis is a regulatory circuit. Symptom flares often follow autonomic activation by hours, not minutes — making the link invisible without the framework. Settling the nervous system is not adjunct therapy. It is the substrate the gut needs to function clearly.</div>
-      </div>
-      <div class="arch-card">
-        <div class="arch-label">Step Two · Clarity</div>
-        <div class="arch-name">Clarify</div>
-        <div class="arch-pillar">Executive Functioning</div>
-        <div class="arch-desc">Separate symptom from interpretation, sensation from threat. Working memory and cognitive flexibility tools that work alongside medical treatment — not in place of it. Naming what the body is doing without escalating it.</div>
-      </div>
-      <div class="arch-card">
-        <div class="arch-label">Step Three · Agency</div>
-        <div class="arch-name">Choose</div>
-        <div class="arch-pillar">Self-Determination Theory</div>
-        <div class="arch-desc">Operate on your own terms within a body that has its own signals. Autonomy in food choices, social planning, work pace. Competence grounded in your own evidence about what your system does. A life chosen, not negotiated around symptoms.</div>
-      </div>
-    </div>
-
-    <div class="shft-strip">
-      <div class="shft-head">
-        <div class="shft-head-name">S.H.F.T.<sup>™</sup></div>
-        <div class="shft-head-sub">The real-time micro-intervention. 60 seconds. Anywhere.</div>
-      </div>
-      <div class="shft-steps">
-        <div class="shft-step"><span class="shft-step-letter">S</span><span class="shft-step-text">Slow — interrupt the threat response</span></div>
-        <div class="shft-step"><span class="shft-step-letter">H</span><span class="shft-step-text">Hold — physiological sigh, regulate</span></div>
-        <div class="shft-step"><span class="shft-step-letter">F</span><span class="shft-step-text">Focus — one next step</span></div>
-        <div class="shft-step"><span class="shft-step-letter">T</span><span class="shft-step-text">Time — sequence, protect choice</span></div>
-        <div class="shft-step"><span class="shft-step-letter plus">+</span><span class="shft-step-text">Plus — repair, reflect, integrate</span></div>
-      </div>
-    </div>
-
-    <div class="seq-quote">
-      <p>The sequence is non-negotiable. Center must precede Clarify because the dysregulated gut-brain system amplifies threat signals from inside the body itself. Clarify must precede Choose because life cannot be designed from symptom-driven reactivity. This is biology — applied to the specific architecture of disorders of gut-brain interaction.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ C³ SERIES — PALE ══════════ -->
-<section id="series" class="band pale">
-  <div class="band-inner">
-    <div class="section-label">C³ Health Series · National Professional Development Programme 2026</div>
-    <div class="section-title">Six modules. The Executive Frame™ from day one.</div>
-    <div class="webinar-intro">The C³ Loop calibrated to the gut-brain axis. Seven modules designed for adults navigating DGBI, following the biological sequence: <strong>Center first. Then Clarify. Then Choose.</strong> Each module is standalone. Together, they build the full Loop. Delivered alongside medical care, not in place of it.</div>
-
-    <div class="sequence-bar">
-      <div class="sb-line"></div>
-      <div class="sb-label">CENTER → CLARIFY → CHOOSE</div>
-      <div class="sb-line"></div>
-    </div>
-
-    <div class="webinar-grid">
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 1 · CENTER</div>
-        <div class="webinar-title">The Gut-Brain Axis</div>
-        <div class="webinar-c3">Neuroscience of DGBI</div>
-        <div class="webinar-quote">"Your system is speaking the only language it has."</div>
-        <div class="webinar-desc">Mapping the gut-brain axis. Why autonomic state drives symptom expression. The biology of visceral hypersensitivity. The C³ architecture as the operating system for living well with a sensitised gut-brain system.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 2 · CENTER</div>
-        <div class="webinar-title">Regulation in the Body</div>
-        <div class="webinar-c3">S.H.F.T.™ Protocol for DGBI</div>
-        <div class="webinar-quote">"Delay the reaction. Protect the outcome."</div>
-        <div class="webinar-desc">S.H.F.T.™ installed for DGBI. The physiological sigh, state recognition, and the 60-second reset — calibrated for visceral activation. Real-time tools for the meal, the meeting, the flare.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 3 · CLARIFY</div>
-        <div class="webinar-title">Cognition Under Symptom Load</div>
-        <div class="webinar-c3">Executive Functioning &amp; Symptom Interpretation</div>
-        <div class="webinar-quote">"Capacity drops. Confidence doesn't."</div>
-        <div class="webinar-desc">Working memory, inhibition, cognitive flexibility under chronic illness load. Separating sensation from threat. Cognitive tools that work alongside medical treatment.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 4 · CLARIFY</div>
-        <div class="webinar-title">The Symptom Tunnel</div>
-        <div class="webinar-c3">Relational Neuroscience &amp; Living With DGBI</div>
-        <div class="webinar-quote">"When pressure narrows the brief."</div>
-        <div class="webinar-desc">When threat activation narrows life — food anxiety, social withdrawal, work limitation. Building the communication architecture that lets you advocate for accommodations and live with the condition without it becoming the identity.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 5 · CHOOSE</div>
-        <div class="webinar-title">Agency in a Sensitised Body</div>
-        <div class="webinar-c3">Self-Determination &amp; Sustainable DGBI Practice</div>
-        <div class="webinar-quote">"Choice is still available — just harder to access."</div>
-        <div class="webinar-desc">Autonomy in food, social life, work. Competence grounded in your own evidence about what your body does. Relatedness without your DGBI organising every interaction. Living, not coping.</div>
-      </div>
-      <div class="webinar-card">
-        <div class="webinar-mod">MODULE 6 · FULL LOOP</div>
-        <div class="webinar-title">The C³ DGBI System</div>
-        <div class="webinar-c3">Your DGBI Operating System — Installed</div>
-        <div class="webinar-quote">"Precision under pressure is a system, not a trait."</div>
-        <div class="webinar-desc">Center → Clarify → Choose → Repeat. The full C³ Loop integrated into a personal operating system for life with DGBI. Your capacity plan built. Your tools mapped to your specific symptom profile.</div>
-      </div>
-    </div>
-
-    <div class="delivery-strip">
-      <div class="delivery-item"><div class="delivery-dot"></div><span>Self-paced eLearning · always-on</span></div>
-      <div class="delivery-item"><div class="delivery-dot"></div><span>Live cohorts · quarterly</span></div>
-      <div class="delivery-item"><div class="delivery-dot"></div><span>Partner clinics (McMurray Gastro) · ongoing</span></div>
-      <div class="delivery-item"><div class="delivery-dot"></div><span>1:1 clinical pathway · telehealth</span></div>
-      
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ PATHWAY 01+02 — NAVY ══════════ -->
-<section id="pathway" class="band navy">
-  <div class="band-inner">
-    <div class="section-label">Choose Your Pathway</div>
-    <div class="section-title">Four ways in. One architecture.</div>
-    <div class="section-subtitle">The six modules are where most people start. From there, choose the depth and format that fits your role, your team, or your stage of practice.</div>
-
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">01</div>
-        <div class="pathway-name">Self-Paced Learning</div>
-      </div>
-      <div class="pathway-tagline">Privately. At your pace. Whenever the body is settled enough to engage.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">PROGRAMME</div>
-          <div class="prog-name">C³ DGBI Series (7 modules)</div>
-          <div class="prog-meta">ON-DEMAND</div>
-          <div class="prog-desc">The seven-module programme calibrated to DGBI. Each module standalone. Captions, transcripts, low-stimulus pacing throughout.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">eLEARNING</div>
-          <div class="prog-name">S.H.F.T.™ for DGBI</div>
-          <div class="prog-meta">~20 MIN</div>
-          <div class="prog-desc">Real-time tool for visceral activation. The physiological sigh and 60-second reset calibrated for gut-brain flares.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">WORKBOOK</div>
-          <div class="prog-name">DGBI Companion Workbook</div>
-          <div class="prog-meta">~90 MIN · PRINTABLE</div>
-          <div class="prog-desc">Reflective workbook for living with DGBI. Designed for use on bad days, not just on good ones.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">DIAGNOSTIC</div>
-          <div class="prog-name">C³ DGBI Capacity Assessment</div>
-          <div class="prog-meta">18 QUESTIONS · 5 MIN · FREE</div>
-          <div class="prog-desc">Identifies your first binding constraint across Center, Clarify, and Choose — calibrated to DGBI.</div>
-        </div>
-      </div>
-    </div>
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">02</div>
-        <div class="pathway-name">Clinical Workshops</div>
-      </div>
-      <div class="pathway-tagline">Applied. Scenario-based. Co-delivered with gastroenterology.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">CENTER</div>
-          <div class="prog-name">Regulation for the Gut-Brain Axis</div>
-          <div class="prog-meta">HALF DAY</div>
-          <div class="prog-desc">S.H.F.T.™ at applied depth for DGBI. Personalised regulation strategy for visceral activation.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">CLARIFY</div>
-          <div class="prog-name">Separating Symptom from Threat</div>
-          <div class="prog-meta">HALF DAY</div>
-          <div class="prog-desc">Cognitive tools for interpreting body signals without amplifying them. Living with sensation.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">CHOOSE</div>
-          <div class="prog-name">Life Beyond Symptoms</div>
-          <div class="prog-meta">HALF DAY</div>
-          <div class="prog-desc">Agency in food, social life, and work. Designing a life around values, not around flares.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">FULL LOOP</div>
-          <div class="prog-name">The C³ DGBI Intensive</div>
-          <div class="prog-meta">FULL DAY</div>
-          <div class="prog-desc">The complete Loop in a single day. For patients ready to go deep, ideally co-attended with a support person.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ PATHWAY 03+04 — PALE ══════════ -->
-<section class="band pale">
-  <div class="band-inner">
-
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">03</div>
-        <div class="pathway-name">Clinical Partnerships</div>
-      </div>
-      <div class="pathway-tagline">Co-delivered with gastroenterology and primary care.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">PARTNERSHIP</div>
-          <div class="prog-name">McMurray Gastro Programme</div>
-          <div class="prog-meta">INTEGRATED CLINICAL PATHWAY</div>
-          <div class="prog-desc">Co-delivered programme with McMurray Gastroenterology. Patients receive medical care and the C³ programme as integrated pathway.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">GP PRACTICE</div>
-          <div class="prog-name">GP Practice Integration</div>
-          <div class="prog-meta">PILOT PROGRAMME</div>
-          <div class="prog-desc">Pilot integration with primary care practices. GPs refer patients into the C³ DGBI programme as part of treatment.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">PATIENT GROUP</div>
-          <div class="prog-name">Patient Cohort</div>
-          <div class="prog-meta">6 WEEKS · SMALL GROUP</div>
-          <div class="prog-desc">Small-cohort programme for patients of partner clinics. Shared vocabulary, sustained group practice.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">PROFESSIONAL</div>
-          <div class="prog-name">Clinician Training</div>
-          <div class="prog-meta">CPD DAY</div>
-          <div class="prog-desc">CPD-accredited training for gastroenterologists, GPs, and gut-health dietitians. Understanding the gut-brain axis architecturally.</div>
-        </div>
-      </div>
-    </div>
-    <div class="pathway-block">
-      <div class="pathway-head">
-        <div class="pathway-num">04</div>
-        <div class="pathway-name">Individual Clinical Pathway</div>
-      </div>
-      <div class="pathway-tagline">Clinical depth. One patient's specific symptom and load profile.</div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-label">INDIVIDUAL</div>
-          <div class="prog-name">1:1 DGBI Clinical Pathway</div>
-          <div class="prog-meta">8–12 SESSIONS · TELEHEALTH</div>
-          <div class="prog-desc">Individual clinical work calibrated to DGBI. Sustained engagement, dual-registered psychologist, telehealth available.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">FAMILY</div>
-          <div class="prog-name">Family Sessions</div>
-          <div class="prog-meta">AS NEEDED</div>
-          <div class="prog-desc">Family sessions for households navigating a member's DGBI. Co-regulation, communication, sustainability.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">CONSULTATION</div>
-          <div class="prog-name">Clinician Consultation</div>
-          <div class="prog-meta">AS REQUESTED</div>
-          <div class="prog-desc">Confidential consultation with medical colleagues about specific patient pathways.</div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-label">TRANSITION</div>
-          <div class="prog-name">Diagnosis Transition</div>
-          <div class="prog-meta">6–8 SESSIONS</div>
-          <div class="prog-desc">For people newly diagnosed with DGBI — establishing the framework, building tools, navigating identity around chronic illness.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ TOOLS + ASSESSMENT — NAVY ══════════ -->
-<section id="tools" class="band navy">
-  <div class="band-inner">
-    <div class="section-label">Health Toolkit</div>
-    <div class="section-title">Eight tools. Immediately usable.</div>
-    <div class="section-subtitle">Each usable without prior training. Designed for the real-time moments of your work.</div>
-
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-name">S.H.F.T.™ DGBI Card</div>
-        <div class="tool-desc">Real-time reset for visceral activation.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Flare Protocol</div>
-        <div class="tool-desc">Structured response for active symptom episodes.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Pre-Meal Worksheet</div>
-        <div class="tool-desc">Regulation preparation for difficult eating contexts.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Symptom Interpretation Map</div>
-        <div class="tool-desc">Cognitive framework for sensation without threat amplification.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Capacity Check</div>
-        <div class="tool-desc">DGBI-calibrated 18-question self-assessment.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Social Planning Tool</div>
-        <div class="tool-desc">Reflective planning for social events and travel.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">Provider Communication</div>
-        <div class="tool-desc">Framework for advocating with medical providers.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-name">After-Flare Debrief</div>
-        <div class="tool-desc">Post-flare learning framework — without self-blame.</div>
-      </div>
-    </div>
-
-    <div class="assessment-block">
-      <div class="assessment-left">
-        <div class="assessment-overline">C³ Capacity Self-Assessment</div>
-        <div class="assessment-title">Where is your first binding constraint?</div>
-        <div class="assessment-meta">18 QUESTIONS · 5 MINUTES · A PERSONALISED PATHWAY</div>
-        <div class="assessment-desc">Identifies where your performance architecture is currently under strain — across Center (regulation around visceral activation), Clarify (cognitive interpretation of symptoms), and Choose (life lived alongside the condition). Your results show exactly where to start.</div>
-      </div>
-      <div class="assessment-right">
-        <div class="assess-axis"><div class="assess-dot"></div><span>Center: Emotional regulation &amp; nervous system stability</span></div>
-        <div class="assess-axis"><div class="assess-dot"></div><span>Clarify: Executive functioning &amp; cognitive performance</span></div>
-        <div class="assess-axis"><div class="assess-dot"></div><span>Choose: Autonomy, competence &amp; sustainable motivation</span></div>
-        <a href="assessment.html" class="btn-ghost">Take the Assessment →</a>
-      </div>
-    </div>
-
-<div style="text-align:center;margin-top:24px;"><a href="health.html" class="parent-back">↩ Part of EF|Health</a></div>
-  </div>
-</section>
-
-
-<!-- ══════════ CTA + INTAKE — PALE ══════════ -->
-<section id="intake" class="band pale">
-  <div class="band-inner">
-    <div class="cta-section">
-
-      <div class="spectrum-bar">
-    <div style="flex:1.2;background:#3d6d5c;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
-  </div>
-
-      <div class="cta-tagline">Human first. Then performance.</div>
-      <div class="cta-title">Start with the series.<br>Go as deep as you need.</div>
-      <div class="cta-sub">CENTER → CLARIFY → CHOOSE → REPEAT</div>
-
-      <div class="intake-wrap">
-        <div class="intake-label">INTAKE FORM</div>
-        <div class="intake-title">Begin your engagement.</div>
-        <div class="intake-sub">For individuals, teams, and organisations.</div>
-        <iframe data-tally-src="https://tally.so/embed/1ADR8g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Client Intake — Executive Frame™"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-col footer-brand">
-    <div class="footer-mark">Executive Frame<sup style="font-size:0.45em;vertical-align:super;">™</sup></div>
-    <div class="footer-desc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</div>
-    <div class="footer-loc">Auckland · Christchurch · Queenstown · Telehealth available</div>
-    <div class="footer-mail"><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
-    <div class="footer-tag">Human first. Then performance.</div>
-  </div>
-
-  <div class="footer-col footer-arms-col">
-    <div class="footer-col-label">The eight arms</div>
-    <div class="footer-arms"><span class="current">EF|Health</span> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a><br><a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></div>
-    <div class="footer-quick">
-      <a href="enquire.html">Make a referral</a> ·
-      <a href="method.html">The S.H.I.F.T.™ Deck</a> ·
-      <a href="partners.html">Partner organisations</a>
-    </div>
-  </div>
-
-  <div class="footer-col footer-practice">
-    <div class="footer-col-label">Practice</div>
-    <div class="footer-practice-name">Dr Sarah Anticich</div>
-    <div class="footer-practice-creds">PhD, MAPS, MNZCCP</div>
-    <div class="footer-practice-role">Clinical Psychologist</div>
-    <div class="footer-practice-role">Industrial / Organisational Psychologist</div>
-    <div class="footer-practice-firm">Sarah Anticich Consulting</div>
-    <div class="footer-practice-copy">© 2026 — All rights reserved.</div>
-    <div class="footer-quick">
-      <a href="enquire.html">Contact</a> ·
-      <a href="enquire.html">Referrals</a> ·
-      <a href="enquire.html">Privacy</a>
-    </div>
-  </div>
-</footer>
-
-<div class="copyline">Site by Anticich Consulting · Built with care.</div>
-</body>
-</html>
+<div class="fcol">
+<div class="fl">The Eight Arms</div>
+<p class="farms"><a class="acc" href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a> · <a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></p>
+<p class="flinks2"><a href="enquire.html">Make a referral</a> · <a href="resources.html">The S.H.I.F.T.™ Deck</a> · <a href="partners.html">Partner organisations</a></p>
+</div>
+<div class="fcol">
+<div class="fl">Practice</div>
+<h4 class="fname">Dr Sarah Anticich</h4>
+<p class="fcred acc">PhD, MAPS, MNZCCP</p>
+<p class="fital">Clinical Psychologist</p>
+<p class="fital">Industrial / Organisational Psychologist</p>
+<p class="fmuted">Sarah Anticich Consulting</p>
+<p class="fmuted">© 2026 — All rights reserved.</p>
+<p class="flinks2"><a href="enquire.html">Contact</a> · <a href="enquire.html">Referrals</a> · <a href="enquire.html">Privacy</a></p>
+</div>
+</div>
+<div class="foot-base">Site by Anticich Consulting · Built with care.</div>
+</div></footer><script src="site.js" defer></script></body></html>

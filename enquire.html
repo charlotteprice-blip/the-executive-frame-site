@@ -1,170 +1,59 @@
-<!DOCTYPE html>
-<html lang="en-NZ">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Confidential enquiry — Executive Frame™</title>
-<meta name="description" content="A short enquiry. Reviewed within three working days.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-:root {
-  --arm: #3d6d5c;
-  --arm-light: #5b8f7b;
-  --arm-dim: #2a5446;
-  --arm-rgb: 61,109,92;
-  --pale-bg: #D2DDD8;
-}
-</style>
-</head>
-<body>
-<nav class="site-nav">
-  <a href="index.html" class="nav-brand">
-    <span class="nav-brand-ef">Executive Frame</span><span class="nav-brand-arm" style="font-size:11px;letter-spacing:0.06em;vertical-align:super;margin-left:2px;">™</span>
-    <span class="nav-brand-sub">Human first. Then performance.</span>
-  </a>
-  <div class="nav-links">
-    <a href="index.html">What</a>
-    <a href="science.html">Why</a>
-    <a href="method.html">How</a>
-    <a href="about-sarah.html">About Sarah</a>
-    <div class="nav-dropdown">
-      <a class="nav-dropdown-trigger">Programs <span class="caret">▾</span></a>
-      <div class="nav-dropdown-panel">
-        <a href="health.html"><span class="nav-dot" style="background:#3d6d5c;"></span>EF|Health</a>
-        <a href="health-dgbi.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — DGBI</a>
-        <a href="health-elearning.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — eLearning</a>
-        <a href="health-store.html"  class="sub"><span class="nav-dot" style="background:#3d6d5c;"></span>↳ EF|Health — Resources</a>
-        <a href="elite.html"><span class="nav-dot" style="background:#C9874E;"></span>EF|Elite</a>
-        <a href="corporate.html"><span class="nav-dot" style="background:#6B8AA8;"></span>EF|Corporate</a>
-        <a href="law.html"><span class="nav-dot" style="background:#4A5F7A;"></span>EF|Law</a>
-        <a href="law-family.html"  class="sub"><span class="nav-dot" style="background:#4A5F7A;"></span>↳ EF|Law — Family</a>
-        <a href="women.html"><span class="nav-dot" style="background:#C28699;"></span>EF|Women</a>
-        <a href="neurodiversity.html"><span class="nav-dot" style="background:#A593C2;"></span>EF|Neurodiversity</a>
-        <a href="family.html"><span class="nav-dot" style="background:#A89BAA;"></span>EF|Family</a>
-        <a href="consulting.html"><span class="nav-dot" style="background:#8FBFA8;"></span>C³ Consulting</a>
-      </div>
-    </div>
-    <a href="store.html">Store</a>
-    <a href="partners.html">Partners</a>
-    <a href="https://tally.so/r/1ADR8g" class="nav-cta" target="_blank">Intake →</a>
-  </div>
-</nav>
-
-<div class="hero" style="min-height:60vh;">
-  <svg class="hero-c3loop" width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" aria-label="The C³ Loop — Centre, Clarify, Choose">
-  <!-- OUTER ORBITAL RING -->
-  <circle cx="350" cy="350" r="290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-  <!-- INNER ORBITAL RING -->
-  <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-
-  <!-- THREE ORBITAL NODES on outer ring -->
-  <!-- CENTRE node · top -->
-  <circle cx="350" cy="60" r="4" fill="rgba(255,255,255,0.80)"/>
-  <!-- CLARIFY node · lower-right (≈120° from top) -->
-  <circle cx="601" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
-  <!-- CHOOSE node · lower-left (≈240° from top) -->
-  <circle cx="99" cy="495" r="4" fill="rgba(255,255,255,0.80)"/>
-
-  <!-- CHOOSE small triangle indicator (per brand kit) -->
-  <polygon points="588,485 600,491 588,497" fill="rgba(255,255,255,0.55)"/>
-
-  <!-- TETRAHEDRON · centred, apex up -->
-  <!-- Apex at 350,180. Base centre at 350,510.
-       Three base vertices forming triangle: left, right, back.
-       Front-left visible face (light), front-right visible face (mid),
-       base receding face (shadow). Apex bright dot on top. -->
-  <g class="c3-tetrahedron">
-    <!-- Base receding edge (shadow) -->
-    <polygon points="350,180 220,510 480,510" fill="#273542" opacity="0.85"/>
-    <!-- Left visible face (light) -->
-    <polygon points="350,180 220,510 350,490" fill="#496278"/>
-    <!-- Right visible face (mid) -->
-    <polygon points="350,180 350,490 480,510" fill="#364B60"/>
-    <!-- Thin shadow at base -->
-    <ellipse cx="350" cy="515" rx="135" ry="4" fill="#121C25" opacity="0.5"/>
-    <!-- Apex highlight dot -->
-    <circle cx="350" cy="180" r="5" fill="#FFFFFF"/>
-  </g>
-
-  <!-- ORBITAL LABELS · CENTRE top, CLARIFY lower-right, CHOOSE lower-left -->
-  <text x="350" y="40" text-anchor="middle"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CENTRE</text>
-  <text x="660" y="640" text-anchor="end"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CLARIFY</text>
-  <text x="40" y="640" text-anchor="start"
-        font-family="Montserrat, sans-serif" font-size="26" font-weight="600"
-        letter-spacing="10" fill="rgba(255,255,255,0.55)">CHOOSE</text>
-</svg>
-  <div class="spectrum-bar">
-    <div style="flex:1.2;background:#3d6d5c;opacity:0.85;"></div><div style="flex:0.8;background:#C28699;opacity:0.75;"></div><div style="flex:0.8;background:#E0A678;opacity:0.78;"></div><div style="flex:0.7;background:#6ab0e0;opacity:0.75;"></div><div style="flex:0.3;background:#2a4a5a;opacity:1;"></div><div style="flex:0.9;background:#6B8AA8;opacity:0.74;"></div><div style="flex:0.8;background:#5B8F7B;opacity:0.78;"></div>
-  </div>
-  <div class="hero-overline">Confidential enquiry</div>
-  <div class="hero-title" style="font-size:clamp(36px,5vw,52px);">Get in <span>touch</span></div>
-  <div class="hero-subtitle">A short enquiry. We respond within three working days.</div>
-  <div class="hero-tagline" style="max-width:540px;">
-    For programmes, workshops, cohorts, partnerships, and organisational engagement.<br>
-    For individual clinical intake, use the client intake form instead.
-  </div>
+<!DOCTYPE html><html lang="en-NZ"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact — Executive Frame™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add('reveal-on')</script>
+<style>:root{--accent:#E8A06A;--accent-ink:#15212D}</style></head>
+<body><div class="grain"></div><nav class="nav"><div class="bar">
+<a class="brand" href="index.html">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
+<div class="links">
+<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a><a class="l" href="about-sarah.html">About Sarah</a>
+<div class="dd"><a class="l" href="#">Programmes ▾</a><div class="dd-menu">
+<a href="law.html">EF|Law</a><a class="sub" href="law-family.html">↳ EF|Law — Family</a>
+<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a><a class="sub" href="health-elearning.html">↳ EF|Health — eLearning</a>
+<a href="corporate.html">EF|Corporate</a><a href="elite.html">EF|Elite</a><a href="women.html">EF|Women</a>
+<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="consulting.html">C³ Consulting</a>
+</div></div>
+<a class="l" href="resources.html">Resources</a><a class="l" href="partners.html">Partners</a>
+<a class="l intake" href="intake.html">Intake →</a>
+</div></div></nav><main><section class="s-hero gridbg"><div class="wrap"><div class="s-eyebrow">Contact</div><div class="s-grid"><div><h1 class="s-display">Begin the<em>conversation.</em></h1><p class="s-body">Three ways to reach us — choose the one that fits.</p><div class="s-cta"><a class="s-btn solid" href="intake.html">Client intake</a><a class="s-btn line" href="mailto:admin@sarahanticich.co.nz">Email us</a></div></div><div class="s-fig"><svg viewBox="0 0 420 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px" aria-label="The C3 Loop">
+<g fill="none" stroke="#8B95A1" stroke-opacity="0.16" stroke-width="1"><circle cx="210" cy="220" r="180"/><circle cx="210" cy="220" r="120"/></g>
+<g><circle cx="210" cy="40" r="5" fill="#8B95A1"/><circle cx="335" cy="345" r="5" fill="#8B95A1"/><circle cx="85" cy="345" r="5" fill="#8B95A1"/>
+<animateTransform attributeName="transform" type="rotate" from="0 210 220" to="360 210 220" dur="64s" repeatCount="indefinite"/></g>
+<g>
+<polygon points="210,120 150,302 210,286" fill="#48637B"/><polygon points="210,120 210,286 270,302" fill="#34495E"/><polygon points="150,302 270,302 210,286" fill="#243646"/>
+<line x1="210" y1="120" x2="210" y2="286" stroke="#5E7C95" stroke-width="1" opacity="0.45"/>
+<circle cx="210" cy="120" r="4.5" fill="#F4F2EC"><animate attributeName="opacity" values="1;0.45;1" dur="4.5s" repeatCount="indefinite"/></circle>
+<animateTransform attributeName="transform" type="translate" values="0 0; 0 -6; 0 0" keyTimes="0;0.5;1" dur="7.5s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" repeatCount="indefinite"/></g>
+<ellipse cx="210" cy="306" rx="66" ry="8" fill="#101A23" opacity="0.55"><animate attributeName="rx" values="66;60;66" dur="7.5s" repeatCount="indefinite"/></ellipse>
+<text x="210" y="24" text-anchor="middle" font-family="Inter" font-size="13" letter-spacing="3" fill="#8B95A1">CENTRE</text>
+<text x="350" y="382" text-anchor="middle" font-family="Inter" font-size="13" letter-spacing="3" fill="#8B95A1">CLARIFY</text>
+<text x="70" y="382" text-anchor="middle" font-family="Inter" font-size="13" letter-spacing="3" fill="#8B95A1">CHOOSE</text></svg></div></div></div></section><section class="s-sub gridbg"><div class="wrap"><div class="s-eyebrow">Three ways to reach us</div><h2 class="s-display">Choose what <em>fits.</em></h2><div class='s-cols'><a class='s-card' style='text-decoration:none' href='https://www.executiveframe.co.nz/enquire'><div class='ce'>Confidential form</div><h3>General enquiry</h3><p>Programmes, workshops, speaking. Reviewed within three days.</p></a><a class='s-card' style='text-decoration:none' href='intake.html'><div class='ce'>Client intake</div><h3>Clinical intake</h3><p>For individuals seeking 1:1 clinical or coaching work.</p></a><a class='s-card' style='text-decoration:none' href='mailto:admin@sarahanticich.co.nz'><div class='ce'>admin@sarahanticich.co.nz</div><h3>Direct email</h3><p>Partnership, media, and conference enquiries.</p></a></div></div></section></main><footer><div class="wrap">
+<hr class="foot-rule">
+<div class="foot-grid">
+<div class="fcol">
+<h4 class="fbrand">Executive Frame<sup>™</sup></h4>
+<p class="fdesc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
+<p class="floc">Auckland · Christchurch · Queenstown · Telehealth available</p>
+<p><a class="fmail" href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></p>
+<p class="ftag">Human first. Then performance.</p>
 </div>
-
-<section class="band pale">
-  <div class="band-inner" style="max-width:720px;">
-    <div class="intake-wrap" style="max-width:720px;">
-      <div class="intake-label">ENQUIRY FORM</div>
-      <div class="intake-title">Tell us what you are working on.</div>
-      <div class="intake-sub">All enquiries are confidential. The Executive Frame™ team responds within three working days. Direct email: admin@sarahanticich.co.nz.</div>
-      <iframe data-tally-src="https://tally.so/embed/1ADR8g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Client Intake — Executive Frame™"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-    </div>
-  </div>
-</section>
-
-<section class="tagline-band navy">
-  <div class="tagline-band-eyebrow">Human first. Then performance.</div>
-  <div class="tagline-band-line">Centre. Clarify. <em>Choose.</em></div>
-  <div class="tagline-band-sub">Auckland · Christchurch · Queenstown · Telehealth available.</div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-col footer-brand">
-    <div class="footer-mark">Executive Frame<sup style="font-size:0.45em;vertical-align:super;">™</sup></div>
-    <div class="footer-desc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</div>
-    <div class="footer-loc">Auckland · Christchurch · Queenstown · Telehealth available</div>
-    <div class="footer-mail"><a href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></div>
-    <div class="footer-tag">Human first. Then performance.</div>
-  </div>
-
-  <div class="footer-col footer-arms-col">
-    <div class="footer-col-label">The eight arms</div>
-    <div class="footer-arms"><span class="current">EF|Health</span> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a><br><a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></div>
-    <div class="footer-quick">
-      <a href="enquire.html">Make a referral</a> ·
-      <a href="method.html">The S.H.I.F.T.™ Deck</a> ·
-      <a href="partners.html">Partner organisations</a>
-    </div>
-  </div>
-
-  <div class="footer-col footer-practice">
-    <div class="footer-col-label">Practice</div>
-    <div class="footer-practice-name">Dr Sarah Anticich</div>
-    <div class="footer-practice-creds">PhD, MAPS, MNZCCP</div>
-    <div class="footer-practice-role">Clinical Psychologist</div>
-    <div class="footer-practice-role">Industrial / Organisational Psychologist</div>
-    <div class="footer-practice-firm">Sarah Anticich Consulting</div>
-    <div class="footer-practice-copy">© 2026 — All rights reserved.</div>
-    <div class="footer-quick">
-      <a href="enquire.html">Contact</a> ·
-      <a href="enquire.html">Referrals</a> ·
-      <a href="enquire.html">Privacy</a>
-    </div>
-  </div>
-</footer>
-
-<div class="copyline">Site by Anticich Consulting · Built with care.</div>
-</body>
-</html>
+<div class="fcol">
+<div class="fl">The Eight Arms</div>
+<p class="farms"><a class="acc" href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a> · <a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></p>
+<p class="flinks2"><a href="enquire.html">Make a referral</a> · <a href="resources.html">The S.H.I.F.T.™ Deck</a> · <a href="partners.html">Partner organisations</a></p>
+</div>
+<div class="fcol">
+<div class="fl">Practice</div>
+<h4 class="fname">Dr Sarah Anticich</h4>
+<p class="fcred acc">PhD, MAPS, MNZCCP</p>
+<p class="fital">Clinical Psychologist</p>
+<p class="fital">Industrial / Organisational Psychologist</p>
+<p class="fmuted">Sarah Anticich Consulting</p>
+<p class="fmuted">© 2026 — All rights reserved.</p>
+<p class="flinks2"><a href="enquire.html">Contact</a> · <a href="enquire.html">Referrals</a> · <a href="enquire.html">Privacy</a></p>
+</div>
+</div>
+<div class="foot-base">Site by Anticich Consulting · Built with care.</div>
+</div></footer><script src="site.js" defer></script></body></html>
