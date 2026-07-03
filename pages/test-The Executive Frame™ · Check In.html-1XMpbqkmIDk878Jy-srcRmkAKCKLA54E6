@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Executive Frame™ · Check In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#14202F;
+    --paper:#FAF7F2;
+    --sand:#EDE5D8;
+    --terra:#C4643B;
+    --terra-soft:#E9CDBE;
+    --ink:#2A2F36;
+    --ink-soft:#5C636E;
+    --sage:#7E8C7C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+  }
+  body{
+    font-family:'Public Sans',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--navy);
+    color:var(--paper);
+    padding:56px 0 64px;
+  }
+  .eyebrow{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--terra-soft);font-weight:600;margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;font-size:clamp(30px,5vw,44px);
+    line-height:1.15;letter-spacing:-.01em;max-width:15ch;
+  }
+  header p.lede{
+    margin-top:18px;max-width:52ch;color:#C9D2DE;font-size:16px;
+  }
+
+  /* ---------- State grid ---------- */
+  #picker{padding:52px 0 24px;}
+  .prompt-label{
+    font-family:'Fraunces',serif;font-size:22px;font-weight:500;
+    margin-bottom:6px;
+  }
+  .prompt-sub{color:var(--ink-soft);font-size:15px;margin-bottom:28px;}
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+    gap:12px;
+  }
+  .state-btn{
+    font-family:'Public Sans',sans-serif;
+    text-align:left;background:#fff;border:1px solid var(--sand);
+    border-radius:10px;padding:18px 18px 16px;cursor:pointer;
+    transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .state-btn:hover{border-color:var(--terra);transform:translateY(-2px);box-shadow:0 6px 18px rgba(27,42,65,.08);}
+  .state-btn:focus-visible{outline:3px solid var(--terra);outline-offset:2px;}
+  .state-btn.active{border-color:var(--navy);background:var(--navy);}
+  .state-btn.active .state-name,.state-btn.active .state-hint{color:var(--paper);}
+  .state-name{font-weight:600;font-size:16px;color:var(--navy);display:block;}
+  .state-hint{font-size:13px;color:var(--ink-soft);margin-top:4px;display:block;line-height:1.45;}
+
+  /* ---------- Result ---------- */
+  #result{padding:16px 0 40px;display:none;}
+  #result.show{display:block;animation:rise .45s ease both;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  .result-head{
+    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+    border-bottom:2px solid var(--navy);padding:34px 0 18px;margin-bottom:8px;
+  }
+  .result-head h2{
+    font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4vw,34px);
+    color:var(--navy);
+  }
+  .result-head .normalise{color:var(--ink-soft);font-size:14px;max-width:46ch;}
+
+  /* C3 spine */
+  .phase{
+    display:grid;grid-template-columns:64px 1fr;gap:0 22px;
+    padding:30px 0;position:relative;
+  }
+  .phase + .phase{border-top:1px solid var(--sand);}
+  .phase-marker{
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .phase-dot{
+    width:44px;height:44px;border-radius:50%;
+    border:2px solid var(--navy);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:17px;font-weight:600;background:#fff;
+    flex-shrink:0;
+  }
+  .phase.p2 .phase-dot{border-color:var(--terra);color:var(--terra);}
+  .phase.p3 .phase-dot{border-color:var(--sage);color:var(--sage);}
+  .phase-line{width:2px;flex:1;background:var(--sand);border-radius:2px;}
+  .phase:last-of-type .phase-line{display:none;}
+  .phase h3{
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:600;margin-bottom:14px;
+  }
+  .phase h3 strong{color:var(--navy);letter-spacing:.16em;}
+
+  .card{
+    background:#fff;border:1px solid var(--sand);border-radius:10px;
+    padding:18px 20px;margin-bottom:12px;
+  }
+  .card:last-child{margin-bottom:0;}
+  .card-label{
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--terra);font-weight:600;margin-bottom:6px;
+  }
+  .card p{font-size:15.5px;}
+  .card .story{
+    font-family:'Fraunces',serif;font-size:18px;font-style:italic;
+    color:var(--navy);line-height:1.5;
+  }
+  .emotion-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px;}
+  .chip{
+    background:var(--sand);color:var(--navy);border-radius:100px;
+    padding:5px 14px;font-size:13.5px;font-weight:500;
+  }
+  .reframe-card{background:var(--navy);border:none;}
+  .reframe-card .card-label{color:var(--terra-soft);}
+  .reframe-card p{color:var(--paper);font-family:'Fraunces',serif;font-size:19px;line-height:1.55;}
+  .step-card{border-left:4px solid var(--sage);}
+  .step-card .card-label{color:var(--sage);}
+
+  .again{
+    margin:26px 0 0;background:none;border:1px solid var(--navy);
+    color:var(--navy);border-radius:100px;padding:11px 24px;
+    font-family:'Public Sans',sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;
+    transition:background .18s ease,color .18s ease;
+  }
+  .again:hover{background:var(--navy);color:var(--paper);}
+  .again:focus-visible{outline:3px solid var(--terra);outline-offset:2px;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--sand);padding:34px 0 40px;margin-top:24px;
+  }
+  footer p{font-size:13.5px;color:var(--ink-soft);max-width:66ch;}
+  footer p + p{margin-top:10px;}
+  footer strong{color:var(--navy);}
+  footer a{color:var(--terra);font-weight:600;text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  @media (max-width:560px){
+    .phase{grid-template-columns:44px 1fr;gap:0 14px;}
+    .phase-dot{width:36px;height:36px;font-size:15px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">The Executive Frame™ · Check In</div>
+    <h1>Name the state. Loosen its grip.</h1>
+    <p class="lede">Every state you land in here is a signal from your system, not a verdict on your character. Choose the one closest to right now, and move through the C³ Loop™ — Centre, Clarify, Choose.</p>
+  </div>
+</header>
+
+<section id="picker" class="wrap">
+  <div class="prompt-label">How are you arriving right now?</div>
+  <p class="prompt-sub">There's no wrong answer — pick the closest fit. You can check in as often as you like.</p>
+  <div class="grid" role="group" aria-label="Choose your current state">
+    <button class="state-btn" data-state="overloaded"><span class="state-name">Overloaded</span><span class="state-hint">Too much on, nowhere to put it</span></button>
+    <button class="state-btn" data-state="stuck"><span class="state-name">Stuck</span><span class="state-hint">Can't seem to start or decide</span></button>
+    <button class="state-btn" data-state="reactive"><span class="state-name">Reactive</span><span class="state-hint">Quick to fire, hard to pause</span></button>
+    <button class="state-btn" data-state="avoidant"><span class="state-name">Avoidant</span><span class="state-hint">Circling the thing, not touching it</span></button>
+    <button class="state-btn" data-state="ashamed"><span class="state-name">Ashamed</span><span class="state-hint">Turning on yourself</span></button>
+    <button class="state-btn" data-state="scattered"><span class="state-name">Scattered</span><span class="state-hint">Attention everywhere, traction nowhere</span></button>
+    <button class="state-btn" data-state="shutdown"><span class="state-name">Shut down</span><span class="state-hint">Flat, numb, switched off</span></button>
+  </div>
+</section>
+
+<section id="result" class="wrap" aria-live="polite"></section>
+
+<footer>
+  <div class="wrap">
+    <p>This check-in is a <strong>reflective tool</strong>, not an assessment or a diagnosis. It offers one possible reading of a common state — you are always the authority on your own experience.</p>
+    <p>If what you're feeling is bigger than a passing state — if you're in distress or worried about your safety — please reach out for real support. In New Zealand you can <strong>free call or text 1737</strong>, any time, to talk with a trained counsellor. <a href="/support">More support options →</a></p>
+  </div>
+</footer>
+
+<script>
+const STATES = {
+  overloaded: {
+    title: "Overloaded",
+    normalise: "A capacity signal — your load has exceeded your bandwidth. Common, temporary, and workable.",
+    happening: "Your working memory is holding more open loops than it's built to carry. When demand outstrips capacity, the brain's executive system starts dropping things — not because you're failing, but because it's saturated. Urgency starts to feel like everything, everywhere, at once.",
+    story: "\u201CI have to hold it all. If I drop one thing, everything falls apart — and it will be my fault.\u201D",
+    emotions: ["Overwhelm", "Anxiety", "Pressure"],
+    body: "Tight chest, shallow high breathing, clenched jaw, a buzzing or braced quality through the shoulders. Some people notice they've stopped blinking at the screen.",
+    reframe: "Capacity is not character. A full system signalling \u201Cenough\u201D is doing its job — the load is the problem, not the person carrying it.",
+    step: "Externalise before you prioritise. Write down everything you're holding — fast, messy, unfiltered — then circle the one thing that genuinely needs you in the next hour. The page can hold the rest."
+  },
+  stuck: {
+    title: "Stuck",
+    normalise: "An initiation block — the engine is fine, the starter motor is jammed. This is a task problem, not a willpower problem.",
+    happening: "Task initiation has stalled — often because the task is too big, too vague, or carries too much meaning to begin imperfectly. The executive system can't find an entry point, so it idles. The longer the idle, the heavier the task appears.",
+    story: "\u201CI don't know where to start, so I can't start. And it has to be right before I begin.\u201D",
+    emotions: ["Frustration", "Helplessness", "Self-doubt"],
+    body: "Heaviness, inertia, a foggy or muffled head. The body feels like it's wading through something thick — you may find yourself physically drifting away from the task.",
+    reframe: "Stuck is a state, not a trait. It nearly always means the next step is too big — shrink the step, and the stuckness has nothing left to hold onto.",
+    step: "Choose the smallest visible action — open the document, write one bad sentence, put your shoes by the door — and do it for two minutes. Starting badly beats planning perfectly."
+  },
+  reactive: {
+    title: "Reactive",
+    normalise: "A threat response — your alarm system fired before your thinking brain got a vote. Regulation comes before clarity, always.",
+    happening: "Something registered as a threat — to your competence, fairness, autonomy, or standing — and your stress response moved faster than reflection could. In this state the brain narrows: it scans for danger, rehearses comebacks, and pushes hard for immediate action.",
+    story: "\u201CThey're doing this to me. If I don't respond right now, I lose.\u201D",
+    emotions: ["Anger", "Indignation", "Threat"],
+    body: "Heat rising in the face or chest, quickened heartbeat, clenched fists or jaw, energy surging toward action — the finger hovering over send.",
+    reframe: "A strong reaction means something you value is on the line. You can honour what matters without letting the alarm write the reply.",
+    step: "Buy your prefrontal cortex ninety seconds. Take a long slow exhale — twice — and delay any response until your body settles. Draft it if you must; send nothing until the heat drops."
+  },
+  avoidant: {
+    title: "Avoidant",
+    normalise: "A protection pattern — avoidance briefly lowers discomfort, which teaches the brain to keep avoiding. The loop is the issue, not laziness.",
+    happening: "A task or situation has been tagged as threatening — likely to bring failure, judgement, or discomfort — so your system steers you around it. Each dodge brings a small hit of relief, which quietly reinforces the pattern. Meanwhile the thing itself grows teeth it doesn't actually have.",
+    story: "\u201CIf I don't look at it, it can't hurt me yet. I'll deal with it when I feel ready.\u201D",
+    emotions: ["Dread", "Anticipatory anxiety", "Guilt"],
+    body: "A knot in the stomach, restlessness, the itch to check your phone or tidy something — anything — else. Relief when you turn away, unease when it resurfaces.",
+    reframe: "Avoidance is protection that has outlived its usefulness. Approaching the thing — gently, briefly — is what actually teaches your system it's safe.",
+    step: "Open it for five minutes with zero obligation to finish. Read the email, look at the bank balance, open the file. Contact first, courage follows — the dread almost always shrinks on contact."
+  },
+  ashamed: {
+    title: "Ashamed",
+    normalise: "A self-conscious emotion turned inward — shame attacks the self, not just the behaviour. It thrives in silence and shrinks when spoken.",
+    happening: "Somewhere along the line, a struggle or misstep got read as evidence about who you are. Shame collapses the distance between \u201CI did something hard\u201D and \u201CI am something wrong\u201D — and then tells you to hide, which is precisely what keeps it alive.",
+    story: "\u201CI am the problem. Everyone else manages. If people really saw me, they'd be gone.\u201D",
+    emotions: ["Shame", "Exposure", "Aloneness"],
+    body: "Heat in the face, eyes down, a collapsing or shrinking posture, the urge to disappear or make yourself small. Sometimes a hollow drop in the stomach.",
+    reframe: "Shame says \u201CI am bad.\u201D The evidence says \u201CI am human, and this is hard.\u201D Struggling is the most ordinary thing a person can do — you are in vast, good company.",
+    step: "Name it to tame it. Say — out loud or to one safe person — \u201CI'm noticing shame right now.\u201D Shame loses its grip the moment it's witnessed with kindness, including your own."
+  },
+  scattered: {
+    title: "Scattered",
+    normalise: "Attentional fragmentation — too many open loops competing for one spotlight. Focus follows structure, not force.",
+    happening: "Your attention is being pulled across too many part-finished threads, and every switch costs you. The executive system is spending its fuel on changing channels rather than making progress — which feels busy, and lands as \u201Cnothing done\u201D by day's end.",
+    story: "\u201CI should be able to just focus. I'm wasting the whole day and I can't even say on what.\u201D",
+    emotions: ["Agitation", "Frustration", "Restlessness"],
+    body: "Buzzy, fidgety energy; eyes flicking between tabs and devices; starting to stand up without knowing why. A wired-but-unproductive hum.",
+    reframe: "Attention follows structure, not willpower. A scattered mind isn't a broken mind — it's an unfenced one. Build a small fence and watch it settle.",
+    step: "One tab, one timer, one task. Choose a single small task, close everything else, set ten minutes, and let it be the only thing that exists until the timer sounds."
+  },
+  shutdown: {
+    title: "Shut down",
+    normalise: "A conservation state — when demand feels endless and effort feels pointless, the nervous system powers down to protect you.",
+    happening: "Your system has moved past overwhelm into under-arousal — the biological brake. Motivation, feeling, and energy all dim at once. This isn't giving up; it's your nervous system rationing resources after running hot for too long.",
+    story: "\u201CNothing matters anyway. I can't do anything, so why try. There's no point.\u201D",
+    emotions: ["Numbness", "Flatness", "Depletion"],
+    body: "Heavy limbs, low or absent energy, a blank or distant feeling, wanting to lie down or scroll without seeing. The world feels slightly behind glass.",
+    reframe: "Shutdown is the nervous system conserving — not the self surrendering. You don't need to push through it; you need to warm it back up, gently.",
+    step: "Gentle activation before any task: stand up, drink a glass of water, step into daylight for two minutes, or send one message to someone safe. Connection and movement come first — productivity can wait."
+  }
+};
+
+const grid = document.querySelector('.grid');
+const result = document.getElementById('result');
+
+grid.addEventListener('click', (e) => {
+  const btn = e.target.closest('.state-btn');
+  if (!btn) return;
+  document.querySelectorAll('.state-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render(btn.dataset.state);
+});
+
+function render(key){
+  const s = STATES[key];
+  result.innerHTML = `
+    <div class="result-head">
+      <h2>${s.title}</h2>
+      <span class="normalise">${s.normalise}</span>
+    </div>
+
+    <div class="phase p1">
+      <div class="phase-marker"><div class="phase-dot">C¹</div><div class="phase-line"></div></div>
+      <div>
+        <h3><strong>Centre</strong> · settle the system</h3>
+        <div class="card">
+          <div class="card-label">What might be happening</div>
+          <p>${s.happening}</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Where it may show up in the body</div>
+          <p>${s.body}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase p2">
+      <div class="phase-marker"><div class="phase-dot">C²</div><div class="phase-line"></div></div>
+      <div>
+        <h3><strong>Clarify</strong> · see the pattern</h3>
+        <div class="card">
+          <div class="card-label">The story you may be telling yourself</div>
+          <p class="story">${s.story}</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Naming the emotion</div>
+          <div class="emotion-chips">${s.emotions.map(e => `<span class="chip">${e}</span>`).join('')}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase p3">
+      <div class="phase-marker"><div class="phase-dot">C³</div><div class="phase-line"></div></div>
+      <div>
+        <h3><strong>Choose</strong> · act with autonomy</h3>
+        <div class="card reframe-card">
+          <div class="card-label">A self-compassion reframe</div>
+          <p>${s.reframe}</p>
+        </div>
+        <div class="card step-card">
+          <div class="card-label">One practical next step</div>
+          <p>${s.step}</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="again" onclick="reset()">Check in again</button>
+  `;
+  result.classList.add('show');
+  result.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function reset(){
+  result.classList.remove('show');
+  result.innerHTML = '';
+  document.querySelectorAll('.state-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('picker').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
