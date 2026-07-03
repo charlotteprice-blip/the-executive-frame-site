@@ -11,3 +11,6 @@
   },{threshold:0.12, rootMargin:'0px 0px -7% 0px'});
   secs.forEach(function(s,i){ s.classList.add('reveal'); s.style.transitionDelay=(Math.min(i,2)*0.06)+'s'; io.observe(s); });
 })();
+(function(){var s=document.createElement('script');
+s.src='https://www.bugherd.com/sidebarv2.js?apikey=8lqfddqwu8z7oarhnchsdq';
+s.async=true;document.body.appendChild(s);})();
