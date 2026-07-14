@@ -9,3 +9,4 @@ collections_config:
   pages:
     path: ''
     icon: wysiwyg
+    url: '/[full_slug]'
