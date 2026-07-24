@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Clinician referral form · EF | Health · The Executive Frame™</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PASTE YOUR APPS SCRIPT WEB APP URL INTO THE SCRIPT_URL LINE
+   AT THE BOTTOM OF THIS FILE BEFORE PUBLISHING.
+   ============================================================ */
+:root{
+  --sage:#6E9E86; --ink:#4E7A65; --bnavy:#16243A; --fnavy:#15212D;
+  --paper:#F4F6F8; --ivory:#ECE6D8; --gold:#C9A063; --powder:#9FB8D6;
+  --body:#2C3A4E; --dim:#5C6B7E; --hair:#DFE5EC; --clay:#B07A62; --claybg:#F7EFEA;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Inter",sans-serif;color:var(--body);background:var(--paper);font-size:15px;line-height:1.6;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px 60px;}
+/* Cover */
+.cover{background:var(--fnavy);color:var(--ivory);padding:44px 0 36px;}
+.cover .in{max-width:760px;margin:0 auto;padding:0 22px;position:relative;}
+.dot{position:absolute;right:26px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--gold);}
+.wordmark{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:19px;}
+.wordmark sup{font-size:9px;}
+.eb{margin-top:12px;}
+.eb .dash{display:inline-block;width:30px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px;}
+.eb span{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.cover h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:40px;line-height:1.1;margin-top:26px;}
+.cover .sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--powder);margin-top:8px;}
+.cover .meta{margin-top:26px;padding-top:12px;border-top:1px solid rgba(236,230,216,0.18);font-size:11.5px;color:rgba(236,230,216,0.7);}
+/* Sections */
+.seb{margin:34px 0 6px;}
+.seb .dash{display:inline-block;width:30px;height:1px;background:var(--ink);vertical-align:middle;margin-right:12px;}
+.seb span{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);}
+h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:26px;color:var(--bnavy);margin-bottom:10px;}
+h2 em{font-style:italic;color:var(--ink);font-weight:500;}
+.card{background:#fff;border:1px solid var(--hair);border-radius:10px;padding:20px 22px;margin:12px 0;}
+.card.clay{background:var(--claybg);border-left:3px solid var(--clay);}
+.card.navy{background:var(--bnavy);border:none;color:rgba(236,230,216,0.9);}
+.card.navy .it{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--powder);}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:620px){.grid{grid-template-columns:1fr;}}
+label{display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);margin-bottom:5px;}
+input[type=text],input[type=email],input[type=tel],input[type=date],textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--hair);border-radius:7px;
+  font-family:"Inter",sans-serif;font-size:15px;color:var(--body);background:#fff;}
+input:focus,textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgba(110,158,134,0.15);}
+textarea{min-height:96px;resize:vertical;}
+.field{margin-bottom:14px;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(min-width:621px){.opts.three{grid-template-columns:1fr 1fr 1fr;}}
+.opt{display:flex;align-items:flex-start;gap:9px;background:#fff;border:1px solid var(--hair);border-radius:7px;padding:9px 12px;cursor:pointer;font-size:14px;}
+.opt:hover{border-color:var(--sage);}
+.opt input{margin-top:3px;accent-color:var(--ink);}
+.note{font-size:12.5px;color:var(--dim);font-style:italic;margin:4px 0 8px;}
+.req{color:var(--clay);}
+button{background:var(--sage);color:var(--fnavy);border:none;border-radius:30px;padding:14px 34px;
+  font-family:"Inter",sans-serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;margin-top:10px;}
+button:hover{background:var(--ink);color:var(--ivory);}
+button:disabled{opacity:0.6;cursor:wait;}
+.hidden{display:none !important;}
+#confirm{border-left:3px solid var(--sage);}
+#errbox{border-left:3px solid var(--clay);background:var(--claybg);}
+footer{border-top:1px solid var(--hair);margin-top:44px;padding-top:14px;font-size:11.5px;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;}
+</style>
+</head>
+<body>
+<div class="cover"><div class="in">
+  <div class="dot"></div>
+  <div class="wordmark">Executive Frame<sup>™</sup></div>
+  <div class="eb"><span class="dash"></span><span>EF | Health · Gut–brain psychology · Clinical form</span></div>
+  <h1 data-editable="source" data-path="/ef-health-referral.html" data-key="page-title-1">Clinician referral form</h1>
+  <div class="sub">Psychological support for gastroenterology and endoscopy patients.</div>
+  <div class="meta">GP · specialist · allied health · self-referral — intake triage completed within two business days · Dr Sarah Anticich · Clinical Psychologist</div>
+</div></div>
+
+<div class="wrap">
+
+
+<div id="confirm" class="card hidden">
+  <h2 data-editable="source" data-path="/ef-health-referral.html" data-key="section-title-1">Referral <em>received.</em></h2>
+  <p data-editable="source" data-path="/ef-health-referral.html" data-key="text-1">Thank you — your referral has been submitted and our team has been notified. Intake triage is completed within two business days; we will contact the patient directly to arrange the first step.</p>
+  <p class="note">Questions in the meantime: receptionchristchurch@macmurray.co.nz</p>
+</div>
+
+<div id="errbox" class="card hidden">
+  <h2 data-editable="source" data-path="/ef-health-referral.html" data-key="section-title-2">Something went <em>wrong.</em></h2>
+  <p data-editable="source" data-path="/ef-health-referral.html" data-key="text-2">The referral could not be submitted just now. Please email it to <strong>receptionchristchurch@macmurray.co.nz</strong>, or try again shortly.</p>
+</div>
+
+<footer>
+  <div>The Executive Frame™ · EF | Health · executiveframe.co.nz</div>
+  <div>© Sarah Anticich Consulting · MacMurray Psychological Services</div>
+</footer>
+</div>
+
+
+
+
