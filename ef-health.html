@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EF Health — Gut-Brain Program | MacMurray Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#15212D; --blueprint:#16243A;
+  --paper:#F4F6F8; --hairline:#E4E8EC; --white:#fff;
+  --ivory:#ECE6D8; --gold:#C9A063; --powder:#9FB8D6; --slatec:#93A4BC;
+  --ink:#15212D; --body:#3B4757; --muted:#6B7788; --health:#5B8A80;
+  --card-border:rgba(159,184,214,.16); --card-fill:rgba(159,184,214,.03);
+  --radius:10px; --radius-sm:8px; --radius-lg:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',Arial,sans-serif;background:var(--paper);color:var(--body);
+  overflow-x:hidden;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.serif,h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+a{text-decoration:none}
+.bpbg{background:
+  radial-gradient(900px 520px at 85% -5%, rgba(159,184,214,.14), transparent 60%),
+  repeating-linear-gradient(0deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px),
+  repeating-linear-gradient(90deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px),
+  var(--blueprint)}
+
+/* ---------- Nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(21,33,45,.94);
+  backdrop-filter:blur(12px);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(159,184,214,.12)}
+.nav-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:19px;
+  letter-spacing:0;color:var(--ivory);text-transform:none}
+.nav-brand-sub{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  font-family:'Inter',sans-serif;font-style:normal;font-weight:600;margin-top:2px}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--slatec);transition:color .2s}
+.nav-links a:hover{color:var(--ivory)}
+.nav-cta{background:transparent;color:var(--gold);padding:9px 20px;border-radius:30px;
+  border:1px solid rgba(201,160,99,.55);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.nav-cta:hover{background:rgba(201,160,99,.1)}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;background:
+  radial-gradient(900px 520px at 85% -5%, rgba(159,184,214,.14), transparent 60%),
+  var(--blueprint);
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  text-align:left;padding:150px 72px 90px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+   repeating-linear-gradient(0deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px),
+   repeating-linear-gradient(90deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px)}
+.hero::after{content:'';position:absolute;right:-160px;bottom:-200px;width:520px;height:520px;
+  border-radius:50%;border:1px solid rgba(159,184,214,.14);
+  box-shadow:0 0 0 70px rgba(159,184,214,.001), inset 0 0 0 70px rgba(159,184,214,.001);
+  pointer-events:none}
+.hero-grid{position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;pointer-events:none;
+  border-radius:50%;border:1px solid rgba(159,184,214,.1)}
+.hero-grid::before{content:'';position:absolute;inset:56px;border-radius:50%;border:1px solid rgba(159,184,214,.1)}
+.hero-grid::after{content:'';position:absolute;width:9px;height:9px;border-radius:50%;
+  background:var(--gold);top:52px;left:196px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.2em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:26px;position:relative;z-index:2;
+  font-family:'Inter',sans-serif}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--gold);flex:none}
+.hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
+  font-size:clamp(40px,6.4vw,72px);letter-spacing:-.01em;color:var(--ivory);line-height:1.06;
+  margin-bottom:22px;position:relative;z-index:2;max-width:900px;text-transform:none}
+.hero h1 span{color:var(--powder);font-style:italic}
+.hero-sub{font-family:'Inter',sans-serif;font-style:normal;font-size:clamp(14px,1.5vw,16.5px);
+  color:var(--slatec);max-width:620px;line-height:1.75;margin-bottom:44px;position:relative;z-index:2}
+.spectrum-bar{display:none}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-start;position:relative;z-index:2}
+.btn-hp{background:var(--gold);color:var(--navy);padding:15px 34px;border-radius:30px;
+  font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:.2s}
+.btn-hp:hover{background:#d9b07a}
+.btn-hg{background:transparent;color:var(--powder);padding:15px 34px;border-radius:30px;
+  border:1px solid rgba(159,184,214,.35);font-size:11.5px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;transition:.2s}
+.btn-hg:hover{border-color:var(--powder);color:var(--ivory)}
+
+/* ---------- Sections ---------- */
+.section{padding:104px 72px;background:var(--paper)}
+.section-inner{max-width:1120px;margin:0 auto}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;
+  letter-spacing:.2em;color:var(--health);text-transform:uppercase;margin-bottom:16px;font-family:'Inter',sans-serif}
+.section-eyebrow::before{content:"";width:26px;height:1.5px;background:var(--health);flex:none}
+.section-title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
+  font-size:clamp(30px,4.2vw,46px);letter-spacing:-.005em;margin-bottom:14px;line-height:1.12;color:var(--ink);text-transform:none}
+.section-title span{font-style:italic;color:var(--health)}
+.section-sub{font-family:'Inter',sans-serif;font-style:normal;font-size:15px;color:var(--muted);
+  max-width:640px;line-height:1.75;margin-bottom:52px}
+
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.what-text p{font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.8;color:var(--body);margin-bottom:16px}
+.what-text strong{color:var(--ink);font-weight:600}
+.model-cards{display:flex;flex-direction:column;gap:12px}
+.model-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius);
+  padding:20px 24px;display:flex;align-items:flex-start;gap:16px;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+.mc-dot{width:8px;height:8px;border-radius:50%;margin-top:8px;flex-shrink:0;background:var(--health)!important}
+.mc-title{font-family:'Inter',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--health);margin-bottom:5px}
+.mc-desc{font-family:'Inter',sans-serif;font-style:normal;font-size:13.5px;color:var(--body);line-height:1.65}
+
+/* Dark "who" section */
+.who-section{background:
+  radial-gradient(900px 520px at 85% -5%, rgba(159,184,214,.13), transparent 60%),
+  var(--blueprint);position:relative;overflow:hidden}
+.who-section::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg, rgba(159,184,214,.05) 0 1px, transparent 1px 88px),
+             repeating-linear-gradient(90deg, rgba(159,184,214,.05) 0 1px, transparent 1px 88px)}
+.who-section .section-inner{position:relative;z-index:2}
+.who-section .section-eyebrow{color:var(--gold)}
+.who-section .section-eyebrow::before{background:var(--gold)}
+.who-section .section-title{color:var(--ivory)}
+.who-section .section-title span{color:var(--powder)}
+.who-section .section-sub{color:var(--slatec)}
+.conditions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
+.condition-pill{background:var(--card-fill);border:1px solid var(--card-border);border-radius:var(--radius);padding:22px 24px}
+.condition-pill h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:19px;
+  color:var(--ivory);margin-bottom:7px}
+.condition-pill p{font-family:'Inter',sans-serif;font-style:normal;font-size:12.5px;
+  color:var(--slatec);line-height:1.65}
+.ref-note{background:rgba(201,160,99,.07)!important;border:1px solid rgba(201,160,99,.4)!important;
+  border-radius:var(--radius);padding:22px 26px;color:var(--slatec);font-size:13.5px;line-height:1.7}
+.ref-note strong{color:var(--ivory)}
+
+/* Pathways */
+.pathway-section{background:var(--paper)}
+.pathway-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pathway-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-lg);
+  padding:36px 34px;display:flex;flex-direction:column;box-shadow:0 2px 14px rgba(21,33,45,.06);transition:.2s}
+.pathway-card:hover{border-color:var(--health);box-shadow:0 6px 22px rgba(21,33,45,.09)}
+.p-tag{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--health);margin-bottom:14px}
+.pathway-card h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:27px;
+  color:var(--ink);margin-bottom:10px;line-height:1.2}
+.p-desc{font-size:13.5px;color:var(--body);line-height:1.7;margin-bottom:20px}
+.p-feats{display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.p-feat{font-size:12.5px;color:var(--muted);display:flex;gap:10px;align-items:flex-start;line-height:1.55}
+.p-feat::before{content:"›";color:var(--health);font-weight:600;flex:none}
+.p-arrow{margin-top:auto;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--health)}
+
+/* Interventions */
+.int-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.int-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius);
+  padding:28px 26px;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+.int-tag{font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--health);margin-bottom:12px}
+.int-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:23px;color:var(--ink);margin-bottom:9px}
+.int-desc{font-size:13px;color:var(--body);line-height:1.7;margin-bottom:18px}
+.int-details{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.int-detail{font-size:12px;color:var(--muted);display:flex;gap:9px;line-height:1.5}
+.int-detail::before{content:"·";color:var(--health);font-weight:700;flex:none}
+.int-badge{margin-top:auto;font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);border-top:1px solid var(--hairline);padding-top:14px}
+
+/* Steps */
+.how-section{background:var(--paper)}
+.steps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.step{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius);
+  padding:26px 28px;display:flex;gap:20px;align-items:flex-start}
+.step-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:500;
+  color:var(--health);line-height:1;flex:none;min-width:34px}
+.step-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--ink);margin-bottom:5px}
+.step-desc{font-size:13px;color:var(--body);line-height:1.7}
+
+/* Clinician section */
+.clin-section{background:
+  radial-gradient(900px 520px at 15% -5%, rgba(159,184,214,.12), transparent 60%),
+  var(--navy);position:relative;overflow:hidden}
+.clin-section .section-inner{position:relative;z-index:2}
+.clin-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.clin-section .section-eyebrow{color:var(--gold)}
+.clin-section .section-eyebrow::before{background:var(--gold)}
+.clin-section .section-title{color:var(--ivory)}
+.clin-text{color:var(--slatec);font-size:14.5px;line-height:1.8}
+.clin-text p{margin-bottom:14px}
+.clin-box{background:var(--card-fill);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:32px}
+.clin-feats{display:flex;flex-direction:column;gap:14px;margin-bottom:26px}
+.clin-feat{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--slatec);line-height:1.6}
+.clin-feat::before{content:"›";color:var(--gold);font-weight:600;flex:none}
+.cf-dot{display:none}
+.cf-text{flex:1}
+
+/* CTA */
+.cta-section{background:var(--paper);padding:104px 72px;text-align:center}
+.cta-inner{max-width:760px;margin:0 auto}
+.cta-section h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
+  font-size:clamp(30px,4.2vw,44px);color:var(--ink);margin-bottom:16px;line-height:1.14}
+.cta-section h2 span{font-style:italic;color:var(--health)}
+.cta-section p{font-size:15px;color:var(--muted);margin-bottom:36px;line-height:1.75}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-cta,.btn-cta-p{background:var(--health);color:#fff;padding:15px 34px;border-radius:30px;
+  font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:.2s}
+.btn-cta-p:hover,.btn-cta:hover{background:#4d786f}
+.btn-cta-s{background:transparent;color:var(--ink);padding:15px 34px;border-radius:30px;
+  border:1px solid var(--hairline);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.btn-cta-s:hover{border-color:var(--health);color:var(--health)}
+
+/* Footer */
+footer{background:var(--navy);padding:46px 72px;color:var(--slatec)}
+.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:16px}
+.footer-tagline{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:17px;color:var(--ivory)}
+.footer-links{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slatec)}
+.fn,.fs{color:var(--slatec)}
+
+@media(max-width:900px){
+  nav{padding:14px 22px}.nav-links{display:none}
+  .hero{padding:120px 24px 70px}
+  .section,.cta-section{padding:70px 24px}
+  .what-grid,.clin-grid,.pathway-grid,.conditions-grid,.int-grid,.steps-grid{grid-template-columns:1fr;gap:22px}
+  footer{padding:34px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-brand-name">Executive Frame™</div>
+    <div class="nav-brand-sub">EF Health</div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#who">Who it's for</a>
+    <a href="#pathways">Pathways</a>
+    <a href="#interventions">Interventions</a>
+    <a href="#clinicians">For clinicians</a>
+  </div>
+  <a href="#pathways" class="nav-cta">Get started</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="eyebrow">MacMurray Clinic · Disorders of Gut-Brain Interaction</div>
+  <h1 data-editable="source" data-path="/ef-health.html" data-key="page-title-1">Your gut and brain<br><span>are in conversation.</span></h1>
+  <p class="hero-sub">EF Health is a structured psychological program for people living with gut-brain conditions — built on the science of emotional regulation, executive functioning, and self-determination.</p>
+  <div class="spectrum-bar">
+    <div style="flex:1.2;background:#4caf82;"></div>
+    <div style="flex:0.8;background:#6ab0e0;"></div>
+    <div style="flex:0.8;background:#e8a0b8;"></div>
+    <div style="flex:0.9;background:#e8a87c;"></div>
+  </div>
+  <div class="hero-actions">
+    <a href="ef-health-intake.html" class="btn-hp">Complete intake form →</a>
+    <a href="#pathways" class="btn-hg">Find my pathway</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="what-grid">
+      <div class="what-text">
+        <div class="section-eyebrow">The model</div>
+        <h2 class="section-title">Human first.<br>Then performance.</h2>
+        <p data-editable="source" data-path="/ef-health.html" data-key="text-1">EF Health applies the Executive Frame™ model to people living with disorders of gut-brain interaction. It addresses the psychological layer that sits alongside biomedical care — the regulatory, cognitive, and motivational barriers that limit treatment engagement and quality of life.</p>
+        <p>Developed by <strong style="color:var(--slate);">Dr Sarah Anticich</strong>, Clinical and Industrial Organisational Psychologist, EF Health is a structured, evidence-based delivery system built specifically for the gut-brain experience.</p>
+        <p>The program operates through the <strong style="color:var(--slate);">C³ Loop</strong> — Centre, Clarify, Choose — grounded in Emotional Intelligence, Executive Functioning, and Self-Determination Theory.</p>
+      </div>
+      <div class="model-cards">
+        <div class="model-card"><div class="mc-dot" style="background:#4caf82;"></div><div><div class="mc-title">Stability — Emotional Intelligence</div><div class="mc-desc">Regulation, recovery, and reducing the physiological stress that amplifies gut symptoms.</div></div></div>
+        <div class="model-card"><div class="mc-dot" style="background:#6ab0e0;"></div><div><div class="mc-title">Clarity — Executive Functioning</div><div class="mc-desc">Organising thinking, managing complexity, and reducing the cognitive burden of chronic illness.</div></div></div>
+        <div class="model-card"><div class="mc-dot" style="background:#e8a0b8;"></div><div><div class="mc-title">Agency — Self-Determination</div><div class="mc-desc">Restoring ownership, rebuilding confidence, and reconnecting action to values.</div></div></div>
+        <div class="model-card"><div class="mc-dot" style="background:#e8a87c;"></div><div><div class="mc-title">Context Load</div><div class="mc-desc">Understanding the environmental and systems pressure that shapes what is actually sustainable.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="section who-section" id="who">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who this is for</div>
+    <h2 class="section-title">Built for gut-brain conditions</h2>
+    <p class="section-sub">Adults, adolescents, and families referred through MacMurray Clinic by their GP or gastroenterologist.</p>
+    <div class="conditions-grid">
+      <div class="condition-pill"><h4>IBS</h4><p data-editable="source" data-path="/ef-health.html" data-key="text-2">Irritable Bowel Syndrome — abdominal pain, altered bowel habit, symptom fluctuation with stress</p></div>
+      <div class="condition-pill"><h4>Functional Dyspepsia</h4><p data-editable="source" data-path="/ef-health.html" data-key="text-3">Persistent upper GI symptoms without structural cause, often linked to visceral hypersensitivity</p></div>
+      <div class="condition-pill"><h4>Functional Constipation / Diarrhoea</h4><p data-editable="source" data-path="/ef-health.html" data-key="text-4">Disrupted motility without organic explanation, frequently co-occurring with anxiety and avoidance</p></div>
+      <div class="condition-pill"><h4>SIBO / Motility Disorders</h4><p data-editable="source" data-path="/ef-health.html" data-key="text-5">Complex symptom profiles requiring multi-system management and sustained self-regulation support</p></div>
+      <div class="condition-pill"><h4>Crohn's Disease</h4><p data-editable="source" data-path="/ef-health.html" data-key="text-6">Significant psychological burden, flare-remission cycles, identity disruption, and adherence difficulty</p></div>
+      <div class="condition-pill"><h4>Other Chronic Illness</h4><p data-editable="source" data-path="/ef-health.html" data-key="text-7">Generalisable to any condition where gut-brain dysregulation is a clinical concern</p></div>
+    </div>
+    <div class="ref-note">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--green);margin-top:6px;flex-shrink:0;"></div>
+      <p data-editable="source" data-path="/ef-health.html" data-key="text-8">EF Health is a referred service. If you have been referred by your GP or gastroenterologist, you can complete your intake form directly using the button below. If you would like to discuss a referral, contact MacMurray Clinic.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PATHWAYS -->
+<section class="section pathway-section" id="pathways">
+  <div class="section-inner">
+    <div class="section-eyebrow">Self-select your pathway</div>
+    <h2 class="section-title">Where would you like to start?</h2>
+    <p class="section-sub">Choose the pathway that fits where you are right now.</p>
+    <div class="pathway-grid">
+      <a href="ef-health-intake.html" class="pathway-card" style="border-color:rgba(76,175,130,0.35);">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--green);border-radius:var(--radius-lg) var(--radius-lg) 0 0;"></div>
+        <div class="p-tag" style="color:var(--green);">For patients</div>
+        <h3 data-editable="source" data-path="/ef-health.html" data-key="card-title-1">I have been referred and want to begin my intake</h3>
+        <p class="p-desc">Complete the gut-brain intake form before your first appointment. Your clinician will use your profile to tailor the program.</p>
+        <div class="p-feats">
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;"></div>15–20 minutes to complete</div>
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;"></div>Scores calculated automatically</div>
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;"></div>Confirmation email sent immediately</div>
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;"></div>Clinician reviews before first appointment</div>
+        </div>
+        <div class="p-arrow" style="color:var(--green);">Begin intake form <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+      </a>
+      <a href="ef-health-referral.html" class="pathway-card" style="border-color:rgba(106,176,224,0.35);">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--blue);border-radius:var(--radius-lg) var(--radius-lg) 0 0;"></div>
+        <div class="p-tag" style="color:var(--blue);">For GPs and specialists</div>
+        <h3 data-editable="source" data-path="/ef-health.html" data-key="card-title-2">I am referring a patient to EF Health</h3>
+        <p class="p-desc">Complete the Smart Referral Form. The intake team will contact your patient directly within the timeframe indicated by the urgency level you select.</p>
+        <div class="p-feats">
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>Seven clinical sections — 8–12 minutes</div>
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>Risk flags and urgency triage built in</div>
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>Tier recommendation and delivery mode</div>
+          <div class="p-feat"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>Recorded in MacMurray Clinic clinical system</div>
+        </div>
+        <div class="p-arrow" style="color:var(--blue);">Begin referral form <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVENTIONS -->
+<section class="section" id="interventions">
+  <div class="section-inner">
+    <div class="section-eyebrow">How we work</div>
+    <h2 class="section-title">Intervention pathways</h2>
+    <p class="section-sub">EF Health is designed to build capacity through psychoeducation, group, and eLearning pathways first. Individual therapy is available where clinically indicated.</p>
+    <div class="int-grid">
+      <div class="int-card">
+        <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:#4caf82;border-radius:var(--radius) 0 0 var(--radius);"></div>
+        <div class="int-tag" style="color:#4caf82;">Foundation pathway</div>
+        <div class="int-name">Psychoeducation</div>
+        <div class="int-desc">Structured learning about the gut-brain connection, the EF model, and evidence-based self-regulation tools. The entry point for most participants.</div>
+        <div class="int-details">
+          <div class="int-detail">Available in-person and hybrid</div>
+          <div class="int-detail">Individual or group format</div>
+          <div class="int-detail">Workbook-supported</div>
+        </div>
+        <div class="int-badge" style="background:#e8f6ef;color:#1a6b40;">Recommended first step</div>
+      </div>
+      <div class="int-card">
+        <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:#6ab0e0;border-radius:var(--radius) 0 0 var(--radius);"></div>
+        <div class="int-tag" style="color:#6ab0e0;">Preferred pathway</div>
+        <div class="int-name">Group Program</div>
+        <div class="int-desc">The C³ Loop in a facilitated group setting. Builds collective regulation capacity, reduces isolation, and creates peer accountability.</div>
+        <div class="int-details">
+          <div class="int-detail">6–8 participants per group</div>
+          <div class="int-detail">8-week structured program</div>
+          <div class="int-detail">In-person or hybrid delivery</div>
+        </div>
+        <div class="int-badge" style="background:#e6f1fb;color:#0c447c;">Scalable · High impact</div>
+      </div>
+      <div class="int-card">
+        <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:#e8a87c;border-radius:var(--radius) 0 0 var(--radius);"></div>
+        <div class="int-tag" style="color:#e8a87c;">Self-paced pathway</div>
+        <div class="int-name">eLearning</div>
+        <div class="int-desc">Short digital modules, reflection prompts, quizzes, and downloadable tools. Between-session reinforcement and standalone low-support pathway.</div>
+        <div class="int-details">
+          <div class="int-detail">Accessible anytime, any device</div>
+          <div class="int-detail">Pairs with group or individual</div>
+          <div class="int-detail">Included in all program tiers</div>
+        </div>
+        <div class="int-badge" style="background:#fff3ec;color:#8b4a1a;">Flexible · Always available</div>
+      </div>
+      <div class="int-card">
+        <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:#e8a0b8;border-radius:var(--radius) 0 0 var(--radius);"></div>
+        <div class="int-tag" style="color:#e8a0b8;">Clinical indication</div>
+        <div class="int-name">Individual Therapy</div>
+        <div class="int-desc">One-to-one clinical sessions for complex presentations, significant comorbidities, or where group pathways are not appropriate.</div>
+        <div class="int-details">
+          <div class="int-detail">In-person and telehealth</div>
+          <div class="int-detail">6–10 sessions standard course</div>
+          <div class="int-detail">EI–EF–SDT structured delivery</div>
+        </div>
+        <div class="int-badge" style="background:#fbeaf0;color:#993556;">Where clinically indicated</div>
+      </div>
+      <div class="int-card">
+        <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:#4a6888;border-radius:var(--radius) 0 0 var(--radius);"></div>
+        <div class="int-tag" style="color:#4a6888;">Delivery mode</div>
+        <div class="int-name">In-Person</div>
+        <div class="int-desc">Face-to-face at MacMurray Clinic. Preferred for initial assessment, psychoeducation blocks, and group sessions.</div>
+        <div class="int-details">
+          <div class="int-detail">MacMurray Clinic — DGBI Program</div>
+          <div class="int-detail">All ages and family formats</div>
+        </div>
+        <div class="int-badge" style="background:#f0f4f8;color:#2e4868;">Available now</div>
+      </div>
+      <div class="int-card">
+        <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:#8899aa;border-radius:var(--radius) 0 0 var(--radius);"></div>
+        <div class="int-tag" style="color:#8899aa;">Delivery mode</div>
+        <div class="int-name">Hybrid</div>
+        <div class="int-desc">In-person and telehealth combined, matched to clinical need and practical access. Default mode for most participants.</div>
+        <div class="int-details">
+          <div class="int-detail">Flexible scheduling</div>
+          <div class="int-detail">Reduces access barriers</div>
+        </div>
+        <div class="int-badge" style="background:#f4f5f6;color:#4a5568;">Default recommendation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:var(--green);">The process</div>
+    <h2 class="section-title">How EF Health works</h2>
+    <p class="section-sub" style="margin-bottom:64px;">From referral to program completion.</p>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">1</div><div class="step-title">Referral</div><div class="step-desc">GP or gastroenterologist submits Smart Referral Form. Urgency level determines contact timeframe.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">Intake</div><div class="step-desc">Patient completes gut-brain intake form. Scored profile generated across four domains.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">Program</div><div class="step-desc">Clinician allocates pathway — psychoeducation, group, eLearning, or individual — matched to profile.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">Review</div><div class="step-desc">Progress reviewed at mid-program and completion. Profile reassessed. Next steps determined.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR CLINICIANS -->
+<section class="section clin-section" id="clinicians">
+  <div class="section-inner">
+    <div class="clin-grid">
+      <div class="clin-text">
+        <div class="section-eyebrow">For referring clinicians</div>
+        <h2 class="section-title">Built for clinical integration</h2>
+        <p data-editable="source" data-path="/ef-health.html" data-key="text-9">EF Health complements, not replaces, biomedical and gastroenterological care. Every referral is structured, tracked, and reported back to the treating team.</p>
+        <p data-editable="source" data-path="/ef-health.html" data-key="text-10">The Smart Referral Form captures the clinical picture in full and routes directly into the MacMurray Clinic DGBI program. Shared care, progress updates, and discharge summaries are available for all referring clinicians.</p>
+        <a href="ef-health-referral.html" class="btn-cta btn-cta-p" style="margin-top:8px;">Submit a referral →</a>
+      </div>
+      <div class="clin-box">
+        <h4>What the referral system includes</h4>
+        <div class="clin-feats">
+          <div class="clin-feat"><div class="cf-dot"></div><div class="cf-text">Seven-section referral form — concerns, risk flags, urgency, and stream recommendation</div></div>
+          <div class="clin-feat"><div class="cf-dot"></div><div class="cf-text">Automatic notification to EF Health intake team on submission</div></div>
+          <div class="clin-feat"><div class="cf-dot"></div><div class="cf-text">Urgent referrals flagged for immediate contact</div></div>
+          <div class="clin-feat"><div class="cf-dot"></div><div class="cf-text">Patient intake profile shared with referring clinician on consent</div></div>
+          <div class="clin-feat"><div class="cf-dot"></div><div class="cf-text">Discharge summary provided at program completion</div></div>
+        </div>
+        <a href="ef-health-referral.html" class="btn-cta btn-cta-s">Open referral form →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="cta-inner">
+    <div class="section-eyebrow" style="text-align:center;">Ready to begin</div>
+    <h2 data-editable="source" data-path="/ef-health.html" data-key="section-title-1">Human first. Then performance.</h2>
+    <p data-editable="source" data-path="/ef-health.html" data-key="text-11">EF Health is available now at MacMurray Clinic. Complete your intake form or submit a referral below.</p>
+    <div class="cta-buttons">
+      <a href="ef-health-intake.html" class="btn-cta btn-cta-p">Patient intake form →</a>
+      <a href="ef-health-referral.html" class="btn-cta btn-cta-s">GP referral form →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div><div class="fn">Executive Frame™ · EF Health</div><div class="fs">Dr Sarah Anticich · Clinical &amp; I/O Psychologist</div></div>
+    <div class="footer-tagline">Human first. Then performance.</div>
+    <div class="footer-links"><a href="ef-health-intake.html">Patient intake</a><a href="ef-health-referral.html">GP referral</a></div>
+  </div>
+</footer>
+
+
+
