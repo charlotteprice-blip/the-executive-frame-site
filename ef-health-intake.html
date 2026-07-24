@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EF Health — Gut-Brain Intake | MacMurray Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#15212D; --blueprint:#16243A;
+  --paper:#F4F6F8; --hairline:#E4E8EC; --white:#fff;
+  --ivory:#ECE6D8; --gold:#C9A063; --powder:#9FB8D6; --slatec:#93A4BC;
+  --ink:#15212D; --body:#3B4757; --muted:#6B7788; --health:#5B8A80;
+  --card-border:rgba(159,184,214,.16); --card-fill:rgba(159,184,214,.03);
+  --radius:10px; --radius-sm:8px; --radius-lg:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',Arial,sans-serif;background:var(--paper);color:var(--body);
+  overflow-x:hidden;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.serif,h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+a{text-decoration:none}
+.bpbg{background:
+  radial-gradient(900px 520px at 85% -5%, rgba(159,184,214,.14), transparent 60%),
+  repeating-linear-gradient(0deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px),
+  repeating-linear-gradient(90deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px),
+  var(--blueprint)}
+
+body{background:var(--paper)}
+/* ---------- Header ---------- */
+.site-header{background:
+  radial-gradient(700px 400px at 85% -20%, rgba(159,184,214,.14), transparent 60%),
+  var(--blueprint);
+  padding:22px 44px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(159,184,214,.14);position:relative;overflow:hidden}
+.site-header::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg, rgba(159,184,214,.05) 0 1px, transparent 1px 88px)}
+.nav-row,.brand{display:flex;align-items:baseline;gap:14px;position:relative;z-index:2;flex-wrap:wrap}
+.brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:20px;
+  color:var(--ivory);letter-spacing:0;text-transform:none}
+.brand-sub,.brand-arm,.sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);font-weight:600}
+.clinic-tag,.tagline{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--slatec);position:relative;z-index:2}
+.spectrum-bar{display:none}
+
+/* ---------- Progress ---------- */
+.progress-wrap{background:var(--white);border-bottom:1px solid var(--hairline);
+  padding:14px 44px;display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:50}
+.progress-track{flex:1;height:2px;background:var(--hairline);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--health);width:0;transition:width .35s ease}
+.progress-label{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;white-space:nowrap}
+
+/* ---------- Screens ---------- */
+.main{max-width:900px;margin:0 auto;padding:48px 32px 90px}
+.screen{display:none;animation:fade .3s ease}
+.screen.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.cover-hero{margin-bottom:30px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.2em;
+  color:var(--health);text-transform:uppercase;margin-bottom:16px;font-family:'Inter',sans-serif}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--health);flex:none}
+.cover-hero h1,h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
+  font-size:clamp(32px,5vw,46px);color:var(--ink);line-height:1.12;letter-spacing:-.005em;
+  margin-bottom:12px;text-transform:none}
+.cover-hero .sub,h1+.sub{font-family:'Inter',sans-serif;font-size:15px;color:var(--muted);
+  letter-spacing:0;text-transform:none;font-weight:400;line-height:1.7}
+
+.intro-box,.note-box{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
+  padding:22px 26px;margin:22px 0;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+.intro-box p{font-size:14px;line-height:1.75;color:var(--body);margin-bottom:10px}
+.intro-box p:last-child{margin-bottom:0}
+.privacy-note,.emerg-note{background:rgba(201,160,99,.07);border:1px solid rgba(201,160,99,.35);
+  border-left:3px solid var(--gold);border-radius:8px;padding:18px 22px;margin:20px 0;
+  font-size:13px;line-height:1.7;color:var(--body)}
+.privacy-note strong,.emerg-note strong{color:var(--ink);font-weight:600}
+
+/* ---------- Section tags ---------- */
+.section-tag{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;
+  letter-spacing:.2em;color:var(--health);text-transform:uppercase;margin-bottom:14px}
+.section-tag::before{content:"";width:26px;height:1.5px;background:var(--health);flex:none}
+.section-tag .st-num,.section-tag .st-letter,.st-num,.st-letter{font-size:11px;letter-spacing:.2em;color:var(--health)}
+.section-body h2,.st-title,.section-body .st-title{font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:500;font-size:clamp(26px,3.6vw,36px);color:var(--ink);line-height:1.15;
+  margin-bottom:8px;text-transform:none}
+.st-sub,.sec-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:26px}
+
+/* ---------- Fields ---------- */
+.form-card{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
+  padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+.field-group{margin-bottom:20px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.field-row.single{grid-template-columns:1fr}
+label{display:block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:7px}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],select,textarea{
+  width:100%;padding:11px 13px;border:1px solid var(--hairline);border-radius:7px;
+  font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);background:var(--white);transition:.15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--health);
+  box-shadow:0 0 0 3px rgba(91,138,128,.13)}
+textarea{min-height:92px;resize:vertical;line-height:1.65}
+
+.check-group{display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
+.check-item{display:flex;align-items:flex-start;gap:11px;background:var(--white);
+  border:1px solid var(--hairline);border-radius:8px;padding:12px 15px;font-size:13.5px;
+  line-height:1.6;color:var(--body);cursor:pointer;transition:.15s}
+.check-item:hover{border-color:var(--health)}
+.check-item input{margin-top:3px;accent-color:var(--health);flex:none}
+.check-item.warning{border-left:3px solid var(--gold);background:rgba(201,160,99,.05)}
+.check-item.danger{border-left:3px solid #B0674F;background:rgba(176,103,79,.06)}
+.check-item.danger:hover{border-color:#B0674F}
+
+/* ---------- Buttons ---------- */
+.form-footer{display:flex;justify-content:space-between;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:14px 32px;border-radius:30px;font-family:'Inter',sans-serif;font-size:11.5px;
+  font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border:none;transition:.2s}
+.btn-primary,.btn-submit{background:var(--health);color:#fff}
+.btn-primary:hover,.btn-submit:hover{background:#4d786f}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--hairline)}
+.btn-ghost:hover{border-color:var(--health);color:var(--health)}
+.btn:disabled{opacity:.55;cursor:wait}
+.val-msg,.validation-msg{display:none;color:#A85440;font-size:13px;margin-top:14px;
+  padding:11px 15px;background:rgba(176,103,79,.07);border-left:3px solid #B0674F;border-radius:6px}
+.val-msg.show,.validation-msg.show{display:block}
+.submit-status{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy);padding:34px 44px;text-align:center}
+.footer-mark,footer .tagline{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
+  font-size:16px;color:var(--ivory);letter-spacing:0;text-transform:none;margin-bottom:7px}
+footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--slatec)}
+
+@media(max-width:760px){
+  .site-header,.progress-wrap{padding:16px 20px}
+  .main{padding:32px 20px 70px}
+  .field-row{grid-template-columns:1fr;gap:14px}
+  .form-footer{flex-direction:column-reverse}
+  .btn{width:100%}
+}
+
+/* ---------- Rating scales ---------- */
+.scale-legend{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 20px;padding:14px 18px;
+  background:var(--white);border:1px solid var(--hairline);border-radius:8px}
+.scale-leg-item{display:flex;align-items:center;gap:7px}
+.scale-leg-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;color:var(--health);font-weight:600}
+.scale-leg-lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+.rating-row{display:grid;align-items:center;gap:8px;padding:13px 16px;background:var(--white);
+  border:1px solid var(--hairline);border-radius:8px;margin-bottom:8px;transition:.15s}
+.rating-row:hover{border-color:rgba(91,138,128,.5)}
+.rating-row.answered{border-left:3px solid var(--health);background:rgba(91,138,128,.035)}
+.q-text{font-size:13.5px;line-height:1.6;color:var(--body);padding-right:10px}
+.q-num-b{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin-right:8px;
+  color:var(--health)!important;font-size:15px}
+.radio-cell{display:flex;justify-content:center;align-items:center}
+.radio-cell input{accent-color:var(--health);width:17px;height:17px;cursor:pointer}
+.scale-preview{margin-top:16px;padding:13px 18px;background:var(--white);border:1px solid var(--hairline);
+  border-left:3px solid var(--health);border-radius:8px;font-size:13px;color:var(--muted)}
+.scale-preview strong{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:var(--health)!important}
+
+/* ---------- Results ---------- */
+.results-hero{text-align:center;padding:34px 0 8px}
+.check-circle{width:60px;height:60px;border-radius:50%;background:rgba(91,138,128,.12);
+  border:1px solid rgba(91,138,128,.45);color:var(--health);display:flex;align-items:center;
+  justify-content:center;font-size:27px;margin:0 auto 20px}
+.results-hero h1{margin-bottom:10px}
+.scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.score-card{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
+  padding:22px 24px;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+.sc-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--ink);margin-bottom:3px}
+.sc-label{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--health);
+  font-weight:600;margin-bottom:14px}
+.sc-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:500;
+  color:var(--ink);line-height:1}
+.sc-denom{font-size:14px;color:var(--muted);margin-left:3px}
+.sc-band{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;margin-top:8px}
+.score-bar-track{height:4px;background:var(--hairline);border-radius:3px;overflow:hidden;margin-top:14px}
+.score-bar-fill{height:100%;background:var(--health);border-radius:3px;transition:width .5s ease}
+.profile-card{background:
+  radial-gradient(600px 340px at 85% -20%, rgba(159,184,214,.13), transparent 60%),
+  var(--blueprint);border-radius:12px;padding:30px 32px;margin:26px 0;color:var(--slatec);
+  position:relative;overflow:hidden}
+.profile-card::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg, rgba(159,184,214,.05) 0 1px, transparent 1px 88px)}
+.profile-card h3,.pc-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;
+  color:var(--ivory);margin-bottom:8px;position:relative;z-index:2}
+.pc-label{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  font-weight:600;margin-bottom:10px;position:relative;z-index:2}
+.pc-summary{font-size:13.5px;line-height:1.75;position:relative;z-index:2}
+.next-steps{background:var(--white);border:1px solid var(--hairline);border-left:3px solid var(--health);
+  border-radius:8px;padding:22px 26px;margin:22px 0}
+.next-steps h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--ink);margin-bottom:8px}
+.next-steps p{font-size:13.5px;line-height:1.75;color:var(--body)}
+.bmark{color:var(--health)}
+@media(max-width:760px){.scores-grid{grid-template-columns:1fr}.rating-row{grid-template-columns:1fr!important}
+  .radio-cell{display:inline-flex;margin-right:14px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div><div class="brand-name">Executive Frame™</div><div class="brand-sub">EF Health — Gut-Brain Intake</div></div>
+  <div class="clinic-tag">MacMurray Clinic · DGBI Program</div>
+</header>
+<div class="progress-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-label" id="progressLabel">Introduction</div>
+</div>
+<main class="main">
+
+<!-- SCREEN 0: COVER -->
+<div class="screen active" id="screen-0">
+  <div class="cover-hero">
+    <div class="eyebrow">EF Health · MacMurray Clinic DGBI Program</div>
+    <h1 data-editable="source" data-path="/ef-health-intake.html" data-key="page-title-1">Gut-Brain Intake Form</h1>
+    <div class="sub">A psychologically informed intake for gut-brain health support</div>
+    <div class="spectrum-bar">
+      <div style="flex:1.2;background:#4caf82;"></div><div style="flex:0.8;background:#6ab0e0;"></div>
+      <div style="flex:0.8;background:#e8a0b8;"></div><div style="flex:0.9;background:#e8a87c;"></div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <p data-editable="source" data-path="/ef-health-intake.html" data-key="text-1">This form helps your clinician understand you as a whole person — your symptoms, how you have been feeling, and what matters most to you right now. It takes approximately 15–20 minutes to complete.</p>
+    <p data-editable="source" data-path="/ef-health-intake.html" data-key="text-2">There are no right or wrong answers. Please respond based on your experience over the <strong>past two weeks</strong>.</p>
+  </div>
+  <div class="privacy-note"><strong>Privacy:</strong> Your responses are confidential and will only be accessed by your treating clinician at MacMurray Clinic. This form is not monitored in real time. If you are in crisis, call 111, text or call 1737 (free, 24/7), or go to your nearest emergency department.</div>
+  <div class="nav-row" style="justify-content:flex-end;"><button class="btn btn-primary">Begin →</button></div>
+</div>
+
+<!-- SCREEN 1: SECTION A -->
+<div class="screen" id="screen-1">
+  <div class="section-tag" style="background:#e8f6ef;">
+    <div class="st-num" style="color:#4caf82;">Section A</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-1">Your Details</h2><div class="st-sub">Personal and contact information</div>
+  </div>
+  <div class="section-body">
+    <div class="field-row">
+      <div class="field-group"><label>Full name *</label><input type="text" id="patientName" placeholder="Your full name"></div>
+      <div class="field-group"><label>Date of birth *</label><input type="date" id="patientDOB"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-group"><label>Email address *</label><input type="email" id="patientEmail" placeholder="your@email.com"></div>
+      <div class="field-group"><label>Mobile number</label><input type="tel" id="patientPhone" placeholder="Phone number"></div>
+    </div>
+    <div class="field-row single"><div class="field-group"><label>Address</label><input type="text" id="patientAddress" placeholder="Your address"></div></div>
+    <div class="field-row">
+      <div class="field-group"><label>Occupation</label><input type="text" id="occupation" placeholder="Your occupation"></div>
+      <div class="field-group"><label>Referring clinician</label><input type="text" id="referrer" placeholder="Name of referring clinician"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-group"><label>GP name</label><input type="text" id="gp" placeholder="Your GP's name"></div>
+    </div>
+    <div style="height:1px;background:var(--border);margin:20px 0;"></div>
+    <div class="field-row">
+      <div class="field-group"><label>Emergency contact name</label><input type="text" id="ecName" placeholder="Emergency contact name"></div>
+      <div class="field-group"><label>Emergency contact phone</label><input type="tel" id="ecPhone" placeholder="Emergency contact number"></div>
+    </div>
+    <div style="margin-top:16px;">
+      <label class="check-item" style="cursor:pointer;">
+        <input type="checkbox" id="consent">
+        <span style="font-size:13px;line-height:1.5;color:var(--slate);">I understand my responses will be kept confidential and used by my treating clinician at MacMurray Clinic. I consent to completing this form. *</span>
+      </label>
+    </div>
+  </div>
+  <div class="val-msg" id="val-1">Please complete your name, date of birth, email address, and consent before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-ghost">← Back</button>
+    <button class="btn btn-primary">Next: Presenting Concerns →</button>
+  </div>
+</div>
+
+<!-- SCREEN 2: SECTION B -->
+<div class="screen" id="screen-2">
+  <div class="section-tag" style="background:#e8f6ef;">
+    <div class="st-num" style="color:#4caf82;">Section B</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-2">Presenting Concerns</h2><div class="st-sub">Your symptoms and what has brought you here</div>
+  </div>
+  <div class="section-body">
+    <div class="field-row single"><div class="field-group"><label>Main gut symptoms *</label><textarea id="mainSymptoms" placeholder="Describe your main gut or digestive symptoms…" style="min-height:90px;"></textarea></div></div>
+    <div class="field-row">
+      <div class="field-group"><label>When did symptoms begin?</label><input type="text" id="symptomOnset" placeholder="e.g. 2 years ago, since childhood…"></div>
+      <div class="field-group"><label>Current diagnosis (if any)</label>
+        <select id="diagnosis">
+          <option value="">Select if applicable</option>
+          <option>IBS — Irritable Bowel Syndrome</option>
+          <option>Functional dyspepsia</option>
+          <option>Functional constipation / diarrhoea</option>
+          <option>SIBO / motility disorder</option>
+          <option>Crohn's disease</option>
+          <option>Ulcerative colitis</option>
+          <option>No formal diagnosis yet</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="field-row single"><div class="field-group"><label>Current medical care and providers</label><textarea id="currentCare" placeholder="Who else is involved in your care?"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>Main reasons for seeking psychological support</label><textarea id="reasonsSeeking" placeholder="What has led you to seek support at this time?"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>What feels hardest right now?</label><textarea id="hardestNow" placeholder="In your own words — the most difficult part of living with this condition right now…" style="min-height:100px;"></textarea></div></div>
+  </div>
+  <div class="val-msg" id="val-2">Please describe your main gut symptoms before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-ghost">← Back</button>
+    <button class="btn btn-primary">Next: Gut-Focused Anxiety →</button>
+  </div>
+</div>
+
+<!-- SCREEN 3: GUT ANXIETY (0-4) -->
+<div class="screen" id="screen-3">
+  <div class="section-tag" style="background:#e8f6ef;">
+    <div class="st-num" style="color:#4caf82;">Section C</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-3">Gut-Focused Anxiety</h2><div class="st-sub">How your gut symptoms relate to anxiety and vigilance</div>
+  </div>
+  <div class="section-body">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 0 to 4 based on the past two weeks.</p>
+    <div class="scale-legend">
+      <div class="scale-leg-item" style="background:#f0faf5;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
+      <div class="scale-leg-item" style="background:#d8f0e6;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Slightly</span></div>
+      <div class="scale-leg-item" style="background:#b8e0cc;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Moderately</span></div>
+      <div class="scale-leg-item" style="background:#8ecfb0;"><span class="scale-leg-num">3</span><span class="scale-leg-lbl">Very much</span></div>
+      <div class="scale-leg-item" style="background:#4caf82;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Extremely</span></div>
+    </div>
+    <div id="gut-anxiety-qs"></div>
+    <div class="scale-preview" id="prev-gutAnxiety"></div>
+  </div>
+  <div class="val-msg" id="val-3">Please answer all 10 questions before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-ghost">← Back</button>
+    <button class="btn btn-primary">Next: Emotion Sensitivity →</button>
+  </div>
+</div>
+
+<!-- SCREEN 4: EMOTION SENSITIVITY (1-5) -->
+<div class="screen" id="screen-4">
+  <div class="section-tag" style="background:#e6f1fb;">
+    <div class="st-num" style="color:#6ab0e0;">Section D</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-4">Emotion Sensitivity</h2><div class="st-sub">How intensely you experience and respond to emotions</div>
+  </div>
+  <div class="section-body">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 1 to 5 based on the past two weeks.</p>
+    <div class="scale-legend">
+      <div class="scale-leg-item" style="background:#f0f6fb;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Strongly disagree</span></div>
+      <div class="scale-leg-item" style="background:#d4e8f5;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Disagree</span></div>
+      <div class="scale-leg-item" style="background:#b5d4f4;"><span class="scale-leg-num">3</span><span class="scale-leg-lbl">Neutral</span></div>
+      <div class="scale-leg-item" style="background:#85b7eb;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Agree</span></div>
+      <div class="scale-leg-item" style="background:#6ab0e0;color:white;"><span class="scale-leg-num" style="color:white;">5</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Strongly agree</span></div>
+    </div>
+    <div id="emotion-sens-qs"></div>
+    <div class="scale-preview" id="prev-emotionSens"></div>
+  </div>
+  <div class="val-msg" id="val-4">Please answer all 10 questions before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-ghost">← Back</button>
+    <button class="btn btn-primary">Next: Health Anxiety →</button>
+  </div>
+</div>
+
+<!-- SCREEN 5: HEALTH ANXIETY (0-3) -->
+<div class="screen" id="screen-5">
+  <div class="section-tag" style="background:#fbeaf0;">
+    <div class="st-num" style="color:#e8a0b8;">Section E</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-5">Health Anxiety</h2><div class="st-sub">How health-related worry affects your daily life</div>
+  </div>
+  <div class="section-body">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 0 to 3 based on the past two weeks.</p>
+    <div class="scale-legend">
+      <div class="scale-leg-item" style="background:#fdf0f8;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
+      <div class="scale-leg-item" style="background:#f4c0d1;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Occasionally</span></div>
+      <div class="scale-leg-item" style="background:#ed93b1;color:white;"><span class="scale-leg-num" style="color:white;">2</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Often</span></div>
+      <div class="scale-leg-item" style="background:#e8a0b8;color:white;"><span class="scale-leg-num" style="color:white;">3</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Most of the time</span></div>
+    </div>
+    <div id="health-anxiety-qs"></div>
+    <div class="scale-preview" id="prev-healthAnxiety"></div>
+  </div>
+  <div class="val-msg" id="val-5">Please answer all 10 questions before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-ghost">← Back</button>
+    <button class="btn btn-primary">Next: Functional Impact →</button>
+  </div>
+</div>
+
+<!-- SCREEN 6: FUNCTIONAL IMPACT (0-4) -->
+<div class="screen" id="screen-6">
+  <div class="section-tag" style="background:#fff3ec;">
+    <div class="st-num" style="color:#e8a87c;">Section F</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-6">Functional Impact</h2><div class="st-sub">How your symptoms affect your daily life and sense of control</div>
+  </div>
+  <div class="section-body">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 0 to 4 based on the past two weeks.</p>
+    <div class="scale-legend">
+      <div class="scale-leg-item" style="background:#fffaf5;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
+      <div class="scale-leg-item" style="background:#fde8d0;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Slightly</span></div>
+      <div class="scale-leg-item" style="background:#f9cba8;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Moderately</span></div>
+      <div class="scale-leg-item" style="background:#f0a870;color:white;"><span class="scale-leg-num" style="color:white;">3</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Very much</span></div>
+      <div class="scale-leg-item" style="background:#e8a87c;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Extremely</span></div>
+    </div>
+    <div id="functional-impact-qs"></div>
+    <div class="scale-preview" id="prev-functionalImpact"></div>
+  </div>
+  <div class="val-msg" id="val-6">Please answer all 4 questions before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-ghost">← Back</button>
+    <button class="btn btn-primary">Next: Clinical Background →</button>
+  </div>
+</div>
+
+<!-- SCREEN 7: SECTION G -->
+<div class="screen" id="screen-7">
+  <div class="section-tag" style="background:#f4f5f6;">
+    <div class="st-num" style="color:var(--slate-mid);">Section G</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-7">Clinical Background</h2><div class="st-sub">Optional — share only what you are comfortable with</div>
+  </div>
+  <div class="section-body">
+    <div class="field-row single">
+      <div class="field-group"><label>Trauma history relevant to your symptoms</label>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:6px;">
+          <label class="check-item"><input type="radio" name="trauma" value="Yes"><span style="font-size:14px;color:var(--slate);">Yes</span></label>
+          <label class="check-item"><input type="radio" name="trauma" value="No"><span style="font-size:14px;color:var(--slate);">No</span></label>
+          <label class="check-item"><input type="radio" name="trauma" value="Prefer not to say"><span style="font-size:14px;color:var(--slate);">Prefer not to say</span></label>
+        </div>
+      </div>
+    </div>
+    <div class="field-row single"><div class="field-group"><label>Major stressors currently affecting your health</label><textarea id="majorStressors" placeholder="Work, relationships, finances, family…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>Sleep difficulties</label><textarea id="sleepDifficulties" placeholder="Describe any difficulties with sleep…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>Eating restrictions or fear foods</label><textarea id="eatingRestrictions" placeholder="Foods you avoid, dietary restrictions…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>Relevant history (anxiety, depression, ADHD, trauma, ASD, or other)</label><textarea id="relevantHistory" placeholder="Any previous or current diagnoses relevant to your wellbeing…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>Current medications</label><textarea id="medications" placeholder="All current medications including supplements…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>Previous therapy or psychological support</label><textarea id="therapyHistory" placeholder="Any previous psychological support…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label>Your goals for this program</label><textarea id="treatmentGoals" placeholder="What would you most like to achieve through this support?" style="min-height:90px;"></textarea></div></div>
+  </div>
+  <div class="nav-row">
+    <button class="btn btn-ghost">← Back</button>
+    <button class="btn btn-submit">Submit my intake form →</button>
+  </div>
+</div>
+
+<!-- SCREEN 8: RESULTS -->
+<div class="screen" id="screen-8">
+  <div class="results-hero">
+    <div class="check-circle">✓</div>
+    <h2 data-editable="source" data-path="/ef-health-intake.html" data-key="section-title-8">Thank you, <span id="resultsName"></span></h2>
+    <p data-editable="source" data-path="/ef-health-intake.html" data-key="text-3">Your intake form has been received. Your clinician will review your profile before your first appointment.</p>
+  </div>
+  <div class="profile-card" id="profileCard"></div>
+  <div class="scores-grid" id="scoresGrid"></div>
+  <div class="next-steps">
+    <h3 data-editable="source" data-path="/ef-health-intake.html" data-key="card-title-1">What happens next</h3>
+    <p data-editable="source" data-path="/ef-health-intake.html" data-key="text-4">Your clinician will review your responses and profile before your first appointment. You will receive a confirmation email shortly. The EF Health program will be tailored to your specific profile.</p>
+  </div>
+  <div class="emerg-note"><strong>Important:</strong> This form is not monitored in real time and is not for emergencies. If you are in distress, call <strong>111</strong>, text or call <strong>1737</strong> (free, 24/7), or go to your nearest emergency department.</div>
+  <div class="submit-status" id="submitStatus"></div>
+  <div class="nav-row" style="justify-content:center;margin-top:24px;">
+    <button class="btn btn-ghost">Print my results</button>
+  </div>
+</div>
+
+</main>
+
+<div class="form-footer" style="max-width:760px;margin:0 auto;padding:0 24px 60px;">
+  <div class="tagline">Human first. Then performance.</div>
+  <div class="bmark">Executive Frame™ · EF Health · Dr Sarah Anticich · MacMurray Clinic</div>
+</div>
+
+
+
+
