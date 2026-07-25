@@ -190,18 +190,38 @@ document.getElementById("refform").addEventListener("submit", async function(e){
   if (!f.reportValidity()) return;
   const btn = document.getElementById("sendbtn");
   btn.disabled = true; btn.textContent = "Sending\u2026";
+  /* Mapped to the register's Apps Script intake keys so referrals land as populated rows.
+     Referrals currently share the Intake tab — flagged for Sarah to confirm or split. */
+  const referrerType = (f.querySelector('input[name=referrer_type]:checked')||{}).value || "";
   const data = {
-    referrer_name: f.referrer_name.value, referrer_practice: f.referrer_practice.value,
-    referrer_email: f.referrer_email.value, referrer_phone: f.referrer_phone.value,
-    referrer_type: (f.querySelector('input[name=referrer_type]:checked')||{}).value || "",
-    patient_name: f.patient_name.value, patient_dob: f.patient_dob.value,
-    patient_phone: f.patient_phone.value, patient_email: f.patient_email.value,
-    patient_gp: f.patient_gp.value, patient_location: f.patient_location.value,
-    presentation: [...f.querySelectorAll('input[name=presentation]:checked')].map(x=>x.value).join("; "),
-    med_management: f.med_management.value, referral_reason: f.referral_reason.value,
-    impact: (f.querySelector('input[name=impact]:checked')||{}).value || "",
-    risk: [...f.querySelectorAll('input[name=risk]:checked')].map(x=>x.value).join("; ") || "None",
-    referrer_signature: f.referrer_signature.value, signature_date: f.signature_date.value
+    type: "referral",
+    patientName: "REFERRAL — " + f.patient_name.value, patientDOB: f.patient_dob.value,
+    patientEmail: f.patient_email.value, patientPhone: f.patient_phone.value,
+    patientAddress: f.patient_location.value, gp: f.patient_gp.value,
+    referrer: f.referrer_name.value + (referrerType ? " (" + referrerType + ")" : "") +
+      (f.referrer_practice.value ? ", " + f.referrer_practice.value : "") +
+      (f.referrer_email.value ? " — " + f.referrer_email.value : "") +
+      (f.referrer_phone.value ? " — " + f.referrer_phone.value : ""),
+    mainSymptoms: [...f.querySelectorAll('input[name=presentation]:checked')].map(x=>x.value).join("; "),
+    reasonsSeeking: f.referral_reason.value,
+    hardestNow: "Impact: " + ((f.querySelector('input[name=impact]:checked')||{}).value || "") +
+      " | Risk: " + ([...f.querySelectorAll('input[name=risk]:checked')].map(x=>x.value).join("; ") || "None"),
+    medications: f.med_management.value,
+    allResponses: JSON.stringify({
+      formType: "clinician-referral",
+      referrer_name: f.referrer_name.value, referrer_practice: f.referrer_practice.value,
+      referrer_email: f.referrer_email.value, referrer_phone: f.referrer_phone.value,
+      referrer_type: referrerType,
+      patient_name: f.patient_name.value, patient_dob: f.patient_dob.value,
+      patient_phone: f.patient_phone.value, patient_email: f.patient_email.value,
+      patient_gp: f.patient_gp.value, patient_location: f.patient_location.value,
+      presentation: [...f.querySelectorAll('input[name=presentation]:checked')].map(x=>x.value).join("; "),
+      med_management: f.med_management.value, referral_reason: f.referral_reason.value,
+      impact: (f.querySelector('input[name=impact]:checked')||{}).value || "",
+      risk: [...f.querySelectorAll('input[name=risk]:checked')].map(x=>x.value).join("; ") || "None",
+      referrer_signature: f.referrer_signature.value, signature_date: f.signature_date.value,
+      source: "executiveframe.co.nz/ef-health-referral.html"
+    })
   };
   try{
     await fetch(SCRIPT_URL, {method:"POST", mode:"no-cors",

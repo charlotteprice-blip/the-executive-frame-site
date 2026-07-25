@@ -251,20 +251,24 @@ document.getElementById("intakeform").addEventListener("submit", async function(
     return answered ? t : "";
   }
 
+  /* Keys below match the Apps Script (doPost) column mapping used by the register.
+     Band/profile columns are computed nowhere for these shorter scales yet — Sarah to supply thresholds. */
   const data = {
-    full_name: f.full_name.value, dob: f.dob.value,
-    email: f.email.value, mobile: f.mobile.value,
+    patientName: f.full_name.value, patientDOB: f.dob.value,
+    patientEmail: f.email.value, patientPhone: f.mobile.value,
     occupation: f.occupation.value, referrer: f.referrer.value,
-    gp: f.gp.value, emergency: f.emergency.value, address: f.address.value,
-    symptoms: f.symptoms.value, onset: f.onset.value, diagnosis: f.diagnosis.value,
-    reasons: f.reasons.value, hardest: f.hardest.value,
-    scale_gut_focused_anxiety: scaleTotal("gfa",5) === "" ? "" : scaleTotal("gfa",5)+" / 20",
-    scale_emotion_sensitivity: scaleTotal("es",4) === "" ? "" : scaleTotal("es",4)+" / 20",
-    scale_health_anxiety: scaleTotal("ha",4) === "" ? "" : scaleTotal("ha",4)+" / 12",
-    scale_functional_impact: scaleTotal("fi",3) === "" ? "" : scaleTotal("fi",3)+" / 12",
-    history: [...f.querySelectorAll('input[name=history]:checked')].map(x=>x.value).join("; "),
-    meds: f.meds.value, goals: f.goals.value,
-    signature: f.signature.value, signature_date: f.signature_date.value
+    gp: f.gp.value, ecName: f.emergency.value, patientAddress: f.address.value,
+    mainSymptoms: f.symptoms.value, symptomOnset: f.onset.value, diagnosis: f.diagnosis.value,
+    reasonsSeeking: f.reasons.value, hardestNow: f.hardest.value,
+    gutAnxietyScore: scaleTotal("gfa",5), emotionSensScore: scaleTotal("es",4),
+    healthAnxietyScore: scaleTotal("ha",4), functionalImpactScore: scaleTotal("fi",3),
+    relevantHistory: [...f.querySelectorAll('input[name=history]:checked')].map(x=>x.value).join("; "),
+    medications: f.meds.value, treatmentGoals: f.goals.value,
+    allResponses: JSON.stringify({
+      signature: f.signature.value, signature_date: f.signature_date.value,
+      scaleMaxima: {gutAnxiety: 20, emotionSens: 20, healthAnxiety: 12, functionalImpact: 12},
+      source: "executiveframe.co.nz/ef-health-intake.html"
+    })
   };
   try{
     await fetch(SCRIPT_URL, {method:"POST", mode:"no-cors",
