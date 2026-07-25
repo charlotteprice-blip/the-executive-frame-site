@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Clinician referral form · EF | Health · The Executive Frame™</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    PASTE YOUR APPS SCRIPT WEB APP URL INTO THE SCRIPT_URL LINE
@@ -70,23 +72,104 @@ footer{border-top:1px solid var(--hair);margin-top:44px;padding-top:14px;font-si
   <div class="dot"></div>
   <div class="wordmark">Executive Frame<sup>™</sup></div>
   <div class="eb"><span class="dash"></span><span>EF | Health · Gut–brain psychology · Clinical form</span></div>
-  <h1 data-editable="source" data-path="/ef-health-referral.html" data-key="page-title-1">Clinician referral form</h1>
+  <h1>Clinician referral form</h1>
   <div class="sub">Psychological support for gastroenterology and endoscopy patients.</div>
   <div class="meta">GP · specialist · allied health · self-referral — intake triage completed within two business days · Dr Sarah Anticich · Clinical Psychologist</div>
 </div></div>
 
 <div class="wrap">
+<form id="refform" novalidate>
+  <div class="hp"><label>Leave this field empty</label><input type="text" name="company" tabindex="-1" autocomplete="off"></div>
 
+  <div class="seb"><span class="dash"></span><span>Referrer</span></div>
+  <h2>Referrer details</h2>
+  <div class="card">
+    <div class="grid">
+      <div class="field"><label>Referrer name <span class="req">*</span></label><input type="text" name="referrer_name" required></div>
+      <div class="field"><label>Practice / organisation</label><input type="text" name="referrer_practice"></div>
+      <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="referrer_email" required></div>
+      <div class="field"><label>Phone</label><input type="tel" name="referrer_phone"></div>
+    </div>
+    <label>Referrer type — select one</label>
+    <div class="opts three">
+      <label class="opt"><input type="radio" name="referrer_type" value="GP">GP</label>
+      <label class="opt"><input type="radio" name="referrer_type" value="Gastroenterologist">Gastroenterologist</label>
+      <label class="opt"><input type="radio" name="referrer_type" value="Surgeon">Surgeon</label>
+      <label class="opt"><input type="radio" name="referrer_type" value="Dietitian">Dietitian</label>
+      <label class="opt"><input type="radio" name="referrer_type" value="Allied health">Allied health</label>
+      <label class="opt"><input type="radio" name="referrer_type" value="Self-referral">Self-referral</label>
+    </div>
+  </div>
+
+  <div class="seb"><span class="dash"></span><span>Patient</span></div>
+  <h2>Patient details</h2>
+  <div class="card">
+    <div class="grid">
+      <div class="field"><label>Patient name <span class="req">*</span></label><input type="text" name="patient_name" required></div>
+      <div class="field"><label>Date of birth</label><input type="text" name="patient_dob" placeholder="dd/mm/yyyy"></div>
+      <div class="field"><label>Contact phone</label><input type="tel" name="patient_phone"></div>
+      <div class="field"><label>Email</label><input type="email" name="patient_email"></div>
+      <div class="field"><label>GP (if not referrer)</label><input type="text" name="patient_gp"></div>
+      <div class="field"><label>Location / town</label><input type="text" name="patient_location"></div>
+    </div>
+  </div>
+
+  <div class="seb"><span class="dash"></span><span>Clinical picture</span></div>
+  <h2>Presentation — <em>tick any that apply.</em></h2>
+  <div class="card">
+    <div class="opts">
+      <label class="opt"><input type="checkbox" name="presentation" value="IBS / functional GI (incl. dyspepsia)">IBS / functional GI (incl. dyspepsia)</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="IBD — Crohn's / ulcerative colitis">IBD — Crohn's / ulcerative colitis</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="Chronic or centrally-mediated GI pain">Chronic or centrally-mediated GI pain</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="Nausea, bloating, motility symptoms">Nausea, bloating, motility symptoms</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="Food anxiety / avoidance / ARFID">Food anxiety / avoidance / ARFID</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="Health anxiety re gut symptoms">Health anxiety re gut symptoms</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="Pre- or post-surgical (incl. bariatric)">Pre- or post-surgical (incl. bariatric)</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="Persistent symptoms, normal investigations">Persistent symptoms, normal investigations</label>
+      <label class="opt"><input type="checkbox" name="presentation" value="Disordered eating / body image">Disordered eating / body image</label>
+    </div>
+    <div class="field" style="margin-top:14px;"><label>Current medical management (diagnoses, medications, recent investigations)</label><textarea name="med_management"></textarea></div>
+    <div class="field"><label>Reason for referral and goals for psychological input <span class="req">*</span></label><textarea name="referral_reason" required></textarea></div>
+    <label>Impact on function — select one</label>
+    <div class="opts three" style="margin-bottom:14px;">
+      <label class="opt"><input type="radio" name="impact" value="Mild">Mild</label>
+      <label class="opt"><input type="radio" name="impact" value="Moderate">Moderate</label>
+      <label class="opt"><input type="radio" name="impact" value="Severe">Severe</label>
+    </div>
+    <label>Risk screen — tick any that apply</label>
+    <p class="note">Ticked items are not suitable for group programmes and route to individual assessment.</p>
+    <div class="opts">
+      <label class="opt"><input type="checkbox" name="risk" value="Active suicidal ideation / self-harm">Active suicidal ideation / self-harm</label>
+      <label class="opt"><input type="checkbox" name="risk" value="Current psychosis / acute mental illness">Current psychosis / acute mental illness</label>
+      <label class="opt"><input type="checkbox" name="risk" value="Active severe eating disorder">Active severe eating disorder</label>
+      <label class="opt"><input type="checkbox" name="risk" value="Significant unmanaged substance use">Significant unmanaged substance use</label>
+    </div>
+  </div>
+
+  <div class="card navy">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">What you receive</div>
+    <p>With patient consent you receive: an assessment report with EF™ profile and recommended pathway, a progress update at six weeks, and a discharge summary on completion. <span class="it">A confirmed DGBI diagnosis is not required for workshop or education pathways.</span></p>
+  </div>
+
+  <div class="card">
+    <div class="grid">
+      <div class="field"><label>Referrer name (as signature) <span class="req">*</span></label><input type="text" name="referrer_signature" required></div>
+      <div class="field"><label>Date</label><input type="text" name="signature_date" placeholder="dd/mm/yyyy"></div>
+    </div>
+    <p class="note">Submitting this form sends the referral securely to MacMurray Psychological Services. Intake triage is completed within two business days.</p>
+    <button type="submit" id="sendbtn">Submit referral</button>
+  </div>
+</form>
 
 <div id="confirm" class="card hidden">
-  <h2 data-editable="source" data-path="/ef-health-referral.html" data-key="section-title-1">Referral <em>received.</em></h2>
-  <p data-editable="source" data-path="/ef-health-referral.html" data-key="text-1">Thank you — your referral has been submitted and our team has been notified. Intake triage is completed within two business days; we will contact the patient directly to arrange the first step.</p>
+  <h2>Referral <em>received.</em></h2>
+  <p>Thank you — your referral has been submitted and our team has been notified. Intake triage is completed within two business days; we will contact the patient directly to arrange the first step.</p>
   <p class="note">Questions in the meantime: receptionchristchurch@macmurray.co.nz</p>
 </div>
 
 <div id="errbox" class="card hidden">
-  <h2 data-editable="source" data-path="/ef-health-referral.html" data-key="section-title-2">Something went <em>wrong.</em></h2>
-  <p data-editable="source" data-path="/ef-health-referral.html" data-key="text-2">The referral could not be submitted just now. Please email it to <strong>receptionchristchurch@macmurray.co.nz</strong>, or try again shortly.</p>
+  <h2>Something went <em>wrong.</em></h2>
+  <p>The referral could not be submitted just now. Please email it to <strong>receptionchristchurch@macmurray.co.nz</strong>, or try again shortly.</p>
 </div>
 
 <footer>
@@ -95,6 +178,42 @@ footer{border-top:1px solid var(--hair);margin-top:44px;padding-top:14px;font-si
 </footer>
 </div>
 
+<script>
+/* ====== PASTE YOUR APPS SCRIPT WEB APP URL BETWEEN THE QUOTES ====== */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyuntHp7vHdRO2Hpuun8Qk1Nd3kJU6lPVmLrMghhqAqeT288ICLFba2_ekc9bRw5yv-dg/exec";
+/* =================================================================== */
 
-
-
+document.getElementById("refform").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const f = e.target;
+  if (f.company.value) return; // honeypot
+  if (!f.reportValidity()) return;
+  const btn = document.getElementById("sendbtn");
+  btn.disabled = true; btn.textContent = "Sending\u2026";
+  const data = {
+    referrer_name: f.referrer_name.value, referrer_practice: f.referrer_practice.value,
+    referrer_email: f.referrer_email.value, referrer_phone: f.referrer_phone.value,
+    referrer_type: (f.querySelector('input[name=referrer_type]:checked')||{}).value || "",
+    patient_name: f.patient_name.value, patient_dob: f.patient_dob.value,
+    patient_phone: f.patient_phone.value, patient_email: f.patient_email.value,
+    patient_gp: f.patient_gp.value, patient_location: f.patient_location.value,
+    presentation: [...f.querySelectorAll('input[name=presentation]:checked')].map(x=>x.value).join("; "),
+    med_management: f.med_management.value, referral_reason: f.referral_reason.value,
+    impact: (f.querySelector('input[name=impact]:checked')||{}).value || "",
+    risk: [...f.querySelectorAll('input[name=risk]:checked')].map(x=>x.value).join("; ") || "None",
+    referrer_signature: f.referrer_signature.value, signature_date: f.signature_date.value
+  };
+  try{
+    await fetch(SCRIPT_URL, {method:"POST", mode:"no-cors",
+      headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(data)});
+    f.classList.add("hidden");
+    document.getElementById("confirm").classList.remove("hidden");
+    window.scrollTo({top:0, behavior:"smooth"});
+  }catch(err){
+    document.getElementById("errbox").classList.remove("hidden");
+    btn.disabled = false; btn.textContent = "Submit referral";
+  }
+});
+</script>
+</body>
+</html>
