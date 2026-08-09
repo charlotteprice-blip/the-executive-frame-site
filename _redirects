@@ -1,0 +1,15 @@
+# Executive Frame — canonical URL redirects (Netlify / Cloudflare Pages)
+# Canonical form is extensionless. 301 the .html form to it.
+/index.html            /                       301!
+/ef-health.html        /ef-health              301!
+/health-dgbi.html      /health-dgbi            301!
+/ef-health-resources.html  /ef-health-resources  301!
+/ef-health-products.html   /ef-health-products   301!
+/ef-health-intake.html /ef-health-intake       301!
+/ef-health-referral.html   /ef-health-referral   301!
+/enquire.html          /enquire                301!
+/health-elearning.html /health-elearning       301!
+/ef-assessment-health.html /ef-assessment-health 301!
+/faqs.html             /faqs                   301!
+# General fallback: any remaining *.html -> extensionless
+/*.html                /:splat                 301!
