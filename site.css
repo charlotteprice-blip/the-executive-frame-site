@@ -204,13 +204,14 @@ footer{background:var(--navy-3);padding:54px 0 40px;border-top:1px solid var(--l
 .s-card p{font-size:14px;color:var(--slate-light);line-height:1.62}
 .s-card .li{font-size:14.5px;color:var(--slate-light);line-height:2;font-family:'Cormorant Garamond';font-size:17px}
 .s-portrait{width:100%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:linear-gradient(155deg,#273947,#15212D);border:1px solid var(--line-navy);box-shadow:0 24px 60px rgba(8,14,20,.45)}.s-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
-.nav a.l.on{color:#E8A06A}
+.nav a.l.on{color:var(--accent)}
 @media(max-width:840px){.s-grid{grid-template-columns:1fr;gap:30px}.s-fig{order:-1;max-width:260px}.s-btn.line{border-left:1px solid rgba(255,255,255,.22)}.s-cols,.s-cols.two{grid-template-columns:1fr}}
 
 /* ============================================================
    ELEVATION LAYER — atmosphere, motion, signature gradient
    ============================================================ */
-:root{--sig:linear-gradient(90deg,#416460 0%,#796775 38%,#736960 66%,#4B677F 100%)}
+:root{--sig:linear-gradient(90deg,#416460 0%,#796775 38%,#736960 66%,#4B677F 100%);
+      --sig-soft:linear-gradient(90deg,#5C807C 0%,#8F7E8B 38%,#897F76 66%,#647E95 100%)}
 body{position:relative}
 nav,main,footer{position:relative;z-index:2}
 .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
@@ -300,7 +301,7 @@ a.btn.solid:hover{box-shadow:0 14px 34px -14px var(--accent)}
 /* ============================================================
    FOOTER — three-column, refined (overrides earlier footer)
    ============================================================ */
-footer{background:var(--navy);border-top:none;padding:0;--accent:#E8A06A}
+footer{background:var(--navy);border-top:none;padding:0;--accent:#6E9E86}
 .foot-rule{border:none;border-top:1px solid var(--line-navy);margin:0}
 .foot-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:64px;padding:72px 0 60px}
 .fbrand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;color:#F4F2EC;line-height:1}
@@ -377,7 +378,8 @@ h2{font-size:clamp(27px,3.3vw,42px)}
 .rtags{display:flex;gap:8px;margin-bottom:14px}
 .rtag{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:30px;border:1px solid;line-height:1}
 .rtag.free{color:#7FB79C;border-color:rgba(127,183,156,.5)}
-.rtag.prem{color:#E8A06A;border-color:rgba(232,160,106,.55)}
+.rtag.prem{color:#8F7E8B;border-color:rgba(143,126,139,.55)}
+.navy .rtag.prem{color:#A493A1;border-color:rgba(164,147,161,.5)}
 .navy .rtag.type{color:var(--slate);border-color:var(--line-navy)}
 .cream .rtag.type{color:var(--ink-soft);border-color:var(--line-cream)}
 .rcard h3{margin-bottom:6px}
@@ -400,7 +402,7 @@ h2{font-size:clamp(27px,3.3vw,42px)}
 .nform label.lbl .opt{color:#9aa0a6;font-weight:500;letter-spacing:.06em;margin-left:5px}
 .nform input,.nform select,.nform textarea{width:100%;font-family:Inter,sans-serif;font-size:15px;color:var(--ink);background:#fff;border:1px solid #d9d4ca;border-radius:4px;padding:13px 14px;transition:border-color .18s,box-shadow .18s;box-sizing:border-box}
 .nform input::placeholder,.nform textarea::placeholder{color:#9aa0a6}
-.nform input:focus,.nform select:focus,.nform textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(232,160,106,.18)}
+.nform input:focus,.nform select:focus,.nform textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
 .nform textarea{min-height:124px;resize:vertical;line-height:1.6}
 .nform select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='14'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%2315212D'%20stroke-width='2'%3E%3Cpath%20d='M6%209l6%206%206-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
 .nform .consent{display:flex;gap:11px;align-items:flex-start;margin:4px 0 26px;cursor:pointer}
@@ -408,8 +410,23 @@ h2{font-size:clamp(27px,3.3vw,42px)}
 .nform .consent span{font-family:Inter,sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.55}
 .nform .consent a{color:var(--accent);text-decoration:none}
 .nform button{background:var(--accent);color:var(--navy);font-family:Inter,sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:3px;padding:16px 36px;cursor:pointer;transition:transform .18s,box-shadow .18s}
-.nform button:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(232,160,106,.30)}
+.nform button:hover{transform:translateY(-2px);box-shadow:0 12px 26px color-mix(in srgb,var(--accent) 30%,transparent)}
 .nform .note{font-family:Inter,sans-serif;font-size:12.5px;color:var(--ink-soft);margin-top:18px}
 .nform .note a{color:var(--accent);text-decoration:none}
 .ef-ok{display:none;font-family:'Cormorant Garamond',serif;font-size:23px;font-style:italic;color:var(--ink);line-height:1.5}
 @media(max-width:640px){.nform,.ef-ok{padding:30px 22px}}
+
+/* ============================================================
+   SIGNATURE INK — flagship spine pages (body.sigink)
+   The orange highlight is retired on the core pages; the EF
+   signature gradient now carries the emphasis, matching
+   sarahanticich.co.nz. Arm pages keep their own accents.
+   ============================================================ */
+/* headline italics keep the original silver serif (reverted from gradient
+   at Sarah's request, 23 Aug 2026) — .s-display em default #AEB6BE applies */
+.sigink .s-eyebrow,.sigink .eyebrow{color:#7EAC94}
+.sigink .s-eyebrow::before,.sigink .eyebrow::before{background:var(--sig-soft)!important}
+.sigink .card .rule{background:var(--sig)}
+.sigink .quote-band{border-image:var(--sig) 1}
+.sigink .narrow .row{border-image:var(--sig) 1}
+.sigink .mod .mq{border-image:var(--sig) 1}
