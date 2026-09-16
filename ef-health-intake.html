@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EF|Health gut–brain intake — a psychologically informed intake for the MacMurray Clinic DGBI programme. Confidential, 15–20 minutes.">
 <title>EF Health — Gut-Brain Intake | MacMurray Clinic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#15212D; --blueprint:#16243A;
+  --navy:#16243A; --blueprint:#1C2B44;
   --paper:#F4F6F8; --hairline:#E4E8EC; --white:#fff;
-  --ivory:#ECE6D8; --gold:#C9A063; --powder:#9FB8D6; --slatec:#93A4BC;
-  --ink:#15212D; --body:#3B4757; --muted:#6B7788; --health:#5B8A80;
-  --card-border:rgba(159,184,214,.16); --card-fill:rgba(159,184,214,.03);
+  --ivory:#E4E8EC; --gold:#8AA79B; --powder:#9FB2C4; --slatec:#8FA6B8;
+  --ink:#16243A; --body:#3B4757; --muted:#6B7788; --health:#789589;
+  --card-border:rgba(159,178,196,.16); --card-fill:rgba(159,178,196,.03);
   --radius:10px; --radius-sm:8px; --radius-lg:14px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -21,20 +22,20 @@ body{font-family:'Inter',Arial,sans-serif;background:var(--paper);color:var(--bo
 .serif,h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
 a{text-decoration:none}
 .bpbg{background:
-  radial-gradient(900px 520px at 85% -5%, rgba(159,184,214,.14), transparent 60%),
-  repeating-linear-gradient(0deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px),
-  repeating-linear-gradient(90deg, rgba(159,184,214,.055) 0 1px, transparent 1px 88px),
+  radial-gradient(900px 520px at 85% -5%, rgba(159,178,196,.14), transparent 60%),
+  repeating-linear-gradient(0deg, rgba(159,178,196,.055) 0 1px, transparent 1px 88px),
+  repeating-linear-gradient(90deg, rgba(159,178,196,.055) 0 1px, transparent 1px 88px),
   var(--blueprint)}
 
 body{background:var(--paper)}
 /* ---------- Header ---------- */
 .site-header{background:
-  radial-gradient(700px 400px at 85% -20%, rgba(159,184,214,.14), transparent 60%),
+  radial-gradient(700px 400px at 85% -20%, rgba(159,178,196,.14), transparent 60%),
   var(--blueprint);
   padding:22px 44px;display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid rgba(159,184,214,.14);position:relative;overflow:hidden}
+  border-bottom:1px solid rgba(159,178,196,.14);position:relative;overflow:hidden}
 .site-header::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(90deg, rgba(159,184,214,.05) 0 1px, transparent 1px 88px)}
+  background:repeating-linear-gradient(90deg, rgba(159,178,196,.05) 0 1px, transparent 1px 88px)}
 .nav-row,.brand{display:flex;align-items:baseline;gap:14px;position:relative;z-index:2;flex-wrap:wrap}
 .brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:20px;
   color:var(--ivory);letter-spacing:0;text-transform:none}
@@ -69,10 +70,10 @@ body{background:var(--paper)}
   letter-spacing:0;text-transform:none;font-weight:400;line-height:1.7}
 
 .intro-box,.note-box{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
-  padding:22px 26px;margin:22px 0;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+  padding:22px 26px;margin:22px 0;box-shadow:0 2px 10px rgba(22,36,58,.05)}
 .intro-box p{font-size:14px;line-height:1.75;color:var(--body);margin-bottom:10px}
 .intro-box p:last-child{margin-bottom:0}
-.privacy-note,.emerg-note{background:rgba(201,160,99,.07);border:1px solid rgba(201,160,99,.35);
+.privacy-note,.emerg-note{background:rgba(138,167,155,.07);border:1px solid rgba(138,167,155,.35);
   border-left:3px solid var(--gold);border-radius:8px;padding:18px 22px;margin:20px 0;
   font-size:13px;line-height:1.7;color:var(--body)}
 .privacy-note strong,.emerg-note strong{color:var(--ink);font-weight:600}
@@ -89,7 +90,7 @@ body{background:var(--paper)}
 
 /* ---------- Fields ---------- */
 .form-card{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
-  padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+  padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 10px rgba(22,36,58,.05)}
 .field-group{margin-bottom:20px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
 .field-row.single{grid-template-columns:1fr}
@@ -99,7 +100,7 @@ input[type=text],input[type=email],input[type=tel],input[type=date],input[type=n
   width:100%;padding:11px 13px;border:1px solid var(--hairline);border-radius:7px;
   font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);background:var(--white);transition:.15s}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--health);
-  box-shadow:0 0 0 3px rgba(91,138,128,.13)}
+  box-shadow:0 0 0 3px rgba(110,158,134,.13)}
 textarea{min-height:92px;resize:vertical;line-height:1.65}
 
 .check-group{display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
@@ -108,21 +109,21 @@ textarea{min-height:92px;resize:vertical;line-height:1.65}
   line-height:1.6;color:var(--body);cursor:pointer;transition:.15s}
 .check-item:hover{border-color:var(--health)}
 .check-item input{margin-top:3px;accent-color:var(--health);flex:none}
-.check-item.warning{border-left:3px solid var(--gold);background:rgba(201,160,99,.05)}
-.check-item.danger{border-left:3px solid #B0674F;background:rgba(176,103,79,.06)}
-.check-item.danger:hover{border-color:#B0674F}
+.check-item.warning{border-left:3px solid var(--gold);background:rgba(138,167,155,.05)}
+.check-item.danger{border-left:3px solid #5B7268;background:rgba(91,114,104,.06)}
+.check-item.danger:hover{border-color:#5B7268}
 
 /* ---------- Buttons ---------- */
 .form-footer{display:flex;justify-content:space-between;gap:14px;margin-top:30px;flex-wrap:wrap}
 .btn{padding:14px 32px;border-radius:30px;font-family:'Inter',sans-serif;font-size:11.5px;
   font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border:none;transition:.2s}
 .btn-primary,.btn-submit{background:var(--health);color:#fff}
-.btn-primary:hover,.btn-submit:hover{background:#4d786f}
+.btn-primary:hover,.btn-submit:hover{background:#5B7268}
 .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--hairline)}
 .btn-ghost:hover{border-color:var(--health);color:var(--health)}
 .btn:disabled{opacity:.55;cursor:wait}
-.val-msg,.validation-msg{display:none;color:#A85440;font-size:13px;margin-top:14px;
-  padding:11px 15px;background:rgba(176,103,79,.07);border-left:3px solid #B0674F;border-radius:6px}
+.val-msg,.validation-msg{display:none;color:#5B7268;font-size:13px;margin-top:14px;
+  padding:11px 15px;background:rgba(91,114,104,.07);border-left:3px solid #5B7268;border-radius:6px}
 .val-msg.show,.validation-msg.show{display:block}
 .submit-status{font-size:13px;color:var(--muted);margin-top:14px}
 
@@ -150,8 +151,8 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 .rating-row{display:grid;align-items:center;gap:8px;padding:13px 16px;background:var(--white);
   border:1px solid var(--hairline);border-radius:8px;margin-bottom:8px;transition:.15s}
-.rating-row:hover{border-color:rgba(91,138,128,.5)}
-.rating-row.answered{border-left:3px solid var(--health);background:rgba(91,138,128,.035)}
+.rating-row:hover{border-color:rgba(110,158,134,.5)}
+.rating-row.answered{border-left:3px solid var(--health);background:rgba(110,158,134,.035)}
 .q-text{font-size:13.5px;line-height:1.6;color:var(--body);padding-right:10px}
 .q-num-b{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin-right:8px;
   color:var(--health)!important;font-size:15px}
@@ -163,13 +164,13 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 /* ---------- Results ---------- */
 .results-hero{text-align:center;padding:34px 0 8px}
-.check-circle{width:60px;height:60px;border-radius:50%;background:rgba(91,138,128,.12);
-  border:1px solid rgba(91,138,128,.45);color:var(--health);display:flex;align-items:center;
+.check-circle{width:60px;height:60px;border-radius:50%;background:rgba(110,158,134,.12);
+  border:1px solid rgba(110,158,134,.45);color:var(--health);display:flex;align-items:center;
   justify-content:center;font-size:27px;margin:0 auto 20px}
 .results-hero h1{margin-bottom:10px}
 .scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
 .score-card{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
-  padding:22px 24px;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+  padding:22px 24px;box-shadow:0 2px 10px rgba(22,36,58,.05)}
 .sc-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--ink);margin-bottom:3px}
 .sc-label{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--health);
   font-weight:600;margin-bottom:14px}
@@ -181,11 +182,11 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 .score-bar-track{height:4px;background:var(--hairline);border-radius:3px;overflow:hidden;margin-top:14px}
 .score-bar-fill{height:100%;background:var(--health);border-radius:3px;transition:width .5s ease}
 .profile-card{background:
-  radial-gradient(600px 340px at 85% -20%, rgba(159,184,214,.13), transparent 60%),
+  radial-gradient(600px 340px at 85% -20%, rgba(159,178,196,.13), transparent 60%),
   var(--blueprint);border-radius:12px;padding:30px 32px;margin:26px 0;color:var(--slatec);
   position:relative;overflow:hidden}
 .profile-card::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(90deg, rgba(159,184,214,.05) 0 1px, transparent 1px 88px)}
+  background:repeating-linear-gradient(90deg, rgba(159,178,196,.05) 0 1px, transparent 1px 88px)}
 .profile-card h3,.pc-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;
   color:var(--ivory);margin-bottom:8px;position:relative;z-index:2}
 .pc-label{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
@@ -200,7 +201,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
   .radio-cell{display:inline-flex;margin-right:14px}}
 </style>
 </head>
-<body>
+<body class="arm-health"><a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div><div class="brand-name">Executive Frame™</div><div class="brand-sub">EF Health — Gut-Brain Intake</div></div>
   <div class="clinic-tag">MacMurray Clinic · DGBI Program</div>
@@ -209,7 +210,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
   <div class="progress-label" id="progressLabel">Introduction</div>
 </div>
-<main class="main">
+<main class="main" id="main">
 
 <!-- SCREEN 0: COVER -->
 <div class="screen active" id="screen-0">
@@ -218,8 +219,8 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
     <h1>Gut-Brain Intake Form</h1>
     <div class="sub">A psychologically informed intake for gut-brain health support</div>
     <div class="spectrum-bar">
-      <div style="flex:1.2;background:#4caf82;"></div><div style="flex:0.8;background:#6ab0e0;"></div>
-      <div style="flex:0.8;background:#e8a0b8;"></div><div style="flex:0.9;background:#e8a87c;"></div>
+      <div style="flex:1.2;background:#789589;"></div><div style="flex:0.8;background:#7E93A8;"></div>
+      <div style="flex:0.8;background:#9FB2C4;"></div><div style="flex:0.9;background:#9DB3AC;"></div>
     </div>
   </div>
   <div class="intro-box">
@@ -232,31 +233,31 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 <!-- SCREEN 1: SECTION A -->
 <div class="screen" id="screen-1">
-  <div class="section-tag" style="background:#e8f6ef;">
-    <div class="st-num" style="color:#4caf82;">Section A</div>
+  <div class="section-tag" style="background:#ECF2EF;">
+    <div class="st-num" style="color:#789589;">Section A</div>
     <h2>Your Details</h2><div class="st-sub">Personal and contact information</div>
   </div>
   <div class="section-body">
     <div class="field-row">
-      <div class="field-group"><label>Full name *</label><input type="text" id="patientName" placeholder="Your full name"></div>
-      <div class="field-group"><label>Date of birth *</label><input type="date" id="patientDOB"></div>
+      <div class="field-group"><label for="patientName">Full name *</label><input type="text" id="patientName" placeholder="Your full name"></div>
+      <div class="field-group"><label for="patientDOB">Date of birth *</label><input type="date" id="patientDOB"></div>
     </div>
     <div class="field-row">
-      <div class="field-group"><label>Email address *</label><input type="email" id="patientEmail" placeholder="your@email.com"></div>
-      <div class="field-group"><label>Mobile number</label><input type="tel" id="patientPhone" placeholder="Phone number"></div>
+      <div class="field-group"><label for="patientEmail">Email address *</label><input type="email" id="patientEmail" placeholder="your@email.com"></div>
+      <div class="field-group"><label for="patientPhone">Mobile number</label><input type="tel" id="patientPhone" placeholder="Phone number"></div>
     </div>
-    <div class="field-row single"><div class="field-group"><label>Address</label><input type="text" id="patientAddress" placeholder="Your address"></div></div>
+    <div class="field-row single"><div class="field-group"><label for="patientAddress">Address</label><input type="text" id="patientAddress" placeholder="Your address"></div></div>
     <div class="field-row">
-      <div class="field-group"><label>Occupation</label><input type="text" id="occupation" placeholder="Your occupation"></div>
-      <div class="field-group"><label>Referring clinician</label><input type="text" id="referrer" placeholder="Name of referring clinician"></div>
+      <div class="field-group"><label for="occupation">Occupation</label><input type="text" id="occupation" placeholder="Your occupation"></div>
+      <div class="field-group"><label for="referrer">Referring clinician</label><input type="text" id="referrer" placeholder="Name of referring clinician"></div>
     </div>
     <div class="field-row">
-      <div class="field-group"><label>GP name</label><input type="text" id="gp" placeholder="Your GP's name"></div>
+      <div class="field-group"><label for="gp">GP name</label><input type="text" id="gp" placeholder="Your GP's name"></div>
     </div>
     <div style="height:1px;background:var(--border);margin:20px 0;"></div>
     <div class="field-row">
-      <div class="field-group"><label>Emergency contact name</label><input type="text" id="ecName" placeholder="Emergency contact name"></div>
-      <div class="field-group"><label>Emergency contact phone</label><input type="tel" id="ecPhone" placeholder="Emergency contact number"></div>
+      <div class="field-group"><label for="ecName">Emergency contact name</label><input type="text" id="ecName" placeholder="Emergency contact name"></div>
+      <div class="field-group"><label for="ecPhone">Emergency contact phone</label><input type="tel" id="ecPhone" placeholder="Emergency contact number"></div>
     </div>
     <div style="margin-top:16px;">
       <label class="check-item" style="cursor:pointer;">
@@ -274,15 +275,15 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 <!-- SCREEN 2: SECTION B -->
 <div class="screen" id="screen-2">
-  <div class="section-tag" style="background:#e8f6ef;">
-    <div class="st-num" style="color:#4caf82;">Section B</div>
+  <div class="section-tag" style="background:#ECF2EF;">
+    <div class="st-num" style="color:#789589;">Section B</div>
     <h2>Presenting Concerns</h2><div class="st-sub">Your symptoms and what has brought you here</div>
   </div>
   <div class="section-body">
-    <div class="field-row single"><div class="field-group"><label>Main gut symptoms *</label><textarea id="mainSymptoms" placeholder="Describe your main gut or digestive symptoms…" style="min-height:90px;"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="mainSymptoms">Main gut symptoms *</label><textarea id="mainSymptoms" placeholder="Describe your main gut or digestive symptoms…" style="min-height:90px;"></textarea></div></div>
     <div class="field-row">
-      <div class="field-group"><label>When did symptoms begin?</label><input type="text" id="symptomOnset" placeholder="e.g. 2 years ago, since childhood…"></div>
-      <div class="field-group"><label>Current diagnosis (if any)</label>
+      <div class="field-group"><label for="symptomOnset">When did symptoms begin?</label><input type="text" id="symptomOnset" placeholder="e.g. 2 years ago, since childhood…"></div>
+      <div class="field-group"><label for="diagnosis">Current diagnosis (if any)</label>
         <select id="diagnosis">
           <option value="">Select if applicable</option>
           <option>IBS — Irritable Bowel Syndrome</option>
@@ -296,9 +297,9 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
         </select>
       </div>
     </div>
-    <div class="field-row single"><div class="field-group"><label>Current medical care and providers</label><textarea id="currentCare" placeholder="Who else is involved in your care?"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>Main reasons for seeking psychological support</label><textarea id="reasonsSeeking" placeholder="What has led you to seek support at this time?"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>What feels hardest right now?</label><textarea id="hardestNow" placeholder="In your own words — the most difficult part of living with this condition right now…" style="min-height:100px;"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="currentCare">Current medical care and providers</label><textarea id="currentCare" placeholder="Who else is involved in your care?"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="reasonsSeeking">Main reasons for seeking psychological support</label><textarea id="reasonsSeeking" placeholder="What has led you to seek support at this time?"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="hardestNow">What feels hardest right now?</label><textarea id="hardestNow" placeholder="In your own words — the most difficult part of living with this condition right now…" style="min-height:100px;"></textarea></div></div>
   </div>
   <div class="val-msg" id="val-2">Please describe your main gut symptoms before continuing.</div>
   <div class="nav-row">
@@ -309,18 +310,18 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 <!-- SCREEN 3: GUT ANXIETY (0-4) -->
 <div class="screen" id="screen-3">
-  <div class="section-tag" style="background:#e8f6ef;">
-    <div class="st-num" style="color:#4caf82;">Section C</div>
+  <div class="section-tag" style="background:#ECF2EF;">
+    <div class="st-num" style="color:#789589;">Section C</div>
     <h2>Gut-Focused Anxiety</h2><div class="st-sub">How your gut symptoms relate to anxiety and vigilance</div>
   </div>
   <div class="section-body">
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 0 to 4 based on the past two weeks.</p>
     <div class="scale-legend">
-      <div class="scale-leg-item" style="background:#f0faf5;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
-      <div class="scale-leg-item" style="background:#d8f0e6;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Slightly</span></div>
-      <div class="scale-leg-item" style="background:#b8e0cc;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Moderately</span></div>
-      <div class="scale-leg-item" style="background:#8ecfb0;"><span class="scale-leg-num">3</span><span class="scale-leg-lbl">Very much</span></div>
-      <div class="scale-leg-item" style="background:#4caf82;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Extremely</span></div>
+      <div class="scale-leg-item" style="background:#F2F6F4;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
+      <div class="scale-leg-item" style="background:#DCE7E2;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Slightly</span></div>
+      <div class="scale-leg-item" style="background:#C6D5CF;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Moderately</span></div>
+      <div class="scale-leg-item" style="background:#9DB3AC;"><span class="scale-leg-num">3</span><span class="scale-leg-lbl">Very much</span></div>
+      <div class="scale-leg-item" style="background:#789589;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Extremely</span></div>
     </div>
     <div id="gut-anxiety-qs"></div>
     <div class="scale-preview" id="prev-gutAnxiety"></div>
@@ -334,18 +335,18 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 <!-- SCREEN 4: EMOTION SENSITIVITY (1-5) -->
 <div class="screen" id="screen-4">
-  <div class="section-tag" style="background:#e6f1fb;">
-    <div class="st-num" style="color:#6ab0e0;">Section D</div>
+  <div class="section-tag" style="background:#EAEFF3;">
+    <div class="st-num" style="color:#7E93A8;">Section D</div>
     <h2>Emotion Sensitivity</h2><div class="st-sub">How intensely you experience and respond to emotions</div>
   </div>
   <div class="section-body">
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 1 to 5 based on the past two weeks.</p>
     <div class="scale-legend">
-      <div class="scale-leg-item" style="background:#f0f6fb;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Strongly disagree</span></div>
-      <div class="scale-leg-item" style="background:#d4e8f5;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Disagree</span></div>
-      <div class="scale-leg-item" style="background:#b5d4f4;"><span class="scale-leg-num">3</span><span class="scale-leg-lbl">Neutral</span></div>
-      <div class="scale-leg-item" style="background:#85b7eb;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Agree</span></div>
-      <div class="scale-leg-item" style="background:#6ab0e0;color:white;"><span class="scale-leg-num" style="color:white;">5</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Strongly agree</span></div>
+      <div class="scale-leg-item" style="background:#F0F4F6;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Strongly disagree</span></div>
+      <div class="scale-leg-item" style="background:#D8E2E9;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Disagree</span></div>
+      <div class="scale-leg-item" style="background:#C9D5DD;"><span class="scale-leg-num">3</span><span class="scale-leg-lbl">Neutral</span></div>
+      <div class="scale-leg-item" style="background:#9FB2C4;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Agree</span></div>
+      <div class="scale-leg-item" style="background:#7E93A8;color:white;"><span class="scale-leg-num" style="color:white;">5</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Strongly agree</span></div>
     </div>
     <div id="emotion-sens-qs"></div>
     <div class="scale-preview" id="prev-emotionSens"></div>
@@ -359,17 +360,17 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 <!-- SCREEN 5: HEALTH ANXIETY (0-3) -->
 <div class="screen" id="screen-5">
-  <div class="section-tag" style="background:#fbeaf0;">
-    <div class="st-num" style="color:#e8a0b8;">Section E</div>
+  <div class="section-tag" style="background:#ECF0F2;">
+    <div class="st-num" style="color:#9FB2C4;">Section E</div>
     <h2>Health Anxiety</h2><div class="st-sub">How health-related worry affects your daily life</div>
   </div>
   <div class="section-body">
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 0 to 3 based on the past two weeks.</p>
     <div class="scale-legend">
-      <div class="scale-leg-item" style="background:#fdf0f8;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
-      <div class="scale-leg-item" style="background:#f4c0d1;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Occasionally</span></div>
-      <div class="scale-leg-item" style="background:#ed93b1;color:white;"><span class="scale-leg-num" style="color:white;">2</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Often</span></div>
-      <div class="scale-leg-item" style="background:#e8a0b8;color:white;"><span class="scale-leg-num" style="color:white;">3</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Most of the time</span></div>
+      <div class="scale-leg-item" style="background:#EFF2F4;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
+      <div class="scale-leg-item" style="background:#C9D5DD;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Occasionally</span></div>
+      <div class="scale-leg-item" style="background:#8FA6B8;color:white;"><span class="scale-leg-num" style="color:white;">2</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Often</span></div>
+      <div class="scale-leg-item" style="background:#9FB2C4;color:white;"><span class="scale-leg-num" style="color:white;">3</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Most of the time</span></div>
     </div>
     <div id="health-anxiety-qs"></div>
     <div class="scale-preview" id="prev-healthAnxiety"></div>
@@ -383,18 +384,18 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 
 <!-- SCREEN 6: FUNCTIONAL IMPACT (0-4) -->
 <div class="screen" id="screen-6">
-  <div class="section-tag" style="background:#fff3ec;">
-    <div class="st-num" style="color:#e8a87c;">Section F</div>
+  <div class="section-tag" style="background:#F1F4F3;">
+    <div class="st-num" style="color:#9DB3AC;">Section F</div>
     <h2>Functional Impact</h2><div class="st-sub">How your symptoms affect your daily life and sense of control</div>
   </div>
   <div class="section-body">
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--slate-mid);margin-bottom:16px;">Rate each statement from 0 to 4 based on the past two weeks.</p>
     <div class="scale-legend">
-      <div class="scale-leg-item" style="background:#fffaf5;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
-      <div class="scale-leg-item" style="background:#fde8d0;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Slightly</span></div>
-      <div class="scale-leg-item" style="background:#f9cba8;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Moderately</span></div>
-      <div class="scale-leg-item" style="background:#f0a870;color:white;"><span class="scale-leg-num" style="color:white;">3</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Very much</span></div>
-      <div class="scale-leg-item" style="background:#e8a87c;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Extremely</span></div>
+      <div class="scale-leg-item" style="background:#FCFDFE;"><span class="scale-leg-num">0</span><span class="scale-leg-lbl">Not at all</span></div>
+      <div class="scale-leg-item" style="background:#E9EFEC;"><span class="scale-leg-num">1</span><span class="scale-leg-lbl">Slightly</span></div>
+      <div class="scale-leg-item" style="background:#C6D5CF;"><span class="scale-leg-num">2</span><span class="scale-leg-lbl">Moderately</span></div>
+      <div class="scale-leg-item" style="background:#8AA79B;color:white;"><span class="scale-leg-num" style="color:white;">3</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Very much</span></div>
+      <div class="scale-leg-item" style="background:#9DB3AC;color:white;"><span class="scale-leg-num" style="color:white;">4</span><span class="scale-leg-lbl" style="color:rgba(255,255,255,0.85);">Extremely</span></div>
     </div>
     <div id="functional-impact-qs"></div>
     <div class="scale-preview" id="prev-functionalImpact"></div>
@@ -422,13 +423,13 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
         </div>
       </div>
     </div>
-    <div class="field-row single"><div class="field-group"><label>Major stressors currently affecting your health</label><textarea id="majorStressors" placeholder="Work, relationships, finances, family…"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>Sleep difficulties</label><textarea id="sleepDifficulties" placeholder="Describe any difficulties with sleep…"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>Eating restrictions or fear foods</label><textarea id="eatingRestrictions" placeholder="Foods you avoid, dietary restrictions…"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>Relevant history (anxiety, depression, ADHD, trauma, ASD, or other)</label><textarea id="relevantHistory" placeholder="Any previous or current diagnoses relevant to your wellbeing…"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>Current medications</label><textarea id="medications" placeholder="All current medications including supplements…"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>Previous therapy or psychological support</label><textarea id="therapyHistory" placeholder="Any previous psychological support…"></textarea></div></div>
-    <div class="field-row single"><div class="field-group"><label>Your goals for this program</label><textarea id="treatmentGoals" placeholder="What would you most like to achieve through this support?" style="min-height:90px;"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="majorStressors">Major stressors currently affecting your health</label><textarea id="majorStressors" placeholder="Work, relationships, finances, family…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="sleepDifficulties">Sleep difficulties</label><textarea id="sleepDifficulties" placeholder="Describe any difficulties with sleep…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="eatingRestrictions">Eating restrictions or fear foods</label><textarea id="eatingRestrictions" placeholder="Foods you avoid, dietary restrictions…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="relevantHistory">Relevant history (anxiety, depression, ADHD, trauma, ASD, or other)</label><textarea id="relevantHistory" placeholder="Any previous or current diagnoses relevant to your wellbeing…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="medications">Current medications</label><textarea id="medications" placeholder="All current medications including supplements…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="therapyHistory">Previous therapy or psychological support</label><textarea id="therapyHistory" placeholder="Any previous psychological support…"></textarea></div></div>
+    <div class="field-row single"><div class="field-group"><label for="treatmentGoals">Your goals for this program</label><textarea id="treatmentGoals" placeholder="What would you most like to achieve through this support?" style="min-height:90px;"></textarea></div></div>
   </div>
   <div class="nav-row">
     <button class="btn btn-ghost" onclick="goTo(6)">← Back</button>
@@ -468,22 +469,22 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyuntHp7vHdRO2Hpuun8
 
 const SCALES = {
   gutAnxiety:{
-    minVal:0,max:4,maxTotal:40,color:'#4caf82',containerId:'gut-anxiety-qs',previewId:'prev-gutAnxiety',
+    minVal:0,max:4,maxTotal:40,color:'#789589',containerId:'gut-anxiety-qs',previewId:'prev-gutAnxiety',
     questions:["I worry about experiencing gut symptoms in public.","I feel anxious when I notice sensations in my stomach or bowel.","I avoid places where bathroom access is uncertain.","I am highly aware of sensations in my gut.","I fear losing control of my bowel symptoms.","I feel tense when thinking about my digestion.","I carefully control what I eat to prevent symptoms.","I feel embarrassed about my gut symptoms.","My gut symptoms reduce my confidence in daily life.","I feel unsafe when I cannot predict my gut symptoms."],
     bands:[[0,7,'Minimal'],[8,15,'Mild'],[16,23,'Moderate'],[24,31,'High'],[32,40,'Very High']]
   },
   emotionSens:{
-    minVal:1,max:5,maxTotal:50,color:'#6ab0e0',containerId:'emotion-sens-qs',previewId:'prev-emotionSens',
+    minVal:1,max:5,maxTotal:50,color:'#7E93A8',containerId:'emotion-sens-qs',previewId:'prev-emotionSens',
     questions:["I experience emotions more intensely than others.","My emotions shift quickly and strongly.","Small events trigger strong emotional reactions.","It takes me a long time to calm down once upset.","I feel emotionally overwhelmed easily.","I am highly sensitive to criticism or rejection.","My emotions feel difficult to control.","I notice physical reactions such as gut tension when emotional.","I feel things deeply, even when I try not to.","My emotions affect my body, such as digestion or fatigue."],
     bands:[[10,17,'Low'],[18,25,'Mild'],[26,33,'Moderate'],[34,41,'High'],[42,50,'Very High']]
   },
   healthAnxiety:{
-    minVal:0,max:3,maxTotal:30,color:'#e8a0b8',containerId:'health-anxiety-qs',previewId:'prev-healthAnxiety',
+    minVal:0,max:3,maxTotal:30,color:'#9FB2C4',containerId:'health-anxiety-qs',previewId:'prev-healthAnxiety',
     questions:["I worry my symptoms indicate something serious.","I check my body for signs of illness.","I search for information about symptoms online.","I find it hard to stop thinking about my health.","Reassurance helps briefly, but worry returns.","I avoid activities that may worsen symptoms.","I seek reassurance from others about my health.","I feel anxious when I notice new bodily sensations.","I assume the worst about my symptoms.","My health worries interfere with daily life."],
     bands:[[0,5,'Minimal'],[6,11,'Mild'],[12,17,'Moderate'],[18,23,'High'],[24,30,'Very High']]
   },
   functionalImpact:{
-    minVal:0,max:4,maxTotal:16,color:'#e8a87c',containerId:'functional-impact-qs',previewId:'prev-functionalImpact',
+    minVal:0,max:4,maxTotal:16,color:'#9DB3AC',containerId:'functional-impact-qs',previewId:'prev-functionalImpact',
     questions:["My symptoms make me feel less in control of my life.","I feel less confident in managing my body.","My symptoms affect my ability to engage socially.","I avoid activities I value because of symptoms."],
     bands:[[0,3,'Minimal'],[4,7,'Mild'],[8,11,'Moderate'],[12,16,'High']]
   }
@@ -599,8 +600,8 @@ function renderResults(){
   const summary=getAutoSummary(profile);
   document.getElementById('resultsName').textContent=document.getElementById('patientName').value.split(' ')[0];
   document.getElementById('profileCard').innerHTML=`<div class="pc-label">Executive Frame Profile</div><div class="pc-name">${profile}</div><div class="pc-summary">${summary}</div>${flag!=='None'?`<div style="margin-top:12px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);">${flag}</div>`:''}`;
-  const bBg={'Minimal':'#e8f6ef','Low':'#e8f6ef','Mild':'#e6f1fb','Moderate':'#fff3ec','High':'#fdf0e8','Very High':'#fdf0f0'};
-  const bTx={'Minimal':'#1a6b40','Low':'#1a6b40','Mild':'#0c447c','Moderate':'#8b4a1a','High':'#7a3a10','Very High':'#8b2222'};
+  const bBg={'Minimal':'#ECF2EF','Low':'#ECF2EF','Mild':'#EAEFF3','Moderate':'#F1F4F3','High':'#EFF3F1','Very High':'#EFF2F2'};
+  const bTx={'Minimal':'#44574F','Low':'#44574F','Mild':'#3E5A78','Moderate':'#5B7268','High':'#44574F','Very High':'#7A4444'};
   document.getElementById('scoresGrid').innerHTML=['gutAnxiety','emotionSens','healthAnxiety','functionalImpact'].map(key=>{
     const s=SCALES[key];const sc=scores[key];const b=bands[key];const pct=(sc/s.maxTotal)*100;
     return `<div class="score-card" style="border-top-color:${s.color}"><div class="sc-label">${SCALE_LABELS[key]}</div><div class="sc-name">${SCALE_NAMES[key]}</div><div class="score-bar-track"><div class="score-bar-fill" style="width:${pct}%;background:${s.color}"></div></div><div class="sc-score" style="color:${s.color}">${sc}<span class="sc-denom"> / ${s.maxTotal}</span></div><div class="sc-band" style="background:${bBg[b]};color:${bTx[b]}">${b}</div></div>`;

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EF|Education — Executive Frame™ · Psychology for schools and educators</title>
+<meta name="description" content="EF|Education — psychologically informed support for educators, school leaders, and learning communities. Regulation, clear thinking, and sustainable practice, built on the Centre → Clarify → Choose architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  :root{--navy:#16243A;--navy-2:#1C2B44;--cream:#FCFDFE;--ink:#27333D;--ink-soft:#5A6670;
+  --edu:#C87A33;--edu-2:#A9661F;--edu-deep:#8F551F;--white:#FFFFFF;--slate:#93A4BC;--slate-light:#AFBBCA;
+  --line-cream:#EBE2D4;--line-navy:rgba(255,255,255,.12)}
+  html{scroll-behavior:smooth} [id]{scroll-margin-top:110px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.65}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+  section{padding:88px 0}
+  .navy{background:var(--navy);color:var(--white)} .cream{background:var(--cream);color:var(--ink)}
+  .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--edu);margin-bottom:26px;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:30px;height:1.5px;background:var(--edu)}
+  .cream .eyebrow{color:var(--edu-deep)}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.08;letter-spacing:-.005em}
+  h2{font-size:clamp(27px,3.3vw,42px)} h2 em{font-style:italic;font-weight:500;color:var(--edu)}
+  .cream h2 em{color:var(--edu-2)}
+  .lead{font-size:16.5px;line-height:1.75;max-width:660px;margin-top:22px}
+  .navy .lead{color:var(--slate-light)} .cream .lead{color:var(--ink-soft)}
+  a.btn{display:inline-block;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:15px 30px;border-radius:2px;transition:all .25s}
+  a.btn.solid{background:var(--edu);color:#16243A} a.btn.solid:hover{background:var(--edu-2);color:#FCFDFE}
+  a.btn.line{border:1px solid var(--line-navy);color:#fff} a.btn.line:hover{border-color:var(--slate);background:var(--navy-2)}
+  .cream a.btn.solid{background:var(--edu-deep);color:#F9F7F2} .cream a.btn.line{border-color:#C2C7B5;color:var(--ink)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero{padding-top:76px;padding-bottom:70px}
+  .hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(48px,7vw,88px);line-height:.92;margin:6px 0 26px}
+  .wordmark span{font-style:italic}
+  .hero h1{font-size:clamp(26px,3.2vw,38px);max-width:700px}
+  .sub{font-size:15px;margin-top:20px;max-width:560px;line-height:1.75}
+  .loop-wrap{display:flex;justify-content:center} img.orbit{width:100%;max-width:300px}
+  .ben{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line-cream)}
+  .ben .b{padding:32px 30px 34px 0;border-bottom:1px solid var(--line-cream)}
+  .ben .b h3{font-size:25px;color:var(--ink)}
+  .ben .b h3::after{content:"";display:block;width:26px;height:2px;background:var(--edu);border-radius:2px;margin-top:10px}
+  .ben .b p{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-top:14px;max-width:34ch}
+  .pfacts{margin-top:40px;border-top:1px solid var(--line-navy)}
+  .pfacts .pf{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:19px 2px;border-bottom:1px solid var(--line-navy)}
+  .pfacts .k{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--edu);padding-top:3px}
+  .pfacts .v{font-size:14.5px;color:var(--slate-light);line-height:1.65}
+  .pfacts .v b{color:#ECE6D8;font-weight:600}
+  .close{text-align:center} .close h2{max-width:760px;margin:0 auto}
+  .close .lead{margin:22px auto 0;text-align:center} .close .cta-row{justify-content:center}
+  .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--slate-light);margin-top:50px}
+  @media(max-width:840px){.hero .grid{grid-template-columns:1fr;gap:30px}.loop-wrap{order:-1;max-width:220px;margin:0 auto}
+  .ben{grid-template-columns:1fr}.ben .b{padding-right:0}.pfacts .pf{grid-template-columns:1fr;gap:6px;padding:16px 2px}
+  section{padding:60px 0}.wrap{padding:0 24px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}a.btn{transition:none}}
+</style>
+<script>document.documentElement.classList.add('reveal-on')</script></head>
+<body class="arm-education"><a class="skip" href="#main">Skip to content</a><div class="grain"></div>
+<nav class="nav"><div class="bar">
+<a class="brand" href="index.html"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="efnav" aria-label="Menu">Menu</button><div class="links" id="efnav">
+<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a>
+<div class="dd"><button class="l ddbtn" aria-expanded="false" aria-haspopup="true">Programmes ▾</button><div class="dd-menu">
+<a href="law.html">EF|Law</a><a class="sub" href="law-family.html">↳ EF|Law — Family</a>
+<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a>
+<a href="corporate.html">EF|Corporate</a><a href="elite.html">EF|Elite</a><a href="women.html">EF|Women</a>
+<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="education.html">EF|Education</a><a href="consulting.html">C³ Consulting</a>
+</div></div>
+<a class="l" href="resources.html">Resources</a><a class="l" href="consulting.html">For organisations</a><a class="l" href="about-sarah.html">About Sarah</a>
+<a class="l intake" href="intake.html">Intake →</a>
+</div></div></nav>
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero hero-wash">
+  <div class="wrap"><div class="grid">
+  <div>
+    <div class="eyebrow">Executive Frame™ · for schools &amp; educators</div>
+    <div class="wordmark">EF<span>|Education</span></div>
+    <h1>Steady adults build steady learners.</h1>
+    <p class="sub">Psychologically informed support for educators, school leaders, and learning communities — regulation, clear thinking, and sustainable practice inside the realities of a school year.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="enquire.html">Enquire for your school →</a>
+      <a class="btn line" href="ef-assessment-education.html">Take the Capacity Check</a>
+    </div>
+  </div>
+  <div class="loop-wrap">
+    <div class="diagram-panel"><img class="orbit" src="images/brand/ef-c3-loop-diagram.png" alt="The C³ Loop™ — Centre · Clarify · Choose"></div>
+  </div>
+  </div>
+<div class="tt3">
+<a href="index.html"><span class="tl">The model</span><h3>The C³ Loop™</h3><p>The repeating cycle — Centre, Clarify, Choose, then return. The architecture under the work.</p><div class="rule"></div></a>
+<a href="index.html"><span class="tl">The map</span><h3>The Tunnel™</h3><p>The predictable way capacity narrows under pressure — named early, so you can exit it deliberately.</p><div class="rule"></div></a>
+<a href="how.html"><span class="tl">The reset</span><h3>S.H.I.F.T.™</h3><p>Stop · Hold · Focus · Take Action. The real-time reset for the hard moment — under a minute, anywhere.</p><div class="rule"></div></a>
+</div>
+</div>
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="cream" id="overview">
+  <div class="wrap">
+    <div class="eyebrow">Overview</div>
+    <h2>What the work <em>builds.</em></h2>
+    <p class="lead">Teacher training builds pedagogy. EF|Education builds the human capacity that sustains it — because classrooms run on regulated adults, and the conditions of the job place real, measurable pressure on the nervous system.</p>
+    <div class="ben">
+      <div class="b"><h3>Regulate</h3><p>Recognise pressure states early — in yourself and in the room — and restore composure before they set the tone.</p></div>
+      <div class="b"><h3>Think clearly</h3><p>Protect planning, judgement, and attention when workload, behaviour, and urgency compete.</p></div>
+      <div class="b"><h3>Act deliberately</h3><p>Build sustainable ways of working within the real constraints of a school year — chosen, not defaulted to.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT'S DELIVERED ================= -->
+<section class="navy" id="delivery">
+  <div class="wrap">
+    <div class="eyebrow">How it's delivered</div>
+    <h2>Built for schools, <em>not added to them.</em></h2>
+    <div class="pfacts">
+      <div class="pf"><div class="k">For educators</div><div class="v">Workshops and PLD sessions on regulation, executive function, and sustainable practice — <b>practical tools usable the next morning</b>.</div></div>
+      <div class="pf"><div class="k">For school leaders</div><div class="v">Leadership development and advisory — the conditions for sound judgement and a staffroom that recovers.</div></div>
+      <div class="pf"><div class="k">For learning communities</div><div class="v">A shared, psychologically accurate language for pressure — across staff, students, and whānau.</div></div>
+      <div class="pf"><div class="k">Grounding</div><div class="v">Led by <b>Dr Sarah Anticich</b>, Clinical and Industrial/Organisational Psychologist — doctoral research on the prevention of anxiety and the development of emotional resilience in children and adolescents.</div></div>
+      <div class="pf"><div class="k">Format</div><div class="v">In-person or online · scoped to your school on enquiry.</div></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn solid" href="enquire.html">Enquire for your school →</a>
+      <a class="btn line" href="ef-education-resources.html">Browse the resources</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEXT-STEP NAVIGATOR (shared component) ================= -->
+<section class="nx" aria-labelledby="nx-h"><div class="wrap">
+<div class="nx-eyebrow">Choose your next step</div>
+<h2 id="nx-h">Check. Learn. Reset. <em>Begin.</em></h2>
+<p class="nx-sub">Choose a structured assessment, practical resources, a real-time regulation tool, or support matched to your needs.</p>
+<div class="nx-grid">
+<a class="nx-card" data-n="01" href="ef-assessment-education.html"><span class="nx-top"><b>01</b>Check</span><h3>The Capacity Check™</h3><p>Identify which area of functioning is currently under the greatest strain.</p><span class="nx-act">Start the check<span class="ar">→</span></span></a>
+<a class="nx-card" data-n="02" href="ef-education-resources.html"><span class="nx-top"><b>02</b>Learn</span><h3>Tools and resources</h3><p>Use evidence-informed guides and worksheets to understand patterns and apply practical strategies.</p><span class="nx-act">Browse the tools<span class="ar">→</span></span></a>
+<a class="nx-card" data-n="03" href="how.html"><span class="nx-top"><b>03</b>Reset</span><h3>S.H.I.F.T.™</h3><p>Reduce arousal, restore attention, and interrupt reactive behaviour when pressure rises.</p><span class="nx-act">Use S.H.I.F.T.™<span class="ar">→</span></span></a>
+<a class="nx-card" data-n="04" href="enquire.html"><span class="nx-top"><b>04</b>Begin</span><h3>Enquire for a school</h3><p>Tell us about your school and context so we can scope the right format.</p><span class="nx-act">Enquire<span class="ar">→</span></span></a>
+</div>
+</div></section>
+
+<!-- ================= CLOSE ================= -->
+<section class="navy close">
+  <div class="wrap">
+    <h2>Steady the adults. <em>The rest follows.</em></h2>
+    <p class="lead">Tell us about your school and the pressure it is carrying — we'll scope the right starting place.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="enquire.html">Enquire for your school →</a>
+      <a class="btn line" href="ef-assessment-education.html">Take the Capacity Check</a>
+    </div>
+    <div class="tagline">Human first. Then performance.</div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">
+<hr class="foot-rule">
+<div class="foot-grid">
+<div class="fcol">
+<h4 class="fbrand"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup></h4>
+<p class="fdesc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
+<p class="floc">Auckland · Christchurch · Queenstown · Telehealth available</p>
+<p><a class="fmail" href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></p>
+<p class="ftag">Human first. Then performance.</p>
+</div>
+<div class="fcol">
+<div class="fl">The Nine Arms</div>
+<p class="farms"><a class="acc" href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a> · <a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="education.html">EF|Education</a> · <a href="consulting.html">C³|Consulting</a></p>
+<p class="flinks2"><a href="enquire.html">Make a referral</a> · <a href="why.html">Why it works</a> · <a href="partners.html">Partner organisations</a></p>
+</div>
+<div class="fcol">
+<div class="fl">Practice</div>
+<h4 class="fname">Dr Sarah Anticich</h4>
+<p class="fcred acc">PhD, MAPS, MNZCCP</p>
+<p class="fital">Clinical Psychologist</p>
+<p class="fital">Industrial / Organisational Psychologist</p>
+<p class="fmuted">Sarah Anticich Consulting</p>
+<p class="fmuted">© 2026 — All rights reserved.</p>
+<p class="flinks2"><a href="enquire.html">Contact</a> · <a href="enquire.html">Referrals</a> · <a href="enquire.html">Privacy</a></p>
+</div>
+</div>
+<div class="foot-base">Site by Anticich Consulting · Built with care.</div>
+</div></footer>
+<script src="site.js" defer></script></body>
+</html>

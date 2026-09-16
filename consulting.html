@@ -1,101 +1,158 @@
 <!DOCTYPE html><html lang="en-NZ"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>C³ Consulting — Executive Frame™</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>C³ Consulting — Psychological systems design — Executive Frame™</title>
+<meta name="description" content="C³ Consulting — psychological systems design for organisations under pressure. Leadership consultation, in-house programmes, and licensed organisational tools. Part of the Executive Frame™.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <script>document.documentElement.classList.add('reveal-on')</script>
-<style>:root{--accent:#59A79A;--accent-ink:#0E1A14}</style></head>
-<body><div class="grain"></div><nav class="nav"><div class="bar">
-<a class="brand" href="index.html">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
-<div class="links">
-<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a><a class="l" href="about-sarah.html">About Sarah</a>
-<div class="dd"><a class="l" href="#">Programmes ▾</a><div class="dd-menu">
+<style>/* C³ Consulting — page-scoped refinements */
+.eyebrow{background:none;background-image:none;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:currentColor;color:#A8B1BB}
+.cream .eyebrow{background:none;background-image:none;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:currentColor;color:#5A6670}
+.svc{margin-top:44px;border-top:1px solid var(--line-cream)}
+.svc article{display:grid;grid-template-columns:64px 300px 1fr;gap:0 40px;padding:38px 18px 38px 8px;border-bottom:1px solid var(--line-cream);transition:background .35s}
+.svc article:hover{background:#FFFFFF}
+.svc .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:42px;line-height:1;color:rgba(39,51,61,.14);font-weight:500;padding-top:2px}
+.svc h3{font-size:26px;margin:0}
+.svc h3::after{content:"";display:block;width:26px;height:2px;background:#7CA0C8;border-radius:2px;margin-top:10px;transition:width .45s cubic-bezier(.22,.61,.36,1)}
+.svc article:hover h3::after{width:64px}
+.svc p{font-size:15px;line-height:1.7;color:var(--ink-soft);max-width:56ch;margin:0;padding-top:6px}
+.svc .sa{margin-top:16px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.svc .sa a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-cream);transition:border-color .3s,color .3s}
+.svc .sa a:hover{border-bottom-color:#3A6484;color:#3A6484}
+@media(max-width:900px){.svc article{grid-template-columns:64px 1fr;gap:6px 24px}.svc article>div{grid-column:2}.svc p{grid-column:2}}
+@media(max-width:480px){.svc article{grid-template-columns:1fr;padding-left:0}.svc .num{display:none}}
+.aud{font-size:13px;letter-spacing:.05em;color:var(--slate-light);margin-top:14px}
+.toolnote{margin-top:34px;padding-top:22px;border-top:1px solid var(--line-cream);font-size:14px;line-height:1.7;color:var(--ink-soft);max-width:66ch}
+.navy .toolnote{border-top-color:var(--line-navy);color:var(--slate)}
+.toolnote a{color:inherit}
+.evfine{margin-top:20px;font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft)}
+  .card .cb{font:600 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--arm-bright,#8FB9E4);margin:8px 0 12px}
+</style></head>
+<body class="arm-consulting"><a class="skip" href="#main">Skip to content</a><div class="grain"></div><nav class="nav"><div class="bar">
+<a class="brand" href="index.html"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="efnav" aria-label="Menu">Menu</button><div class="links" id="efnav">
+<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a>
+<div class="dd"><button class="l ddbtn" aria-expanded="false" aria-haspopup="true">Programmes ▾</button><div class="dd-menu">
 <a href="law.html">EF|Law</a><a class="sub" href="law-family.html">↳ EF|Law — Family</a>
-<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a><a class="sub" href="health-elearning.html">↳ EF|Health — eLearning</a>
+<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a>
 <a href="corporate.html">EF|Corporate</a><a href="elite.html">EF|Elite</a><a href="women.html">EF|Women</a>
-<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="consulting.html">C³ Consulting</a>
+<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="education.html">EF|Education</a><a href="consulting.html">C³ Consulting</a>
 </div></div>
-<a class="l" href="resources.html">Resources</a><a class="l" href="partners.html">Partners</a>
+<a class="l" href="resources.html">Resources</a><a class="l on" href="consulting.html" aria-current="page">For organisations</a><a class="l" href="about-sarah.html">About Sarah</a>
 <a class="l intake" href="intake.html">Intake →</a>
-</div></div></nav><main>
-<section class="hero navy"><div class="wrap"><div class="grid">
-<div><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-1">Executive Frame™ · systems level</div>
+</div></div></nav><main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero hero-wash"><div class="wrap"><div class="grid">
+<div><div class="eyebrow">Executive Frame™ · Organisational Consulting</div>
 <div class="wordmark">C<sup>3</sup>&nbsp;<span class="accent">Consulting</span></div>
-<h1><span data-editable="source" data-path="/consulting.html" data-key="page-title-1-t1">The framework,<br></span><em data-editable="source" data-path="/consulting.html" data-key="page-title-1-e1">at systems level.</em></h1><p class="lead" data-editable="source" data-path="/consulting.html" data-key="lead-text-1">Organisational consulting grounded in the Executive Frame — capacity designed into how the system works.</p><p class="sub">For leadership teams, organisations, and whole systems.</p>
-<div class="cta-row"><a class="btn solid" href="intake.html">Start with an intake →</a><a class="btn line" href="https://www.executiveframe.co.nz/assessment.html">Take the Capacity Check →</a></div></div>
-<div class="loop-wrap"><svg class="loop" viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" aria-label="The C3 Loop">
-<g fill="none" stroke="#8B95A1" stroke-opacity="0.20" stroke-width="1"><circle cx="180" cy="190" r="150"/><circle cx="180" cy="190" r="104"/></g>
-<g><circle cx="180" cy="40" r="5" fill="#8B95A1"/><circle cx="287" cy="297" r="5" fill="#8B95A1"/><circle cx="73" cy="297" r="5" fill="#8B95A1"/>
-<animateTransform attributeName="transform" type="rotate" from="0 180 190" to="360 180 190" dur="64s" repeatCount="indefinite"/></g>
-<g>
-<polygon points="180,108 126,256 180,242" fill="#59A79A"/><polygon points="180,108 180,242 234,256" fill="#417B71"/><polygon points="126,256 234,256 180,242" fill="#2C534D"/>
-<line x1="180" y1="108" x2="180" y2="242" stroke="#76B6AC" stroke-width="1" opacity="0.5"/>
-<circle cx="180" cy="108" r="4" fill="#fff"><animate attributeName="opacity" values="1;0.45;1" dur="4.5s" repeatCount="indefinite"/></circle>
-<animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" keyTimes="0;0.5;1" dur="7.5s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" repeatCount="indefinite"/></g>
-<ellipse cx="180" cy="258" rx="58" ry="7" fill="#121C25" opacity="0.5"><animate attributeName="rx" values="58;52;58" dur="7.5s" repeatCount="indefinite"/></ellipse>
-<text x="180" y="22" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CENTRE</text>
-<text x="300" y="330" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CLARIFY</text>
-<text x="60" y="330" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CHOOSE</text></svg></div></div></div></section>
+<h1><span>Psychological systems design </span><em>for organisations under pressure.</em></h1>
+<p class="lead">C³ Consulting helps leadership teams build the conditions for sound judgement, coordinated action, and sustainable performance when complexity is high.</p>
+<p class="aud">For leadership teams, professional services, and complex organisations.</p>
+<div class="cta-row"><a class="btn solid" href="enquire.html">Discuss an engagement →</a><a class="btn line" href="#approach">See the approach</a></div></div>
+<div class="loop-wrap"><div class="diagram-panel"><img class="loop mkfig" src="images/brand/ef-c3-loop-diagram.png" alt="The C³ Loop™ — Centre · Clarify · Choose" style="width:100%;max-width:280px"></div></div></div></div></section>
 
-<section class="cream"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-2">What it is</div>
-<h2>The framework at systems level</h2><p class="lead" data-editable="source" data-path="/consulting.html" data-key="lead-text-2">C³ Consulting is organisational consulting grounded in the Executive Frame — capacity designed into how the system works.</p></div></section>
-
-<section class="navy"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-3">Recognising the Tunnel</div>
-<h2>When pressure builds, the system narrows — <em>predictably.</em></h2>
-<p class="lead" data-editable="source" data-path="/consulting.html" data-key="lead-text-3">Under load, the threat system comes online. That's biology, not a flaw — and it follows the same recognisable pattern every time. Knowing the pattern is the first move back.</p>
-<div class="narrow">
-<div class="row"><b style="color:#fff;font-weight:600">Arousal rises</b> — the body asks for steadiness first.</div>
-<div class="row"><b style="color:#fff;font-weight:600">Focus tightens</b> — attention pulls to the immediate.</div>
-<div class="row"><b style="color:#fff;font-weight:600">Action speeds up</b> — and starts to lose its aim.</div></div>
-<p class="body" style="margin-top:24px">None of this is a failing — each is a signal, and each has a move back. That's what Centre restores; from there the sequence takes over.</p></div></section>
-
-<section class="cream"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-4">How it works</div>
-<h2>Centre · Clarify · Choose,<br>at the level of the system.</h2><div class="cards"><div class="card"><div class="ce" data-editable="source" data-path="/consulting.html" data-key="card-tag-4">Stage 01 · EI</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-1">Centre</h3><p data-editable="source" data-path="/consulting.html" data-key="text-1">Steady the team's baseline. A dysregulated system can't think well together.</p><div class="rule"></div></div><div class="card"><div class="ce" data-editable="source" data-path="/consulting.html" data-key="card-tag-5">Stage 02 · EF</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-2">Clarify</h3><p data-editable="source" data-path="/consulting.html" data-key="text-2">Align on what's real — together, not in silos.</p><div class="rule"></div></div><div class="card"><div class="ce" data-editable="source" data-path="/consulting.html" data-key="card-tag-6">Stage 03 · SDT</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-3">Choose</h3><p data-editable="source" data-path="/consulting.html" data-key="text-3">Decide and act as one system, in line with how the organisation wants to operate.</p><div class="rule"></div></div></div></div></section>
-
-<section class="navy"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-5">The tools</div>
-<h2>Three tools. <em>One operating system.</em></h2>
-<div class="cards">
-<a class="card" style="text-decoration:none;color:inherit" href="resources.html"><div class="ce" data-editable="source" data-path="/consulting.html" data-key="card-tag-7">The model</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-4">The C³ Loop™</h3><p data-editable="source" data-path="/consulting.html" data-key="text-4">The repeating cycle — Centre, Clarify, Choose, then return. The architecture under the work.</p><div class="rule"></div></a>
-<a class="card" style="text-decoration:none;color:inherit" href="resources.html"><div class="ce" data-editable="source" data-path="/consulting.html" data-key="card-tag-8">The map</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-5">The Tunnel™</h3><p data-editable="source" data-path="/consulting.html" data-key="text-5">The predictable way capacity narrows under pressure — named early, so you can exit it deliberately.</p><div class="rule"></div></a>
-<a class="card" style="text-decoration:none;color:inherit" href="how.html"><div class="ce" data-editable="source" data-path="/consulting.html" data-key="card-tag-9">The reset</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-6">S.H.I.F.T.™</h3><p data-editable="source" data-path="/consulting.html" data-key="text-6">Stop · Hold · Focus · Take Action. The real-time reset for leadership-team alignment, the cultural reset, the decision under load — under a minute, anywhere.</p><div class="rule"></div></a>
-</div></div></section>
-
-<section class="cream"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-6">Outcomes</div>
-<h2>What <em>shifts.</em></h2><div class="narrow"><div class="row">A leadership team with a steadier baseline.</div><div class="row">Shared, faster decisions under load.</div><div class="row">One language for capacity across the system.</div><div class="row">Performance designed in, not bolted on.</div></div></div></section>
-
-<section class="navy"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-7">The science</div>
-<h2>Three evidence bases. <em>One sequence.</em></h2>
-<p class="lead" data-editable="source" data-path="/consulting.html" data-key="lead-text-4">Executive Frame rests on three of the most established fields in applied psychology. They converge on one order — steady first, think second, act third.</p>
-<div class="sci-cards">
-<div class="sci-card"><div class="n">01</div><div class="t">Centre</div><div class="d">Emotional Intelligence</div><div class="q">Perry · Goleman · Linehan</div></div>
-<div class="sci-card"><div class="n">02</div><div class="t">Clarify</div><div class="d">Executive Functioning</div><div class="q">Barkley · Beck · Ericsson</div></div>
-<div class="sci-card"><div class="n">03</div><div class="t">Choose</div><div class="d">Self-Determination Theory</div><div class="q">Deci &amp; Ryan · Dweck · McGonigal</div></div>
-</div></div></section>
-
-<section class="cream"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-8">Good to know</div>
-<h2>The <em>details.</em></h2>
-<div class="acc"><details><summary><span class="ix">01</span>Who it's for</summary><div class="ac-body"><p>For leadership teams, organisations, and whole systems. If you're not sure it's the right fit, the <a href='https://www.executiveframe.co.nz/assessment.html'>Capacity Check</a> will point you to the right starting place.</p></div></details><details><summary><span class="ix">02</span>How it's delivered</summary><div class="ac-body"><p>One-to-one, in small groups, or in-house for teams and organisations — in person across Auckland, Christchurch, and Queenstown, or by telehealth nationwide. Begin with a short <a href='intake.html'>intake</a> and we'll match you to the right format.</p></div></details><details><summary><span class="ix">03</span>What you'll work with</summary><div class="ac-body"><p>Every engagement is built around portable, real-time tools: the <a href='library.html'>C³ Loop™</a>, the <a href='how.html'>S.H.I.F.T.™</a> reset, and the diagnostics in the <a href='library.html'>Library</a>. You leave with something you can use the next day.</p></div></details><details><summary><span class="ix">04</span>The evidence base</summary><div class="ac-body"><p>Three established literatures — emotional intelligence, executive functioning, and self-determination theory — sequenced as Centre, Clarify, Choose. The <a href='why.html'>science</a> sets out the full basis.</p></div></details></div>
+<!-- ================= THE ORGANISATIONAL CHALLENGE ================= -->
+<section class="cream"><div class="wrap"><div class="eyebrow">The organisational challenge</div>
+<h2>As pressure rises, <em>systems narrow.</em></h2>
+<p class="lead">As pressure rises, attention narrows, urgency increases, and coordination becomes harder. These are predictable human responses — but in an organisation, they can quickly become patterns of communication, decision-making, and culture.</p>
+<p class="body" style="max-width:64ch">The aim is not to remove pressure. It is to help the system recognise narrowing early, restore sufficient steadiness, and make deliberate choices before urgency becomes the operating model.</p>
 </div></section>
 
-<section class="cream"><div class="wrap"><div class="eyebrow" data-editable="source" data-path="/consulting.html" data-key="eyebrow-9">Tools &amp; resources</div><h2>Take it <em>with you.</em></h2><div class="cards"><a class='card' style='text-decoration:none;color:inherit' href='https://www.executiveframe.co.nz/assessment.html'><div class='ce' data-editable="source" data-path="/consulting.html" data-key="card-tag-1">Diagnostic</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-7">The Capacity Check</h3><p data-editable="source" data-path="/consulting.html" data-key="text-7">Find your first binding constraint in five minutes.</p></a><a class='card' style='text-decoration:none;color:inherit' href='resources.html'><div class='ce' data-editable="source" data-path="/consulting.html" data-key="card-tag-2">Resources</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-8">Free & premium tools</h3><p data-editable="source" data-path="/consulting.html" data-key="text-8">The full hub, organised by phase.</p></a><a class='card' style='text-decoration:none;color:inherit' href='enquire.html'><div class='ce' data-editable="source" data-path="/consulting.html" data-key="card-tag-3">Talk to us</div><h3 data-editable="source" data-path="/consulting.html" data-key="card-title-9">Enquire</h3><p data-editable="source" data-path="/consulting.html" data-key="text-9">Find the right pathway for you or your team.</p></a></div></div></section>
+<!-- ================= THE C³ APPROACH ================= -->
+<section class="navy" id="approach"><div class="wrap"><div class="eyebrow">The C³ approach</div>
+<h2>Centre · Clarify · Choose,<br>at the level of the system.</h2>
+<div class="cards">
+<div class="card"><div class="ce">01</div><h3>Centre</h3><div class="cb">Emotional intelligence · EI</div><p>Establish the conditions for clear thinking — steadiness, psychological safety, and a shared read of the pressure in the system.</p><div class="rule"></div></div>
+<div class="card"><div class="ce">02</div><h3>Clarify</h3><div class="cb">Executive function · EF</div><p>Establish a reliable view of the work — what is happening, what matters most, and where responsibility and decisions sit.</p><div class="rule"></div></div>
+<div class="card"><div class="ce">03</div><h3>Choose</h3><div class="cb">Self-determination theory · SDT</div><p>Establish deliberate action under constraint — coordinated choices that reflect purpose, standards, and real capacity.</p><div class="rule"></div></div>
+</div>
+<p class="toolnote">In practice, the sequence is carried by a small set of working tools — <a href="index.html">the C³ Loop™</a>, <a href="index.html">The Tunnel™</a>, and <a href="how.html">the S.H.I.F.T.™ reset</a> — so leaders and teams share one language for recognising narrowing and responding deliberately.</p>
+</div></section>
 
-<section class="navy close"><div class="wrap"><div class="eyebrow" style="justify-content:center">Work with us</div>
-<h2>Start where you are.</h2><p class="lead" data-editable="source" data-path="/consulting.html" data-key="lead-text-5">Designed in, not bolted on.</p>
-<div class="cta-row"><a class="btn solid" href="intake.html">Start with an intake →</a><a class="btn line" href="https://www.executiveframe.co.nz/enquire">Get in touch →</a></div>
-<div class="tagline">Human first. Then performance.</div></div></section></main><footer><div class="wrap">
+<!-- ================= WAYS TO WORK TOGETHER ================= -->
+<section class="cream"><div class="wrap"><div class="eyebrow">Ways to work together</div>
+<h2>Engagements shaped <em>to the organisation.</em></h2>
+<p class="lead">The scope depends on the pressure, the people involved, and the level at which change is needed. Work may begin with a focused leadership question or extend to a broader organisational programme.</p>
+<div class="svc">
+<article>
+<span class="num">01</span>
+<div><h3>Leadership &amp; system consultation</h3><div class="sa"><a href="enquire.html">Discuss an engagement →</a></div></div>
+<p>Focused psychological consultation for leaders and teams navigating complexity, sustained pressure, change, or difficult decisions.</p>
+</article>
+<article>
+<span class="num">02</span>
+<div><h3>Leadership programmes</h3><div class="sa"><a href="enquire.html">Enquire about a programme →</a></div></div>
+<p>Structured in-house development that gives leaders a shared language and practical architecture for working under pressure.</p>
+</article>
+<article>
+<span class="num">03</span>
+<div><h3>Organisational tools &amp; licensing</h3><div class="sa"><a href="enquire.html">Ask about licensing →</a></div></div>
+<p>Supported toolkits and licensed materials for organisations that want to embed the framework with consistency and integrity.</p>
+</article>
+</div>
+</div></section>
+
+<!-- ================= OUTCOMES ================= -->
+<section class="navy"><div class="wrap"><div class="eyebrow">Outcomes</div>
+<h2>What the work <em>is aimed at.</em></h2>
+<div class="narrow">
+<div class="row">A steadier leadership baseline.</div>
+<div class="row">Clearer decision pathways under pressure.</div>
+<div class="row">Better coordination across professional boundaries.</div>
+<div class="row">A shared language for recognising and responding to narrowing.</div>
+<div class="row">Sustainable performance supported by the system.</div></div>
+</div></section>
+
+<!-- ================= EVIDENCE & METHODOLOGY ================= -->
+<section class="cream"><div class="wrap"><div class="eyebrow">Evidence &amp; methodology</div>
+<h2>Established science, <em>applied in sequence.</em></h2>
+<p class="lead">The framework draws on established work in emotional regulation, executive functioning, and self-determination theory. These bodies of evidence are applied through a practical sequence: steady the system, clarify what matters, and choose deliberately. <a href="why.html" style="color:var(--ink)">The science page</a> sets out the fuller basis.</p>
+<p class="evfine">Informing literatures include the work of Perry, Goleman, and Linehan; Barkley, Beck, and Ericsson; and Deci &amp; Ryan.</p>
+</div></section>
+
+<!-- ================= FAQ ================= -->
+<section class="navy"><div class="wrap"><div class="eyebrow">Practical questions</div>
+<h2>Before you <em>enquire.</em></h2>
+<div class="acc">
+<details><summary><span class="ix">01</span>Who is it for?</summary><div class="ac-body"><p>Leadership teams, professional-services firms, and complex organisations. Individuals seeking one-to-one support are better served through the <a href="intake.html">clinical intake</a>.</p></div></details>
+<details><summary><span class="ix">02</span>How are engagements scoped?</summary><div class="ac-body"><p>Through an initial conversation, followed by a written proposal. Engagements range from focused consultation on a single leadership question to organisation-wide programmes.</p></div></details>
+<details><summary><span class="ix">03</span>How is the work delivered?</summary><div class="ac-body"><p>In person across Auckland, Christchurch, and Queenstown, or by telehealth nationwide — as advisory sessions, facilitated workshops, or in-house programmes.</p></div></details>
+<details><summary><span class="ix">04</span>What is the first step?</summary><div class="ac-body"><p>A brief conversation. <a href="enquire.html">Enquire here</a> and we will respond within three working days.</p></div></details>
+</div>
+</div></section>
+
+<!-- ================= NEXT-STEP NAVIGATOR (shared component) ================= -->
+<section class="nx" aria-labelledby="nx-h"><div class="wrap">
+<div class="nx-eyebrow">Choose your next step</div>
+<h2 id="nx-h">Check. Learn. Reset. <em>Begin.</em></h2>
+<p class="nx-sub">Choose a structured assessment, practical resources, a real-time regulation tool, or support matched to your needs.</p>
+<div class="nx-grid">
+<a class="nx-card" data-n="01" href="ef-assessment-consulting.html"><span class="nx-top"><b>01</b>Check</span><h3>The Capacity Check™</h3><p>Identify which area of functioning is currently under the greatest strain.</p><span class="nx-act">Start the check<span class="ar">→</span></span></a>
+<a class="nx-card" data-n="02" href="ef-consulting-resources.html"><span class="nx-top"><b>02</b>Learn</span><h3>Tools and resources</h3><p>Use evidence-informed guides and worksheets to understand patterns and apply practical strategies.</p><span class="nx-act">Browse the tools<span class="ar">→</span></span></a>
+<a class="nx-card" data-n="03" href="how.html"><span class="nx-top"><b>03</b>Reset</span><h3>S.H.I.F.T.™</h3><p>Reduce arousal, restore attention, and interrupt reactive behaviour when pressure rises.</p><span class="nx-act">Use S.H.I.F.T.™<span class="ar">→</span></span></a>
+<a class="nx-card" data-n="04" href="enquire.html"><span class="nx-top"><b>04</b>Begin</span><h3>Discuss an engagement</h3><p>Tell us about the system and the pressure it is under so we can scope an engagement.</p><span class="nx-act">Discuss an engagement<span class="ar">→</span></span></a>
+</div>
+</div></section>
+<!-- ================= CLOSE ================= -->
+<section class="navy close"><div class="wrap"><div class="eyebrow" style="justify-content:center">Begin a conversation</div>
+<h2>Start with the question <em>the system is facing.</em></h2>
+<p class="lead">A brief initial conversation will establish the context, the people involved, and whether C³ Consulting is the right fit.</p>
+<div class="cta-row"><a class="btn solid" href="enquire.html">Discuss an engagement →</a><a class="btn line" href="ef-assessment-consulting.html">Take the Capacity Check</a><a class="btn line" href="ef-consulting-resources.html">Browse C³ resources</a></div>
+</div></section>
+</main><footer><div class="wrap">
 <hr class="foot-rule">
 <div class="foot-grid">
 <div class="fcol">
-<h4 class="fbrand">Executive Frame<sup>™</sup></h4>
+<h4 class="fbrand"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup></h4>
 <p class="fdesc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
 <p class="floc">Auckland · Christchurch · Queenstown · Telehealth available</p>
 <p><a class="fmail" href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></p>
 <p class="ftag">Human first. Then performance.</p>
 </div>
 <div class="fcol">
-<div class="fl">The Eight Arms</div>
-<p class="farms"><a class="acc" href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a> · <a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="consulting.html">C³|Consulting</a></p>
-<p class="flinks2"><a href="enquire.html">Make a referral</a> · <a href="resources.html">The S.H.I.F.T.™ Deck</a> · <a href="partners.html">Partner organisations</a></p>
+<div class="fl">The Nine Arms</div>
+<p class="farms"><a class="acc" href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a> · <a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="education.html">EF|Education</a> · <a href="consulting.html">C³|Consulting</a></p>
+<p class="flinks2"><a href="enquire.html">Make a referral</a> · <a href="why.html">Why it works</a> · <a href="partners.html">Partner organisations</a></p>
 </div>
 <div class="fcol">
 <div class="fl">Practice</div>

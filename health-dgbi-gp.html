@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-NZ"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EF|Health — Gut Sense for GPs — Executive Frame™</title>
+<meta name="description" content="Gut Sense™ — a self-paced gut–brain programme your patient can begin the same day. Widening access to psychological care for disorders of gut–brain interaction, at no cost to your practice.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add('reveal-on')</script>
+<style>:root{--accent:#6E9E86;--accent-ink:#0E1A14}</style>
+
+<!-- ============================================================
+     FALLBACK BASE — only applies if site.css is absent.
+     When dropped into the live site, this block can be deleted;
+     every class below already exists in site.css.
+     ============================================================ -->
+<style id="efgp-fallback">
+:root{--paper:#F6F7F9;--cream:#F6F7F9;--cream-2:#EDF0F3;--navy:#15212D;--navy-2:#1B2935;--navy-3:#111B24;
+--ink:#27333D;--ink-soft:#55616B;--slate:#8A94A0;--slate-muted:#8A94A0;--slate-light:#9FB8D6;
+--line-cream:#E4E7EB;--line-navy:rgba(255,255,255,.12);--gold:#C9A063}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.005em}
+em{font-style:italic}
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+section{padding:88px 0}
+section.cream{background:var(--cream)}
+section.navy{background:linear-gradient(160deg,var(--navy),var(--navy-3));color:#fff}
+section.navy h2,section.navy h1{color:#fff}
+section.navy .lead{color:var(--slate-light)}
+.hero{padding:92px 0 76px}
+.hero h1{font-size:clamp(36px,5.4vw,58px)}
+.hero h1 em{color:var(--accent)}
+.eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--accent)}
+h2{font-size:clamp(28px,4vw,44px);margin-bottom:14px}
+h2 em{color:var(--accent)}
+section.cream h2 em{color:#3F6B54}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:700px}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.03em;padding:13px 24px;border-radius:2px;text-decoration:none;border:1px solid transparent;transition:all .2s}
+.btn.solid{background:var(--accent);color:var(--accent-ink)}
+.btn.solid:hover{filter:brightness(1.07)}
+.btn.line{background:transparent;border-color:var(--line-cream);color:var(--ink)}
+.btn.line:hover{border-color:var(--accent);color:#3F6B54}
+section.navy .btn.line{border-color:var(--line-navy);color:#fff}
+.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--accent);margin-top:26px}
+@media(max-width:900px){.wrap{padding:0 22px}section{padding:64px 0}}
+</style>
+
+<!-- ============================================================
+     GUT SENSE · GP PAGE — scoped components (efgp-)
+     ============================================================ -->
+<style id="efgp-styles">
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:76px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.efgp-bar{background:var(--navy-2);border-bottom:1px solid var(--line-navy)}
+.efgp-bar .wrap{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;padding-top:11px;padding-bottom:11px}
+.efgp-bar a{font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--slate-light);text-decoration:none}
+.efgp-bar a:hover{color:var(--accent)}
+.efgp-bar a.lead-link{color:var(--accent)}
+
+/* numbered section head — What / Why / How */
+.efgp-head{display:flex;align-items:flex-start;gap:20px;margin-bottom:8px}
+.efgp-num{flex:none;width:52px;height:52px;border-radius:50%;background:rgba(110,158,134,.14);color:#3F6B54;
+  font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:4px}
+section.navy .efgp-num{background:rgba(110,158,134,.16);color:var(--accent)}
+.efgp-head .t{flex:1}
+
+/* cards */
+.efgp-grid{display:grid;gap:18px;margin-top:44px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.efgp-card{background:#fff;border:1px solid var(--line-cream);border-radius:8px;padding:26px 24px;transition:transform .22s,box-shadow .22s,border-color .22s}
+.efgp-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px -26px rgba(20,33,45,.4);border-color:var(--accent)}
+.efgp-card h3{font-size:21px;margin-bottom:8px;color:var(--ink)}
+.efgp-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+.efgp-ic{width:42px;height:42px;border-radius:10px;background:rgba(110,158,134,.13);color:#3F6B54;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+.efgp-ic svg{width:22px;height:22px}
+.efgp-dark{background:var(--navy-2);border:1px solid var(--line-navy);border-radius:8px;padding:26px 24px}
+.efgp-dark h3{color:#fff;font-size:21px;margin-bottom:8px}
+.efgp-dark p{font-size:13.5px;color:var(--slate-light);line-height:1.6}
+.efgp-dark .efgp-ic{background:rgba(110,158,134,.16);color:var(--accent)}
+
+/* bulleted why list */
+.efgp-why{display:grid;grid-template-columns:1fr 1fr;gap:8px 44px;margin-top:40px}
+.efgp-why div{padding:16px 0;border-bottom:1px solid var(--line-navy)}
+.efgp-why b{display:block;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff;margin-bottom:5px}
+.efgp-why p{font-size:13.5px;color:var(--slate-light);line-height:1.6}
+
+/* three-step prescribe */
+.efgp-steps{counter-reset:s;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+.efgp-steps li{counter-increment:s;background:#fff;border:1px solid var(--line-cream);border-radius:8px;padding:26px 24px;position:relative}
+.efgp-steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;
+  background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:13px;margin-bottom:14px}
+.efgp-steps li::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--slate);font-size:14px}
+.efgp-steps li:last-child::after{display:none}
+.efgp-steps h4{font-size:20px;margin-bottom:7px;color:var(--ink)}
+.efgp-steps p{font-size:13px;color:var(--ink-soft);line-height:1.55}
+
+/* copy-paste snippet */
+.efgp-snip{margin-top:26px;background:#fff;border:1px solid var(--line-cream);border-radius:8px;overflow:hidden}
+.efgp-snip .hd{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line-cream);background:var(--cream-2)}
+.efgp-snip .hd span{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate-muted)}
+.efgp-snip .hd button{font-size:11px;font-weight:600;padding:7px 14px;border-radius:2px;border:1px solid var(--line-cream);background:#fff;color:var(--ink);cursor:pointer}
+.efgp-snip .hd button:hover{border-color:var(--accent);color:#3F6B54}
+.efgp-snip .bd{padding:20px 22px;font-size:14px;line-height:1.72;color:var(--ink-soft)}
+
+/* price strip */
+.efgp-price{display:grid;grid-template-columns:300px 1fr;gap:0;margin-top:42px;border:1px solid var(--line-navy);border-radius:10px;overflow:hidden}
+.efgp-price .p{background:linear-gradient(160deg,var(--navy-2),var(--navy-3));padding:32px 30px}
+.efgp-price .n{font-family:'Cormorant Garamond',serif;font-size:46px;color:#fff;line-height:1}
+.efgp-price .s{font-size:12.5px;font-weight:600;color:var(--accent);margin-top:8px}
+.efgp-price .f{font-size:12.5px;color:var(--slate-light);margin-top:8px;line-height:1.55}
+.efgp-price .d{background:var(--navy-2);padding:32px 30px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.efgp-price .d p{font-size:14px;color:var(--slate-light);line-height:1.6}
+.efgp-price .d b{color:#fff}
+
+/* scope box */
+.efgp-scope{margin-top:42px;border-left:3px solid var(--gold);background:rgba(201,160,99,.07);border-radius:0 8px 8px 0;padding:24px 26px}
+.efgp-scope .l{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.efgp-scope p{font-size:13.5px;line-height:1.7;color:var(--slate-light)}
+section.cream .efgp-scope p{color:var(--ink-soft)}
+
+/* CTA panel */
+.efgp-cta{background:linear-gradient(135deg,#fff,var(--cream-2));border:1px solid var(--line-cream);border-radius:12px;
+  padding:38px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;margin-top:52px}
+.efgp-cta h3{font-size:28px;color:var(--ink);margin-bottom:6px}
+.efgp-cta p{font-size:14px;color:var(--ink-soft);max-width:520px}
+.efgp-cta .cta-row{margin-top:0}
+
+/* FAQ */
+.efgp-faq{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.efgp-faq details{border-bottom:1px solid var(--line-cream)}
+.efgp-faq summary{list-style:none;cursor:pointer;padding:19px 32px 19px 0;position:relative;font-size:15px;font-weight:600;color:var(--ink);line-height:1.4}
+.efgp-faq summary::-webkit-details-marker{display:none}
+.efgp-faq summary::after{content:"+";position:absolute;right:2px;top:16px;font-size:21px;color:var(--accent)}
+.efgp-faq details[open] summary::after{content:"–"}
+.efgp-faq .ab{font-size:13.5px;line-height:1.72;color:var(--ink-soft);padding:0 32px 22px 0}
+
+@media(max-width:1000px){.g3,.g4,.efgp-steps{grid-template-columns:1fr 1fr}.efgp-steps li::after{display:none}}
+@media(max-width:760px){.g2,.g3,.g4,.efgp-steps,.efgp-why,.efgp-faq{grid-template-columns:1fr}
+.efgp-price{grid-template-columns:1fr}.efgp-cta{padding:28px 24px}}
+.reveal-on .efgp-anim{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal-on .efgp-anim.in{opacity:1;transform:none}
+</style>
+</head>
+<body class="arm-health"><a class="skip" href="#main">Skip to content</a><div class="grain"></div>
+
+<nav class="nav"><div class="bar">
+<a class="brand" href="/"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="efnav" aria-label="Menu">Menu</button><div class="links" id="efnav">
+<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a>
+<div class="dd"><button class="l ddbtn" aria-expanded="false" aria-haspopup="true">Programmes ▾</button><div class="dd-menu">
+<a href="law.html">EF|Law</a><a class="sub" href="law-family.html">↳ EF|Law — Family</a>
+<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a>
+<a href="corporate.html">EF|Corporate</a><a href="elite.html">EF|Elite</a><a href="women.html">EF|Women</a>
+<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="education.html">EF|Education</a><a href="consulting.html">C³ Consulting</a>
+</div></div>
+<a class="l" href="resources.html">Resources</a><a class="l" href="consulting.html">For organisations</a><a class="l" href="about-sarah.html">About Sarah</a>
+<a class="l intake" href="intake.html">Intake →</a>
+</div></div></nav>
+
+<div class="efgp-bar"><div class="wrap">
+<a class="lead-link" href="#what">What it is</a>
+<a href="#why">Why offer it</a>
+<a href="#how">How to prescribe it</a>
+<a href="#scope">Scope &amp; governance</a>
+<a href="#faqs">FAQs</a>
+<a href="ef-health-referral.html">Refer instead →</a>
+</div></div>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero navy" id="top"><div class="wrap">
+<div class="eyebrow">EF|Health · DGBI · Information for GPs</div>
+<h1>A next step to offer <em>the moment the results are clear.</em></h1>
+<p class="lead" style="margin-top:18px">Gut Sense™ is a self-paced gut–brain programme your patient can begin the same day. It puts a complete, clinically developed framework directly in their hands — widening access to psychological care that has until now reached relatively few patients, and asking nothing of your practice.</p>
+<div class="cta-row">
+  <a class="btn solid" href="health-dgbi.html">See the programme →</a>
+  <a class="btn line" href="downloads/gut-sense-gp-sheet.pdf" download>Download the GP sheet →</a>
+  </div>
+<p style="font-size:12px;line-height:1.6;color:var(--slate);margin-top:20px;max-width:620px">Gut Sense™ is structured self-management education delivered alongside medical care. It is <b style="color:var(--slate-light)">not a crisis service</b> and does not replace medical assessment. In an emergency, call <b style="color:var(--slate-light)">111</b> (NZ).</p>
+</div></section>
+
+<!-- ===================== 1 · WHAT ===================== -->
+<section class="cream" id="what"><div class="wrap">
+<div class="efgp-head efgp-anim">
+  <div class="efgp-num">1</div>
+  <div class="t">
+    <div class="eyebrow">What it is</div>
+    <h2><em>A complete programme,</em> ready when your patient is.</h2>
+  </div>
+</div>
+<p class="lead efgp-anim" style="margin-left:72px">Written by a clinical psychologist working specifically with gut–brain presentations, and already delivered to patients individually and in groups. The same clinical framework is now packaged so your patient can begin it the day you mention it.</p>
+
+<div class="efgp-grid g4">
+  <div class="efgp-card efgp-anim">
+    <div class="efgp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v15H6a2 2 0 0 1-2-2z"/><path d="M17 3h1a2 2 0 0 1 2 2v13"/><path d="M8 8h6M8 12h6"/></svg></div>
+    <h3>Self-Paced Workbook</h3><p>The core programme — psychoeducation, practices and reflection, one part a week.</p>
+  </div>
+  <div class="efgp-card efgp-anim">
+    <div class="efgp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg></div>
+    <h3>eLearning modules</h3><p>The same material online — video, written and audio — with progress tracking.</p>
+  </div>
+  <div class="efgp-card efgp-anim">
+    <div class="efgp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 1-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 1 5.3-5.3z"/></svg></div>
+    <h3>18-Tool Library</h3><p>Regulation and symptom-management tools organised by phase, fillable.</p>
+  </div>
+  <div class="efgp-card efgp-anim">
+    <div class="efgp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 3l-3 3M12 3l3 3"/><rect x="4" y="9" width="16" height="12" rx="2"/></svg></div>
+    <h3>S.H.F.T.™ Card</h3><p>Stop · Hold · Focus · Take Action — a pocket reset for flares, with a practice log.</p>
+  </div>
+</div>
+
+<div class="efgp-cta efgp-anim">
+  <div><h3>What the patient actually does</h3>
+  <p>Works through one part per week over roughly eight weeks, at home, in their own time — around 30 minutes a week. They begin within minutes of enrolling and keep lifetime access, so the programme stays available whenever they need to return to it.</p></div>
+  <div class="cta-row"><a class="btn solid" href="health-dgbi.html">See what's included →</a></div>
+</div>
+</div></section>
+
+<!-- ===================== 2 · WHY ===================== -->
+<section class="navy" id="why"><div class="wrap">
+<div class="efgp-head efgp-anim">
+  <div class="efgp-num">2</div>
+  <div class="t">
+    <div class="eyebrow">Why offer it</div>
+    <h2>Because <em>access</em> is what changes outcomes.</h2>
+  </div>
+</div>
+<p class="lead efgp-anim" style="margin-left:72px">You have completed the investigation and the findings are reassuring. What remains is the gut–brain component — the part that responds well to psychological work. Gut Sense™ makes that work available to your patient straight away, alongside the care you are already providing.</p>
+
+<div class="efgp-why">
+  <div class="efgp-anim"><b>Good news, with a next step attached</b><p>A clear result is genuinely good news. Handing over a next step lets your patient leave holding both.</p></div>
+  <div class="efgp-anim"><b>Access, widened</b><p>Gut–brain psychology has been available to relatively few patients. This makes the same framework available to any patient you see.</p></div>
+  <div class="efgp-anim"><b>The timing works in your favour</b><p>The period straight after a clear result is when this material lands best — and your patient can begin that same week.</p></div>
+  <div class="efgp-anim"><b>It builds on your care</b><p>The programme reinforces medical management and returns the patient to you for anything clinical. You remain the treating clinician.</p></div>
+  <div class="efgp-anim"><b>The patient holds the wheel</b><p>Self-paced and self-directed — which is what the evidence favours for this population, and what most patients say they want.</p></div>
+  <div class="efgp-anim"><b>Something to report back</b><p>Patients arrive at their next appointment with progress to describe, which makes the review a more useful conversation.</p></div>
+</div>
+
+<div class="efgp-scope" id="scope" style="margin-top:52px">
+  <div class="l">Scope &amp; clinical governance</div>
+  <p>Gut Sense™ is <b style="color:#fff">structured self-management education, not psychological therapy</b>, and does not create a psychologist–client relationship or replace medical assessment and management. It is intended for patients whose investigation is complete and whose findings do not account for their symptom burden. It is <b style="color:#fff">not suitable</b> where there are red-flag features, active eating-disorder symptoms, or acute mental-health risk. Patients are directed back to their GP for anything outside that scope. No patient data is collected on your behalf or shared with your practice. Where a patient needs clinician-led care, the <a href="ef-health-referral.html" style="color:var(--accent);text-decoration:none">standard EF Health referral pathway</a> remains available.</p>
+</div>
+</div></section>
+
+<!-- ===================== 3 · HOW ===================== -->
+<section class="cream" id="how"><div class="wrap">
+<div class="efgp-head efgp-anim">
+  <div class="efgp-num">3</div>
+  <div class="t">
+    <div class="eyebrow">How to prescribe it</div>
+    <h2>Three steps, <em>about thirty seconds.</em></h2>
+  </div>
+</div>
+<p class="lead efgp-anim" style="margin-left:72px">One card, or one line in a letter. Everything after that happens without you.</p>
+
+<ol class="efgp-steps">
+  <li class="efgp-anim"><h4>Hand over the card</h4><p>A printed patient card sits in your consulting room. Give it to them at the end of the appointment — it carries the URL and a QR code.</p></li>
+  <li class="efgp-anim"><h4>Or paste one line</h4><p>Drop the paragraph below into your letter, discharge summary or patient-portal template.</p></li>
+  <li class="efgp-anim"><h4>That's it</h4><p>The patient enrols online themselves and begins immediately. No referral, no invoice, no administration on your side.</p></li>
+</ol>
+
+<div class="efgp-snip efgp-anim">
+  <div class="hd"><span>Copy for your letter template</span><button type="button" id="efgp-copy">Copy text</button></div>
+  <div class="bd" id="efgp-snippet">Your investigations have not shown structural disease, which is good news. The gut–brain component of your symptoms is real, and it is the part that responds well to psychological approaches. I recommend Gut Sense™, a self-paced programme developed by a clinical psychologist who specialises in gut–brain conditions — you can begin it yourself at efhealth.co.nz/gut-sense. Please continue with your usual care and come back to see me as planned.</div>
+</div>
+
+<div class="efgp-price efgp-anim">
+  <div class="p">
+    <div class="n">NZ$199</div>
+    <div class="s">one-off, paid by the patient</div>
+    <div class="f">Lifetime access to the workbook, modules and tool library.</div>
+  </div>
+  <div class="d">
+    <p><b>Nothing invoiced to your practice.</b> No licence fee, no per-patient charge, no administration.</p>
+    <p><b>A great deal is free.</b> Information sheets, the S.H.F.T.™ card, the C³ Loop™ practice and the Capacity Check need no purchase at all — <a href="ef-health-resources.html" style="color:var(--accent);text-decoration:none">browse the library</a>.</p>
+  </div>
+</div>
+
+<div class="efgp-cta efgp-anim">
+  <div><h3>Want cards for your rooms?</h3>
+  <p>Printed patient cards and a one-page GP sheet are free — tell me how many you need and where to send them.</p></div>
+  <div class="cta-row">
+    <a class="btn solid" href="mailto:consultant@sarahanticich.co.nz?subject=Gut%20Sense%20—%20patient%20cards%20for%20our%20practice">Request cards →</a>
+    <a class="btn line" href="downloads/gut-sense-gp-sheet.pdf" download>GP sheet (PDF) →</a>
+  </div>
+</div>
+</div></section>
+
+<!-- ===================== FAQs ===================== -->
+<section class="cream" id="faqs" style="padding-top:0"><div class="wrap">
+<div class="eyebrow efgp-anim">Questions from GPs</div>
+<h2 class="efgp-anim">Before you <em>hand it over.</em></h2>
+<div class="efgp-faq">
+  <details open><summary>Which patients is this for?</summary><div class="ab">Patients with a DGBI — IBS, functional dyspepsia, chronic nausea, functional constipation or motility disorders — whose investigation is complete and whose findings do not account for their symptom burden. It is most useful where symptom hypervigilance, health anxiety or food-related anxiety are prominent.</div></details>
+  <details><summary>Who shouldn't be given it?</summary><div class="ab">Patients with unexplained red-flag features, incomplete investigation, active eating-disorder symptoms or acute mental-health risk are better served by clinician-led care — either your own onward referral or the EF Health referral pathway.</div></details>
+  <details><summary>Is this therapy?</summary><div class="ab">No. It is structured self-management education. It does not create a psychologist–client relationship, is not a substitute for assessment or treatment, and carries no clinical record. Patients who need therapy are directed to seek it.</div></details>
+  <details><summary>Does anything come back to me?</summary><div class="ab">No. There is no referral, no report, no invoice and no patient data flowing to your practice. If you would like clinician-led care with progress updates instead, use the standard referral pathway.</div></details>
+  <details><summary>What if the patient can't afford it?</summary><div class="ab">The free library covers a great deal — information sheets on DGBI, hypervigilance, regulation and food anxiety, plus the S.H.F.T.™ card, the C³ Loop™ practice, the Zone Check-In and the Capacity Check. Hand over the card and point them there; nothing is gated, and many patients get real traction from the free material alone.</div></details>
+  <details><summary>Can I still refer patients as usual?</summary><div class="ab">Yes, and you should wherever clinician-led care is indicated. This sits alongside the referral pathway, not in place of it — it broadens what is available to the much larger group of patients for whom a full clinical episode is not the right fit.</div></details>
+</div>
+</div></section>
+
+<!-- ===================== CLOSE ===================== -->
+<section class="navy close" id="start"><div class="wrap" style="text-align:center">
+<div class="eyebrow" style="justify-content:center">Start where your patient is</div>
+<h2>One card. One line in a letter.</h2>
+<p class="lead" style="margin:0 auto">That is the whole of it on your side — and your patient walks out with a complete programme in hand.</p>
+<div class="cta-row" style="justify-content:center">
+  <a class="btn solid" href="health-dgbi.html">See the programme →</a>
+  <a class="btn line" href="downloads/gut-sense-gp-sheet.pdf" download>GP sheet (PDF) →</a>
+  <a class="btn line" href="ef-health-referral.html">Make a referral →</a>
+  <a class="btn line" href="enquire.html">Contact →</a>
+</div>
+<div class="tagline">Human first. Then performance.</div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+<hr class="foot-rule">
+<div class="foot-grid">
+<div class="fcol">
+<h4 class="fbrand"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup></h4>
+<p class="fdesc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
+<p class="floc">Auckland · Christchurch · Queenstown · Telehealth available</p>
+<p><a class="fmail" href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></p>
+<p class="ftag">Human first. Then performance.</p>
+</div>
+<div class="fcol">
+<div class="fl">The Nine Arms</div>
+<p class="farms"><a class="acc" href="health.html">EF|Health</a> · <a href="elite.html">EF|Elite</a> · <a href="corporate.html">EF|Corporate</a> · <a href="law.html">EF|Law</a> · <a href="women.html">EF|Women</a> · <a href="neurodiversity.html">EF|Neurodiversity</a> · <a href="family.html">EF|Family</a> · <a href="education.html">EF|Education</a> · <a href="consulting.html">C³|Consulting</a></p>
+<p class="flinks2"><a href="enquire.html">Make a referral</a> · <a href="why.html">Why it works</a> · <a href="partners.html">Partner organisations</a></p>
+</div>
+<div class="fcol">
+<div class="fl">Practice</div>
+<h4 class="fname">Dr Sarah Anticich</h4>
+<p class="fcred acc">PhD, MAPS, MNZCCP</p>
+<p class="fital">Clinical Psychologist</p>
+<p class="fital">Industrial / Organisational Psychologist</p>
+<p class="fmuted">Sarah Anticich Consulting</p>
+<p class="fmuted">© 2026 — All rights reserved.</p>
+<p class="flinks2"><a href="enquire.html">Contact</a> · <a href="enquire.html">Referrals</a> · <a href="enquire.html">Privacy</a></p>
+</div>
+</div>
+<div class="foot-base">Site by Anticich Consulting · Built with care.</div>
+</div></footer>
+
+<script src="site.js" defer></script>
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.efgp-anim'));
+  if(els.length){
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.08});
+      els.forEach(function(el){io.observe(el);});
+      setTimeout(function(){els.forEach(function(el){el.classList.add('in');});},1600);
+    } else { els.forEach(function(el){el.classList.add('in');}); }
+  }
+  var btn=document.getElementById('efgp-copy'), snip=document.getElementById('efgp-snippet');
+  if(btn&&snip){btn.addEventListener('click',function(){
+    var t=snip.textContent.trim();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o;},1600);});
+    }
+  });}
+})();
+</script>
+</body></html>

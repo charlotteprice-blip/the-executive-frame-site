@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EF|Health smart referral — refer a patient to the MacMurray Clinic DGBI psychology pathway.">
 <title>EF Health — Smart Referral Form | MacMurray Clinic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#15212D; --blueprint:#16243A;
+  --navy:#16243A; --blueprint:#16243A;
   --paper:#F4F6F8; --hairline:#E4E8EC; --white:#fff;
-  --ivory:#ECE6D8; --gold:#C9A063; --powder:#9FB8D6; --slatec:#93A4BC;
-  --ink:#15212D; --body:#3B4757; --muted:#6B7788; --health:#5B8A80;
+  --ivory:#ECE6D8; --gold:#8AA79B; --powder:#9FB8D6; --slatec:#93A4BC;
+  --ink:#16243A; --body:#3B4757; --muted:#6B7788; --health:#5B8A80;
   --card-border:rgba(159,184,214,.16); --card-fill:rgba(159,184,214,.03);
   --radius:10px; --radius-sm:8px; --radius-lg:14px;
 }
@@ -69,10 +70,10 @@ body{background:var(--paper)}
   letter-spacing:0;text-transform:none;font-weight:400;line-height:1.7}
 
 .intro-box,.note-box{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
-  padding:22px 26px;margin:22px 0;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+  padding:22px 26px;margin:22px 0;box-shadow:0 2px 10px rgba(22,36,58,.05)}
 .intro-box p{font-size:14px;line-height:1.75;color:var(--body);margin-bottom:10px}
 .intro-box p:last-child{margin-bottom:0}
-.privacy-note,.emerg-note{background:rgba(201,160,99,.07);border:1px solid rgba(201,160,99,.35);
+.privacy-note,.emerg-note{background:rgba(110,158,134,.07);border:1px solid rgba(110,158,134,.35);
   border-left:3px solid var(--gold);border-radius:8px;padding:18px 22px;margin:20px 0;
   font-size:13px;line-height:1.7;color:var(--body)}
 .privacy-note strong,.emerg-note strong{color:var(--ink);font-weight:600}
@@ -89,7 +90,7 @@ body{background:var(--paper)}
 
 /* ---------- Fields ---------- */
 .form-card{background:var(--white);border:1px solid var(--hairline);border-radius:10px;
-  padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 10px rgba(21,33,45,.05)}
+  padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 10px rgba(22,36,58,.05)}
 .field-group{margin-bottom:20px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
 .field-row.single{grid-template-columns:1fr}
@@ -108,7 +109,7 @@ textarea{min-height:92px;resize:vertical;line-height:1.65}
   line-height:1.6;color:var(--body);cursor:pointer;transition:.15s}
 .check-item:hover{border-color:var(--health)}
 .check-item input{margin-top:3px;accent-color:var(--health);flex:none}
-.check-item.warning{border-left:3px solid var(--gold);background:rgba(201,160,99,.05)}
+.check-item.warning{border-left:3px solid var(--gold);background:rgba(110,158,134,.05)}
 .check-item.danger{border-left:3px solid #B0674F;background:rgba(176,103,79,.06)}
 .check-item.danger:hover{border-color:#B0674F}
 
@@ -155,7 +156,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
 .success-screen h1{margin-bottom:12px}
 </style>
 </head>
-<body>
+<body class="arm-health"><a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div>
@@ -170,7 +171,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
   <div class="progress-label" id="progressLabel">Cover</div>
 </div>
 
-<main class="main">
+<main class="main" id="main">
 
   <!-- COVER -->
   <div class="screen active" id="screen-0">
@@ -209,27 +210,27 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
     <div class="form-card">
       <h3>Referring clinician</h3>
       <div class="field-row">
-        <div class="field-group"><label>Clinician name *</label><input type="text" id="refName" placeholder="Full name"></div>
-        <div class="field-group"><label>Practice / clinic *</label><input type="text" id="refPractice" placeholder="Practice name"></div>
+        <div class="field-group"><label for="refName">Clinician name *</label><input type="text" id="refName" placeholder="Full name"></div>
+        <div class="field-group"><label for="refPractice">Practice / clinic *</label><input type="text" id="refPractice" placeholder="Practice name"></div>
       </div>
       <div class="field-row">
-        <div class="field-group"><label>Profession / role</label><input type="text" id="refRole" placeholder="e.g. GP, Gastroenterologist"></div>
-        <div class="field-group"><label>Contact email</label><input type="email" id="refEmail" placeholder="clinician@practice.com"></div>
+        <div class="field-group"><label for="refRole">Profession / role</label><input type="text" id="refRole" placeholder="e.g. GP, Gastroenterologist"></div>
+        <div class="field-group"><label for="refEmail">Contact email</label><input type="email" id="refEmail" placeholder="clinician@practice.com"></div>
       </div>
     </div>
 
     <div class="form-card">
       <h3>Participant details</h3>
       <div class="field-row">
-        <div class="field-group"><label>Participant full name *</label><input type="text" id="ptName" placeholder="Full name"></div>
-        <div class="field-group"><label>Date of birth *</label><input type="date" id="ptDOB"></div>
+        <div class="field-group"><label for="ptName">Participant full name *</label><input type="text" id="ptName" placeholder="Full name"></div>
+        <div class="field-group"><label for="ptDOB">Date of birth *</label><input type="date" id="ptDOB"></div>
       </div>
       <div class="field-row">
-        <div class="field-group"><label>Contact phone</label><input type="tel" id="ptPhone" placeholder="Phone number"></div>
-        <div class="field-group"><label>Contact email</label><input type="email" id="ptEmail" placeholder="patient@email.com"></div>
+        <div class="field-group"><label for="ptPhone">Contact phone</label><input type="tel" id="ptPhone" placeholder="Phone number"></div>
+        <div class="field-group"><label for="ptEmail">Contact email</label><input type="email" id="ptEmail" placeholder="patient@email.com"></div>
       </div>
       <div class="field-row">
-        <div class="field-group"><label>Participant type</label>
+        <div class="field-group"><label for="ptType">Participant type</label>
           <select id="ptType">
             <option value="">Select</option>
             <option>Adult (18+)</option>
@@ -238,7 +239,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
             <option>Family unit — family-level assessment</option>
           </select>
         </div>
-        <div class="field-group"><label>Referral date</label><input type="date" id="referralDate"></div>
+        <div class="field-group"><label for="referralDate">Referral date</label><input type="date" id="referralDate"></div>
       </div>
     </div>
 
@@ -272,13 +273,13 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
       <h3>Primary reason for referral</h3>
       <div class="field-row single">
         <div class="field-group">
-          <label>What is the clinician most hoping EF Health will address?</label>
+          <label for="referralReason">What is the clinician most hoping EF Health will address?</label>
           <textarea id="referralReason" placeholder="Describe the primary concern driving this referral…" style="min-height:100px;"></textarea>
         </div>
       </div>
       <div class="field-row">
         <div class="field-group">
-          <label>Duration of current presentation</label>
+          <label for="duration">Duration of current presentation</label>
           <select id="duration">
             <option value="">Select</option>
             <option>Under 3 months</option>
@@ -311,13 +312,13 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
       <h3>Current supports and previous psychology</h3>
       <div class="field-row single">
         <div class="field-group">
-          <label>Current treatments and supports in place</label>
+          <label for="currentSupports">Current treatments and supports in place</label>
           <textarea id="currentSupports" placeholder="Medical, dietary, pharmacological, psychological…"></textarea>
         </div>
       </div>
       <div class="field-row single">
         <div class="field-group">
-          <label>Previous psychological or program involvement</label>
+          <label for="prevPsych">Previous psychological or program involvement</label>
           <textarea id="prevPsych" placeholder="Any previous psychology, mental health care plans, or structured programs…"></textarea>
         </div>
       </div>
@@ -374,7 +375,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
       </div>
       <div class="field-row single" style="margin-top:14px;">
         <div class="field-group">
-          <label>Additional clinical notes — Section C</label>
+          <label for="riskNotes">Additional clinical notes — Section C</label>
           <textarea id="riskNotes" placeholder="Any additional context on risk or urgency…"></textarea>
         </div>
       </div>
@@ -449,7 +450,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
       <h3>Motivation and readiness</h3>
       <div class="field-row single">
         <div class="field-group">
-          <label>What does the person hope to gain from this program?</label>
+          <label for="motivation">What does the person hope to gain from this program?</label>
           <textarea id="motivation" placeholder="Referrer's understanding or direct quote from patient if available…"></textarea>
         </div>
       </div>
@@ -514,7 +515,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
       <h3>Delivery preferences</h3>
       <div class="field-row">
         <div class="field-group">
-          <label>Preferred delivery mode</label>
+          <label for="deliveryMode">Preferred delivery mode</label>
           <select id="deliveryMode">
             <option value="">Select</option>
             <option>In-person — MacMurray Clinic</option>
@@ -524,7 +525,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
           </select>
         </div>
         <div class="field-group">
-          <label>Individual or family delivery</label>
+          <label for="deliveryType">Individual or family delivery</label>
           <select id="deliveryType">
             <option value="">Select</option>
             <option>Individual</option>
@@ -540,7 +541,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
       <h3>Clinical handover notes</h3>
       <div class="field-row single">
         <div class="field-group">
-          <label>Specific information, sensitivities, or recommendations for the intake clinician</label>
+          <label for="handoverNotes">Specific information, sensitivities, or recommendations for the intake clinician</label>
           <textarea id="handoverNotes" placeholder="Any clinical context important for the EF Health clinician to know at intake…" style="min-height:100px;"></textarea>
         </div>
       </div>
@@ -592,11 +593,11 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
     <div class="form-card">
       <h3>Referrer confirmation</h3>
       <div class="field-row">
-        <div class="field-group"><label>Referrer name (confirm) *</label><input type="text" id="confirmName" placeholder="Your full name"></div>
-        <div class="field-group"><label>Date *</label><input type="date" id="confirmDate"></div>
+        <div class="field-group"><label for="confirmName">Referrer name (confirm) *</label><input type="text" id="confirmName" placeholder="Your full name"></div>
+        <div class="field-group"><label for="confirmDate">Date *</label><input type="date" id="confirmDate"></div>
       </div>
       <div class="field-row single">
-        <div class="field-group"><label>Provider number (optional)</label><input type="text" id="providerNum" placeholder="Provider number if applicable"></div>
+        <div class="field-group"><label for="providerNum">Provider number (optional)</label><input type="text" id="providerNum" placeholder="Provider number if applicable"></div>
       </div>
     </div>
 
@@ -615,7 +616,7 @@ footer div:last-child,.footer-mark+div{font-size:9.5px;letter-spacing:.16em;
       <p>Thank you. The referral for <strong id="successName"></strong> has been received by the EF Health intake team at MacMurray Clinic.</p>
       <br>
       <p>The team will contact the patient directly within the timeframe indicated by the priority level you selected. A copy of this referral is recorded in the clinical system.</p>
-      <div id="submitStatusMsg" style="margin-top:20px;font-size:13px;color:var(--slate-light);font-family:'Montserrat',sans-serif;"></div>
+      <div id="submitStatusMsg" style="margin-top:20px;font-size:13px;color:var(--slate-light);font-family:'Inter',sans-serif;"></div>
     </div>
   </div>
 

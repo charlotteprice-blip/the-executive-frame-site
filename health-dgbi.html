@@ -3,10 +3,10 @@
 <link rel="canonical" href="https://executiveframe.co.nz/health-dgbi">
 <meta name="description" content="Integrated psychological care for disorders of gut–brain interaction. Referral, intake, programme, resource library, workbooks, eLearning and clinician information — the complete EF Health hub.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <script>document.documentElement.classList.add('reveal-on')</script>
-<style>:root{--accent:#6E9E86;--accent-ink:#0E1A14}</style>
+
 <!-- ============================================================
      EF HEALTH — DGBI HUB  ·  scoped redesign styles (efx-/rlib-)
      Reuses site.css tokens, type and section themes.
@@ -68,8 +68,10 @@ html{scroll-behavior:smooth}
 
 /* --- large pathway cards --- */
 .efx-pathways{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:46px}
+@media(max-width:640px){.efx-pathways{grid-template-columns:minmax(0,1fr)!important}.efx-path{min-width:0;padding:26px 22px}.efx-path .ce{white-space:normal;letter-spacing:.12em}}
+@media(min-width:641px) and (max-width:900px){.efx-pathways{grid-template-columns:repeat(2,1fr)!important}}
 .efx-path{display:flex;flex-direction:column;background:var(--navy-2);border:1px solid var(--line-navy);border-radius:10px;padding:32px 30px;transition:transform .25s,border-color .25s,box-shadow .25s}
-.efx-path:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 24px 50px -30px rgba(0,0,0,.6)}
+.efx-path:hover{transform:translateY(-1px);border-color:var(--accent);box-shadow:0 10px 24px -18px rgba(0,0,0,.5)}
 .efx-path .efx-ic{width:48px;height:48px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(110,158,134,.16);color:var(--accent);margin-bottom:20px}
 .efx-path .efx-ic svg{width:25px;height:25px}
 .efx-path .ce{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
@@ -106,7 +108,7 @@ html{scroll-behavior:smooth}
 .rlib-card .sum{font-size:13px;line-height:1.55;color:var(--ink-soft);flex:1}
 .rlib-meta{display:flex;flex-wrap:wrap;gap:6px;margin:15px 0 4px}
 .rlib-tag{font-size:10px;font-weight:600;letter-spacing:.03em;padding:4px 9px;border-radius:4px;background:var(--cream-2);color:var(--slate-muted);white-space:nowrap}
-.rlib-tag.free{background:rgba(110,158,134,.16);color:#3f6b54}
+.rlib-tag.free{background:rgba(110,158,134,.16);color:#4E6A60}
 .rlib-tag.paid{background:rgba(232,160,106,.20);color:#9a5a24}
 .rlib-tag.aud{background:var(--cream-2);color:var(--ink-soft)}
 .rlib-related{font-size:11.5px;color:var(--slate-muted);margin-top:12px;line-height:1.5}
@@ -253,9 +255,9 @@ html{scroll-behavior:smooth}
 .rlib-tag + .rlib-tag::before{content:"·";margin:0 8px;color:var(--line-cream)}
 .rlib-tag.aud{color:var(--ink-soft);font-weight:600}
 .rlib-tag.free{display:none}                 /* free is the library default — implied, not labelled */
-.rlib-tag.paid{color:#8a6a2e;font-weight:600}
+.rlib-tag.paid{color:#5A6670;font-weight:600}
 /* — fewer borders, gentle lift, more breathing room — */
-.rlib-card,.efx-step,.efx-week,.efx-freecard{border-color:#EEE9E0;box-shadow:0 1px 3px rgba(20,28,37,.04)}
+.rlib-card,.efx-step,.efx-week,.efx-freecard{border-color:#E3E9EC;box-shadow:0 1px 3px rgba(20,28,37,.04)}
 .rlib-card{padding:26px 24px}
 .rlib-grid{gap:24px;margin-top:24px}
 .efx-freegrid{gap:20px}
@@ -280,10 +282,10 @@ html{scroll-behavior:smooth}
 </style><style id="efx-sections">
 /* EXPERIENCE PASS — editorial section rhythm, colour moments, whitespace */
 :root{--cream:#FFFFFF;--cream-2:#F2F0EB;--cream-tint:#F5F2EC;
-      --sage-pale:#EDF3EF;--info-pale:#EEF2F7;--paper-soft:#F6F2EA}
+      --sage-pale:#ECF2EF;--info-pale:#EEE6D8;--paper-soft:#FCFDFE}
 .cream{background:#FFFFFF}                         /* default light chapter = pure white */
 .cream.sec-paper{background:var(--paper-soft)}
-.cream.sec-sage{background:linear-gradient(180deg,#EFF5F0,#E8F0EA)}
+.cream.sec-sage{background:linear-gradient(180deg,#EEF3F1,#E5EDEA)}
 .cream.sec-info{background:var(--info-pale)}
 section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
 .navy{border-top:1px solid rgba(255,255,255,.06)}
@@ -293,47 +295,49 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
   box-shadow:0 1px 3px rgba(20,28,37,.05),0 16px 36px -24px rgba(20,28,37,.16)}
 /* colour-coded pathways — subtle identity per route */
 .efx-path{border-top:3px solid transparent}
-.efx-pathways .efx-path:nth-of-type(1){border-top-color:#6E9E86}
-.efx-pathways .efx-path:nth-of-type(2){border-top-color:#9FB8D6}
-.efx-pathways .efx-path:nth-of-type(3){border-top-color:#C9A063}
-.efx-pathways .efx-path:nth-of-type(4){border-top-color:#4E9E93}
-.efx-pathways .efx-path:nth-of-type(5){border-top-color:#517463}
+.efx-pathways .efx-path:nth-of-type(1){border-top-color:#789589}
+.efx-pathways .efx-path:nth-of-type(2){border-top-color:#93ABA1}
+.efx-pathways .efx-path:nth-of-type(3){border-top-color:#5B7268}
+.efx-pathways .efx-path:nth-of-type(4){border-top-color:#44574F}
+.efx-pathways .efx-path:nth-of-type(5){border-top-color:#B7C9C2}
 .efx-pathways .efx-path.wide{border-top-color:transparent}
 </style>
 </head>
-<body><div class="grain"></div>
+<body class="arm-health"><a class="skip" href="#main">Skip to content</a><div class="grain"></div>
 <div class="efx-progress" aria-hidden="true"><span id="efx-rp"></span></div>
 <nav class="nav"><div class="bar">
-<a class="brand" href="/">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
-<div class="links">
-<a class="l" href="/">What</a><a class="l" href="why">Why</a><a class="l" href="how">How</a><a class="l" href="about-sarah">About Sarah</a>
-<div class="dd"><a class="l" href="#">Programmes ▾</a><div class="dd-menu">
-<a href="law">EF Law</a><a class="sub" href="law-family">↳ EF Law — Family</a>
-<a href="health">EF Health</a><a class="sub" href="health-dgbi">↳ EF Health — DGBI</a><a class="sub" href="health-elearning">↳ EF Health — eLearning</a>
-<a href="corporate">EF Corporate</a><a href="elite">EF Elite</a><a href="women">EF Women</a>
-<a href="neurodiversity">EF Neurodiversity</a><a href="family">EF Family</a><a href="consulting">C³ Consulting</a>
+<a class="brand" href="/"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup><span class="tg">Human first. Then performance.</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="efnav" aria-label="Menu">Menu</button><div class="links" id="efnav">
+<a class="l" href="index.html">What</a><a class="l" href="why.html">Why</a><a class="l" href="how.html">How</a>
+<div class="dd"><button class="l ddbtn" aria-expanded="false" aria-haspopup="true">Programmes ▾</button><div class="dd-menu">
+<a href="law.html">EF|Law</a><a class="sub" href="law-family.html">↳ EF|Law — Family</a>
+<a href="health.html">EF|Health</a><a class="sub" href="health-dgbi.html">↳ EF|Health — DGBI</a>
+<a href="corporate.html">EF|Corporate</a><a href="elite.html">EF|Elite</a><a href="women.html">EF|Women</a>
+<a href="neurodiversity.html">EF|Neurodiversity</a><a href="family.html">EF|Family</a><a href="education.html">EF|Education</a><a href="consulting.html">C³ Consulting</a>
 </div></div>
-<a class="l" href="resources">Resources</a><a class="l" href="partners">Partners</a>
-<a class="l intake" href="ef-health-intake">Intake →</a>
+<a class="l" href="resources.html">Resources</a><a class="l" href="consulting.html">For organisations</a><a class="l" href="about-sarah.html">About Sarah</a>
+<a class="l intake" href="intake.html">Intake →</a>
 </div></div></nav>
 
 <!-- section shortcut bar -->
 <div class="efx-bar"><div class="wrap">
-<a class="lead-link" href="ef-health-resources">Resources for you &amp; your patients</a>
-<a href="#how">How it works</a>
-<a href="#pathways">Pathways</a>
+<a class="lead-link" href="ef-health-resources.html">Resources for you &amp; your patients</a>
+<a href="#start-free">Start free</a>
 <a href="#products">Products</a>
+<a href="#self-paced-programme">Self-paced</a>
+<a href="#pathways">Clinical pathways</a>
 <a href="#programme">Programme</a>
 <a href="#referrers">For referrers</a>
+<a href="health-dgbi-gp.html">For GPs</a>
 <a href="#faqs">FAQs</a>
 </div></div>
 
-<main><!-- ===================== HERO ===================== -->
-<section class="hero navy" id="top"><div class="wrap"><div class="grid"><div>
+<main id="main"><!-- ===================== HERO ===================== -->
+<section class="hero hero-wash" id="top"><div class="wrap"><div class="grid"><div>
 <div class="eyebrow" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-1">EF Health · DGBI · for patients &amp; referrers</div>
 <h1><span data-editable="source" data-path="/health-dgbi.html" data-key="page-title-1-t1">Integrated psychological care </span><em data-editable="source" data-path="/health-dgbi.html" data-key="page-title-1-e1">for disorders of gut–brain interaction.</em></h1>
 <p class="lead">The complete EF Health hub — referral, intake, programme, resources, workbooks and eLearning in one calm place. A psychologically informed gut–brain programme delivered in partnership with the <em>MacMurray Centre</em>, working alongside your medical care.</p>
-<div class="cta-row"><a class="btn solid" href="ef-health-intake" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-1">Start intake →</a><a class="btn line" href="ef-health-referral" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-2">Make a referral →</a><a class="btn line" href="ef-assessment-health" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-3">Take the Capacity Check →</a></div>
+<div class="cta-row"><a class="btn solid" href="ef-health-intake.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-1">Start intake →</a><a class="btn line" href="ef-health-referral.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-2">Make a referral →</a><a class="btn line" href="ef-assessment-health.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-3">Take the Capacity Check →</a></div>
 <p style="font-size:12px;line-height:1.6;color:var(--slate);margin-top:14px;max-width:590px">EF Health works alongside your medical care and is <b style="color:var(--slate-light)">not a crisis service</b>. In an emergency, call <b style="color:var(--slate-light)">111</b> (NZ). Referred by a clinician? Your intake takes about 10 minutes. New here and not yet referred? Ask your GP or gastroenterologist for a referral, or explore the EF Health Self-Paced Programme below.</p>
 <div class="efx-hero-note">
 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>Works alongside medical care</span>
@@ -342,21 +346,57 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
 </div>
 <div class="efx-hero-note" style="margin-top:14px">
 <a class="l" href="#pathways" style="color:var(--accent);font-weight:600;font-size:12px;letter-spacing:.03em;text-decoration:none">Explore the programme →</a>
-<a class="l" href="ef-health-resources" style="color:var(--accent);font-weight:600;font-size:12px;letter-spacing:.03em;text-decoration:none">Browse the library →</a>
+<a class="l" href="ef-health-resources.html" style="color:var(--accent);font-weight:600;font-size:12px;letter-spacing:.03em;text-decoration:none">Browse the library →</a>
 </div>
-</div><div class="loop-wrap"><svg class="loop" viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg" aria-label="The C3 Loop">
-<g fill="none" stroke="#8B95A1" stroke-opacity="0.20" stroke-width="1"><circle cx="180" cy="190" r="150"/><circle cx="180" cy="190" r="104"/></g>
-<g><circle cx="180" cy="40" r="5" fill="#8B95A1"/><circle cx="287" cy="297" r="5" fill="#8B95A1"/><circle cx="73" cy="297" r="5" fill="#8B95A1"/>
-<animateTransform attributeName="transform" type="rotate" from="0 180 190" to="360 180 190" dur="64s" repeatCount="indefinite"/></g>
-<g>
-<polygon points="180,108 126,256 180,242" fill="#6E9E86"/><polygon points="180,108 180,242 234,256" fill="#517463"/><polygon points="126,256 234,256 180,242" fill="#374F43"/>
-<line x1="180" y1="108" x2="180" y2="242" stroke="#88AF9B" stroke-width="1" opacity="0.5"/>
-<circle cx="180" cy="108" r="4" fill="#fff"><animate attributeName="opacity" values="1;0.45;1" dur="4.5s" repeatCount="indefinite"/></circle>
-<animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" keyTimes="0;0.5;1" dur="7.5s" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" repeatCount="indefinite"/></g>
-<ellipse cx="180" cy="258" rx="58" ry="7" fill="#121C25" opacity="0.5"><animate attributeName="rx" values="58;52;58" dur="7.5s" repeatCount="indefinite"/></ellipse>
-<text x="180" y="22" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CENTRE</text>
-<text x="300" y="330" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CLARIFY</text>
-<text x="60" y="330" text-anchor="middle" font-family="Inter" font-size="12" letter-spacing="2.5" fill="#8B95A1">CHOOSE</text></svg></div></div></div></section>
+</div><div class="loop-wrap"><div class="diagram-panel"><img class="loop mkfig" src="images/brand/ef-c3-loop-diagram.png" alt="The C³ Loop™ — Centre · Clarify · Choose" style="width:100%;max-width:280px"></div></div></div></div></section>
+
+<!-- ===================== THREE DOORS ===================== -->
+<section class="cream" id="choose-your-door" style="padding:64px 0"><div class="wrap">
+<div class="eyebrow efx-anim">Where would you like to start?</div>
+<h2 class="efx-anim" style="font-size:clamp(26px,3.4vw,38px)"><span>Three doors. </span><em>Walk through the right one.</em></h2>
+<div class="efx-pathways" style="grid-template-columns:repeat(3,1fr);margin-top:38px">
+  <div class="efx-path efx-anim" style="background:#fff;border-color:var(--line-cream)">
+    <div class="ce">For myself</div>
+    <h3 style="color:var(--ink)">I'm looking for support for myself</h3>
+    <p style="color:var(--ink-soft)">Start with the free tools below, take the Capacity Check, or work through the toolkit and workbook at your own pace — no referral needed for any of it.</p>
+    <a class="efx-link" href="#start-free">Start free →</a>
+  </div>
+  <div class="efx-path efx-anim" style="background:#fff;border-color:var(--line-cream)">
+    <div class="ce">Referred</div>
+    <h3 style="color:var(--ink)">I've been referred and want to begin</h3>
+    <p style="color:var(--ink-soft)">Your intake takes about ten minutes. A psychologist reviews it, confirms your pathway, and you'll know your next step quickly.</p>
+    <a class="efx-link" href="ef-health-intake.html">Complete your intake →</a>
+  </div>
+  <div class="efx-path efx-anim" style="background:#fff;border-color:var(--line-cream)">
+    <div class="ce">Clinician</div>
+    <h3 style="color:var(--ink)">I'm a clinician referring a patient</h3>
+    <p style="color:var(--ink-soft)">The secure Smart Referral takes 10–12 minutes, and with consent you'll receive brief, practical updates throughout care.</p>
+    <a class="efx-link" href="#referrers">How referral works →</a>
+  </div>
+</div>
+</div></section>
+
+<!-- ===================== FREE RESOURCES HIGHLIGHT ===================== -->
+<section class="cream sec-sage" id="start-free"><div class="wrap">
+<div class="efx-free efx-anim">
+<div class="eyebrow" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-4">Free to start today</div>
+<h2 style="font-size:clamp(28px,3.6vw,40px)"><span data-editable="source" data-path="/health-dgbi.html" data-key="section-title-3-t1">Six things you can use </span><em data-editable="source" data-path="/health-dgbi.html" data-key="section-title-3-e1">right now.</em></h2>
+<p class="lead" style="margin-top:16px" data-editable="source" data-path="/health-dgbi.html" data-key="body-text-3">No account, no purchase. Download, print, or share these with patients and whānau.</p>
+<div class="efx-freegrid">
+  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h4"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-1">Information sheets</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-5">Plain-language explainers on DGBI, hypervigilance, regulation and food anxiety.</p><a href="ef-health-resources.html">Browse sheets →</a></div>
+  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 1-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 1 5.3-5.3z"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-2">Starter toolkit</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-6">A short bundle of the most useful first practices, in one download.</p><a href="downloads/ef-health-free-starter-bundle.pdf" download>Download →</a></div>
+  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 3l-3 3M12 3l3 3"/><rect x="4" y="9" width="16" height="12" rx="2"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-3">S.H.I.F.T.™ Card</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-7">Stop · Hold · Focus · Take Action — a pocket reset for flares.</p><a href="downloads/ef-health-shift-protocol-card.pdf" download>Download →</a></div>
+  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-4">C³ Loop™</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-8">A three-minute daily reset — Centre, Clarify, Choose.</p><a href="downloads/ef-health-c3-loop-daily-practice.pdf" download>Download →</a></div>
+  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-5">Zone Check-In</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-9">Green · Yellow · Red — catch a flare early with a weekly grid.</p><a href="downloads/ef-health-zone-check-in.pdf" download>Download →</a></div>
+  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-6">Take the Capacity Check</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-10">A short, private self-assessment to orient you to the right support.</p><a href="ef-assessment-health.html">Take the Capacity Check →</a></div>
+</div>
+</div>
+<div class="efx-cta on-cream efx-anim" style="margin-top:40px">
+  <div><h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-8">Prefer to learn first?</h3><p data-editable="source" data-path="/health-dgbi.html" data-key="text-11">Start with the free resources, or work through the whole programme at your own pace.</p></div>
+  <div class="cta-row"><a class="btn solid" href="ef-health-resources.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-8">Browse the full library →</a><a class="btn line" href="#self-paced-programme" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-9">Self-paced programme →</a></div>
+</div>
+</div><p style="margin-top:26px"><a class="btn line" href="ef-health-resources.html">Browse the full patient resource library →</a></p></section>
+
 <!-- ===================== HOW IT WORKS ===================== -->
 <section class="cream" id="how"><div class="wrap">
 <div class="eyebrow efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-2">How EF Health works</div>
@@ -373,13 +413,13 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
 </div>
 <div class="efx-cta on-cream efx-anim" style="margin-top:52px">
   <div><h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-1">Ready to begin?</h3><p data-editable="source" data-path="/health-dgbi.html" data-key="text-1">Already referred? Complete your intake. Not yet referred? Make an enquiry, or ask your GP or gastroenterologist to refer you. Not sure yet? The Capacity Check helps orient you first.</p></div>
-  <div class="cta-row"><a class="btn solid" href="ef-health-intake" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-4">Complete your intake →</a><a class="btn line" href="enquire" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-5">Make an enquiry →</a><a class="btn line" href="ef-assessment-health" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-6">Take the Capacity Check →</a></div>
+  <div class="cta-row"><a class="btn solid" href="ef-health-intake.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-4">Complete your intake →</a><a class="btn line" href="enquire.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-5">Make an enquiry →</a><a class="btn line" href="ef-assessment-health.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-6">Take the Capacity Check →</a></div>
 </div>
 </div></section>
 
 <!-- ===================== WHICH PATHWAY ===================== -->
 <section class="cream" id="pathways"><div class="wrap">
-<div class="eyebrow efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-3">Intervention pathways</div>
+<div class="eyebrow efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-3">Clinical support pathways</div>
 <h2 class="efx-anim"><span data-editable="source" data-path="/health-dgbi.html" data-key="section-title-2-t1">One stepped-care system. </span><em data-editable="source" data-path="/health-dgbi.html" data-key="section-title-2-e1">Five responsive pathways.</em></h2>
 <p class="lead efx-kicker efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="body-text-2">Everyone begins with EF Health Foundations, then continues on the pathway confirmed for them — all on the same Executive Frame™ sequence: Centre, Clarify, Choose. Together the pathways form one stepped-care system; final pathway allocation follows review and clinical acceptance.</p>
 <div class="efx-pathways">
@@ -405,7 +445,7 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
     <h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-4">EF Health Self-Paced Programme</h3>
     <p>Short digital modules, reflection prompts and downloadable tools — between-session reinforcement or a standalone, lower-support pathway. An <em>educational resource, not clinical care</em>; it doesn't create a psychologist–client relationship.</p>
     <div class="efx-meta"><span><b>Format:</b> Online · self-paced</span><span><b>Best for:</b> Flexibility &amp; independence</span></div>
-    <a class="efx-link" href="health-elearning">View self-paced learning →</a>
+    <a class="efx-link" href="#self-paced-programme">View the Self-Paced Programme →</a>
   </div>
   <div class="efx-path efx-anim">
     <div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M5 20c0-3.3 3-6 7-6s7 2.7 7 6"/></svg></div>
@@ -413,7 +453,7 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
     <h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-5">EF Health Individual Pathway</h3>
     <p data-editable="source" data-path="/health-dgbi.html" data-key="text-3">One-to-one clinical sessions for complex presentations, significant comorbidities, or where group pathways aren't appropriate — drawing on CBT, ACT, CFT, gut-directed hypnotherapy and motivational interviewing.</p>
     <div class="efx-meta"><span><b>Format:</b> In-person / telehealth</span><span><b>Best for:</b> Tailored, higher-need care</span></div>
-    <a class="efx-link" href="ef-health-intake">Start with an intake →</a>
+    <a class="efx-link" href="ef-health-intake.html">Start with an intake →</a>
   </div>
   <div class="efx-path efx-anim">
     <div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -429,60 +469,64 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
       <h3 style="margin-bottom:6px" data-editable="source" data-path="/health-dgbi.html" data-key="card-title-7">Take the Capacity Check</h3>
       <p style="color:var(--slate-light);font-size:14px;line-height:1.6">A short, private self-assessment that helps orient you to the right level of support — educational, not a diagnosis, and your pathway is always confirmed by a clinician. Clinicians: see <a href="#referrers" style="color:var(--accent);text-decoration:none">information for referrers</a>.</p>
     </div>
-    <div class="cta-row"><a class="btn solid" href="ef-assessment-health" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-7">Take the Capacity Check →</a></div>
+    <div class="cta-row"><a class="btn solid" href="ef-assessment-health.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-7">Take the Capacity Check →</a></div>
   </div>
-</div>
-</div></section>
-<!-- ===================== FREE RESOURCES HIGHLIGHT ===================== -->
-<section class="cream sec-sage" style="padding-top:0"><div class="wrap">
-<div class="efx-free efx-anim">
-<div class="eyebrow" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-4">Free to start today</div>
-<h2 style="font-size:clamp(28px,3.6vw,40px)"><span data-editable="source" data-path="/health-dgbi.html" data-key="section-title-3-t1">Six things you can use </span><em data-editable="source" data-path="/health-dgbi.html" data-key="section-title-3-e1">right now.</em></h2>
-<p class="lead" style="margin-top:16px" data-editable="source" data-path="/health-dgbi.html" data-key="body-text-3">No account, no purchase. Download, print, or share these with patients and whānau.</p>
-<div class="efx-freegrid">
-  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h4"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-1">Information sheets</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-5">Plain-language explainers on DGBI, hypervigilance, regulation and food anxiety.</p><a href="ef-health-resources">Browse sheets →</a></div>
-  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 1-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 1 5.3-5.3z"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-2">Starter toolkit</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-6">A short bundle of the most useful first practices, in one download.</p><a href="https://drive.google.com/file/d/1cS9H_TMGo7edFpFlpkF-H8eJoIZF1N7l/view?usp=sharing" download>Download →</a></div>
-  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 3l-3 3M12 3l3 3"/><rect x="4" y="9" width="16" height="12" rx="2"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-3">S.H.F.T.™ Card</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-7">Stop · Hold · Focus · Take Action — a pocket reset for flares.</p><a href="https://drive.google.com/file/d/1NGoisoDLwomSICMO__KdZGaUb7lMnbVI/view?usp=sharing" download>Download →</a></div>
-  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-4">C³ Loop™</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-8">A three-minute daily reset — Centre, Clarify, Choose.</p><a href="https://drive.google.com/file/d/1ZgPZpffoTtQn_Z1vUgvA590jryc7Gvl1/view?usp=sharing" download>Download →</a></div>
-  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-5">Zone Check-In</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-9">Green · Yellow · Red — catch a flare early with a weekly grid.</p><a href="https://drive.google.com/file/d/1RIu8V9Ulstcj8IWK3XtzF-znA9pLOrLV/view?usp=sharing" download>Download →</a></div>
-  <div class="efx-freecard"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-6">Take the Capacity Check</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-10">A short, private self-assessment to orient you to the right support.</p><a href="ef-assessment-health">Take the Capacity Check →</a></div>
-</div>
-</div>
-<div class="efx-cta on-cream efx-anim" style="margin-top:40px">
-  <div><h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-8">Prefer to learn first?</h3><p data-editable="source" data-path="/health-dgbi.html" data-key="text-11">Start with the free resources, or work through the whole programme at your own pace.</p></div>
-  <div class="cta-row"><a class="btn solid" href="ef-health-resources" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-8">Browse the full library →</a><a class="btn line" href="health-elearning" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-9">Self-paced programme →</a></div>
 </div>
 </div></section>
 <!-- ===================== DIGITAL PRODUCTS ===================== -->
 <section class="navy" id="products"><div class="wrap">
-<div class="eyebrow efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-5">Digital products</div>
+<div class="eyebrow efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-5">Work through it yourself</div>
 <h2 class="efx-anim"><span data-editable="source" data-path="/health-dgbi.html" data-key="section-title-4-t1">Take the framework </span><em data-editable="source" data-path="/health-dgbi.html" data-key="section-title-4-e1">home.</em></h2>
 <p class="lead efx-kicker efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="body-text-4">Premium, self-contained resources built on the same clinical framework — to use independently, while waiting for support, or between sessions.</p>
 <div class="efx-products">
+  <div class="efx-prod efx-anim">
+    <div class="badge">Toolkit</div>
+    <h3>The Compassionate Gut Toolkit</h3>
+    <p>Respond to gut symptoms without adding fear, self-criticism, or avoidance — real-time reset tools, worksheets, a personal flare plan, and clinician-informed guidance.</p>
+    <div class="price">$49<small> · digital PDF · emailed within five minutes</small></div>
+    <div class="efx-pact"><a class="efx-pbtn solid" href="mailto:admin@sarahanticich.co.nz?subject=Order%3A%20The%20Compassionate%20Gut%20Toolkit&body=Hi%2C%20I%27d%20like%20to%20order%20The%20Compassionate%20Gut%20Toolkit%20(%2449%20digital).%20Please%20send%20payment%20details.">Buy — $49</a></div>
+  </div>
   <div class="efx-prod efx-anim">
     <div class="badge">Workbook</div>
     <h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-9">The EF Health Workbook</h3>
     <p data-editable="source" data-path="/health-dgbi.html" data-key="text-12">The complete self-guided companion — psychoeducation, practices and reflection, structured across the full programme.</p>
     <div class="price">Purchase<small> · price confirmed at checkout</small></div>
-    <div class="efx-pact"><a class="efx-pbtn solid" href="mailto:admin@sarahanticich.co.nz?subject=Order%3A%20The%20EF%20Health%20Workbook&body=Hi%2C%20I%27d%20like%20to%20order%20The%20EF%20Health%20Workbook.%20Please%20send%20payment%20details.">Buy</a><a class="efx-pbtn line" href="https://drive.google.com/file/d/1szOGdv3theXRZkVvu-zB542I3whSvfH1/view?usp=sharing" target="_blank" rel="noopener">Preview</a></div>
+    <div class="efx-pact"><a class="efx-pbtn solid" href="https://buy.stripe.com/7sY7sLgSj4wIcag9md4Ja00?client_reference_id=dgbi-health-workbook" target="_blank" rel="noopener">Buy now — $49 →</a></div>
   </div>
   <div class="efx-prod efx-anim">
     <div class="badge">Toolkit</div>
     <h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-10">The EF Health Tool Library</h3>
     <p data-editable="source" data-path="/health-dgbi.html" data-key="text-13">Eighteen gut–brain tools organised by phase, in a fillable workbook — the practical core of the programme in one place.</p>
     <div class="price">Purchase<small> · price confirmed at checkout</small></div>
-    <div class="efx-pact"><a class="efx-pbtn solid" href="mailto:admin@sarahanticich.co.nz?subject=Order%3A%20The%20EF%20Health%20Tool%20Library&body=Hi%2C%20I%27d%20like%20to%20order%20The%20EF%20Health%20Tool%20Library.%20Please%20send%20payment%20details.">Buy</a><a class="efx-pbtn line" href="https://drive.google.com/file/d/10Zu-AlRm5kQw0Ay56j4etBU5AiipaLZq/view?usp=sharing" target="_blank" rel="noopener">Preview</a></div>
+    <div class="efx-pact"><a class="efx-pbtn solid" href="mailto:admin@sarahanticich.co.nz?subject=Order%3A%20The%20EF%20Health%20Tool%20Library&body=Hi%2C%20I%27d%20like%20to%20order%20The%20EF%20Health%20Tool%20Library.%20Please%20send%20payment%20details.">Buy</a></div>
   </div>
   <div class="efx-prod efx-anim">
     <div class="badge">Self-paced</div>
     <h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-11">EF Health Self-Paced Programme</h3>
     <p data-editable="source" data-path="/health-dgbi.html" data-key="text-14">The full programme delivered as eLearning — seven modules in video, written and audio, worked through at your own pace, with progress tracking and downloadable tools.</p>
     <div class="price">Enrol<small> · 7 modules</small></div>
-    <div class="efx-pact"><a class="efx-pbtn solid" href="health-elearning">Enrol</a><a class="efx-pbtn line" href="health-elearning#preview">Preview</a></div>
+    <div class="efx-pact"><a class="efx-pbtn solid" href="#self-paced-programme">See the programme</a></div>
   </div>
   </div>
-<div class="cta-row efx-anim" style="margin-top:38px"><a class="btn line" href="ef-health-products" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-10">See all products →</a></div>
+<div class="cta-row efx-anim" style="margin-top:38px"><a class="btn line" href="health-dgbi.html#products" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-10">See all products →</a></div>
 </div></section>
+
+<!-- ===================== SELF-PACED PROGRAMME (merged eLearning) ===================== -->
+<section class="cream" id="self-paced-programme"><div class="wrap">
+<div class="eyebrow efx-anim">EF Health — DGBI · Self-Paced Programme</div>
+<h2 class="efx-anim"><span>The full programme, </span><em>at your own pace.</em></h2>
+<p class="lead efx-kicker efx-anim">The EF Health curriculum as structured eLearning — the same framework, calibrated to gut–brain health, worked through wherever and whenever suits you. Between-session reinforcement, or a standalone lower-support pathway.</p>
+<div class="cards" style="margin-top:40px">
+<div class="card efx-anim"><div class="ce">Eight modules</div><h3>Centre → Clarify → Choose</h3><p>Structured across the three phases, each module with orientation, key concepts, and reflection prompts — in video, written, and audio formats with progress tracking.</p><div class="rule"></div></div>
+<div class="card efx-anim"><div class="ce">Real tools</div><h3>Usable from day one</h3><p>S.H.I.F.T.™, the physiological sigh, and the 60-second reset — portable, private, and included as downloadable tools you keep.</p><div class="rule"></div></div>
+<div class="card efx-anim"><div class="ce">At your pace</div><h3>One module a week, or all at once</h3><p>Designed for sustained use, not a single sitting — and it pairs naturally with the workbook and tool library above.</p><div class="rule"></div></div>
+</div>
+<div class="efx-cta on-cream efx-anim" style="margin-top:44px">
+  <div><h3>Enrol in the Self-Paced Programme</h3><p>$295–$495 depending on inclusions, confirmed at enrolment. An educational, supportive programme — it does not create a psychologist–client relationship and is not individual clinical treatment. If you need clinical care, start with an intake instead.</p></div>
+  <div class="cta-row"><a class="btn solid" href="mailto:admin@sarahanticich.co.nz?subject=Enrolment%3A%20EF%20Health%20Self-Paced%20Programme&body=Hi%2C%20I%27d%20like%20to%20enrol%20in%20the%20EF%20Health%20Self-Paced%20Programme.%20Please%20send%20details.">Enrol →</a><a class="btn line" href="ef-health-intake.html">Start a clinical intake →</a></div>
+</div>
+</div></section>
+
 <!-- ===================== PROGRAMME TIMELINE ===================== -->
 <section class="cream" id="programme"><div class="wrap">
 <div class="eyebrow efx-anim" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-6">The EF Health programme</div>
@@ -497,7 +541,7 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
 </div>
 <div class="efx-cta efx-anim" style="margin-top:52px">
   <div><h3 data-editable="source" data-path="/health-dgbi.html" data-key="card-title-12">Referring a patient?</h3><p data-editable="source" data-path="/health-dgbi.html" data-key="text-20">Send a secure clinician referral, or share these resources directly as part of their care.</p></div>
-  <div class="cta-row"><a class="btn solid" href="ef-health-referral" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-11">Make a referral →</a><a class="btn line" href="#referrers" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-12">How referrals work →</a></div>
+  <div class="cta-row"><a class="btn solid" href="ef-health-referral.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-11">Make a referral →</a><a class="btn line" href="#referrers" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-12">How referrals work →</a></div>
 </div>
 </div></section>
 <!-- ===================== MEET DR SARAH ===================== -->
@@ -532,7 +576,7 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
   <div class="efx-refitem efx-anim"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12a3 3 0 0 0 6 0V6a3 3 0 0 1 6 0v12"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-11">Shared care</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-27">Psychological care runs alongside medical management, never instead of it — coordinated so the whole team is working to one plan.</p></div>
   <div class="efx-refitem efx-anim"><div class="efx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11z"/><path d="M9 13h6M9 17h4"/></svg></div><h4 data-editable="source" data-path="/health-dgbi.html" data-key="sub-title-12">Clinician resources</h4><p data-editable="source" data-path="/health-dgbi.html" data-key="text-28">Downloadable briefings and patient-facing sheets you can print or share at the point of referral, so patients arrive informed.</p></div>
 </div>
-<div class="cta-row efx-anim" style="margin-top:36px"><a class="btn solid" href="ef-health-referral" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-13">Make a referral →</a><a class="btn line" href="https://drive.google.com/file/d/1HNqgG-BLmX1RreaHALpnj0DlT62jmaU7/view?usp=sharing" download data-editable="source" data-path="/health-dgbi.html" data-key="button-label-14">Clinician one-pager →</a><a class="btn line" href="#faqs" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-15">Clinician FAQs →</a></div>
+<div class="cta-row efx-anim" style="margin-top:36px"><a class="btn solid" href="ef-health-referral.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-13">Make a referral →</a><a class="btn line" href="downloads/clinician-gut-brain-intro.pdf" download data-editable="source" data-path="/health-dgbi.html" data-key="button-label-14">Clinician one-pager →</a><a class="btn line" href="#faqs" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-15">Clinician FAQs →</a></div>
 </div></section>
 
 <!-- ===================== FAQs ===================== -->
@@ -547,7 +591,7 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
   <details class="efx-faq" data-cat="confidentiality"><summary data-editable="source" data-path="/health-dgbi.html" data-key="faq-q-5">Is what I share confidential?</summary><div class="efx-abody"><p data-editable="source" data-path="/health-dgbi.html" data-key="text-32">Your sessions are confidential. With your consent, we share brief, practical updates with your referrer or medical team so your care stays coordinated. We'll always be clear about what is shared and why.</p></div></details>
   <details class="efx-faq" data-cat="patient programme"><summary data-editable="source" data-path="/health-dgbi.html" data-key="faq-q-6">How is this different from seeing any psychologist?</summary><div class="efx-abody"><p data-editable="source" data-path="/health-dgbi.html" data-key="text-33">EF Health is built specifically for disorders of gut–brain interaction. It combines gut–brain science with the Executive Frame™ and evidence-based therapies (CBT, ACT, CFT, gut-directed hypnotherapy), and it's delivered as part of integrated medical care.</p></div></details>
   </div>
-<div class="cta-row efx-anim" style="margin-top:30px"><a class="btn line" href="faqs" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-16">See all FAQs →</a></div>
+<div class="cta-row efx-anim" style="margin-top:30px"><a class="btn line" href="faqs.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-16">See all FAQs →</a></div>
 </div></section>
 <!-- ===================== EVIDENCE BASE ===================== -->
 <section class="navy" id="evidence"><div class="wrap">
@@ -569,22 +613,22 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
 <section class="navy close" id="start"><div class="wrap"><div class="eyebrow" style="justify-content:center" data-editable="source" data-path="/health-dgbi.html" data-key="eyebrow-11">Start where you are</div>
 <h2 data-editable="source" data-path="/health-dgbi.html" data-key="section-title-10">Not sure where to start?</h2>
 <p class="lead" data-editable="source" data-path="/health-dgbi.html" data-key="body-text-7">Already referred? Complete your intake. Not yet referred? Make an enquiry, or ask your GP or gastroenterologist to refer you — and take the Capacity Check to get oriented. Clinicians can make a referral in minutes.</p>
-<div class="cta-row" style="justify-content:center"><a class="btn solid" href="ef-health-intake" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-17">Complete your intake →</a><a class="btn line" href="enquire" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-18">Make an enquiry →</a><a class="btn line" href="ef-health-referral" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-19">Make a referral →</a><a class="btn line" href="ef-assessment-health" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-20">Take the Capacity Check →</a></div>
+<div class="cta-row" style="justify-content:center"><a class="btn solid" href="ef-health-intake.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-17">Complete your intake →</a><a class="btn line" href="enquire.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-18">Make an enquiry →</a><a class="btn line" href="ef-health-referral.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-19">Make a referral →</a><a class="btn line" href="ef-assessment-health.html" data-editable="source" data-path="/health-dgbi.html" data-key="button-label-20">Take the Capacity Check →</a></div>
 <div class="tagline">Human first. Then performance.</div></div></section>
 </main><footer><div class="wrap">
 <hr class="foot-rule">
 <div class="foot-grid">
 <div class="fcol">
-<h4 class="fbrand">Executive Frame<sup>™</sup></h4>
+<h4 class="fbrand"><img class="mk" src="images/brand/ef-mark.png" alt="" width="21" height="18">Executive Frame<sup>™</sup></h4>
 <p class="fdesc">A structured psychological architecture for individuals, families, and organisations navigating pressure.</p>
 <p class="floc">Auckland · Christchurch · Queenstown · Telehealth available</p>
 <p><a class="fmail" href="mailto:admin@sarahanticich.co.nz">admin@sarahanticich.co.nz</a></p>
 <p class="ftag">Human first. Then performance.</p>
 </div>
 <div class="fcol">
-<div class="fl">The Eight Arms</div>
-<p class="farms"><a class="acc" href="health">EF Health</a> · <a href="elite">EF Elite</a> · <a href="corporate">EF Corporate</a> · <a href="law">EF Law</a> · <a href="women">EF Women</a> · <a href="neurodiversity">EF Neurodiversity</a> · <a href="family">EF Family</a> · <a href="consulting">C³ Consulting</a></p>
-<p class="flinks2"><a href="ef-health-referral">Make a referral</a> · <a href="resources">The S.H.I.F.T.™ Deck</a> · <a href="partners">Partner organisations</a></p>
+<div class="fl">The Nine Arms</div>
+<p class="farms"><a class="acc" href="health.html">EF Health</a> · <a href="elite.html">EF Elite</a> · <a href="corporate.html">EF Corporate</a> · <a href="law.html">EF Law</a> · <a href="women.html">EF Women</a> · <a href="neurodiversity.html">EF Neurodiversity</a> · <a href="family.html">EF Family</a> · <a href="consulting.html">C³ Consulting</a></p>
+<p class="flinks2"><a href="ef-health-referral.html">Make a referral</a> · <a href="resources.html">The S.H.I.F.T.™ Deck</a> · <a href="partners.html">Partner organisations</a></p>
 </div>
 <div class="fcol">
 <div class="fl">Practice</div>
@@ -594,7 +638,7 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
 <p class="fital">Industrial / Organisational Psychologist</p>
 <p class="fmuted">Sarah Anticich Consulting</p>
 <p class="fmuted">© 2026 — All rights reserved.</p>
-<p class="flinks2"><a href="enquire">Contact</a> · <a href="enquire">Referrals</a> · <a href="enquire">Privacy</a></p>
+<p class="flinks2"><a href="enquire.html">Contact</a> · <a href="enquire.html">Referrals</a> · <a href="enquire.html">Privacy</a></p>
 </div>
 </div>
 <div class="foot-base">The Executive Frame™ · EF Health · executiveframe.co.nz &nbsp;·&nbsp; Delivered in partnership with the MacMurray Centre. EF Health is not a crisis service — in an emergency call 111 (NZ). &nbsp;·&nbsp; Site by Anticich Consulting.</div>
@@ -602,8 +646,8 @@ section{border-top:1px solid rgba(20,28,37,.05);padding:104px 0}
 
 <!-- floating conversion CTAs -->
 <div class="efx-float" id="efx-float" aria-hidden="true">
-<a class="fc-intake" href="ef-health-intake">Start intake →</a>
-<a class="fc-ref" href="ef-health-referral">Make a referral →</a>
+<a class="fc-intake" href="ef-health-intake.html">Start intake →</a>
+<a class="fc-ref" href="ef-health-referral.html">Make a referral →</a>
 </div>
 
 <script src="site.js" defer></script>
