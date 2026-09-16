@@ -93,7 +93,7 @@ def find_close(text, tag, start):
         pos = m.end()
 
 
-EM_SPLIT_RE = re.compile(r'(<em\b[^>]*>.*?</em>)', re.S | re.I)
+SEG_RE = re.compile(r'(<(?:em|span)\b[^>]*>.*?</(?:em|span)>|<br\s*/?>)', re.S | re.I)
 
 
 def process(path, apply_changes):
@@ -131,9 +131,11 @@ def process(path, apply_changes):
         def attr(key):
             return ' data-editable="source" data-path="/%s" data-key="%s"' % (os.path.basename(path), key)
 
-        if tag in ('h1', 'h2') and re.search(r'<em\b', inner, re.I):
-            parts = EM_SPLIT_RE.split(inner)
-            if any(re.search(r'<(?!/?em\b)', p) for p in parts):
+        if tag in ('h1', 'h2', 'h3', 'h4') and re.search(r'<(em|span|br)\b', inner, re.I):
+            parts = SEG_RE.split(inner)
+            if any(re.search(r'<', p) for p in parts if not SEG_RE.fullmatch(p)):
+                continue
+            if any('data-editable' in p for p in parts):
                 continue
             counters[ktype] = counters.get(ktype, 0) + 1
             base = '%s-%d' % (ktype, counters[ktype])
@@ -141,13 +143,22 @@ def process(path, apply_changes):
             for p in parts:
                 if not p:
                     continue
-                if p.lower().startswith('<em'):
+                if re.fullmatch(r'<br\s*/?>', p, re.I):
+                    out.append(p)
+                elif p.lower().startswith('<em'):
                     em = re.match(r'<em\b([^>]*)>(.*?)</em>', p, re.S | re.I)
                     if not em or re.search(r'<', em.group(2)):
                         ok = False
                         break
                     ei += 1
                     out.append('<em%s%s>%s</em>' % (em.group(1), attr('%s-e%d' % (base, ei)), em.group(2)))
+                elif p.lower().startswith('<span'):
+                    sp = re.match(r'<span\b([^>]*)>(.*?)</span>', p, re.S | re.I)
+                    if not sp or re.search(r'<', sp.group(2)):
+                        ok = False
+                        break
+                    ti += 1
+                    out.append('<span%s%s>%s</span>' % (sp.group(1), attr('%s-t%d' % (base, ti)), sp.group(2)))
                 elif p.strip():
                     ti += 1
                     out.append('<span%s>%s</span>' % (attr('%s-t%d' % (base, ti)), p))
